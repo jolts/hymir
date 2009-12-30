@@ -4,6 +4,8 @@
   - @posts.each do |post|
     %h2
       = link_to h(post.title), post
+      by
+      = post.user.username
     .content
       = simple_format(post.body)
 

@@ -1,4 +1,9 @@
-- title @post.title
+- title @post.title, false
+
+%h2
+  = @post.title
+  by
+  = @post.user.username
 
 = simple_format(@post.body)
 
