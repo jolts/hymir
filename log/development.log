@@ -18,3 +18,414 @@
  FROM sqlite_master
  WHERE type = 'table' AND NOT name = 'sqlite_sequence'
 [0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-12-30 20:36:43) [GET]
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 51ms (View: 41, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2009-12-30 20:36:44) [GET]
+Rendering template within layouts/application
+Rendering posts/new
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2009-12-30 20:37:04) [GET]
+Rendering template within layouts/application
+Rendering posts/new
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #3 of app/views/posts/_form.html.haml:
+1: = error_messages_for :article
+2: 
+3: - form_for @article do |f|
+4:   %p
+5:     = f.label :title
+6:     = f.text_field :title
+
+    haml (2.2.15) lib/haml/helpers/action_view_mods.rb:170:in `form_for_with_haml'
+    app/views/posts/_form.html.haml:3:in `_run_haml_app47views47posts47_form46html46haml_locals_form_object'
+    haml (2.2.15) lib/haml/helpers/action_view_mods.rb:11:in `block in render_with_haml'
+    haml (2.2.15) lib/haml/helpers.rb:96:in `non_haml'
+    haml (2.2.15) lib/haml/helpers/action_view_mods.rb:11:in `render_with_haml'
+    app/views/posts/new.html.haml:3:in `_run_haml_app47views47posts47new46html46haml'
+    haml (2.2.15) lib/haml/helpers/action_view_mods.rb:13:in `render_with_haml'
+    haml (2.2.15) lib/haml/helpers/action_view_mods.rb:13:in `render_with_haml'
+    haml (2.2.15) lib/sass/plugin/rails.rb:19:in `process'
+    <internal:prelude>:8:in `synchronize'
+    thin (1.2.5) lib/thin/connection.rb:76:in `block in pre_process'
+    thin (1.2.5) lib/thin/connection.rb:74:in `catch'
+    thin (1.2.5) lib/thin/connection.rb:74:in `pre_process'
+    thin (1.2.5) lib/thin/connection.rb:57:in `process'
+    thin (1.2.5) lib/thin/connection.rb:42:in `receive_data'
+    eventmachine (0.12.10) lib/eventmachine.rb:256:in `run_machine'
+    eventmachine (0.12.10) lib/eventmachine.rb:256:in `run'
+    thin (1.2.5) lib/thin/backends/base.rb:57:in `start'
+    thin (1.2.5) lib/thin/server.rb:156:in `start'
+    thin (1.2.5) lib/thin/controllers/controller.rb:80:in `start'
+    thin (1.2.5) lib/thin/runner.rb:177:in `run_command'
+    thin (1.2.5) lib/thin/runner.rb:143:in `run!'
+    thin (1.2.5) bin/thin:6:in `<top (required)>'
+    /usr/bin/thin:19:in `load'
+    /usr/bin/thin:19:in `<main>'
+
+Rendered rescues/_trace (56.6ms)
+Rendered rescues/_request_and_response (0.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-12-30 20:37:26) [GET]
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 40ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2009-12-30 20:37:26) [GET]
+Rendering template within layouts/application
+Rendering posts/new
+Rendered posts/_form (49.0ms)
+Completed in 58ms (View: 54, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2009-12-30 20:37:39) [POST]
+  Parameters: {"authenticity_token"=>"aLlsX+PB7GssrC//BtDxLpMJELinuSR2N0pMRRv5ZwY=", "post"=>{"title"=>"First post", "body"=>"With not alot of content."}, "commit"=>"Save"}
+Redirected to http://localhost:3000/posts/4b3bac03196b74453f000001
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2009-12-30 20:37:39) [GET]
+  Parameters: {"id"=>"4b3bac03196b74453f000001"}
+
+Errno::ENOENT (No such file or directory - /home/gigamo/Code/ruby/rails/hymir/app/views/posts/show.html.erb):
+  haml (2.2.15) lib/sass/plugin/rails.rb:19:in `process'
+  <internal:prelude>:8:in `synchronize'
+  thin (1.2.5) lib/thin/connection.rb:76:in `block in pre_process'
+  thin (1.2.5) lib/thin/connection.rb:74:in `catch'
+  thin (1.2.5) lib/thin/connection.rb:74:in `pre_process'
+  thin (1.2.5) lib/thin/connection.rb:57:in `process'
+  thin (1.2.5) lib/thin/connection.rb:42:in `receive_data'
+  eventmachine (0.12.10) lib/eventmachine.rb:256:in `run_machine'
+  eventmachine (0.12.10) lib/eventmachine.rb:256:in `run'
+  thin (1.2.5) lib/thin/backends/base.rb:57:in `start'
+  thin (1.2.5) lib/thin/server.rb:156:in `start'
+  thin (1.2.5) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.2.5) lib/thin/runner.rb:177:in `run_command'
+  thin (1.2.5) lib/thin/runner.rb:143:in `run!'
+  thin (1.2.5) bin/thin:6:in `<top (required)>'
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19:in `<main>'
+
+Rendered rescues/_trace (39.8ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-12-30 20:38:19) [GET]
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-12-30 20:38:22) [GET]
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2009-12-30 20:38:24) [GET]
+  Parameters: {"id"=>"4b3bac03196b74453f000001"}
+
+Errno::ENOENT (No such file or directory - /home/gigamo/Code/ruby/rails/hymir/app/views/posts/show.html.erb):
+  haml (2.2.15) lib/sass/plugin/rails.rb:19:in `process'
+  <internal:prelude>:8:in `synchronize'
+  thin (1.2.5) lib/thin/connection.rb:76:in `block in pre_process'
+  thin (1.2.5) lib/thin/connection.rb:74:in `catch'
+  thin (1.2.5) lib/thin/connection.rb:74:in `pre_process'
+  thin (1.2.5) lib/thin/connection.rb:57:in `process'
+  thin (1.2.5) lib/thin/connection.rb:42:in `receive_data'
+  eventmachine (0.12.10) lib/eventmachine.rb:256:in `run_machine'
+  eventmachine (0.12.10) lib/eventmachine.rb:256:in `run'
+  thin (1.2.5) lib/thin/backends/base.rb:57:in `start'
+  thin (1.2.5) lib/thin/server.rb:156:in `start'
+  thin (1.2.5) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.2.5) lib/thin/runner.rb:177:in `run_command'
+  thin (1.2.5) lib/thin/runner.rb:143:in `run!'
+  thin (1.2.5) bin/thin:6:in `<top (required)>'
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19:in `<main>'
+
+Rendered rescues/_trace (68.9ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#show (for 127.0.0.1 at 2009-12-30 20:38:54) [GET]
+  Parameters: {"id"=>"4b3bac03196b74453f000001"}
+
+Errno::ENOENT (No such file or directory - /home/gigamo/Code/ruby/rails/hymir/app/views/posts/show.html.erb):
+  haml (2.2.15) lib/sass/plugin/rails.rb:19:in `process'
+  <internal:prelude>:8:in `synchronize'
+  thin (1.2.5) lib/thin/connection.rb:76:in `block in pre_process'
+  thin (1.2.5) lib/thin/connection.rb:74:in `catch'
+  thin (1.2.5) lib/thin/connection.rb:74:in `pre_process'
+  thin (1.2.5) lib/thin/connection.rb:57:in `process'
+  thin (1.2.5) lib/thin/connection.rb:42:in `receive_data'
+  eventmachine (0.12.10) lib/eventmachine.rb:256:in `run_machine'
+  eventmachine (0.12.10) lib/eventmachine.rb:256:in `run'
+  thin (1.2.5) lib/thin/backends/base.rb:57:in `start'
+  thin (1.2.5) lib/thin/server.rb:156:in `start'
+  thin (1.2.5) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.2.5) lib/thin/runner.rb:177:in `run_command'
+  thin (1.2.5) lib/thin/runner.rb:143:in `run!'
+  thin (1.2.5) bin/thin:6:in `<top (required)>'
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19:in `<main>'
+
+Rendered rescues/_trace (39.4ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-12-30 20:41:24) [GET]
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 23ms (View: 13, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2009-12-30 20:41:25) [GET]
+  Parameters: {"id"=>"4b3bac03196b74453f000001"}
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/posts/4b3bac03196b74453f000001]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-12-30 20:41:31) [GET]
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 6ms (View: 1, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2009-12-30 20:43:43) [GET]
+Rendering template within layouts/application
+Rendering posts/new
+Rendered posts/_form (49.2ms)
+Completed in 63ms (View: 58, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-12-30 20:43:44) [GET]
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 6ms (View: 1, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2009-12-30 20:43:44) [GET]
+  Parameters: {"id"=>"4b3bac03196b74453f000001"}
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/posts/4b3bac03196b74453f000001]
+
+
+Processing PostsController#edit (for 127.0.0.1 at 2009-12-30 20:43:46) [GET]
+  Parameters: {"id"=>"4b3bac03196b74453f000001"}
+Rendering template within layouts/application
+Rendering posts/edit
+Rendered posts/_form (1.6ms)
+Completed in 40ms (View: 35, DB: 0) | 200 OK [http://localhost/posts/4b3bac03196b74453f000001/edit]
+
+
+Processing PostsController#update (for 127.0.0.1 at 2009-12-30 20:43:49) [PUT]
+  Parameters: {"authenticity_token"=>"aLlsX+PB7GssrC//BtDxLpMJELinuSR2N0pMRRv5ZwY=", "post"=>{"title"=>"First post", "body"=>"With not alot of content.\r\nSee?"}, "commit"=>"Save", "id"=>"4b3bac03196b74453f000001"}
+Redirected to http://localhost:3000/posts/4b3bac03196b74453f000001
+Completed in 24ms (DB: 0) | 302 Found [http://localhost/posts/4b3bac03196b74453f000001]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2009-12-30 20:43:49) [GET]
+  Parameters: {"id"=>"4b3bac03196b74453f000001"}
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/posts/4b3bac03196b74453f000001]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-12-30 20:43:52) [GET]
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2009-12-30 20:44:26) [GET]
+  Parameters: {"id"=>"4b3bac03196b74453f000001"}
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/posts/4b3bac03196b74453f000001]
+
+
+Processing PostsController#destroy (for 127.0.0.1 at 2009-12-30 20:44:28) [DELETE]
+  Parameters: {"authenticity_token"=>"aLlsX+PB7GssrC//BtDxLpMJELinuSR2N0pMRRv5ZwY=", "id"=>"4b3bac03196b74453f000001"}
+Redirected to http://localhost:3000/posts
+Completed in 7ms (DB: 0) | 302 Found [http://localhost/posts/4b3bac03196b74453f000001]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-12-30 20:44:28) [GET]
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 6ms (View: 1, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2009-12-30 20:44:29) [GET]
+Rendering template within layouts/application
+Rendering posts/new
+Rendered posts/_form (1.2ms)
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2009-12-30 20:44:41) [POST]
+  Parameters: {"authenticity_token"=>"aLlsX+PB7GssrC//BtDxLpMJELinuSR2N0pMRRv5ZwY=", "post"=>{"title"=>"First post", "body"=>"With no content :/"}, "commit"=>"Save"}
+Redirected to http://localhost:3000/posts/4b3bada9196b74456a000001
+Completed in 7ms (DB: 0) | 302 Found [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2009-12-30 20:44:41) [GET]
+  Parameters: {"id"=>"4b3bada9196b74456a000001"}
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 8ms (View: 2, DB: 0) | 200 OK [http://localhost/posts/4b3bada9196b74456a000001]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-12-30 20:45:44) [GET]
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2009-12-30 20:46:23) [GET]
+Rendering template within layouts/application
+Rendering posts/new
+Rendered posts/_form (1.2ms)
+Completed in 36ms (View: 4, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-12-30 20:46:29) [GET]
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2009-12-30 20:46:30) [GET]
+  Parameters: {"id"=>"4b3bada9196b74456a000001"}
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/posts/4b3bada9196b74456a000001]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-12-30 20:46:35) [GET]
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 7ms (View: 1, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2009-12-30 20:46:36) [GET]
+Rendering template within layouts/application
+Rendering posts/new
+Rendered posts/_form (1.2ms)
+Completed in 36ms (View: 2, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2009-12-30 20:46:37) [POST]
+  Parameters: {"authenticity_token"=>"aLlsX+PB7GssrC//BtDxLpMJELinuSR2N0pMRRv5ZwY=", "post"=>{"title"=>"", "body"=>""}, "commit"=>"Save"}
+Rendering template within layouts/application
+Rendering posts/new
+Rendered posts/_form (2.2ms)
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-12-30 20:46:45) [GET]
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 7ms (View: 1, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2009-12-30 20:47:08) [GET]
+
+ArgumentError (invalid options: in):
+  /usr/lib/ruby/gems/1.9.1/gems/jnunemaker-validatable-1.8.1/lib/validatable/understandable.rb:27:in `must_understand'
+  /usr/lib/ruby/gems/1.9.1/gems/jnunemaker-validatable-1.8.1/lib/validatable/validations/validation_base.rb:47:in `initialize'
+  /usr/lib/ruby/gems/1.9.1/gems/jnunemaker-validatable-1.8.1/lib/validatable/validatable_class_methods.rb:66:in `new'
+  /usr/lib/ruby/gems/1.9.1/gems/jnunemaker-validatable-1.8.1/lib/validatable/validatable_class_methods.rb:66:in `block in add_validations'
+  /usr/lib/ruby/gems/1.9.1/gems/jnunemaker-validatable-1.8.1/lib/validatable/validatable_class_methods.rb:65:in `each'
+  /usr/lib/ruby/gems/1.9.1/gems/jnunemaker-validatable-1.8.1/lib/validatable/validatable_class_methods.rb:65:in `add_validations'
+  /usr/lib/ruby/gems/1.9.1/gems/jnunemaker-validatable-1.8.1/lib/validatable/macros.rb:75:in `validates_length_of'
+  app/models/post.rb:10:in `<class:Post>'
+  app/models/post.rb:1:in `<top (required)>'
+  app/controllers/posts_controller.rb:11:in `new'
+  haml (2.2.15) lib/sass/plugin/rails.rb:19:in `process'
+  <internal:prelude>:8:in `synchronize'
+  thin (1.2.5) lib/thin/connection.rb:76:in `block in pre_process'
+  thin (1.2.5) lib/thin/connection.rb:74:in `catch'
+  thin (1.2.5) lib/thin/connection.rb:74:in `pre_process'
+  thin (1.2.5) lib/thin/connection.rb:57:in `process'
+  thin (1.2.5) lib/thin/connection.rb:42:in `receive_data'
+  eventmachine (0.12.10) lib/eventmachine.rb:256:in `run_machine'
+  eventmachine (0.12.10) lib/eventmachine.rb:256:in `run'
+  thin (1.2.5) lib/thin/backends/base.rb:57:in `start'
+  thin (1.2.5) lib/thin/server.rb:156:in `start'
+  thin (1.2.5) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.2.5) lib/thin/runner.rb:177:in `run_command'
+  thin (1.2.5) lib/thin/runner.rb:143:in `run!'
+  thin (1.2.5) bin/thin:6:in `<top (required)>'
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19:in `<main>'
+
+Rendered rescues/_trace (44.2ms)
+Rendered rescues/_request_and_response (0.8ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#new (for 127.0.0.1 at 2009-12-30 20:47:13) [GET]
+Rendering template within layouts/application
+Rendering posts/new
+Rendered posts/_form (1.2ms)
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2009-12-30 20:47:15) [POST]
+  Parameters: {"authenticity_token"=>"aLlsX+PB7GssrC//BtDxLpMJELinuSR2N0pMRRv5ZwY=", "post"=>{"title"=>"", "body"=>""}, "commit"=>"Save"}
+Rendering template within layouts/application
+Rendering posts/new
+Rendered posts/_form (2.2ms)
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2009-12-30 20:47:25) [POST]
+  Parameters: {"authenticity_token"=>"aLlsX+PB7GssrC//BtDxLpMJELinuSR2N0pMRRv5ZwY=", "post"=>{"title"=>"Asd", "body"=>""}, "commit"=>"Save"}
+Rendering template within layouts/application
+Rendering posts/new
+Rendered posts/_form (2.1ms)
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2009-12-30 20:47:35) [POST]
+  Parameters: {"authenticity_token"=>"aLlsX+PB7GssrC//BtDxLpMJELinuSR2N0pMRRv5ZwY=", "post"=>{"title"=>"asdfsdfasdfasdfasdfasdfasdfasdfasdfasdfasdfsdfasdfasdfasdfsdfasdfasdfasdfasdfsdfasdfasdfsdf", "body"=>""}, "commit"=>"Save"}
+Rendering template within layouts/application
+Rendering posts/new
+Rendered posts/_form (2.1ms)
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-12-30 20:47:37) [GET]
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2009-12-30 20:47:38) [GET]
+Rendering template within layouts/application
+Rendering posts/new
+Rendered posts/_form (1.2ms)
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-12-30 20:47:39) [GET]
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/posts]

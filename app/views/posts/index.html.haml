@@ -1,0 +1,10 @@
+- title 'Posts'
+
+#posts
+  - @posts.each do |post|
+    %h2
+      = link_to h(post.title), post
+    .content
+      = simple_format(post.body)
+
+= link_to 'New post', new_post_path
