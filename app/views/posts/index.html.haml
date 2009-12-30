@@ -7,4 +7,5 @@
     .content
       = simple_format(post.body)
 
-= link_to 'New post', new_post_path
+- if signed_in?
+  = link_to 'New post', new_post_path

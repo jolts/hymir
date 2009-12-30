@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_filter :authenticate, :only => [:new, :create, :edit, :update, :destroy]
+
   def index
     @posts = Post.all
   end
@@ -13,6 +15,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(params[:post])
+    @post.user_id = current_user.id
     @post.created_at = Time.now
     @post.updated_at = Time.now
 
