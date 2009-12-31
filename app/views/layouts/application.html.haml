@@ -4,6 +4,7 @@
   %head
     %title= h(yield(:title) || 'Hymir')
     = stylesheet_link_tag 'application'
+    = auto_discovery_link_tag :atom, "#{posts_path}.atom", :title => 'Posts feed'
     = yield(:head)
 
   %body
