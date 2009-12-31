@@ -6,6 +6,8 @@ class UserSessionsController < ApplicationController
   end
 
   def create
+    sign_out_keeping_session!
+
     respond_to do |format|
       if user = User.authenticate(params[:email], params[:password])
         self.current_user = user
@@ -19,7 +21,7 @@ class UserSessionsController < ApplicationController
   end
 
   def destroy
-    sign_out_keeping_session!
+    sign_out_killing_session!
 
     respond_to do |format|
       flash[:notice] = 'You were successfully logged out.'
