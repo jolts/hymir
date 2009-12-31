@@ -8,8 +8,7 @@ class UserSessionsController < ApplicationController
   def create
     respond_to do |format|
       if user = User.authenticate(params[:email], params[:password])
-        session[:user_id] = user.id
-        @current_user = user
+        self.current_user = user
         flash[:notice] = 'You were successfully logged in.'
         format.html { redirect_back_or_default(root_url) }
       else
