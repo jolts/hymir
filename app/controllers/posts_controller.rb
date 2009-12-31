@@ -1,8 +1,6 @@
 class PostsController < ApplicationController
   load_and_authorize_resource
 
-  before_filter :authenticate, :except => [:index, :show]
-
   def index
     @posts = Post.all(:order => 'created_at DESC')
 
@@ -14,6 +12,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    @post ||= Post.first(:slug => params[:slug])
     @comment = Comment.new(:post_id => @post.id)
 
     respond_to do |format|
