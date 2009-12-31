@@ -6,8 +6,10 @@ class User
   key :email, String, :required => true, :unique => true
   key :crypted_password, String
   key :roles_mask, Integer
+  key :created_at, Time
 
   many :posts
+  many :comments
 
   RegEmailName = '[\w\.%\+\-]+'
   RegDomainHead = '(?:[A-Z0-9\-]+\.)+'

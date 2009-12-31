@@ -4,10 +4,14 @@
   - @posts.each do |post|
     %h2
       = link_to h(post.title), post
+      %span.comments= '(' + pluralize(post.comments.count, 'comment') + ')'
+    .author
       by
       = post.user.username
+      on
+      = post.created_at.strftime('%b %d, %Y')
     .content
       = simple_format(post.body)
 
 - if can? :create, Post
-  = link_to 'New post', new_post_path
+  %p= link_to 'New post', new_post_path

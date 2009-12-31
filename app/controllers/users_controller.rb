@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   
   def create
     @user = User.new(params[:user])
+    @user.created_at = Time.now
 
     respond_to do |format|
       if @user.save

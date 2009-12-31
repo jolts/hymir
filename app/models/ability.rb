@@ -8,10 +8,10 @@ class Ability
     else
       can :read, :all
       if user
-        #can :create, Comment
-        #can :update, Comment do |comment|
-        #  comment.try(:user) == user
-        #end
+        can :create, Comment
+        can :update, Comment do |comment|
+          comment.try(:user) == user
+        end
         if user.role?(:author)
           can :create, Post
           can :update, Post do |post|

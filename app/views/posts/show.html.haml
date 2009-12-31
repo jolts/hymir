@@ -7,10 +7,35 @@
 
 = simple_format(@post.body)
 
-- if can? :update, @post
-  = link_to 'Edit', edit_post_path(@post)
-  \|
-- if can? :destroy, @post
-  = link_to 'Destroy', @post, :method => :delete, :confirm => 'Are you sure?'
-  \|
-= link_to 'Back to list', posts_path
+%p
+  - if can? :update, @post
+    = link_to 'Edit', edit_post_path(@post)
+    \|
+  - if can? :destroy, @post
+    = link_to 'Destroy', @post, :method => :delete, :confirm => 'Are you sure?'
+    \|
+  = link_to 'Back to list', posts_path
+
+- unless @post.comments.empty?
+  %h2= pluralize(@post.comments.count, 'comment')
+
+  #comments
+    - @post.comments.each do |comment|
+      .comment
+        %strong= h(comment.user.username)
+        %em
+          on
+          = comment.created_at.strftime('%b %d, %Y at %H:%M')
+
+        = simple_format(comment.body)
+
+        %p
+          - if can? :update, comment
+            = link_to 'Edit', edit_comment_path(comment)
+          - if can? :destroy, comment
+            \|
+            = link_to 'Destroy', comment, :method => :delete, :confirm => 'Are you sure?'
+
+- if can? :create, Comment
+  %h3 Add your comment:
+  = render :partial => 'comments/form'

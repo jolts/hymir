@@ -14,6 +14,8 @@ class PostsController < ApplicationController
   end
 
   def show
+    @comment = Comment.new(:post_id => @post.id)
+
     respond_to do |format|
       format.html
       format.json { render :json => @post }
