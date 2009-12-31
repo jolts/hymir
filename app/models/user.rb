@@ -2,11 +2,9 @@ require 'digest/sha1'
 class User
   include MongoMapper::Document
 
-  key :username, String, :required => true
-  key :email, String, :required => true
+  key :username, String, :required => true, :unique => true
+  key :email, String, :required => true, :unique => true
   key :crypted_password, String
-  key :reset_password_code, String
-  key :reset_password_code_until, Time
 
   many :posts
 
@@ -49,12 +47,5 @@ class User
   def email=(new_email)
     new_email.downcase! unless new_email.nil?
     write_attribute(:email, new_email)
-  end
-
-  def set_password_code!
-    seed = "#{email}#{Time.now.to_s.split(//).sort_by {rand}.join}"
-    self.reset_password_code_until = 1.day.from_now
-    self.reset_password_code = Digest::SHA1.hexdigest(seed)
-    save!
   end
 end
