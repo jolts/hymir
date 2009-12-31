@@ -1,7 +1,7 @@
 body {
-  background-color: #FFF;
-  font-family: Verdana, Helvetica, Arial;
-  font-size: 14px;
+  background-color: #3d3c3a;
+  color: #fff;
+  font: 12px Helvetica, Arial, sans-serif;
 }
  
 a img {
@@ -9,19 +9,15 @@ a img {
 }
  
 a {
-  color: #0000FF;
-}
- 
-body {
-  background-color: #4B7399;
+  color: #35a8a1;
 }
  
 #container {
+  background-color: #1d1916;
   width: 75%;
   margin: 0 auto;
-  background-color: #FFF;
   padding: 20px 40px;
-  border: solid 1px black;
+  border: solid 1px #404f48;
   margin-top: 20px;
 }
  
@@ -58,19 +54,18 @@ body {
  
 #posts .author {
   font-style: italic;
-  color: #333;
+  color: #ccc;
 }
  
 #comments {
-  font-size: 12px;
-  background-color: #DDD;
+  background-color: #3d3c3a;
   padding: 0 20px;
   width: 325px;
-  border: solid 1px #333;
+  border: solid 1px #404f48;
 }
  
 .comment {
-  border-bottom: solid 1px #999;
+  border-bottom: solid 1px #404f48;
   margin: 15px 0;
 }
  
