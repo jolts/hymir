@@ -28,7 +28,7 @@ class User
   validates_length_of :password, :minimum => 6
 
   def authenticated?(secret)
-    password == secret ? true : false
+    password == secret
   end
 
   def password
