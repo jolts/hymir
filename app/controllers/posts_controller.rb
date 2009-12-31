@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
+
   before_filter :authenticate, :except => [:index, :show]
-  before_filter :find_post, :only => [:show, :edit, :update, :destroy]
 
   def index
     @posts = Post.all(:order => 'created_at DESC')
@@ -72,10 +73,4 @@ class PostsController < ApplicationController
       format.html { redirect_to(posts_url) }
     end
   end
-
-  private
-    def find_post
-      @post = Post.find(params[:id])
-    end
-  # private
 end

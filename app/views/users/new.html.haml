@@ -18,6 +18,14 @@
     %br/
     = f.password_field :password_confirmation
   %p
+    = f.label :roles
+    %br/
+    - User::ROLES.each do |role|
+      = check_box_tag 'user[roles][]', role, @user.roles.include?(role)
+      = h role.humanize
+      %br/
+    = hidden_field_tag 'user[roles][]', ''
+  %p
     = f.submit 'Sign up', :disable_with => 'Signing you up...'
     or
     = link_to 'sign in', login_path

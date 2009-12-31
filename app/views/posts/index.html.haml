@@ -9,5 +9,5 @@
     .content
       = simple_format(post.body)
 
-- if signed_in?
+- if can? :create, Post
   = link_to 'New post', new_post_path

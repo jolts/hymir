@@ -20,8 +20,8 @@ module Authentication
   end
   
   # Store the given user id in the session.
-  def current_user=(new_user)
-    session[:user_id] = new_user ? new_user.id : nil
+  def current_user=(new_user = nil)
+    session[:user_id] = new_user.id
     @current_user = new_user || false
   end
 

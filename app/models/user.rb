@@ -5,6 +5,7 @@ class User
   key :username, String, :required => true, :unique => true
   key :email, String, :required => true, :unique => true
   key :crypted_password, String
+  key :roles_mask, Integer
 
   many :posts
 
@@ -47,5 +48,19 @@ class User
   def email=(new_email)
     new_email.downcase! unless new_email.nil?
     write_attribute(:email, new_email)
+  end
+
+  ROLES = %w[admin moderator author]
+
+  def roles=(roles)
+    self.roles_mask = (roles & ROLES).map {|r| 2**ROLES.index(r)}.sum
+  end
+
+  def roles
+    ROLES.reject {|r| ((roles_mask || 0) & 2**ROLES.index(r)).zero?}
+  end
+
+  def role?(role)
+    roles.include? role.to_s
   end
 end

@@ -4,8 +4,8 @@ class Post
   key :user_id, ObjectId
   key :title, String, :required => true, :allow_blank => false, :unique => true
   key :body, String, :required => true, :allow_blank => false
-  key :created_at, DateTime
-  key :updated_at, DateTime
+  key :created_at, Time
+  key :updated_at, Time
 
   validates_length_of :title, :within => 4..40
 
