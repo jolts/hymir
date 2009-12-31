@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_filter :authenticate, :only => [:new, :create, :edit, :update, :destroy]
+  before_filter :authenticate, :except => [:index, :show]
   before_filter :find_post, :only => [:show, :edit, :update, :destroy]
 
   def index
