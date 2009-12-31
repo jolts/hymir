@@ -38,7 +38,7 @@ class PostsController < ApplicationController
     respond_to do |format|
       if @post.save
         flash[:notice] = 'Successfully created post.'
-        format.html { redirect_to(@post) }
+        format.html { redirect_to(@post.url) }
       else
         format.html { render :action => 'new' }
       end
@@ -59,7 +59,7 @@ class PostsController < ApplicationController
     respond_to do |format|
       if @post.save
         flash[:notice] = 'Successfully updated post.'
-        format.html { redirect_to(@post) }
+        format.html { redirect_to(@post.url) }
       else
         format.html { render :action => 'edit' }
       end
