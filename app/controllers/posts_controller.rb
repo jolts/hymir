@@ -7,12 +7,15 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       format.html
+      format.json { render :json => @posts }
+      format.atom
     end
   end
 
   def show
     respond_to do |format|
       format.html
+      format.json { render :json => @post }
     end
   end
 
