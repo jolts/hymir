@@ -2,6 +2,9 @@ class CommentsController < ApplicationController
   load_and_authorize_resource
 
   def new
+    respond_to do |format|
+      format.html
+    end
   end
 
   def create
@@ -21,6 +24,9 @@ class CommentsController < ApplicationController
   end
 
   def edit
+    respond_to do |format|
+      format.html
+    end
   end
 
   def update

@@ -26,7 +26,7 @@
 
         %p
           - if can? :update, comment
-            = link_to 'Edit', edit_post_comment_path(@post, comment)
+            = link_to 'Edit', edit_post_comment_path(@post.id, comment.id)
           - if can? :destroy, comment
             \|
             = link_to 'Destroy', post_comment_path(@post.id, comment.id), :method => :delete, :confirm => 'Are you sure?'
