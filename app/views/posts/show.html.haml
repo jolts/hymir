@@ -26,10 +26,10 @@
 
         %p
           - if can? :update, comment
-            = link_to 'Edit', edit_comment_path(comment)
+            = link_to 'Edit', edit_post_comment_path(@post, comment)
           - if can? :destroy, comment
             \|
-            = link_to 'Destroy', comment, :method => :delete, :confirm => 'Are you sure?'
+            = link_to 'Destroy', post_comment_path(@post.id, comment.id), :method => :delete, :confirm => 'Are you sure?'
 
 - if can? :create, Comment
   %h3 Add your comment:

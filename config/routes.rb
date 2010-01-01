@@ -8,8 +8,9 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :users
   map.resources :user_sessions
 
-  map.resources :posts
-  map.resources :comments
+  map.resources :posts do |post|
+    post.resources :comments
+  end
 
   map.root :posts
 end

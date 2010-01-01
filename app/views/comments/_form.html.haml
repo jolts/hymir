@@ -1,6 +1,6 @@
 = error_messages_for :comment
 
-- form_for @comment do |f|
+- form_for [@post, @comment] do |f|
   = f.hidden_field :post_id
   %p
     = f.label :body, 'Comment'
