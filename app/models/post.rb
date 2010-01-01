@@ -7,6 +7,7 @@ class Post
   key :title, String, :required => true, :allow_blank => false, :unique => true
   key :body, String, :required => true, :allow_blank => false
   key :slug, String, :unique => true
+  key :tags, Array
   key :created_at, Time
   key :updated_at, Time
 
@@ -19,6 +20,18 @@ class Post
     t = self.created_at
     "/posts/#{t.year}/#{t.month}/#{t.day}/#{self.slug}"
   end
+
+  def named_tags=(given_tags)
+    self.tags = given_tags.split(/;\s*/)
+  end
+
+  def named_tags
+    self.tags.join('; ')
+  end
+
+  #def tag_urls
+  #  self.post_tags.map {|tag| "/tag/#{tag}"}
+  #end
 
   private
     def make_slug

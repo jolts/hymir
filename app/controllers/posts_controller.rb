@@ -54,6 +54,7 @@ class PostsController < ApplicationController
   def update
     @post.title = params[:post][:title]
     @post.body  = params[:post][:body]
+    @post.named_tags = params[:post][:named_tags]
     @post.updated_at = Time.now
 
     respond_to do |format|
