@@ -16,11 +16,6 @@ class Post
 
   belongs_to :user
 
-  def url
-    t = self.created_at
-    "/posts/#{t.year}/#{t.month}/#{t.day}/#{self.slug}"
-  end
-
   def named_tags=(given_tags)
     self.tags = given_tags.split(/;\s*/).map {|t| t.downcase}
   end
