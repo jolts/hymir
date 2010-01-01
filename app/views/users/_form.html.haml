@@ -1,0 +1,28 @@
+- form_for @user do |f|
+  = f.error_messages
+
+  %p
+    = f.label :username
+    %br/
+    = f.text_field :username
+  %p
+    = f.label :email
+    %br/
+    = f.text_field :email
+  %p
+    = f.label :password
+    %br/
+    = f.password_field :password
+  %p
+    = f.label :password_confirmation, 'Confirm Password'
+    %br/
+    = f.password_field :password_confirmation
+  %p
+    = f.label :roles
+    %br/
+    - User::ROLES.each do |role|
+      = check_box_tag 'user[roles][]', role, @user.roles.include?(role)
+      = h(role.humanize)
+      %br/
+  %p
+    = f.submit 'Save', :disable_with => 'Saving user...'

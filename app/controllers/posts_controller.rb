@@ -23,7 +23,6 @@ class PostsController < ApplicationController
 
   def show
     @post ||= Post.first(:slug => params[:slug])
-    @comment = Comment.new(:post_id => @post.id)
 
     respond_to do |format|
       format.html

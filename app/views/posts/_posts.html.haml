@@ -2,7 +2,6 @@
   - @posts.each do |post|
     %h2
       = link_to h(post.title), post.url
-      %span.comments= '(' + pluralize(post.comments.count, 'comment') + ')'
     .author
       by
       = post.user.username

@@ -16,27 +16,3 @@
     = link_to 'Destroy', @post, :method => :delete, :confirm => 'Are you sure?'
     \|
   = link_to 'Back to list', posts_path
-
-- unless @post.comments.empty?
-  %h2= pluralize(@post.comments.count, 'comment')
-
-  #comments
-    - @post.comments.each do |comment|
-      .comment
-        %strong= h(comment.user.username)
-        %em
-          = time_ago_in_words(comment.created_at)
-          ago
-
-        = simple_format(comment.body)
-
-        %p
-          - if can? :update, comment
-            = link_to 'Edit', edit_post_comment_path(@post.id, comment.id)
-          - if can? :destroy, comment
-            \|
-            = link_to 'Destroy', post_comment_path(@post.id, comment.id), :method => :delete, :confirm => 'Are you sure?'
-
-- if can? :create, Comment
-  %h3 Add your comment:
-  = render :partial => 'comments/form'

@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  load_and_authorize_resource
+
+  # TODO: Edit, list, show users etc
+
   def new
     @user = User.new
 
@@ -13,8 +17,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        self.current_user = @user
-        flash[:notice] = 'Thank you for signing up. You are now logged in.'
+        flash[:notice] = 'Successfully created user.'
         format.html { redirect_to(root_path) }
       else
         format.html { render :action => 'new' }
