@@ -5,8 +5,8 @@ ActionController::Routing::Routes.draw do |map|
 
   map.slugged_post 'posts/:year/:month/:day/:slug', :controller => 'posts', :action => 'show'
 
-  map.resources :users
-  map.resources :user_sessions
+  map.resources :users, :only => [:new, :create]
+  map.resources :user_sessions, :only => [:new, :create, :destroy]
 
   map.resources :posts do |post|
     post.resources :comments
