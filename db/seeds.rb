@@ -13,7 +13,10 @@ admin_user = User.create(
   :password_confirmation => 'abcdef',
   :roles_mask => '1'
 )
-admin_user.save!
+
+if admin_user.save!
+  puts 'Successfully created admin user'
+end
 
 welcome_post = Post.create(
   :user_id => admin_user.id,
@@ -23,4 +26,7 @@ welcome_post = Post.create(
   :created_at => Time.now,
   :updated_at => Time.now
 )
-welcome_post.save!
+
+if welcome_post.save!
+  puts 'Successfully created welcome post'
+end
