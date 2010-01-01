@@ -1,5 +1,10 @@
 - title @post.title
 
+%p
+  Tags:
+  = tag_urls(@post.tags)
+
+
 = simple_format(@post.body)
 
 %p

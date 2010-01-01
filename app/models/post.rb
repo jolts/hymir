@@ -12,6 +12,7 @@ class Post
   key :updated_at, Time
 
   validates_length_of :title, :within => 4..40
+  # TODO: Validate tag format (tag1; tag2; tag3; etc)
 
   many :comments, :dependent => :destroy
   belongs_to :user
@@ -30,7 +31,7 @@ class Post
   end
 
   #def tag_urls
-  #  self.post_tags.map {|tag| "/tag/#{tag}"}
+  #  self.tags.map {|tag| "/tag/#{tag}"}
   #end
 
   private

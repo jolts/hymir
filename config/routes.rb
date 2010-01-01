@@ -11,6 +11,7 @@ ActionController::Routing::Routes.draw do |map|
   end
   map.resources :comments, :only => [:update, :create]
   map.slugged_post 'posts/:year/:month/:day/:slug', :controller => 'posts', :action => 'show'
+  map.tag 'tag/:tag', :controller => 'posts', :action => 'tag'
 
   map.root :posts
 end

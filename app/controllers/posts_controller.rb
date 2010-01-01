@@ -11,6 +11,14 @@ class PostsController < ApplicationController
     end
   end
 
+  def tag
+    @posts = Post.all.select {|p| p.tags.include?(params[:tag])}
+
+    respond_to do |format|
+      format.html
+    end
+  end
+
   def show
     @post ||= Post.first(:slug => params[:slug])
     @comment = Comment.new(:post_id => @post.id)
