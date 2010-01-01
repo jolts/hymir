@@ -8,7 +8,6 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :posts
   map.slug 'posts/:year/:month/:day/:slug', :controller => 'posts', :action => 'show'
-  map.archive 'archive/:year/:month/:day', :controller => 'posts', :action => 'archive'
   map.tag 'tag/:tag', :controller => 'posts', :action => 'tag'
 
   map.root :posts
