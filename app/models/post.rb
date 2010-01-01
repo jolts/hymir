@@ -30,10 +30,6 @@ class Post
     self.tags.join('; ')
   end
 
-  #def tag_urls
-  #  self.tags.map {|tag| "/tag/#{tag}"}
-  #end
-
   private
     def make_slug
       self.slug = self.title.downcase.gsub(/ /, '-').gsub(/[^a-z0-9-]/, '').squeeze('-')

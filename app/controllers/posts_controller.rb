@@ -12,7 +12,9 @@ class PostsController < ApplicationController
   end
 
   def tag
-    @posts = Post.all.select {|p| p.tags.include?(params[:tag])}
+    @posts = Post.all(:order => 'created_at DESC').select do |p|
+      p.tags.include?(params[:tag])
+    end
 
     respond_to do |format|
       format.html
