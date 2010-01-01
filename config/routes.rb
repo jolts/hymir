@@ -9,8 +9,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :posts do |post|
     post.resources :comments, :except => [:index, :show]
   end
-  map.resources :comments, :only => [:update]
-
+  map.resources :comments, :only => [:update, :create]
   map.slugged_post 'posts/:year/:month/:day/:slug', :controller => 'posts', :action => 'show'
 
   map.root :posts
