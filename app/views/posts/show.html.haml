@@ -1,8 +1,9 @@
 - title @post.title
 
-%p
-  Tags:
-  = tag_urls(@post.tags)
+- if @post.tags.any?
+  %p
+    Tags:
+    = tag_urls(@post.tags)
 
 
 = simple_format(@post.body)
