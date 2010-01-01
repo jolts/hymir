@@ -12,7 +12,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :users, :only => [:new, :create]
 
   # Posts
-  map.resources :posts, :member => {:tag => :get} # :archive => :get
+  map.resources :posts
 
   # Find posts by slug
   map.slug 'posts/:year/:month/:day/:slug',
