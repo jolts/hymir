@@ -3,5 +3,5 @@
 = render :partial => 'form'
 
 %p
-  = link_to 'Show', @post.url
+  = link_to 'Show', slug_url(@post.created_at.year, @post.created_at.month, @post.created_at.day, @post.slug)
   = link_to 'View all', posts_path
