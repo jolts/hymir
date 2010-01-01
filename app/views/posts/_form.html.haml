@@ -1,17 +1,8 @@
-= error_messages_for :post
+- semantic_form_for @post do |f|
+  = #f.error_messages
 
-- form_for @post do |f|
-  %p
-    = f.label :title
-    %br/
-    = f.text_field :title
-  %p
-    = f.label :named_tags, 'Tags'
-    %br/
-    = f.text_field :named_tags
-  %p
-    = f.label :body
-    %br/
-    = f.text_area :body
-  %p
-    = f.submit 'Save', :disable_with => 'Saving post...'
+  - f.inputs do
+    = f.input :title, :required => true
+    = f.input :named_tags, :label => 'Tags', :hint => "Separate tags with a semicolon (;)"
+    = f.input :body, :as => :text, :required => true
+  = f.buttons

@@ -3,7 +3,7 @@
 %html{html_attrs}
   %head
     %title= h(yield(:title) || 'Hymir')
-    = stylesheet_link_tag 'application', :cache => 'base'
+    = stylesheet_link_tag 'application', 'formtastic', 'formtastic_changes', :cache => 'base'
     = auto_discovery_link_tag :atom, "#{posts_path}.atom", :title => 'Posts feed'
     = yield(:head)
 

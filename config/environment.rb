@@ -20,7 +20,7 @@ Rails::Initializer.run do |config|
   config.gem 'mongo_mapper'
   config.gem 'bcrypt-ruby', :lib => 'bcrypt'
   config.gem 'cancan'
-  #config.gem 'formtastic'
+  config.gem 'formtastic'
   #config.gem 'roleful'
 
   # Only load the plugins named here, in the order given (default is alphabetical).
