@@ -23,7 +23,7 @@ class Post
   end
 
   def named_tags=(given_tags)
-    self.tags = given_tags.split(/;\s*/)
+    self.tags = given_tags.split(/;\s*/).map {|t| t.downcase}
   end
 
   def named_tags
