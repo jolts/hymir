@@ -22,7 +22,7 @@ Rails::Initializer.run do |config|
   config.gem 'cancan'
   config.gem 'formtastic'
   config.gem 'rdiscount'
-  config.gem 'paginator'
+  config.gem 'will_paginate'
   #config.gem 'roleful'
 
   # Only load the plugins named here, in the order given (default is alphabetical).

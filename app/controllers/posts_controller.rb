@@ -2,10 +2,7 @@ class PostsController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @pager = Paginator.new(Post.count, 10) do |offset, per_page|
-      Post.all(:offset => offset, :limit => per_page, :order => 'created_at DESC')
-    end
-    @posts = @pager.page(params[:page])
+    @posts = Post.paginate(:per_page => 2, :page => params[:page], :order => 'created_at DESC')
 
     respond_to do |format|
       format.html
