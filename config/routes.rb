@@ -30,7 +30,7 @@ ActionController::Routing::Routes.draw do |map|
   # Other post related routes
   map.with_options :controller => :posts, :method => :get do |post|
     # Find posts by slug
-    post.slug 'posts/:year/:month/:day/:slug', :action => :show
+    post.slug ':year/:month/:day/:slug', :action => :show
 
     # Tags
     post.tag  'tag/:tag', :action => :tag
