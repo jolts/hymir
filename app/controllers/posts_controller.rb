@@ -12,7 +12,7 @@ class PostsController < ApplicationController
   end
 
   def tag
-    @posts = Post.paginate(:per_page => Post.per_page, :page => params[:page], :order => 'created_at DESC').select do |p|
+    @posts = Post.all(:order => 'created_at DESC').select do |p|
       p.tags.include?(params[:tag])
     end
 
@@ -23,7 +23,7 @@ class PostsController < ApplicationController
   end
 
   def archive
-    @posts = Post.paginate(:per_page => Post.per_page, :page => params[:page], :order => 'created_at DESC').select do |p|
+    @posts = Post.all(:order => 'created_at DESC').select do |p|
       if params[:day]
         p.created_at.day   == params[:day].to_i   &&
         p.created_at.month == params[:month].to_i &&

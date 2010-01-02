@@ -1,6 +1,7 @@
 - title 'Posts'
 
 = render :partial => 'posts'
+= will_paginate @posts
 
 - if can? :create, Post
   %p= link_to 'New post', new_post_path
