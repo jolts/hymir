@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @posts = Post.paginate(:per_page => 2, :page => params[:page], :order => 'created_at DESC')
+    @posts = Post.paginate(:per_page => 10, :page => params[:page], :order => 'created_at DESC')
 
     respond_to do |format|
       format.html
@@ -12,12 +12,9 @@ class PostsController < ApplicationController
   end
 
   def tag
-    @pager = Paginator.new(Post.count, 10) do |offset, per_page|
-      Post.all(:offset => offset, :limit => per_page, :order => 'created_at DESC').select do |p|
-        p.tags.include?(params[:tag])
-      end
+    Post.paginate(:per_page => 10, :page => params[:page], :order => 'created_at DESC').select do |p|
+      p.tags.include?(params[:tag])
     end
-    @posts = @pager.page(params[:page])
 
     respond_to do |format|
       format.html
@@ -26,21 +23,18 @@ class PostsController < ApplicationController
   end
 
   def archive
-    @pager = Paginator.new(Post.count, 10) do |offset, per_page|
-      Post.all(:offset => offset, :limit => per_page, :order => 'created_at DESC').select do |p|
-        if params[:day]
-          p.created_at.day   == params[:day].to_i   &&
-          p.created_at.month == params[:month].to_i &&
-          p.created_at.year  == params[:year].to_i
-        elsif params[:month]
-          p.created_at.month == params[:month].to_i &&
-          p.created_at.year  == params[:year].to_i
-        else
-          p.created_at.year  == params[:year].to_i
-        end
+    Post.all(:per_page => 10, :page => params[:page], :order => 'created_at DESC').select do |p|
+      if params[:day]
+        p.created_at.day   == params[:day].to_i   &&
+        p.created_at.month == params[:month].to_i &&
+        p.created_at.year  == params[:year].to_i
+      elsif params[:month]
+        p.created_at.month == params[:month].to_i &&
+        p.created_at.year  == params[:year].to_i
+      else
+        p.created_at.year  == params[:year].to_i
       end
     end
-    @posts = @pager.page(params[:page])
 
     respond_to do |format|
       format.html
