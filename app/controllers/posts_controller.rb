@@ -32,11 +32,14 @@ class PostsController < ApplicationController
     @pager = Paginator.new(Post.count, 10) do |offset, per_page|
       Post.all(:offset => offset, :limit => per_page, :order => 'created_at DESC').select do |p|
         if params[:day]
-          p.created_at.day.to_s == params[:day] && p.created_at.month.to_s == params[:month] && p.created_at.year.to_s == params[:year]
+          p.created_at.day   == params[:day].to_i   &&
+          p.created_at.month == params[:month].to_i &&
+          p.created_at.year  == params[:year].to_i
         elsif params[:month]
-          p.created_at.month.to_s == params[:month] && p.created_at.year.to_s == params[:year]
+          p.created_at.month == params[:month].to_i &&
+          p.created_at.year  == params[:year].to_i
         else
-          p.created_at.year.to_s == params[:year]
+          p.created_at.year  == params[:year].to_i
         end
       end
     end

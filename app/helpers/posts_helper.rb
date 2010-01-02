@@ -23,6 +23,6 @@ module PostsHelper
     elsif params[:month]
       date += "/#{params[:month]}"
     end
-    date
+    title "Posts from #{date}"
   end
 end
