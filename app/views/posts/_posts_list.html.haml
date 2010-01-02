@@ -1,0 +1,11 @@
+- if @posts.any?
+  %ul
+    - @posts.each do |post|
+      %li
+        %strong= link_to h(post.title), post_slug_url(post)
+        by
+        = post.user.username
+        = time_ago_in_words(post.created_at)
+        ago
+- else
+  No posts found!

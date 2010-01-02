@@ -1,6 +1,20 @@
 - title 'Posts'
 
-= render :partial => 'posts'
+#posts
+  - if @posts.any?
+    - @posts.each do |post|
+      %h2
+        = link_to h(post.title), post_slug_url(post)
+      .author
+        by
+        = post.user.username
+        = time_ago_in_words(post.created_at)
+        ago
+      .content
+        = parse_markdown_body(post.body)
+  - else
+    No posts found!
+
 = will_paginate @posts
 
 - if can? :create, Post
