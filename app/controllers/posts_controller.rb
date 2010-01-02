@@ -60,10 +60,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(params[:post])
-    @post.user_id = current_user.id
-    @post.created_at = Time.now
-    @post.updated_at = Time.now
+    @post = Post.new(params[:post].merge(:user_id => current_user.id))
 
     respond_to do |format|
       if @post.save
@@ -89,13 +86,8 @@ class PostsController < ApplicationController
   end
   
   def update
-    @post.title = params[:post][:title]
-    @post.body  = params[:post][:body]
-    @post.named_tags = params[:post][:named_tags]
-    @post.updated_at = Time.now
-
     respond_to do |format|
-      if @post.save
+      if @post.update_attributes(params[:post])
         flash[:notice] = 'Successfully updated post.'
         format.html do
           redirect_to(slug_url(
