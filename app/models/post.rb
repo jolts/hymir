@@ -6,8 +6,7 @@ class Post
   key :body, String, :required => true, :allow_blank => false
   key :slug, String, :unique => true
   key :tags, Array
-  key :created_at, Time
-  key :updated_at, Time
+  timestamps!
 
   belongs_to :user
 

@@ -2,7 +2,10 @@ class PostsController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @posts = Post.all(:order => 'created_at DESC')
+    @pager = Paginator.new(Post.count, 10) do |offset, per_page|
+      Post.all(:offset => offset, :limit => per_page, :order => 'created_at DESC')
+    end
+    @posts = @pager.page(params[:page])
 
     respond_to do |format|
       format.html
@@ -12,9 +15,12 @@ class PostsController < ApplicationController
   end
 
   def tag
-    @posts = Post.all(:order => 'created_at DESC').select do |p|
-      p.tags.include?(params[:tag])
+    @pager = Paginator.new(Post.count, 10) do |offset, per_page|
+      Post.all(:offset => offset, :limit => per_page, :order => 'created_at DESC').select do |p|
+        p.tags.include?(params[:tag])
+      end
     end
+    @posts = @pager.page(params[:page])
 
     respond_to do |format|
       format.html
@@ -23,15 +29,18 @@ class PostsController < ApplicationController
   end
 
   def archive
-    @posts = Post.all(:order => 'created_at DESC').select do |p|
-      if params[:day]
-        p.created_at.day.to_s == params[:day] && p.created_at.month.to_s == params[:month] && p.created_at.year.to_s == params[:year]
-      elsif params[:month]
-        p.created_at.month.to_s == params[:month] && p.created_at.year.to_s == params[:year]
-      else
-        p.created_at.year.to_s == params[:year]
+    @pager = Paginator.new(Post.count, 10) do |offset, per_page|
+      Post.all(:offset => offset, :limit => per_page, :order => 'created_at DESC').select do |p|
+        if params[:day]
+          p.created_at.day.to_s == params[:day] && p.created_at.month.to_s == params[:month] && p.created_at.year.to_s == params[:year]
+        elsif params[:month]
+          p.created_at.month.to_s == params[:month] && p.created_at.year.to_s == params[:year]
+        else
+          p.created_at.year.to_s == params[:year]
+        end
       end
     end
+    @posts = @pager.page(params[:page])
 
     respond_to do |format|
       format.html
@@ -40,7 +49,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post ||= Post.first(:slug => params[:slug])
+    @post ||= Post.find_by_slug(params[:slug])
 
     respond_to do |format|
       format.html

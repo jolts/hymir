@@ -9,7 +9,7 @@ class User
   # 4: Author
   # 2: Moderator
   # 1: Admin
-  key :created_at, Time
+  timestamps!
 
   many :posts
 

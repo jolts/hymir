@@ -9,3 +9,6 @@
       ago
     .content
       = parse_markdown_body(post.body)
+
+= link_to 'Previous page', posts_url(:page => @posts.prev.number) if @posts.prev?
+= link_to 'Next page', posts_url(:page => @posts.next.number) if @posts.next?
