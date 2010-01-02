@@ -18,6 +18,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       format.html
+      format.json { render :json => @posts }
     end
   end
 
@@ -47,7 +48,14 @@ class PostsController < ApplicationController
     respond_to do |format|
       if @post.save
         flash[:notice] = 'Successfully created post.'
-        format.html { redirect_to(@post.url) }
+        format.html do
+          redirect_to(slug_url(
+            @post.created_at.year,
+            @post.created_at.month,
+            @post.created_at.day,
+            @post.slug
+          ))
+        end
       else
         format.html { render :action => 'new' }
       end
@@ -69,7 +77,14 @@ class PostsController < ApplicationController
     respond_to do |format|
       if @post.save
         flash[:notice] = 'Successfully updated post.'
-        format.html { redirect_to(@post.url) }
+        format.html do
+          redirect_to(slug_url(
+            @post.created_at.year,
+            @post.created_at.month,
+            @post.created_at.day,
+            @post.slug
+          ))
+        end
       else
         format.html { render :action => 'edit' }
       end

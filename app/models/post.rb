@@ -1,8 +1,6 @@
 class Post
   include MongoMapper::Document
 
-  before_create :make_slug
-
   key :user_id, ObjectId
   key :title, String, :required => true, :allow_blank => false, :unique => true
   key :body, String, :required => true, :allow_blank => false
@@ -11,13 +9,17 @@ class Post
   key :created_at, Time
   key :updated_at, Time
 
-  validates_length_of :title, :within => 4..40
-  # TODO: Validate tag format (tag1; tag2; tag3; etc)
-
   belongs_to :user
 
+  before_create :make_slug
+
+  TagsFormat = /.*/i # FIXME
+
+  validates_length_of :title, :within => 4..40
+  validates_format_of :named_tags, :with => TagsFormat
+
   def named_tags=(given_tags)
-    self.tags = given_tags.split(/;\s*/).map {|t| t.downcase}
+    write_attribute(:tags, given_tags.split(/;\s*/).map {|t| t.downcase})
   end
 
   def named_tags
@@ -26,7 +28,9 @@ class Post
 
   private
     def make_slug
-      self.slug = self.title.downcase.gsub(/ /, '-').gsub(/[^a-z0-9-]/, '').squeeze('-')
+      write_attribute(:slug,
+        self.title.downcase.gsub(/ /, '-').gsub(/[^a-z0-9-]/, '').squeeze('-')
+      )
     end
   # private
 end

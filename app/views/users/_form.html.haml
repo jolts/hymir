@@ -8,7 +8,7 @@
     = f.input :password_confirmation, :as => :password, :required => true
     %li#user_roles_input.required
       = label_tag :user_roles, 'Roles'
-      - User::ROLES.each do |role|
+      - User::Roles.each do |role|
         = check_box_tag 'user[roles][]', role, @user.roles.include?(role)
         = h(role.humanize)
   = f.buttons
