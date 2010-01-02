@@ -6,8 +6,8 @@
   }
   var setupPagination = function() {
     $('.pagination a').live('click', function() {
-      $('.pagination').html('Loading...')
-      $.get(this.href, null, null, 'script')
+      $('.pagination').html("<img src='/images/ajax-loader.gif' alt='Loading...' />")
+      $.getScript(this.href)
       return false
     })
   }
