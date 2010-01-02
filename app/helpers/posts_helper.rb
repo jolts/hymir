@@ -11,4 +11,8 @@ module PostsHelper
       post.slug
     )
   end
+
+  def parse_markdown_body(body)
+    RDiscount.new(body).to_html
+  end
 end

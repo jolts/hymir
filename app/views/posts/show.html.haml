@@ -5,8 +5,7 @@
     Tags:
     = tag_urls(@post.tags)
 
-
-= simple_format(@post.body)
+= parse_markdown_body(@post.body)
 
 %p
   - if can? :update, @post

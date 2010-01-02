@@ -8,4 +8,4 @@
       = time_ago_in_words(post.created_at)
       ago
     .content
-      = simple_format(post.body)
+      = parse_markdown_body(post.body)
