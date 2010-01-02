@@ -27,26 +27,24 @@ ActionController::Routing::Routes.draw do |map|
   # Posts
   map.resources :posts
 
-  # Find posts by slug
-  map.slug 'posts/:year/:month/:day/:slug',
-    :controller => :posts,
-    :action     => :show,
-    :method     => :get
+  # Other post related routes
+  map.with_options :controller => :posts, :method => :get do |post|
+    # Find posts by slug
+    post.slug 'posts/:year/:month/:day/:slug', :action => :show
 
-  # Tags
-  map.tag 'tag/:tag',
-    :controller => :posts,
-    :action     => :tag,
-    :method     => :get
+    # Tags
+    post.tag  'tag/:tag', :action => :tag
 
-  # Archives
-  map.with_options :controller   => :posts,
-                   :action       => :archive,
-                   :requirements => {:year => /\d{4}/, :month => /\d{2}/, :day => /\d{2}/},
-                   :method       => :get do |archive|
-    archive.archive_day   'archive/:year/:month/:day'
-    archive.archive_month 'archive/:year/:month'
-    archive.archive_year  'archive/:year'
+    # Archives
+    post.archive_day 'archive/:year/:month/:day',
+      :action       => :archive,
+      :requirements => {:year => /\d{4}/, :month => /\d{2}/, :day => /\d{2}/}
+    post.archive_month 'archive/:year/:month',
+      :action       => :archive,
+      :requirements => {:year => /\d{4}/, :month => /\d{2}/}
+    post.archive_year 'archive/:year',
+      :action       => :archive,
+      :requirements => {:year => /\d{4}/}
   end
 
   # Index page
