@@ -26,7 +26,7 @@ class Post
   end
 
   def self.per_page
-    10
+    5
   end
 
   private

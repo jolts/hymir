@@ -12,7 +12,7 @@ class UserSessionsController < ApplicationController
       if user = User.authenticate(params[:email], params[:password])
         self.current_user = user
         flash[:notice] = 'You were successfully logged in.'
-        format.html { redirect_back_or_default(root_url) }
+        format.html { redirect_back_or_default(root_path) }
       else
         flash[:error] = 'Login failed'
         format.html { render :action => 'new' }
@@ -25,7 +25,7 @@ class UserSessionsController < ApplicationController
 
     respond_to do |format|
       flash[:notice] = 'You were successfully logged out.'
-      format.html { redirect_back_or_default(root_url) }
+      format.html { redirect_back_or_default(root_path) }
     end
   end
 end

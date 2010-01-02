@@ -66,7 +66,7 @@ class PostsController < ApplicationController
       if @post.save
         flash[:notice] = 'Successfully created post.'
         format.html do
-          redirect_to(slug_url(
+          redirect_to(slug_path(
             @post.created_at.year,
             @post.created_at.month,
             @post.created_at.day,
@@ -90,7 +90,7 @@ class PostsController < ApplicationController
       if @post.update_attributes(params[:post])
         flash[:notice] = 'Successfully updated post.'
         format.html do
-          redirect_to(slug_url(
+          redirect_to(slug_path(
             @post.created_at.year,
             @post.created_at.month,
             @post.created_at.day,
@@ -108,7 +108,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       flash[:notice] = 'Successfully destroyed post.'
-      format.html { redirect_to(posts_url) }
+      format.html { redirect_to(root_path) }
     end
   end
 end

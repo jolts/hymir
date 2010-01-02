@@ -4,7 +4,7 @@ module PostsHelper
   end
 
   def post_slug_url(post)
-    slug_url(
+    slug_path(
       post.created_at.year,
       post.created_at.month,
       post.created_at.day,
