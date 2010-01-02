@@ -22,6 +22,23 @@ class PostsController < ApplicationController
     end
   end
 
+  def archive
+    @posts = Post.all(:order => 'created_at DESC').select do |p|
+      if params[:day]
+        p.created_at.day.to_s == params[:day] && p.created_at.month.to_s == params[:month] && p.created_at.year.to_s == params[:year]
+      elsif params[:month]
+        p.created_at.month.to_s == params[:month] && p.created_at.year.to_s == params[:year]
+      else
+        p.created_at.year.to_s == params[:year]
+      end
+    end
+
+    respond_to do |format|
+      format.html
+      format.json { render :json => @posts }
+    end
+  end
+
   def show
     @post ||= Post.first(:slug => params[:slug])
 

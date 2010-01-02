@@ -15,4 +15,14 @@ module PostsHelper
   def parse_markdown_body(body)
     RDiscount.new(body).to_html
   end
+
+  def archive_title(params)
+    date = params[:year]
+    if params[:day]
+      date += "/#{params[:month]}/#{params[:day]}"
+    elsif params[:month]
+      date += "/#{params[:month]}"
+    end
+    date
+  end
 end

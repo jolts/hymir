@@ -35,9 +35,10 @@ ActionController::Routing::Routes.draw do |map|
 
   # Archives
   # TODO: Implement this
-  map.with_options :controller => :posts,
-                   :action     => :archive,
-                   :conditions => {:method => :get} do |archive|
+  map.with_options :controller   => :posts,
+                   :action       => :archive,
+                   :requirements => {:year => /\d{4}/, :month => /\d{2}/, :day => /\d{2}/},
+                   :conditions   => {:method => :get} do |archive|
     archive.day   'archive/:year/:month/:day'
     archive.month 'archive/:year/:month'
     archive.year  'archive/:year'
