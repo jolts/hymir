@@ -3,9 +3,6 @@ class Ability
 
   def initialize(user)
     if user
-      if user.role?(:admin)
-        can :manage, :all
-      end
       if user.role?(:author)
         can :create, Post
         can :update, Post do |post|
@@ -15,6 +12,9 @@ class Ability
       if user.role?(:moderator)
         can :update, Post
         can :destroy, Post
+      end
+      if user.role?(:admin)
+        can :manage, :all
       end
     else
       can :read, :all
