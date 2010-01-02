@@ -25,6 +25,10 @@ class Post
     self.tags.join('; ')
   end
 
+  def self.per_page
+    10
+  end
+
   private
     def make_slug
       write_attribute(:slug,
