@@ -26,7 +26,7 @@ class User
   validates_length_of :password, :minimum => 6
 
   def self.authenticate(email, secret)
-    u = User.first(:conditions => {:email => email.downcase})
+    u = User.find_by_email(email.downcase)
     u && u.authenticated?(secret) ? u : nil
   end
 
