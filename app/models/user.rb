@@ -27,7 +27,7 @@ class User
 
   def self.authenticate(email_or_username, secret)
     u = find_by_email(email_or_username.downcase) || find_by_username(email_or_username)
-    u && u.authenticated?(secret) ? u : nil
+    u && u.authenticated?(secret)
   end
 
   def authenticated?(secret)
