@@ -3,9 +3,9 @@
 - if @post.tags.any?
   %p
     Tags:
-    = tag_urls(@post.tags)
+    = tag_urls @post.tags
 
-= parse_markdown_body(@post.body)
+= markdown @post.body
 
 %p
   - if can? :update, @post

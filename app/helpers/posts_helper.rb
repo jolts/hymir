@@ -4,10 +4,13 @@ module PostsHelper
   end
 
   def post_slug_url(post)
+    year  = post.created_at.year
+    month = post.created_at.month
+    day   = post.created_at.day
     slug_path(
-      post.created_at.year,
-      post.created_at.month,
-      post.created_at.day,
+      year,
+      month < 10 ? "0#{month}" : month,
+      day < 10 ? "0#{day}" : day,
       post.slug
     )
   end
@@ -16,10 +19,6 @@ module PostsHelper
     year  = posts.map {|p| p.created_at.year}.first
     month = posts.map {|p| p.created_at.month}.first
     "archive/#{year}/#{month < 10 ? "0#{month}" : month}"
-  end
-
-  def parse_markdown_body(body)
-    RDiscount.new(body).to_html
   end
 
   def archive_title(params)
