@@ -12,7 +12,7 @@ class Post
 
   before_create :make_slug
 
-  TagsFormat = /\A([A-Z\s\-]+;*)*\z/i
+  TagsFormat = /\A([A-Z\s\-]+;?)*\z/i
 
   validates_length_of :title, :within => 4..40
   validates_format_of :named_tags, :with => TagsFormat
