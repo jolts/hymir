@@ -19,4 +19,8 @@ module LayoutHelper
   def javascript(*args)
     content_for(:head) { javascript_include_tag(*args) }
   end
+
+  def prepend_zero_or_not(number)
+    number < 10 ? "0#{number}" : number
+  end
 end

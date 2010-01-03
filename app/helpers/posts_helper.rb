@@ -5,20 +5,20 @@ module PostsHelper
 
   def post_slug_url(post)
     year  = post.created_at.year
-    month = post.created_at.month
-    day   = post.created_at.day
+    month = prepend_zero_or_not(post.created_at.month)
+    day   = prepend_zero_or_not(post.created_at.day)
     slug_path(
       year,
-      month < 10 ? "0#{month}" : month,
-      day < 10 ? "0#{day}" : day,
+      month,
+      day,
       post.slug
     )
   end
 
   def archive_url(posts)
     year  = posts.map {|p| p.created_at.year}.first
-    month = posts.map {|p| p.created_at.month}.first
-    "archive/#{year}/#{month < 10 ? "0#{month}" : month}"
+    month = prepend_zero_or_not(posts.map {|p| p.created_at.month}.first)
+    "archive/#{year}/#{month}"
   end
 
   def archive_title(params)
