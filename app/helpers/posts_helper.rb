@@ -12,6 +12,12 @@ module PostsHelper
     )
   end
 
+  def archive_url(posts)
+    year  = posts.map {|p| p.created_at.year}.first
+    month = posts.map {|p| p.created_at.month}.first
+    "archive/#{year}/#{month < 10 ? "0#{month}" : month}"
+  end
+
   def parse_markdown_body(body)
     RDiscount.new(body).to_html
   end

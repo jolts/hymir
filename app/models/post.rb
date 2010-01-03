@@ -29,6 +29,10 @@ class Post
     5
   end
 
+  def month
+    self.created_at.strftime('%B %Y')
+  end
+
   private
     def make_slug
       write_attribute(:slug,
