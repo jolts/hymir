@@ -4,10 +4,10 @@
   .author
     by
     = post.user.username
-    = time_ago_in_words(post.created_at)
+    = time_ago_in_words post.created_at
     ago
   .content
-    = parse_markdown_body(post.body)
+    = parse_markdown_body truncate(post.body, 250, link_to('...', post_slug_url(post)))
 
 = page_entries_info @posts
 = will_paginate @posts
