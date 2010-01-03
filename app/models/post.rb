@@ -25,8 +25,8 @@ class Post
     self.tags.join('; ')
   end
 
-  def self.per_page
-    5
+  def updated?
+    self.updated_at > self.created_at
   end
 
   def month
