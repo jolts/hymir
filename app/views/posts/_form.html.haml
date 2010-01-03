@@ -3,6 +3,6 @@
 
   - f.inputs do
     = f.input :title, :required => true
-    = f.input :named_tags, :label => 'Tags', :hint => "Separate tags with a semicolon (;)"
+    = f.input :named_tags, :label => 'Tags', :hint => "Separate tags with a semicolon (;). Only alphabetic characters and dashes (-) are allowed."
     = f.input :body, :as => :text, :required => true
   = f.buttons
