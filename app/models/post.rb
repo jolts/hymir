@@ -12,10 +12,10 @@ class Post
 
   before_create :make_slug
 
-  TagsFormat = /\A([A-Z\s\-]+;?)*\z/i
+  RegTagsOk = /\A([A-Z\s\-]+;?)*\z/i
 
   validates_length_of :title, :within => 4..40
-  validates_format_of :named_tags, :with => TagsFormat
+  validates_format_of :named_tags, :with => RegTagsOk
 
   def named_tags=(given_tags)
     write_attribute(:tags, given_tags.split(/;\s*/).map {|t| t.downcase})

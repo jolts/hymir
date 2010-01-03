@@ -22,11 +22,11 @@ class User
   validates_length_of :email, :within => 6..100
   validates_format_of :email, :with => RegEmailOk
   validates_presence_of :password
-  validates_confirmation_of :password
   validates_length_of :password, :minimum => 6
+  validates_confirmation_of :password
 
-  def self.authenticate(email, secret)
-    u = find_by_email(email.downcase)
+  def self.authenticate(email_or_username, secret)
+    u = find_by_email(email_or_username.downcase) || find_by_username(email_or_username)
     u && u.authenticated?(secret) ? u : nil
   end
 
