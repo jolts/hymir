@@ -199,7 +199,7 @@ textarea:focus {
   padding: 3px 5px;
   position: relative;
   overflow: hidden;
-  background: #000;
+  background: #1c1916;
 }
 .post .title h2 {
   float: left;
@@ -221,7 +221,7 @@ textarea:focus {
 .post .meta {
   -moz-border-radius-bottomright: 8px;
   -webkit-border-radius-bottomright: 8px;
-  background: #000;
+  background: #1c1916;
   margin: 1px;
   padding: 3px 5px;
   font-size: 10px;
