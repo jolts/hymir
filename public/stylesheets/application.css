@@ -5,7 +5,8 @@
 
 body {
   background: #1c1916;
-  font: 14px 'Myriad Pro';
+  /*font: 14px 'Myriad Pro', 'Lucida Grande', Helvetica, Arial, sans-serif;*/
+  font: 12px 'Lucida Grande', Helvetica, Arial, sans-serif;
   color: #cdcdcd;
 }
 
@@ -28,10 +29,10 @@ h1, h2, h3, h4, h5, h6 {
   margin: 10px 0;
 }
 h1 {
-  font-size: 18px;
+  font-size: 16px;
 }
 h2 {
-  font-size: 16px;
+  font-size: 15px;
 }
 h3, h4, h5, h6 {
   font-size: 14px;
@@ -138,12 +139,12 @@ h3, h4, h5, h6 {
 }
 
 .pagination {
-  font-size: 12px;
+  font-size: 11px;
 }
 .pagination a,
 .pagination em,
 .pagination span {
-  padding: 0.25em 0.5em 0.2em;
+  padding: 0.25em 0.5em;
   border: 1px solid #2c2c2a;
   font-style: normal;
   text-decoration: none;
