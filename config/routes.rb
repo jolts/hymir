@@ -3,6 +3,8 @@ ActionController::Routing::Routes.draw do |map|
   map.with_options :controller => :info,
                    :method     => :get do |info|
     info.about 'about', :action => :about
+    info.portfolio 'portfolio', :action => :portfolio
+    info.services 'services', :action => :services
     # Add more static pages here
   end
 
