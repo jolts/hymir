@@ -45,7 +45,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    #@comment = Comment.new
+    @comment = Comment.new
 
     respond_to do |format|
       format.html

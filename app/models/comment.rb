@@ -3,7 +3,7 @@ class Comment
 
   key :name, String, :required => true, :allow_blank => false
   key :email, String, :required => true, :allow_blank => false
-  key :website, String
+  key :url, String
   key :body, String, :required => true, :allow_blank => false
   key :created_at, Time
 

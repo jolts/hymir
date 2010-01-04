@@ -1,0 +1,9 @@
+- semantic_form_for [@post, @comment] do |f|
+  = #f.error_messages
+
+  - f.inputs do
+    = f.input :name, :required => true, :hint => 'Length is is required to be within 2 to 32 characters.'
+    = f.input :email, :label => 'E-mail', :required => true, :hint => "Length is is required to be within 6 to 100 characters. Won\'t be shown."
+    = f.input :url, :label => 'Website'
+    = f.input :body, :as => :text, :required => true, :hint => "#{link_to 'Markdown', 'http://daringfireball.net/projects/markdown/'} is enabled."
+  = f.buttons
