@@ -166,9 +166,13 @@ textarea:focus {
   border-right: 1px solid #2c2c2a;
   text-align: center;
 }
-#flash_notice {
+#flash_notice:before {
+  content: '✔ ';
+  color: #34a8a1;
 }
-#flash_error {
+#flash_error:before {
+  content: '✘ ';
+  color: #cc3333;
 }
 
 .post {
