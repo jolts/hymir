@@ -84,6 +84,7 @@ textarea:focus {
   list-style: none;
 }
 #nav ul li {
+  text-shadow: 1px 1px 1px #000;
   margin-left: 10px;
   display: inline;
   color: #34a8a1;
@@ -126,6 +127,7 @@ textarea:focus {
   width: 170px;
 }
 #sidebar h2 {
+  text-shadow: 1px 1px 1px #000;
   font-size: 16px;
   color: #3d3c3b;
   margin-top: 0;
@@ -188,6 +190,7 @@ textarea:focus {
   overflow: hidden;
 }
 .post .date {
+  text-shadow: 1px 1px 1px #000;
   color: #36615d;
   float: left;
   font-size: 10px;
@@ -223,6 +226,7 @@ textarea:focus {
   background: #1c1916;
 }
 .post .head h2.title {
+  text-shadow: 1px 1px 1px #000;
   float: left;
   margin: 0;
 }
