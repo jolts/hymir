@@ -44,6 +44,7 @@ textarea {
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
   border: 1px solid #bbb;
+  padding: 2px;
 }
 input:focus,
 textarea:focus { 
@@ -99,7 +100,7 @@ textarea:focus {
   padding: 20px;
   width: 820px;
   margin: 0 auto;
-  min-height: 400px;
+  min-height: 560px;
   overflow: hidden;
   position: relative;
 }
@@ -122,7 +123,7 @@ textarea:focus {
   color: #3d3c3b;
 }
 #sidebar p {
-  line-height: 1.25;
+  line-height: normal;
 }
 #sidebar ul {
   list-style: none;
@@ -146,6 +147,9 @@ textarea:focus {
   color: #34a8a1;
   text-decoration: none;
 }
+#footer p {
+  margin: 0;
+}
 
 #flash_notice, #flash_error {
 }
@@ -154,10 +158,86 @@ textarea:focus {
 #flash_error {
 }
 
+.post {
+  margin-bottom: 40px;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+}
+.post .date {
+  color: #36615d;
+  float: left;
+  font-size: 10px;
+  font-weight: bold;
+  height: 32px;
+  padding: 3px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 10%;
+}
+.post .date b {
+  color: #34a8a1;
+  display: block;
+  font-size: 14px;
+}
+.post .content {
+  -moz-border-radius-bottomright: 8px;
+  -webkit-border-radius-bottomright: 8px;
+  width: 89%;
+  float: right;
+  clear: right;
+  background: #3d3c3b;
+}
+.post .title {
+  margin: 1px;
+  padding: 3px 5px;
+  position: relative;
+  overflow: hidden;
+  background: #000;
+}
+.post .title h2 {
+  float: left;
+  margin: 0;
+}
+.post .title span.user {
+  float: right;
+  clear: right;
+  padding-top: 2px;
+  font-size: 12px;
+  color: #404f48;
+}
+.post .body {
+  padding: 5px 10px;
+}
+.post .body p {
+  margin: 5px;
+}
+.post .meta {
+  -moz-border-radius-bottomright: 8px;
+  -webkit-border-radius-bottomright: 8px;
+  background: #000;
+  margin: 1px;
+  padding: 3px 5px;
+  font-size: 10px;
+  color: #404f48;
+  position: relative;
+  overflow: hidden;
+}
+.post .meta span.tags {
+  float: left;
+}
+.post .meta span.comments {
+  float: right;
+  clear: right;
+}
+
 .pagination {
   position: absolute;
   bottom: 25px;
   font-size: 11px;
+  margin-left: 66px;
 }
 .pagination a,
 .pagination em,

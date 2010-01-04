@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @posts = Post.paginate(:per_page => 5, :page => params[:page], :order => 'created_at DESC')
+    @posts = Post.paginate(:per_page => 3, :page => params[:page], :order => 'created_at DESC')
 
     respond_to do |format|
       format.html

@@ -1,9 +1,20 @@
-- @posts.each do |post|
-  %h2
-    = link_to h(post.title), post_slug_url(post)
-    by
-    = post.user.username
-  = markdown truncate(post.body, :length => 250, :omission => link_to('...', post_slug_url(post)))
+%ul
+  - @posts.each do |post|
+    %li.post
+      .date
+        = post.created_at.strftime('%b')
+        %b= post.created_at.strftime('%d')
+      .content
+        .title
+          %h2= link_to h(post.title), post_slug_url(post)
+          %span.user= post.user.username
+        .body
+          = markdown truncate(post.body, :length => 350, :omission => link_to('... (more)', post_slug_url(post)))
+        .meta
+          %span.tags
+            Tags:
+            = tag_urls post.tags
+          %span.comments
+            = link_to 'Comments', "#{post_slug_url(post)}#comments"
 
-= #page_entries_info @posts
 = will_paginate @posts
