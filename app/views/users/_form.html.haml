@@ -2,9 +2,9 @@
   = #f.error_messages
 
   - f.inputs do
-    = f.input :username, :required => true
-    = f.input :email, :required => true
-    = f.input :password, :as => :password, :required => true
+    = f.input :username, :required => true, :hint => 'Length is required to be within 2 to 32 characters.'
+    = f.input :email, :label => 'E-mail', :required => true, :hint => 'Length is required to be within 6 to 100 characters. Requires a valid e-mail format.'
+    = f.input :password, :as => :password, :required => true, :hint => 'Length is required to be at least 6 characters.'
     = f.input :password_confirmation, :as => :password, :required => true
     %li#user_roles_input.required
       = label_tag :user_roles, 'Roles'
