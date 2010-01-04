@@ -7,10 +7,10 @@ class Comment
   key :body, String, :required => true, :allow_blank => false
   key :created_at, Time
 
-  # FIXME: Make these validations run.
-  #        Comment never directly gets saved, it gets embedded within
-  #        Post, so these validations do not run by default.
-  #        Need to figure out how to do this.
+  def post
+    _root_document
+  end
+
   validates_length_of :name, :within => 2..32
   validates_length_of :email, :within => 6..100
   validates_format_of :email, :with => User::RegEmailOk

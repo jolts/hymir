@@ -15,6 +15,7 @@ class Post
 
   RegTagsOk = /\A([A-Z\s\-]+;?)*\z/i
 
+  validates_associated :comments
   validates_length_of :title, :within => 4..40
   validates_format_of :named_tags, :with => RegTagsOk
 
