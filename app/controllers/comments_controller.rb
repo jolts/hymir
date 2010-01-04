@@ -3,6 +3,11 @@ class CommentsController < ApplicationController
   load_and_authorize_resource :except => [:destroy]
 
   def create
+    if signed_in?
+      @comment.name = current_user.username
+      @comment.email = current_user.email
+      @comment.has_user = true
+    end
     @comment.created_at = Time.now
     @post.comments << @comment
 

@@ -20,7 +20,10 @@
     - @post.comments.sort_by {|c| c.created_at}.each do |comment|
       %li.comment
         \##{@post.comments.index(comment)+1} by
-        %strong= link_to_unless comment.url.blank?, h(comment.name), comment.url
+        - if comment.has_user
+          %em= comment.name
+        - else
+          %strong= link_to_unless comment.url.blank?, h(comment.name), comment.url
         = markdown comment.body
         - if can? :destroy, comment
           = link_to 'Destroy', post_comment_path(@post, comment), :method => :delete, :confirm => 'Are you sure?'

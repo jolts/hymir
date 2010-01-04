@@ -5,6 +5,7 @@ class Comment
   key :email, String, :required => true, :allow_blank => false
   key :url, String
   key :body, String, :required => true, :allow_blank => false
+  key :has_user, Boolean
   key :created_at, Time
 
   def post
