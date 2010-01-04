@@ -209,7 +209,7 @@ textarea:focus {
   width: 10%;
 }
 .post .date b {
-  margin-top: -3px;
+  margin: -3px 0 0 2px;
   color: #34a8a1;
   display: block;
   font-size: 15px;
