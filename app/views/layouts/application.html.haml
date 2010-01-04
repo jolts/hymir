@@ -2,21 +2,21 @@
 %html{html_attrs}
   %head
     %title= h(yield(:title) || 'Hymir')
+    = auto_discovery_link_tag :atom, "#{posts_path}.atom", :title => 'Posts feed'
     = stylesheet_link_tag 'application', 'tipsy', :cache => 'base'
     = stylesheet_link_tag 'formtastic', 'formtastic_changes', :cache => 'formtastic'
     = javascript_include_tag 'jquery'
     = javascript_include_tag 'jquery.tipsy', 'application', :cache => 'application'
-    = auto_discovery_link_tag :atom, "#{posts_path}.atom", :title => 'Posts feed'
     = yield(:head)
 
   %body
     #container
       #header
-        %h1= link_to 'Project Hymir', root_url
+        %h1= link_to 'Project Hymir', root_path
         #nav
           %ul
-            %li= link_to 'Home', root_url, :class => 'active'
-            %li= link_to 'About', about_url
+            %li= link_to 'Home', root_path, :class => 'active'
+            %li= link_to 'About', about_path
             %li= link_to 'Portfolio', '#'
             %li= link_to 'Services', '#'
       #wrapper
@@ -50,4 +50,4 @@
       #footer
         %p
           Powered by
-          = link_to 'Hymir', root_url
+          = link_to 'Hymir', root_path
