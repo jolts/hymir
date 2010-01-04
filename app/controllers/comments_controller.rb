@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
     @comment.created_at = Time.now
-    @post.comments << @comment
+    @post.comments << @comment # Figure out how to validate the comment before we do this
 
     respond_to do |format|
       if @post.save
@@ -22,6 +22,7 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+    # FIXME: Untested
     @post = Post.find(params[:post_id])
     @post.comments.delete_if {|comment| comment.id.to_s == params[:comment_id]}
 
