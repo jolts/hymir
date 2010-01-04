@@ -21,8 +21,8 @@ end
 welcome_post = Post.create(
   :user_id => admin_user.id,
   :title => 'Welcome to Hymir!',
-  :tags => 'welcome; hymir',
-  :body => 'Welcome to Hymir! Should be more stuff here...',
+  :tags => ['welcome', 'hymir'],
+  :body => "### Welcome to Hymir!\n\nShould be more stuff here...",
   :created_at => Time.now,
   :updated_at => Time.now
 )
