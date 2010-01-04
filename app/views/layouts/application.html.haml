@@ -15,10 +15,10 @@
         %h1= link_to 'Hymir', root_path
         #nav
           %ul
-            %li= link_to 'Home', root_path, :class => 'active'
-            %li= link_to 'About', about_path
-            %li= link_to 'Portfolio', portfolio_path
-            %li= link_to 'Services', services_path
+            %li= link_to_unless_current 'Home', root_path
+            %li= link_to_unless_current 'About', about_path
+            %li= link_to_unless_current 'Portfolio', portfolio_path
+            %li= link_to_unless_current 'Services', services_path
       #wrapper
         - flash.each do |name, msg|
           = content_tag :div, msg, :id => "flash_#{name}"

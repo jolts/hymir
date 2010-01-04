@@ -79,15 +79,17 @@ textarea:focus {
   list-style: none;
 }
 #nav ul li {
-  padding-left: 10px;
+  margin-left: 10px;
   display: inline;
+  color: #34a8a1;
+  margin-bottom: 2px;
+  border-bottom: 2px solid #2c2c2a;
 }
 #nav ul li a {
   color: #36615d;
   margin-bottom: 2px;
   border-bottom: 2px solid #1c1916;
 }
-#nav ul li a.active,
 #nav ul li a:hover {
   color: #34a8a1;
   margin-bottom: 2px;
