@@ -280,6 +280,13 @@ textarea:focus {
   clear: right;
 }
 
+.comment {
+  margin-bottom: 40px;
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
 .user {
   margin-bottom: 40px;
   display: block;
