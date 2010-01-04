@@ -23,6 +23,8 @@
         - flash.each do |name, msg|
           = content_tag :div, msg, :id => "flash_#{name}"
         #content
+          - if show_title?
+            %h2= h(yield(:title))
           = yield
         #sidebar
           %h2 Archive

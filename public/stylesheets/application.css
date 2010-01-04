@@ -95,6 +95,9 @@ h3, h4, h5, h6 {
   float: left;
   width: 600px;
 }
+#content a:hover {
+  text-decoration: underline;
+}
 
 #sidebar {
   float: right;
