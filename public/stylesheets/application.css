@@ -183,6 +183,8 @@ textarea:focus {
   font-size: 14px;
 }
 .post .content {
+  -moz-border-radius-topleft: 8px;
+  -webkit-border-radius-topleft: 8px;
   -moz-border-radius-bottomright: 8px;
   -webkit-border-radius-bottomright: 8px;
   width: 89%;
@@ -191,6 +193,8 @@ textarea:focus {
   background: #3d3c3b;
 }
 .post .title {
+  -moz-border-radius-topleft: 8px;
+  -webkit-border-radius-topleft: 8px;
   margin: 1px;
   padding: 3px 5px;
   position: relative;
