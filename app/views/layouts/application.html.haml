@@ -27,10 +27,6 @@
             %h2= h(yield(:title))
           = yield
         #sidebar
-          %h2 Archive
-          %ul#archive
-            - Post.all(:order => 'created_at DESC').group_by(&:month).each do |month, posts|
-              %li= link_to "#{month} (#{posts.count})", archive_url(posts)
           %h2
             - if signed_in?
               Welcome,
@@ -49,6 +45,10 @@
               %br/
             - else
               = link_to 'Log in', login_path
+          %h2 Archive
+          %ul#archive
+            - Post.all(:order => 'created_at DESC').group_by(&:month).each do |month, posts|
+              %li= link_to "#{month} (#{posts.count})", archive_url(posts)
       #footer
         %p
           Powered by
