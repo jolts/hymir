@@ -1,6 +1,6 @@
 module PostsHelper
   def tag_urls(tags)
-    tags.map {|tag| link_to tag, tag_url(tag)}.join(', ')
+    tags.map {|tag| link_to tag, tag_path(tag)}.join(', ')
   end
 
   def post_slug_url(post)
