@@ -9,7 +9,7 @@
           %h2= link_to h(post.title), post_slug_url(post)
           %span.user= post.user.username
         .body
-          = markdown truncate(post.body, :length => 350, :omission => link_to('... (more)', post_slug_url(post)))
+          = markdown truncate(post.body, :length => 450, :omission => link_to('... (more)', post_slug_url(post)))
         .meta
           %span.tags
             Tags:
