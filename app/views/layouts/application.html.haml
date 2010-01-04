@@ -41,7 +41,7 @@
               - if can? :create, User
                 = link_to 'Create user', signup_path
                 %br/
-              = link_to 'Log out', logout_path, :method => :delete
+              = link_to 'Log out', logout_path, :method => :delete, :title => 'DOOM!', :rel => 'tipsy'
               %br/
             - else
               = link_to 'Log in', login_path
