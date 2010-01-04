@@ -38,6 +38,18 @@ h3, h4, h5, h6 {
   font-size: 14px;
 }
 
+input[type=text],
+input[type=password],
+textarea {
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border: 1px solid #bbb;
+}
+input:focus,
+textarea:focus { 
+  border: 1px solid #34a8a1;
+}
+
 #container {
   width: 860px;
   margin: 0 auto;
