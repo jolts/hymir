@@ -29,8 +29,7 @@
         #sidebar
           %h2
             - if signed_in?
-              Welcome,
-              = h current_user.username
+              Welcome, #{h current_user.username}
             - else
               Doom
           %p
@@ -50,6 +49,4 @@
             - Post.all(:order => 'created_at DESC').group_by(&:month).each do |month, posts|
               %li= link_to "#{month} (#{posts.count})", archive_url(posts)
       #footer
-        %p
-          Powered by
-          = link_to 'Hymir', root_path
+        %p Powered by #{link_to 'Hymir', root_path}.

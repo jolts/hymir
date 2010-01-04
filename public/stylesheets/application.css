@@ -191,21 +191,27 @@ textarea:focus {
   overflow: hidden;
 }
 .post .date {
+  -moz-border-radius-bottomleft: 8px;
+  -webkit-border-radius-bottomleft: 8px;
   text-shadow: 1px 1px 1px #000;
   color: #36615d;
   float: left;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: bold;
   height: 32px;
-  padding: 3px;
+  margin-top: 5px;
+  padding: 0 3px 0 2px;
+  border-bottom: 1px solid #272725;
+  border-left: 1px solid #272725;
   text-align: center;
   text-transform: uppercase;
   width: 10%;
 }
 .post .date b {
+  margin-top: -3px;
   color: #34a8a1;
   display: block;
-  font-size: 14px;
+  font-size: 15px;
 }
 .post .content {
   -moz-border-radius-topleft: 8px;
@@ -221,13 +227,14 @@ textarea:focus {
   -moz-border-radius-topleft: 8px;
   -webkit-border-radius-topleft: 8px;
   margin: 1px;
-  padding: 3px 5px;
+  padding: 2px 5px;
   position: relative;
   overflow: hidden;
   background: #1c1916;
 }
 .post .head h2.title {
   text-shadow: 1px 1px 1px #000;
+  font-weight: bold;
   float: left;
   margin: 0;
 }
