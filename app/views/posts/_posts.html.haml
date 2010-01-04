@@ -1,13 +1,9 @@
 - @posts.each do |post|
   %h2
     = link_to h(post.title), post_slug_url(post)
-  .author
     by
     = post.user.username
-    = time_ago_in_words post.created_at
-    ago
-  .content
-    = markdown truncate(post.body, :length => 250, :omission => link_to('...', post_slug_url(post)))
+  = markdown truncate(post.body, :length => 250, :omission => link_to('...', post_slug_url(post)))
 
-= page_entries_info @posts
+= #page_entries_info @posts
 = will_paginate @posts

@@ -2,12 +2,3 @@
 
 #posts
   = render 'posts'
-
-#archives
-  %h3 Archives
-  %ul
-    - @posts.group_by(&:month).each do |month, posts|
-      %li= link_to "#{month} (#{posts.count})", archive_url(posts)
-
-- if can? :create, Post
-  %p= link_to 'New post', new_post_path
