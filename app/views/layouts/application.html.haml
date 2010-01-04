@@ -24,7 +24,7 @@
           = content_tag :div, msg, :id => "flash_#{name}"
         #content
           - if show_title?
-            %h2= h(yield(:title))
+            %h2= h yield(:title)
           = yield
         #sidebar
           %h2
@@ -35,11 +35,11 @@
               Doom
           %p
             - if signed_in?
-              - if can? :create, User
-                = link_to 'Create user', signup_path
-                %br/
               - if can? :create, Post
                 = link_to 'Create post', new_post_path
+                %br/
+              - if can? :create, User
+                = link_to 'Create user', signup_path
                 %br/
               = link_to 'Log out', logout_path, :method => :delete
               %br/
