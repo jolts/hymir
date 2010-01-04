@@ -24,13 +24,16 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @post.comments.delete_if {|comment| comment.id.to_s == params[:id]}
-
     respond_to do |format|
-      if @post.save
-        flash[:notice] = 'Successfully destroyed comment.'
+      if can? :destroy, Comment
+        @post.comments.delete_if {|comment| comment.id.to_s == params[:id]}
+        if @post.save
+          flash[:notice] = 'Successfully destroyed comment.'
+        else
+          flash[:error] = 'Error while destroying comment.'
+        end
       else
-        flash[:error] = 'Error while destroying comment.'
+        flash[:error] = 'Access denied.'
       end
       format.html do
         redirect_to(slug_path(
