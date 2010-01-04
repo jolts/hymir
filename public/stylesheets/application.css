@@ -147,6 +147,7 @@ textarea:focus {
 }
 
 #footer {
+  text-shadow: 1px 1px 1px #000;
   border-top: 1px solid #2c2c2a;
   color: #3d3c39;
   padding-top: 20px;
