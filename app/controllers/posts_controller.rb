@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_filter :find_post_by_slug, :only => :show
   load_and_authorize_resource
 
   def index
@@ -44,7 +45,6 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post ||= Post.find_by_slug(params[:slug])
     #@comment = Comment.new
 
     respond_to do |format|
@@ -113,4 +113,10 @@ class PostsController < ApplicationController
       format.html { redirect_to root_path }
     end
   end
+
+  private
+    def find_post_by_slug
+      @post ||= Post.find_by_slug(params[:slug])
+    end
+  # private
 end
