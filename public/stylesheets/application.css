@@ -180,8 +180,6 @@ textarea:focus {
   display: block;
   position: relative;
   overflow: hidden;
-  -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;
 }
 .post .date {
   color: #36615d;
