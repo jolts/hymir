@@ -8,7 +8,7 @@
         .content
           .head
             %h2.title= link_to h(post.title), post_slug_url(post)
-            %span.user{:title => user_role(post.user).capitalize}= post.user.username
+            %span.username{:title => user_role(post.user).capitalize}= post.user.username
           .body
             = markdown truncate(post.body, :length => 450, :omission => link_to('... (more)', post_slug_url(post)))
           .meta

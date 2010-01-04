@@ -1,6 +1,8 @@
 class CommentsController < ApplicationController
   load_and_authorize_resource
 
+  # TODO: Make comments validate themselves somehow
+
   def create
     @post = Post.find(params[:post_id])
     @comment.created_at = Time.now

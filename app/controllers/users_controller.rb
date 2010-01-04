@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   load_and_authorize_resource
 
+  # TODO: Allow users to update their own profile
+
   def index
     @users = User.all(:order => 'created_at ASC')
 

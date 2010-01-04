@@ -239,7 +239,7 @@ textarea:focus {
   float: left;
   margin: 0;
 }
-.post .head span.user {
+.post .head span.username {
   float: right;
   clear: right;
   padding-top: 2px;
