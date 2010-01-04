@@ -30,4 +30,11 @@ module PostsHelper
     end
     title "Posts from #{date}"
   end
+
+  def user_role(user)
+    role = :author if user.role?(:author)
+    role = :moderator if user.role?(:moderator)
+    role = :admin if user.role?(:admin)
+    role
+  end
 end
