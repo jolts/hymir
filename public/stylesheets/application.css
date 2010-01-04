@@ -89,6 +89,7 @@ h3, h4, h5, h6 {
   margin: 0 auto;
   min-height: 400px;
   overflow: hidden;
+  position: relative;
 }
 
 #content {
@@ -142,6 +143,8 @@ h3, h4, h5, h6 {
 }
 
 .pagination {
+  position: absolute;
+  bottom: 25px;
   font-size: 11px;
 }
 .pagination a,
