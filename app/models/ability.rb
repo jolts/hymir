@@ -3,9 +3,8 @@ class Ability
 
   def initialize(user)
     can :create, Comment
-    can :read, :all do |object_class|
-      object_class != User
-    end
+    can :read, :all
+    cannot :read, User
     if user
       if user.role?(:author)
         can :create, Post

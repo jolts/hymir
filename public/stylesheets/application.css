@@ -249,7 +249,7 @@ textarea:focus {
 .post .body {
   padding: 5px 10px;
 }
-.post .body p {
+.post .body h1, h2, h3, h4, h5, h6, p, ul, ol {
   margin: 5px;
 }
 .post .meta {
