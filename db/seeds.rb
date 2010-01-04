@@ -8,7 +8,7 @@
 
 admin_user = User.create(
   :username => 'admin',
-  :email => 'gigamo@gmail.com',
+  :email => 'admin@domain.com',
   :password => 'abcdef',
   :password_confirmation => 'abcdef',
   :roles_mask => '1'

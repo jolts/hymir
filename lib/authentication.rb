@@ -71,7 +71,6 @@ module Authentication
   def access_denied
     respond_to do |format|
       format.html do
-        store_location
         redirect_to new_user_session_path
       end
       # format.any doesn't work in rails version < http://dev.rubyonrails.org/changeset/8987
@@ -81,28 +80,10 @@ module Authentication
       end
     end
   end
-
-  # Store the URI of the current request in the session.
-  #
-  # We can return to this location by calling #redirect_back_or_default.
-  def store_location
-    session[:return_to] = request.request_uri
-  end
-
-  # Redirect to the URI stored by the most recent store_location call or
-  # to the passed default. Set an appropriately modified
-  # after_filter :store_location, :only => [:index, :new, :show, :edit]
-  # for any controller you want to be bounce-backable.
-  def redirect_back_or_default(default)
-    redirect_to(session[:return_to] || default)
-    session[:return_to] = nil
-  end
   
   # Called from #current_user. First attempt to sign_in by the user id stored in the session.
   def sign_in_from_session
-    if session[:user_id]
-      self.current_user = User.find_by_id(session[:user_id])
-    end
+    self.current_user = User.find(session[:user_id]) if session[:user_id]
   end
 
   # Called from #current_user. Now, attempt to sign_in by basic authentication information.
