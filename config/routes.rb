@@ -27,7 +27,9 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :users, :only => [:new, :create]
 
   # Posts
-  map.resources :posts
+  map.resources :posts do |post|
+    post.resources :comments, :only => [:new, :create, :destroy]
+  end
 
   # Other post related routes
   map.with_options :controller => :posts,

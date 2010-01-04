@@ -6,10 +6,10 @@ class Post
   key :body, String, :required => true, :allow_blank => false
   key :slug, String, :unique => true
   key :tags, Array
-  key :comments, Comment
   timestamps!
 
   belongs_to :user
+  many :comments
 
   before_create :make_slug
 
