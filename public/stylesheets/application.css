@@ -193,7 +193,7 @@ textarea:focus {
   clear: right;
   background: #272725;
 }
-.post .title {
+.post .head {
   -moz-border-radius-topleft: 8px;
   -webkit-border-radius-topleft: 8px;
   margin: 1px;
@@ -202,11 +202,11 @@ textarea:focus {
   overflow: hidden;
   background: #1c1916;
 }
-.post .title h2 {
+.post .head h2.title {
   float: left;
   margin: 0;
 }
-.post .title span.user {
+.post .head span.user {
   float: right;
   clear: right;
   padding-top: 2px;
