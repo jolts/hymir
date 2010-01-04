@@ -2,6 +2,10 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
+    can :create, Comment
+    can :read, :all do |object_class|
+      object_class != User
+    end
     if user
       if user.role?(:author)
         can :create, Post
@@ -14,11 +18,6 @@ class Ability
       end
       if user.role?(:admin)
         can :manage, :all
-      end
-    else
-      can :create, Comment
-      can :read, :all do |object_class|
-        object_class != User
       end
     end
   end
