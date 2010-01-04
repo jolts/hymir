@@ -250,7 +250,15 @@ textarea:focus {
 .post .content .body {
   padding: 5px 10px;
 }
-.post .content .body h1, h2, h3, h4, h5, h6, p, ul, ol {
+.post .content .body h1,
+.post .content .body h2,
+.post .content .body h3,
+.post .content .body h4,
+.post .content .body h5,
+.post .content .body h6,
+.post .content .body p,
+.post .content .body ul,
+.post .content .body ol {
   margin: 5px;
 }
 .post .content .meta {
