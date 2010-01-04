@@ -9,22 +9,14 @@ ActionController::Routing::Routes.draw do |map|
   end
 
   # Sessions
-  map.signup 'signup',
-    :controller => :users,
-    :action     => :new,
-    :method     => :get
-  map.login  'login',
-    :controller => :user_sessions,
-    :action     => :new,
-    :method     => :get
-  map.logout 'logout',
-    :controller => :user_sessions,
-    :action     => :destroy,
-    :method     => :delete
+  map.with_options :controller => :user_sessions do |session|
+    session.login 'login', :action => :new, :method => :get
+    session.logout 'logout', :action => :destroy, :method => :delete
+  end
   map.resource  :user_sessions, :only => [:create]
 
   # Users
-  map.resources :users, :only => [:new, :create]
+  map.resources :users, :except => [:show, :edit, :update]
 
   # Posts
   map.resources :posts

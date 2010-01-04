@@ -37,16 +37,19 @@
               - if can? :create, Post
                 = link_to 'Create post', new_post_path
                 %br/
-              - if can? :create, User
-                = link_to 'Create user', signup_path
+              - if can? :manage, User
+                = link_to 'Create user', new_user_path
+                %br/
+                = link_to 'All users', users_path
                 %br/
               = link_to 'Log out', logout_path, :method => :delete, :title => 'DOOM!', :rel => 'tipsy'
               %br/
             - else
               = link_to 'Log in', login_path
           %h2 Archive
-          %ul#archive
+          %p
             - Post.all(:order => 'created_at DESC').group_by(&:month).each do |month, posts|
-              %li= link_to "#{month} (#{posts.count})", archive_url(posts)
+              = link_to "#{month} (#{posts.count})", archive_url(posts)
+              %br/
       #footer
         %p Powered by #{link_to 'Hymir', root_path}.

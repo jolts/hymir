@@ -50,7 +50,8 @@ textarea {
   border: 1px solid #bbb;
   padding: 2px;
 }
-input:focus,
+input[type=text]:focus,
+input[type=password]:focus,
 textarea:focus { 
   border: 1px solid #34a8a1;
 }
@@ -268,6 +269,28 @@ textarea:focus {
 .post .meta span.comments {
   float: right;
   clear: right;
+}
+
+.user {
+  margin-bottom: 40px;
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+.user dl {
+  margin-bottom: 3px;
+}
+.user dt {
+  text-shadow: 1px 1px 1px #000;
+  float: left;
+  color: #3d3c39;
+  width: 100px;
+}
+.user dd.name {
+  font-weight: bold;
+}
+.user span.destroy {
+  margin-left: 100px;
 }
 
 .pagination {
