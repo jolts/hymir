@@ -32,9 +32,9 @@ module PostsHelper
   end
 
   def user_role(user)
-    role = :author if user.role?(:author)
-    role = :moderator if user.role?(:moderator)
-    role = :admin if user.role?(:admin)
+    role = 'Author' if user.role?(:author)
+    role = 'Moderator' if user.role?(:moderator)
+    role = 'Admin' if user.role?(:admin)
     role
   end
 end
