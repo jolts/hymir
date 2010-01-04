@@ -121,6 +121,7 @@ textarea:focus {
 #sidebar h2 {
   font-size: 16px;
   color: #3d3c3b;
+  margin-top: 0;
 }
 #sidebar p {
   line-height: normal;
