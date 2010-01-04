@@ -11,7 +11,11 @@
         .body
           = markdown truncate(post.body, :length => 450, :omission => link_to('... (more)', post_slug_url(post)))
         .meta
-          %span.tags Tags: #{tag_urls post.tags}
+          %span.tags
+            - if post.tags.any?
+              Tags: #{tag_urls post.tags}
+            - else
+              No tags
           %span.comments= link_to 'Comments', "#{post_slug_url(post)}#comments"
 
 = will_paginate @posts
