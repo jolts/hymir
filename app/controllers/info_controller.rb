@@ -1,4 +1,8 @@
 class InfoController < ApplicationController
+  caches_page :about
+  caches_page :portfolio
+  caches_page :services
+
   def about
     respond_to do |format|
       format.html
