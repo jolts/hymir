@@ -18,7 +18,7 @@ module PostsHelper
   def archive_url(posts)
     year  = posts.map {|p| p.created_at.year}.first
     month = prepend_zero?(posts.map {|p| p.created_at.month}.first)
-    "archive/#{year}/#{month}"
+    "/archive/#{year}/#{month}"
   end
 
   def archive_title(params)
