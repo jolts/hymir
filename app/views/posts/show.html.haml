@@ -33,4 +33,6 @@
     %h2 No comments yet!
 
 - if can? :create, Comment
-  = render 'comments/form'
+  #newcomment
+    %h2 New Comment
+    = render 'comments/form'
