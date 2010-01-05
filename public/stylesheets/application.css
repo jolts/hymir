@@ -438,13 +438,19 @@ textarea:focus {
   text-shadow: 1px 1px 1px #000;
   float: left;
   color: #3d3c39;
-  width: 100px;
+  width: 14%;
+}
+#users .user dd {
+  float: right;
+  clear: right;
+  width: 85%;
 }
 #users .user dd.name {
   font-weight: bold;
 }
 #users .user span.destroy a {
   color: #cc3333;
+  float: right;
 }
 
 .pagination {
