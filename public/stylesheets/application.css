@@ -282,7 +282,7 @@ textarea:focus {
 }
 #posts .post .content .head h2.title {
   float: left;
-  font-size: 17px;
+  font-size: 18px;
   margin: 0;
 }
 #posts .post .content .head h2.title a {
@@ -343,6 +343,9 @@ textarea:focus {
   display: block;
   position: relative;
   overflow: hidden;
+}
+#posts_list .post a {
+  text-shadow: 1px 1px 1px #000;
 }
 #posts_list .post:hover {
   background: #283743;
