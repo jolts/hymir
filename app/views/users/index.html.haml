@@ -1,20 +1,22 @@
 - title 'Users'
 
 - if can? :read, @users
-  - @users.each do |user|
-    .user
-      %dl
-        %dt Name
-        %dd.name= user.username
-      %dl
-        %dt E-mail
-        %dd= user.email
-      - if user.roles.any?
+  #users
+    - @users.each do |user|
+      .user
         %dl
-          %dt Roles
-          %dd= user.roles.map {|role| role.capitalize}.join(', ')
-      %dl
-        %dt Age
-        %dd= time_ago_in_words(user.created_at)
-      - if can?(:destroy, user) && User.all.count > 1
-        %span.destroy= link_to 'Destroy', user, :method => :delete, :confirm => 'Are you sure?'
+          %dt Name
+          %dd.name
+            = user.username
+            - if can?(:destroy, user) && User.all.count > 1
+              %span.destroy= link_to '✘', user, :method => :delete, :confirm => 'Are you sure?', :rel => 'tipsy', :title => 'Destroy'
+        %dl
+          %dt E-mail
+          %dd= user.email
+        - if user.roles.any?
+          %dl
+            %dt Roles
+            %dd= user.roles.map {|role| role.capitalize}.join(', ')
+        %dl
+          %dt Age
+          %dd= time_ago_in_words(user.created_at)

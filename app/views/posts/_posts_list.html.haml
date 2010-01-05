@@ -1,11 +1,9 @@
 - if @posts.any?
-  %ul
+  %ul#posts_list
     - @posts.each do |post|
-      %li
-        %strong= link_to h(post.title), post_slug_url(post)
-        by
-        = post.user.username
-        = time_ago_in_words(post.created_at)
-        ago
+      %li{:class => "post#{first_or_last_post(post)}"}
+        .title
+          %strong #{link_to h(post.title), post_slug_url(post)} by #{post.user.username}
+        .meta #{post.created_at.strftime('%B %d, %Y %H:%M')}
 - else
-  No posts found!
+  %p No posts found!

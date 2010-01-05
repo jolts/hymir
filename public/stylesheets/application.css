@@ -185,13 +185,67 @@ textarea:focus {
   color: #cc3333;
 }
 
-.post {
+#single {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+#single .content {
+}
+#single .content .head {
+  padding: 5px 0;
+  border-bottom: 1px solid #000;
+  position: relative;
+  overflow: hidden;
+  background: #1c1916;
+}
+#single .content .head a {
+  color: #36615d;
+}
+#single .content .head h2.title {
+  text-shadow: 1px 1px 1px #000;
+  font-size: 18px;
+  margin: 0;
+}
+#single .content .head span.actions {
+  margin-top: 4px;
+  float: right;
+  clear: right;
+}
+#single .content .head span.actions span.destroy a {
+  color: #cc3333;
+}
+#single .content .head p.meta {
+  margin: 0;
+  padding: 0;
+  padding-top: 2px;
+  font-size: 12px;
+  color: #404f48;
+}
+#single .content .body {
+  border-top: 1px solid #2c2c2a;
+  border-bottom: 1px solid #000;
+  padding: 5px 0;
+}
+#single .content .body h1,
+#single .content .body h2,
+#single .content .body h3,
+#single .content .body h4,
+#single .content .body h5,
+#single .content .body h6,
+#single .content .body p,
+#single .content .body ul,
+#single .content .body ol {
+  margin: 5px 0;
+}
+
+#posts .post {
   margin-bottom: 40px;
   display: block;
   position: relative;
   overflow: hidden;
 }
-.post .date {
+#posts .post .date {
   -moz-border-radius-topright: 8px;
   -webkit-border-radius-topright: 8px;
   -moz-border-radius-bottomleft: 8px;
@@ -209,13 +263,13 @@ textarea:focus {
   text-transform: uppercase;
   width: 10%;
 }
-.post .date b {
+#posts .post .date b {
   margin: -3px 0 0 1px;
   color: #34a8a1;
   display: block;
   font-size: 15px;
 }
-.post .content {
+#posts .post .content {
   -moz-border-radius-topleft: 8px;
   -webkit-border-radius-topleft: 8px;
   -moz-border-radius-bottomright: 8px;
@@ -225,7 +279,7 @@ textarea:focus {
   clear: right;
   background: #272725;
 }
-.post .content .head {
+#posts .post .content .head {
   -moz-border-radius-topleft: 8px;
   -webkit-border-radius-topleft: 8px;
   margin: 1px;
@@ -234,34 +288,33 @@ textarea:focus {
   overflow: hidden;
   background: #1c1916;
 }
-.post .content .head h2.title {
+#posts .post .content .head h2.title {
   text-shadow: 1px 1px 1px #000;
-  font-weight: bold;
   float: left;
   margin: 0;
 }
-.post .content .head span.username {
+#posts .post .content .head span.username {
   float: right;
   clear: right;
   padding-top: 2px;
   font-size: 12px;
   color: #404f48;
 }
-.post .content .body {
+#posts .post .content .body {
   padding: 5px 10px;
 }
-.post .content .body h1,
-.post .content .body h2,
-.post .content .body h3,
-.post .content .body h4,
-.post .content .body h5,
-.post .content .body h6,
-.post .content .body p,
-.post .content .body ul,
-.post .content .body ol {
+#posts .post .content .body h1,
+#posts .post .content .body h2,
+#posts .post .content .body h3,
+#posts .post .content .body h4,
+#posts .post .content .body h5,
+#posts .post .content .body h6,
+#posts .post .content .body p,
+#posts .post .content .body ul,
+#posts .post .content .body ol {
   margin: 5px;
 }
-.post .content .meta {
+#posts .post .content .meta {
   -moz-border-radius-bottomright: 8px;
   -webkit-border-radius-bottomright: 8px;
   background: #1c1916;
@@ -272,41 +325,120 @@ textarea:focus {
   position: relative;
   overflow: hidden;
 }
-.post .content .meta span.tags {
+#posts .post .content .meta span.tags {
   float: left;
 }
-.post .content .meta span.comments {
+#posts .post .content .meta span.comments {
   float: right;
   clear: right;
 }
-
-.comment {
-  margin-bottom: 40px;
+#posts_list .post {
+  padding: 10px 0 10px 5px;
+  margin-left: -5px;
+  border-bottom: 1px solid #000;
+  border-top: 1px solid #2c2c2a;
   display: block;
   position: relative;
   overflow: hidden;
 }
+#posts_list .post:hover {
+  background: #272725;
+}
+#posts_list .post.first {
+  border-top: none;
+  -moz-border-radius-topright: 8px;
+  -webkit-border-radius-topright: 8px;
+  -moz-border-radius-topleft: 8px;
+  -webkit-border-radius-topleft: 8px;
+}
+#posts_list .post.last {
+  border-bottom: none;
+  -moz-border-radius-bottomright: 8px;
+  -webkit-border-radius-bottomright: 8px;
+  -moz-border-radius-bottomleft: 8px;
+  -webkit-border-radius-bottomleft: 8px;
+}
+#posts_list .post .title {
+  float: left;
+  width: 73%;
+}
+#posts_list .post .meta {
+  float: right;
+  clear: right;
+  width: 25%;
+}
 
-.user {
-  margin-bottom: 40px;
+#comments {
+  border-top: 1px solid #2c2c2a;
+}
+#comments h2 {
+  margin: 20px 0;
+}
+#comments .comment {
+  margin-bottom: 20px;
+  padding: 5px 0;
   display: block;
   position: relative;
   overflow: hidden;
 }
-.user dl {
+#comments .comment.has_user {
+  -moz-border-radius-topleft: 8px;
+  -webkit-border-radius-topleft: 8px;
+  -moz-border-radius-bottomright: 8px;
+  -webkit-border-radius-bottomright: 8px;
+  background: #272725;
+  margin: 0 -10px 20px;
+  padding: 5px 10px;
+}
+#comments .comment .info {
+  float: left;
+  width: 23%;
+  padding: 5px 0;
+}
+#comments .comment .info p {
+  margin: 0;
+  color: #404f48;
+}
+#comments .comment .info span.destroy a {
+  color: #cc3333;
+}
+#comments .comment .body {
+  float: right;
+  clear: right;
+  width: 75%;
+}
+#comments .comment .body h1,
+#comments .comment .body h2,
+#comments .comment .body h3,
+#comments .comment .body h4,
+#comments .comment .body h5,
+#comments .comment .body h6,
+#comments .comment .body p,
+#comments .comment .body ul,
+#comments .comment .body ol {
+  margin: 0 0 5px;
+}
+
+#users .user {
+  margin: 20px 0;
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+#users .user dl {
   margin-bottom: 3px;
 }
-.user dt {
+#users .user dt {
   text-shadow: 1px 1px 1px #000;
   float: left;
   color: #3d3c39;
   width: 100px;
 }
-.user dd.name {
+#users .user dd.name {
   font-weight: bold;
 }
-.user span.destroy {
-  margin-left: 100px;
+#users .user span.destroy a {
+  color: #cc3333;
 }
 
 .pagination {

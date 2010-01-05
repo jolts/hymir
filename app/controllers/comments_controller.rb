@@ -6,6 +6,7 @@ class CommentsController < ApplicationController
     if signed_in?
       @comment.name = current_user.username
       @comment.email = current_user.email
+      @comment.url = 'http://github.com/gigamo/hymir'
       @comment.has_user = true
     end
     @comment.created_at = Time.now
@@ -15,7 +16,7 @@ class CommentsController < ApplicationController
       if @post.save
         flash[:notice] = 'Successfully created comment.'
       else
-        flash[:error] = 'Error while creating comment. Possibly the information you supplied was invalid.'
+        flash[:error] = 'Error while creating comment.'
       end
       format.html do
         redirect_to(slug_path(

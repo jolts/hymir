@@ -37,4 +37,10 @@ module PostsHelper
     role = 'Admin' if user.role?(:admin)
     role
   end
+
+  def first_or_last_post(post)
+    cls = ' first' if post == @posts.first
+    cls = ' last'  if post == @posts.last
+    cls
+  end
 end

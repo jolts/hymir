@@ -1,36 +1,36 @@
-- title @post.title, false
+- title h(@post.title), false
 
-%h2= h @post.title
+#single
+  .content
+    .head
+      %h2.title= h @post.title
+      %span.actions
+        - if can? :update, @post
+          %span.edit= link_to 'E', edit_post_path(@post), :rel => 'tipsy', :title => 'Edit'
+        - if can? :destroy, @post
+          %span.destroy= link_to '✘', @post, :method => :delete, :confirm => 'Are you sure?', :rel => 'tipsy', :title => 'Destroy'
+      %p.meta{:title => user_role(@post.user)}
+        By #{@post.user.username} #{time_ago_in_words @post.created_at} ago
+        - if @post.tags.any?
+          under #{tag_urls @post.tags}
+    .body
+      = markdown @post.body
 
-- if @post.tags.any?
-  %p
-    Tags:
-    = tag_urls @post.tags
-
-= markdown @post.body
-
-%p
-  - if can? :update, @post
-    = link_to 'Edit', edit_post_path(@post)
-  - if can? :destroy, @post
-    = link_to 'Destroy', @post, :method => :delete, :confirm => 'Are you sure?'
-
-- if @post.comments.any?
-  %h3 Comments
-  %ul#comments
-    - @post.comments.sort_by {|c| c.created_at}.each do |comment|
-      %li.comment
-        \##{@post.comments.index(comment)+1} by
-        - if comment.has_user
-          %em= comment.name
-        - else
-          %strong= link_to_unless comment.url.blank?, h(comment.name), comment.url
-        = markdown comment.body
-        - if can? :destroy, comment
-          = link_to 'Destroy', post_comment_path(@post, comment), :method => :delete, :confirm => 'Are you sure?'
-- else
-  %p No comments yet!
+#comments
+  - if @post.comments.any?
+    %h2 #{@post.comments.count} Comments
+    %ul#comments_list
+      - @post.comments.sort_by {|c| c.created_at}.each do |comment|
+        %li{:class => "comment#{comment.has_user ? ' has_user' : nil}"}
+          .info
+            %strong.username= link_to_unless comment.url.blank?, h(comment.name), comment.url
+            - if can? :destroy, comment
+              %span.destroy= link_to '✘', post_comment_path(@post, comment), :method => :delete, :confirm => 'Are you sure?', :rel => 'tipsy', :title => 'Destroy'
+            %p.meta #{time_ago_in_words comment.created_at} ago
+          .body
+            = markdown comment.body
+  - else
+    %h2 No comments yet!
 
 - if can? :create, Comment
-  %h3 New Comment
   = render 'comments/form'
