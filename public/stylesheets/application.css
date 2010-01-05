@@ -104,6 +104,7 @@ textarea:focus {
 }
 
 #wrapper {
+  background: url(/images/glow_top.png) no-repeat top left;
   border-top: 1px solid #2c2c2a;
   border-bottom: 1px solid black;
   padding: 20px;
@@ -197,7 +198,6 @@ textarea:focus {
   border-bottom: 1px solid #000;
   position: relative;
   overflow: hidden;
-  background: #1c1916;
 }
 #single .content .head a {
   color: #36615d;
