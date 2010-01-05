@@ -416,7 +416,7 @@ textarea:focus {
   color: #cc3333;
 }
 #comments .comment .body {
-  padding: 2px 0;
+  padding: 5px 0;
   float: right;
   clear: right;
   width: 75%;
