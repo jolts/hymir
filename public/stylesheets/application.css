@@ -5,14 +5,13 @@
 
 body {
   background: #10212e;
-  /*font: 14px 'Myriad Pro', 'Lucida Grande', Helvetica, Arial, sans-serif;*/
-  font: 12px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  font: 13.38px Helvetica, Arial, sans-serif;
   color: #cdcdcd;
 }
 
 p {
   margin: 10px 0;
-  line-height: 1.5;
+  line-height: 1.25;
 }
 
 a {
@@ -30,6 +29,7 @@ ul, ol {
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
+  text-shadow: 1px 1px 1px #000;
   margin: 10px 0;
 }
 h1 {
@@ -72,7 +72,7 @@ textarea:focus {
   margin: 0;
   text-shadow: 2px 2px 2px #000;
   float: left;
-  font-size: 32px;
+  font-size: 36px;
   font-weight: normal;
 }
 #header h1 a {
@@ -113,7 +113,7 @@ textarea:focus {
   padding: 20px;
   width: 820px;
   margin: 0 auto;
-  min-height: 650px;
+  min-height: 635px;
   overflow: hidden;
   position: relative;
 }
@@ -132,7 +132,6 @@ textarea:focus {
   width: 170px;
 }
 #sidebar h2 {
-  text-shadow: 1px 1px 1px #000;
   font-size: 16px;
   color: #66717a;
   margin-top: 0;
@@ -148,7 +147,7 @@ textarea:focus {
 #footer {
   text-shadow: 1px 1px 1px #000;
   border-top: 1px solid #283743;
-  color: #f1f1f1;
+  color: #cdcdcd;
   padding-top: 20px;
   margin-bottom: 50px;
   text-align: center;
@@ -175,7 +174,7 @@ textarea:focus {
 }
 #flash_notice:before {
   content: '✔ ';
-  color: #34a8a1;
+  color: #6887a0;
 }
 #flash_error:before {
   content: '✘ ';
@@ -196,17 +195,17 @@ textarea:focus {
   overflow: hidden;
 }
 #single .content .head h2.title {
-  text-shadow: 1px 1px 1px #000;
-  font-size: 18px;
+  font-size: 20px;
   margin: 0;
 }
 #single .content .head span.actions {
-  margin-top: 4px;
   float: right;
   clear: right;
+  margin-top: 2px;
 }
 #single .content .head span.actions span.destroy a {
   color: #cc3333;
+  text-shadow: 1px 1px 1px #000;
 }
 #single .content .head p.meta {
   margin: 0;
@@ -239,8 +238,8 @@ textarea:focus {
   overflow: hidden;
 }
 #posts .post .date {
-  -moz-border-radius-topright: 8px;
-  -webkit-border-radius-topright: 8px;
+  -moz-border-radius-topleft: 8px;
+  -webkit-border-radius-topleft: 8px;
   -moz-border-radius-bottomleft: 8px;
   -webkit-border-radius-bottomleft: 8px;
   padding: 0 -10px;
@@ -257,13 +256,13 @@ textarea:focus {
   width: 10%;
 }
 #posts .post .date b {
-  margin: -3px 0 0 1px;
+  margin: -2px 0 0;
   display: block;
   font-size: 16px;
 }
 #posts .post .content {
-  -moz-border-radius-topleft: 8px;
-  -webkit-border-radius-topleft: 8px;
+  -moz-border-radius-topright: 8px;
+  -webkit-border-radius-topright: 8px;
   -moz-border-radius-bottomright: 8px;
   -webkit-border-radius-bottomright: 8px;
   width: 89%;
@@ -273,32 +272,38 @@ textarea:focus {
   background: #66717a;
 }
 #posts .post .content .head {
-  -moz-border-radius-topleft: 8px;
-  -webkit-border-radius-topleft: 8px;
+  -moz-border-radius-topright: 8px;
+  -webkit-border-radius-topright: 8px;
   margin: 1px;
-  padding: 7px 5px;
+  padding: 7px;
   position: relative;
   overflow: hidden;
   background: #10212e;
 }
 #posts .post .content .head h2.title {
-  text-shadow: 1px 1px 1px #000;
   float: left;
   font-size: 17px;
   margin: 0;
 }
 #posts .post .content .head h2.title a {
-  color: #f1f1f1;
+  color: #cdcdcd;
+}
+#posts .post .content .head h2.title a:hover {
+  text-decoration: none;
 }
 #posts .post .content .head span.username {
   float: right;
   clear: right;
   padding-top: 2px;
-  font-size: 12px;
+  font-size: 13px;
   color: #66717a;
 }
 #posts .post .content .body {
   padding: 5px 10px;
+}
+#posts .post .content .body a {
+  color: #000;
+  font-weight: bold;
 }
 #posts .post .content .body h1,
 #posts .post .content .body h2,
@@ -316,8 +321,8 @@ textarea:focus {
   -webkit-border-radius-bottomright: 8px;
   background: #10212e;
   margin: 1px;
-  padding: 3px 5px;
-  font-size: 10px;
+  padding: 3px 7px;
+  font-size: 12px;
   color: #66717a;
   position: relative;
   overflow: hidden;
@@ -330,6 +335,7 @@ textarea:focus {
   clear: right;
 }
 #posts_list .post {
+  color: #66717a;
   padding: 10px 0 10px 5px;
   margin-left: -5px;
   border-bottom: 1px solid #000;
@@ -397,15 +403,20 @@ textarea:focus {
   width: 23%;
   padding: 5px 0;
 }
+#comments .comment .info .username {
+  text-shadow: 1px 1px 1px #000;
+}
 #comments .comment .info p {
   margin: 0;
   color: #66717a;
 }
 #comments .comment .info span.destroy a {
   float: right;
+  text-shadow: 1px 1px 1px #000;
   color: #cc3333;
 }
 #comments .comment .body {
+  padding: 2px 0;
   float: right;
   clear: right;
   width: 75%;
@@ -428,12 +439,12 @@ textarea:focus {
 
 #users .user {
   margin: 20px 0;
-  display: block;
-  position: relative;
-  overflow: hidden;
 }
 #users .user dl {
   margin-bottom: 3px;
+  display: block;
+  position: relative;
+  overflow: hidden;
 }
 #users .user dt {
   text-shadow: 1px 1px 1px #000;
@@ -451,13 +462,13 @@ textarea:focus {
 }
 #users .user span.destroy a {
   color: #cc3333;
+  text-shadow: 1px 1px 1px #000;
   float: right;
 }
 
 .pagination {
   position: absolute;
   bottom: 25px;
-  font-size: 11px;
   margin-left: 66px;
 }
 .pagination a,
@@ -470,7 +481,7 @@ textarea:focus {
 }
 .pagination span.disabled,
 .pagination em {
-  color: #888;
+  color: #66717a;
 }
 .pagination span.current {
   font-weight: bold;

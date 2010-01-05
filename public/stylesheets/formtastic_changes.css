@@ -10,7 +10,8 @@ form.formtastic fieldset ol li p.inline-hints { color:#333; }
 --------------------------------------------------------------------------------------------------*/
 
 form.formtastic fieldset ol li p.inline-hints {
-  font-size: 11px;
+  font-size: 12px;
+  color: #66717a;
 }
 form.formtastic fieldset ol li input,
 form.formtastic fieldset ol li textarea {
