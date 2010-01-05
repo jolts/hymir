@@ -9,7 +9,7 @@
           %span.edit= link_to 'E', edit_post_path(@post), :rel => 'tipsy', :title => 'Edit'
         - if can? :destroy, @post
           %span.destroy= link_to '✘', @post, :method => :delete, :confirm => 'Are you sure?', :rel => 'tipsy', :title => 'Destroy'
-      %p.meta{:title => user_role(@post.user)}
+      %p.meta
         By #{@post.user.username} #{time_ago_in_words @post.created_at} ago
         - if @post.tags.any?
           under #{tag_urls @post.tags}

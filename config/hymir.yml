@@ -1,17 +1,16 @@
+# TODO
+
 DEFAULTS: &DEFAULTS
-  email: no-reply@hymir.com
-  email_signature: |
-    Regards,
-    The Hymir Team
- 
+  #
+
 development:
-  domain: localhost
   <<: *DEFAULTS
-  
+  #  
+
 test:
-  domain: localhost
   <<: *DEFAULTS
- 
+  # 
+
 production:
-  domain: localhost
   <<: *DEFAULTS
+  #

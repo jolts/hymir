@@ -1,5 +1,11 @@
 module Hymir
-  Version = '0.0.1 (alpha)'
+  module VERSION
+    MAJOR = '0'
+    MINOR = '0'
+    TINY  = 'alpha'
+
+    STRING = [MAJOR, MINOR, TINY].join('.')
+  end
 
   def self.[](key)
     unless @config
