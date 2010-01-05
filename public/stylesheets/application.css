@@ -463,7 +463,7 @@ textarea:focus {
 .pagination em,
 .pagination span {
   padding: 0.25em 0.5em;
-  border: 1px solid #2c2c2a;
+  border: 1px solid #66717a;
   font-style: normal;
   text-decoration: none;
 }
@@ -477,5 +477,5 @@ textarea:focus {
 }
 .pagination a:hover,
 .pagination a:focus {
-  border-color: #34a8a1;
+  border-color: #6887a0;
 }
