@@ -405,6 +405,7 @@ textarea:focus {
   color: #404f48;
 }
 #comments .comment .info span.destroy a {
+  float: right;
   color: #cc3333;
 }
 #comments .comment .body {
