@@ -90,19 +90,20 @@ textarea:focus {
 #nav ul li {
   text-shadow: 1px 1px 1px #000;
   margin-left: 10px;
-  color: #66717a;
+  color: #6887a0;
   display: inline;
   margin-bottom: 2px;
-  border-bottom: 2px solid #2c2c2a;
+  border-bottom: 2px solid #283743;
 }
 #nav ul li a {
+  color: #66717a;
   margin-bottom: 2px;
   border-bottom: 2px solid #10212e;
 }
 #nav ul li a:hover {
   color: #66717a;
   margin-bottom: 2px;
-  border-bottom: 2px solid #2c2c2a;
+  border-bottom: 2px solid #283743;
 }
 
 #wrapper {
