@@ -26,16 +26,8 @@ class PostsController < ApplicationController
 
   def archive
     @posts = Post.all(:order => 'created_at DESC').select do |p|
-      if params[:day]
-        p.created_at.day   == params[:day].to_i   &&
-        p.created_at.month == params[:month].to_i &&
-        p.created_at.year  == params[:year].to_i
-      elsif params[:month]
-        p.created_at.month == params[:month].to_i &&
-        p.created_at.year  == params[:year].to_i
-      else
-        p.created_at.year  == params[:year].to_i
-      end
+      p.created_at.month == params[:month].to_i &&
+      p.created_at.year  == params[:year].to_i
     end
 
     respond_to do |format|

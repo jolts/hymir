@@ -21,16 +21,6 @@ module PostsHelper
     "/archive/#{year}/#{month}"
   end
 
-  def archive_title(params)
-    date = params[:year]
-    if params[:day]
-      date += "/#{params[:month]}/#{params[:day]}"
-    elsif params[:month]
-      date += "/#{params[:month]}"
-    end
-    title "Posts from #{date}"
-  end
-
   def user_role(user)
     role = ''
     role = 'Author' if user.role?(:author)

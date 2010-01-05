@@ -22,26 +22,20 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :posts do |post|
     post.resources :comments, :only => [:create, :destroy]
   end
-
-  # Other post related routes
   map.with_options :controller => :posts,
                    :method => :get do |post|
-    # Find posts by slug
-    post.slug ':year/:month/:day/:slug', :action => :show
-
     # Tags
     post.tag  'tag/:tag', :action => :tag
 
     # Archives
-    post.archive_day 'archive/:year/:month/:day',
-      :action       => :archive,
-      :requirements => {:year => /\d{4}/, :month => /\d{2}/, :day => /\d{2}/}
+    # FIXME: GET /archive/2010/01/01 matches post.slug route! Should return not
+    # found instead.
     post.archive_month 'archive/:year/:month',
       :action       => :archive,
       :requirements => {:year => /\d{4}/, :month => /\d{2}/}
-    post.archive_year 'archive/:year',
-      :action       => :archive,
-      :requirements => {:year => /\d{4}/}
+
+    # Find posts by slug
+    post.slug ':year/:month/:day/:slug', :action => :show
   end
 
   # Index page
