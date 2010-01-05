@@ -107,7 +107,7 @@ textarea:focus {
 
 #wrapper {
   background: url(/images/glow_top.png) no-repeat top left;
-  border-top: 1px solid #2c2c2a;
+  border-top: 1px solid #283743;
   border-bottom: 1px solid black;
   padding: 20px;
   width: 820px;
@@ -146,7 +146,7 @@ textarea:focus {
 
 #footer {
   text-shadow: 1px 1px 1px #000;
-  border-top: 1px solid #2c2c2a;
+  border-top: 1px solid #283743;
   color: #f1f1f1;
   padding-top: 20px;
   margin-bottom: 50px;
@@ -167,9 +167,9 @@ textarea:focus {
   -webkit-border-radius-bottomleft: 8px;
   padding: 5px 0;
   margin: -20px 0 20px;
-  border-left: 1px solid #2c2c2a;
-  border-bottom: 1px solid #2c2c2a;
-  border-right: 1px solid #2c2c2a;
+  border-left: 1px solid #283743;
+  border-bottom: 1px solid #283743;
+  border-right: 1px solid #283743;
   text-align: center;
 }
 #flash_notice:before {
@@ -215,7 +215,7 @@ textarea:focus {
   color: #404f48;
 }
 #single .content .body {
-  border-top: 1px solid #2c2c2a;
+  border-top: 1px solid #283743;
   border-bottom: 1px solid #000;
   padding: 5px 0;
 }
@@ -332,13 +332,13 @@ textarea:focus {
   padding: 10px 0 10px 5px;
   margin-left: -5px;
   border-bottom: 1px solid #000;
-  border-top: 1px solid #2c2c2a;
+  border-top: 1px solid #283743;
   display: block;
   position: relative;
   overflow: hidden;
 }
 #posts_list .post:hover {
-  background: #272725;
+  background: #283743;
 }
 #posts_list .post.single {
   border: none;
@@ -370,7 +370,7 @@ textarea:focus {
 }
 
 #comments {
-  border-top: 1px solid #2c2c2a;
+  border-top: 1px solid #283743;
 }
 #comments h2 {
   margin: 20px 0;
@@ -387,7 +387,7 @@ textarea:focus {
   -webkit-border-radius-topleft: 8px;
   -moz-border-radius-bottomright: 8px;
   -webkit-border-radius-bottomright: 8px;
-  background: #272725;
+  background: #283743;
   margin: 0 -10px 20px;
   padding: 5px 10px;
 }
@@ -398,7 +398,7 @@ textarea:focus {
 }
 #comments .comment .info p {
   margin: 0;
-  color: #404f48;
+  color: #66717a;
 }
 #comments .comment .info span.destroy a {
   float: right;
@@ -437,7 +437,7 @@ textarea:focus {
 #users .user dt {
   text-shadow: 1px 1px 1px #000;
   float: left;
-  color: #3d3c39;
+  color: #66717a;
   width: 14%;
 }
 #users .user dd {
