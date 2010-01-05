@@ -344,6 +344,11 @@ textarea:focus {
 #posts_list .post:hover {
   background: #272725;
 }
+#posts_list .post.single {
+  border: none;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+}
 #posts_list .post.first {
   border-top: none;
   -moz-border-radius-topright: 8px;

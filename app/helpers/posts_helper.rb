@@ -32,6 +32,7 @@ module PostsHelper
   end
 
   def user_role(user)
+    role = ''
     role = 'Author' if user.role?(:author)
     role = 'Moderator' if user.role?(:moderator)
     role = 'Admin' if user.role?(:admin)
@@ -39,8 +40,13 @@ module PostsHelper
   end
 
   def first_or_last_post(post)
-    cls = ' first' if post == @posts.first
-    cls = ' last'  if post == @posts.last
+    cls = ''
+    if @posts.first == @posts.last
+      cls = ' single'
+    else
+      cls = ' first' if post == @posts.first
+      cls = ' last'  if post == @posts.last
+    end
     cls
   end
 end
