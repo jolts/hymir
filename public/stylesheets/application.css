@@ -271,7 +271,6 @@ textarea:focus {
   clear: right;
   color: #10212e;
   background: #66717a;
-  font-weight: bold;
 }
 #posts .post .content .head {
   -moz-border-radius-topright: 8px;
