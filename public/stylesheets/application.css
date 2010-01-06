@@ -229,6 +229,7 @@ textarea:focus {
 #single .content .body ul,
 #single .content .body ol {
   margin: 5px 0;
+  text-shadow: none;
 }
 
 #posts .post {
@@ -315,6 +316,7 @@ textarea:focus {
 #posts .post .content .body ul,
 #posts .post .content .body ol {
   margin: 5px;
+  text-shadow: none;
 }
 #posts .post .content .meta {
   -moz-border-radius-bottomright: 8px;
@@ -440,6 +442,7 @@ textarea:focus {
 #comments .comment .body ul,
 #comments .comment .body ol {
   margin: 0 0 5px;
+  text-shadow: none;
 }
 
 #newcomment {
