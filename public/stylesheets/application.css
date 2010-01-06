@@ -418,6 +418,12 @@ textarea:focus {
   text-shadow: 1px 1px 1px #000;
   color: #cc3333;
 }
+#comments .comment .info img.gravatar {
+  float: left;
+  padding: 2px;
+  border: 1px solid #66717a;
+  margin: 3px 5px 0 0;
+}
 #comments .comment .body {
   padding: 5px 0;
   float: right;

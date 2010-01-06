@@ -25,6 +25,7 @@
       - @post.comments.sort_by {|c| c.created_at}.each do |comment|
         %li{:class => "comment#{comment.has_user ? ' has_user' : nil}"}
           .info
+            %img.gravatar{:src => comment.gravatar(21), :height => '21', :width => '21'}/
             %strong.username= link_to_unless comment.url.blank?, h(comment.name), comment.url
             - if can? :destroy, comment
               %span.destroy= link_to '✘', post_comment_path(@post, comment), :method => :delete, :confirm => 'Are you sure?', :rel => 'tipsy', :title => 'Destroy'
