@@ -5,7 +5,7 @@ class User
   key :username, String, :required => true, :unique => true
   key :email, String, :required => true, :unique => true
   key :crypted_password, String
-  key :roles_mask, Integer
+  key :roles_mask, Integer, :numeric => true
   # 4: Author
   # 2: Moderator
   # 1: Admin
