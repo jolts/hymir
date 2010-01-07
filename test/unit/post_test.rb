@@ -9,11 +9,14 @@ class PostTest < ActiveSupport::TestCase
     should 'not save without the required fields' do
       assert !@post.save
     end
+  end
+
+  context 'A post with data' do
+    setup do
+      @post = Factory(:post)
+    end
 
     should 'create a slug' do
-      @post.title = 'foo bar baz'
-      @post.body = 'bar'
-      @post.save!
       assert_equal 'foo-bar-baz', @post.slug
     end
   end
