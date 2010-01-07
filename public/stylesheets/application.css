@@ -176,14 +176,6 @@ textarea:focus {
   border-right: 1px solid #283743;
   text-align: center;
 }
-/*#flash_notice:before {
-  content: '✔ ';
-  color: #6887a0;
-}
-#flash_error:before {
-  content: '✘ ';
-  color: #cc3333;
-}*/
 #flash_notice span.notice {
   background: url(/images/information.png) no-repeat;
   padding-left: 20px;
