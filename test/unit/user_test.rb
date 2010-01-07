@@ -24,19 +24,21 @@ class UserTest < ActiveSupport::TestCase
       @user.password = 'abcdef'
       @user.password_confirmation = 'abcdef'
       @user.roles = ['admin']
-      @user.save!
     end
 
     should 'work with username/email and password' do
+      @user.save!
       assert_equal @user, User.authenticate(@user.username, 'abcdef')
       assert_equal @user, User.authenticate(@user.email, 'abcdef')
     end
 
     should 'not work with incorrect password' do
+      @user.save!
       assert_nil User.authenticate(@user.username, 'foo')
     end
 
     should 'not work with incorrect username or email' do
+      @user.save!
       assert_not_equal @user, User.authenticate('foo', 'abcdef')
       assert_not_equal @user, User.authenticate('foo@bar.com', 'abcdef')
     end
