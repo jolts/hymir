@@ -27,11 +27,14 @@
             %h2= h yield(:title)
           = yield
         #sidebar
+          - form_tag root_path, :method => :get do
+            = text_field_tag :q, params[:q], :class => 'search', :placeholder => 'Search posts...'
+            = submit_tag 'Search', :name => nil, :style => 'display: none;'
           %h2
             - if signed_in?
               Welcome, #{h current_user.username}
             - else
-              Doom
+              Controls
           %p
             - if signed_in?
               - if can? :create, Post

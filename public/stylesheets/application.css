@@ -503,3 +503,8 @@ textarea:focus {
 .pagination a:focus {
   border-color: #6887a0;
 }
+
+.search {
+  margin-bottom: 20px;
+  width: 125px;
+}

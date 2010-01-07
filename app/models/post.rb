@@ -19,6 +19,14 @@ class Post
   validates_length_of :title, :within => 4..40
   validates_format_of :named_tags, :with => RegTagsOk
 
+  def self.search(search, page)
+    if search
+      paginate(:per_page => 3, :page => page, :title => /#{search}/i, :order => 'created_at DESC')
+    else
+      paginate(:per_page => 3, :page => page, :order => 'created_at DESC')
+    end
+  end
+
   def named_tags=(given_tags)
     write_attribute(:tags, given_tags.split(/;\s*/).map {|t| t.downcase})
   end

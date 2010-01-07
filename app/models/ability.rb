@@ -3,7 +3,7 @@ class Ability
 
   def initialize(user)
     can :create, Comment
-    can :read, :all
+    can [:read, :archive, :tag], :all
     cannot :read, User
     if user
       if user.role?(:author)
