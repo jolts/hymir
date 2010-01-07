@@ -33,13 +33,17 @@ h1, h2, h3, h4, h5, h6 {
   margin: 10px 0;
 }
 h1 {
-  font-size: 16px;
+  font-size: 18px;
 }
 h2 {
-  font-size: 15px;
+  font-size: 16px;
 }
 h3, h4, h5, h6 {
   font-size: 14px;
+}
+
+img {
+  border: 0 none;
 }
 
 input[type=text],
@@ -53,7 +57,7 @@ textarea {
 input[type=text]:focus,
 input[type=password]:focus,
 textarea:focus { 
-  border: 1px solid #34a8a1;
+  border: 1px solid #6887a0;
 }
 
 #container {
@@ -450,7 +454,7 @@ textarea:focus {
 }
 
 #users .user {
-  margin: 20px 0;
+  margin: 20px 0 30px;
 }
 #users .user dl {
   margin-bottom: 3px;
@@ -504,7 +508,24 @@ textarea:focus {
   border-color: #6887a0;
 }
 
-.search {
+#searchfield {
   margin-bottom: 20px;
-  width: 125px;
+  display: inline;
+  color: #10212e;
+  background: #66717a;
+  width: 80px;
+  border: 1px solid #000;
+}
+#searchsubmit {
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  color: #10212e;
+  background: #66717a;
+  padding: 1px;
+  border: 1px solid #000;
+  cursor: pointer;
+}
+#searchfield:focus,
+#searchsubmit:focus {
+  border: 1px solid #252527;
 }

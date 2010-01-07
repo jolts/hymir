@@ -6,9 +6,9 @@
       %h2.title= h @post.title
       %span.actions
         - if can? :update, @post
-          %span.edit= link_to 'E', edit_post_path(@post), :rel => 'tipsy', :title => 'Edit'
+          %span.edit= link_to image_tag('/images/add.png'), edit_post_path(@post), :rel => 'tipsy', :title => 'Edit'
         - if can? :destroy, @post
-          %span.destroy= link_to '✘', @post, :method => :delete, :confirm => 'Are you sure?', :rel => 'tipsy', :title => 'Destroy'
+          %span.destroy= link_to image_tag('/images/delete.png'), @post, :method => :delete, :confirm => 'Are you sure?', :rel => 'tipsy', :title => 'Destroy'
       %p.meta
         By
         %strong= h @post.user.username
@@ -28,7 +28,7 @@
             %img.gravatar{:src => comment.gravatar(21), :height => '21', :width => '21'}/
             %strong.username= link_to_unless comment.url.blank?, h(comment.name), comment.url
             - if can? :destroy, comment
-              %span.destroy= link_to '✘', post_comment_path(@post, comment), :method => :delete, :confirm => 'Are you sure?', :rel => 'tipsy', :title => 'Destroy'
+              %span.destroy= link_to image_tag('/images/delete.png'), post_comment_path(@post, comment), :method => :delete, :confirm => 'Are you sure?', :rel => 'tipsy', :title => 'Destroy'
             %p.meta #{time_ago_in_words comment.created_at} ago
           .body
             = markdown comment.body
