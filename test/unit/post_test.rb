@@ -13,7 +13,7 @@ class PostTest < ActiveSupport::TestCase
     should 'create a slug' do
       @post.title = 'foo bar baz'
       @post.body = 'bar'
-      @post.save
+      @post.save!
       assert_equal 'foo-bar-baz', @post.slug
     end
   end

@@ -23,7 +23,8 @@ class UserTest < ActiveSupport::TestCase
       @user.email = 'john@doe.com'
       @user.password = 'abcdef'
       @user.password_confirmation = 'abcdef'
-      @user.save
+      @user.roles = ['admin']
+      @user.save!
     end
 
     should 'work with username/email and password' do
