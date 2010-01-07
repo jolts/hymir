@@ -7,7 +7,7 @@ class UserTest < ActiveSupport::TestCase
     end
 
     should 'not save without the required fields' do
-      assert !@user.save
+      assert_equal false, @user.valid?
     end
 
     should 'store email as lowercase' do
