@@ -21,7 +21,7 @@
             %li= link_to_unless_current 'Services', services_path
       #wrapper
         - flash.each do |name, msg|
-          = content_tag :div, msg, :id => "flash_#{name}"
+          = content_tag :div, (content_tag :span, msg, :class => name), :id => "flash_#{name}"
         #content
           - if show_title?
             %h2= h yield(:title)
