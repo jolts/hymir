@@ -20,8 +20,9 @@ class PostTest < ActiveSupport::TestCase
       assert_equal 'foo-bar-baz', @post.slug
     end
 
-    should 'store tags in an array' do
+    should 'store tags in an array and string' do
       assert_equal ['foo', 'bar', 'baz'], @post.tags
+      assert_equal 'foo; bar; baz', @post.named_tags
     end
   end
 end

@@ -21,7 +21,7 @@ class UserTest < ActiveSupport::TestCase
       @user = Factory(:user)
     end
 
-    should 'work with username/email and password' do
+    should 'work with correct username/email and password' do
       assert_equal @user, User.authenticate(@user.username, 'abcdef')
       assert_equal @user, User.authenticate(@user.email, 'abcdef')
     end
