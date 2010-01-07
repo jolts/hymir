@@ -1,7 +1,7 @@
 !!! 5
 %html{html_attrs}
   %head
-    %title= h(yield(:title) || 'Hymir')
+    %title= h(yield(:title) || Hymir[:title])
     = auto_discovery_link_tag :atom, "#{posts_path}.atom", :title => 'Posts feed'
     = stylesheet_link_tag 'application', 'tipsy', :cache => 'application'
     = stylesheet_link_tag 'formtastic', 'formtastic_changes', :cache => 'formtastic'
@@ -12,7 +12,7 @@
   %body
     #container
       #header
-        %h1= link_to 'Hymir', root_path
+        %h1= link_to Hymir[:title], root_path
         #nav
           %ul
             %li= link_to_unless_current 'Home', root_path
@@ -56,4 +56,4 @@
               %br/
       #footer
         %p &copy; 2010 #{link_to 'The Hymir Team', 'mailto://#'}. All rights reserved.
-        %p Powered by #{link_to 'Hymir', 'http://github.com/gigamo/hymir', :title => "Version: #{Hymir::VERSION::STRING}"}.
+        %p Powered by #{link_to 'Hymir', 'http://github.com/gigamo/hymir', :rel => 'tipsy', :title => "Version: #{Hymir::VERSION::STRING}"}.
