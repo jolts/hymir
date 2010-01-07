@@ -19,5 +19,9 @@ class PostTest < ActiveSupport::TestCase
     should 'create a slug' do
       assert_equal 'foo-bar-baz', @post.slug
     end
+
+    should 'store tags in an array' do
+      assert_equal ['foo', 'bar', 'baz'], @post.tags
+    end
   end
 end
