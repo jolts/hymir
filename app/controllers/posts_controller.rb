@@ -64,7 +64,8 @@ class PostsController < ApplicationController
             @post.created_at.year,
             @post.created_at.month,
             @post.created_at.day,
-            @post.slug
+            @post.slug,
+            'html'
           ))
         end
       else
@@ -88,7 +89,8 @@ class PostsController < ApplicationController
             @post.created_at.year,
             @post.created_at.month,
             @post.created_at.day,
-            @post.slug
+            @post.slug,
+            'html'
           ))
         end
       else

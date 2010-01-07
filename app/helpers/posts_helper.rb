@@ -11,7 +11,8 @@ module PostsHelper
       year,
       month,
       day,
-      post.slug
+      post.slug,
+      'html'
     )
   end
 

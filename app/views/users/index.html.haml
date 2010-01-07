@@ -20,4 +20,4 @@
             %dd= user.roles.map {|role| role.capitalize}.join(', ')
         %dl
           %dt Age
-          %dd= time_ago_in_words(user.created_at)
+          %dd= time_ago_in_words user.created_at

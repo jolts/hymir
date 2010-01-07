@@ -35,7 +35,7 @@ ActionController::Routing::Routes.draw do |map|
       :requirements => {:year => /\d{4}/, :month => /\d{2}/}
 
     # Find posts by slug
-    post.slug ':year/:month/:day/:slug', :action => :show
+    post.slug ':year/:month/:day/:slug.:format', :action => :show
   end
 
   # Index page
