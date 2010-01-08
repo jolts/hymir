@@ -21,7 +21,8 @@ class Post
 
   def self.search(search, page)
     if search
-      paginate(:per_page => 3, :page => page, :title => /#{search}/i, :order => 'created_at DESC')
+      paginate(:per_page => 3, :page => page, :order => 'created_at DESC',
+              '$where' => "this.title.match(/#{search}/i) || this.body.match(/#{search}/i)")
     else
       paginate(:per_page => 3, :page => page, :order => 'created_at DESC')
     end
