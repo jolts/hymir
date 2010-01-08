@@ -11,6 +11,7 @@
 
   %body
     #container
+      = link_to '&rarr; Log out', logout_path, :method => :delete, :id => 'logout'
       #header
         %h1= link_to Hymir::Config[:title], root_path
         #nav
@@ -47,7 +48,5 @@
                 %br/
                 = link_to 'All users', users_path
                 %br/
-              = link_to '&rarr; Log out', logout_path, :method => :delete
-              %br/
       #footer
         %p Powered by #{link_to 'Hymir', 'http://github.com/gigamo/hymir', :rel => 'tipsy', :title => "Version: #{Hymir::Version::STRING}"}.

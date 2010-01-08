@@ -43,8 +43,4 @@ ActionController::Routing::Routes.draw do |map|
 
   # Index page
   map.root :controller => :posts, :action => :index, :method => :get
-
-  # Default routes as lowest priority
-  map.connect ':controller/:action/:id.:format'
-  map.connect ':controller/:action/:id'
 end
