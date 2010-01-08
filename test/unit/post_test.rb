@@ -24,9 +24,41 @@ class PostTest < ActiveSupport::TestCase
       assert_equal 'foo-bar-baz', @post.slug
     end
 
-    should 'store tags in an array and string' do
+    should 'store tags in an array' do
       assert_equal ['foo', 'bar', 'baz'], @post.tags
-      assert_equal 'foo; bar; baz', @post.named_tags
+    end
+
+    should 'turn up in search results' do
+      assert_equal @post, Post.search('Foo', 1).first
+    end
+
+    should 'have an empty embedded document for comments' do
+      assert_equal [], @post.comments
+    end
+
+    should 'store comments' do
+      comment = Comment.new
+      @post.comments << comment
+      assert_equal [comment], @post.comments
+    end
+
+    should 'save valid comments' do
+      comment = Comment.new(:name => 'John Doe', :email => 'john@doe.com', :body => 'Hello')
+      @post.comments << comment
+      assert_equal true, @post.valid?
+    end
+
+    should 'not save invalid comments' do
+      comment = Comment.new
+      @post.comments << comment
+      assert_equal false, @post.valid?
+    end
+
+    should 'be able to delete specific comments' do
+      comment = Comment.new(:name => 'John Doe')
+      @post.comments << comment
+      @post.comments.delete_if {|comment| comment.name == 'John Doe'}
+      assert_equal [], @post.comments
     end
   end
 end
