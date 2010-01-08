@@ -9,7 +9,7 @@ module Hymir
 
   def self.[](key)
     unless @config
-      raw_config = File.read(RAILS_ROOT + "/config/hymir.yml")
+      raw_config = File.read(File.join(RAILS_ROOT, 'config/hymir.yml'))
       @config = YAML.load(raw_config)[RAILS_ENV].symbolize_keys
     end
     @config[key]

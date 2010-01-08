@@ -13,7 +13,7 @@ ActionController::Routing::Routes.draw do |map|
     session.login 'login', :action => :new, :method => :get
     session.logout 'logout', :action => :destroy, :method => :delete
   end
-  map.resource  :user_sessions, :only => [:create]
+  map.resource :user_sessions, :only => [:create]
 
   # Users
   map.resources :users, :except => [:show, :edit, :update]
