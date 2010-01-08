@@ -30,29 +30,24 @@
           - form_tag search_path, :method => :get do
             = text_field_tag :q, params[:q], :id => 'searchfield'
             = submit_tag 'Search', :name => nil, :id => 'searchsubmit'
-          %h2
-            - if signed_in?
-              Welcome, #{h current_user.username}
-            - else
-              Controls
-          %p
-            - if signed_in?
-              - if can? :create, Post
-                = link_to 'Create post', new_post_path
-                %br/
-              - if can? :manage, User
-                = link_to 'Create user', new_user_path
-                %br/
-                = link_to 'All users', users_path
-                %br/
-              = link_to 'Log out', logout_path, :method => :delete
-              %br/
-            - else
-              = link_to 'Log in', login_path
           %h2 Archive
           %p
             - Post.all(:order => 'created_at DESC').group_by(&:month).each do |month, posts|
               = link_to "#{month} (#{posts.count})", archive_url(posts)
+              %br/
+          - if signed_in?
+            %h2 Welcome, #{h current_user.username}
+          %p
+            - if signed_in?
+              - if can? :create, Post
+                = link_to 'New post', new_post_path
+                %br/
+              - if can? :manage, User
+                = link_to 'New user', new_user_path
+                %br/
+                = link_to 'All users', users_path
+                %br/
+              = link_to '&rarr; Log out', logout_path, :method => :delete
               %br/
       #footer
         %p Powered by #{link_to 'Hymir', 'http://github.com/gigamo/hymir', :rel => 'tipsy', :title => "Version: #{Hymir::Version::STRING}"}.
