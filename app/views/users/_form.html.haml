@@ -7,7 +7,7 @@
     = f.input :password, :as => :password, :required => true, :hint => 'Length is required to be at least 6 characters.'
     = f.input :password_confirmation, :label => 'Password (again)', :as => :password, :required => true
     %li#user_roles_input.required
-      = label_tag :user_roles, 'Roles'
+      = label_tag :user_roles, 'Roles<abbr title="required">*</abbr>'
       - User::Roles.each do |role|
         = check_box_tag 'user[roles][]', role, @user.roles.include?(role)
         = h(role.humanize)
