@@ -16,6 +16,37 @@ class UserTest < ActiveSupport::TestCase
     end
   end
 
+  context 'A user with data' do
+    setup do
+      @user = Factory(:user)
+    end
+
+    should 'have posts' do
+      assert_equal [], @user.posts
+    end
+
+    should 'have specific role masks' do
+      assert_equal 1, @user.roles_mask
+      @user.roles = ['moderator']
+      assert_equal 2, @user.roles_mask
+      @user.roles = ['moderator', 'admin']
+      assert_equal 3, @user.roles_mask
+      @user.roles = ['author']
+      assert_equal 4, @user.roles_mask
+      @user.roles = ['author', 'admin']
+      assert_equal 5, @user.roles_mask
+      @user.roles = ['author', 'moderator']
+      assert_equal 6, @user.roles_mask
+      @user.roles = ['author', 'moderator', 'admin']
+      assert_equal 7, @user.roles_mask
+    end
+
+    should 'encrypt its password' do
+      password = BCrypt::Password.new(@user.crypted_password)
+      assert_equal password, @user.password
+    end
+  end
+
   context 'Authentication' do
     setup do
       @user = Factory(:user)

@@ -1,4 +1,3 @@
-require 'digest/sha1'
 class User
   include MongoMapper::Document
 
