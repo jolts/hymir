@@ -28,10 +28,6 @@ class PostTest < ActiveSupport::TestCase
       assert_equal ['foo', 'bar', 'baz'], @post.tags
     end
 
-    should 'turn up in search results' do
-      assert_equal @post, Post.search('Foo', 1).first
-    end
-
     should 'have an empty embedded document for comments' do
       assert_equal [], @post.comments
     end
