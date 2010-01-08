@@ -25,6 +25,7 @@ form.formtastic fieldset ol li textarea {
   padding: 2px;
 }
 form.formtastic fieldset ol li label {
+  font-weight: bold;
   color: #66717a;
   text-shadow: 1px 1px 1px #000;
 }

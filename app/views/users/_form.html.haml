@@ -5,7 +5,7 @@
     = f.input :username, :required => true, :hint => 'Length is required to be within 2 to 32 characters.'
     = f.input :email, :label => 'E-mail', :required => true, :hint => 'Length is required to be within 6 to 100 characters.'
     = f.input :password, :as => :password, :required => true, :hint => 'Length is required to be at least 6 characters.'
-    = f.input :password_confirmation, :as => :password, :required => true
+    = f.input :password_confirmation, :label => 'Password (again)', :as => :password, :required => true
     %li#user_roles_input.required
       = label_tag :user_roles, 'Roles'
       - User::Roles.each do |role|
