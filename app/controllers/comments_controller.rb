@@ -17,13 +17,15 @@ class CommentsController < ApplicationController
         flash[:notice] = 'Successfully created comment.'
       else
         flash[:error] = 'Error while creating comment.'
+        #@comment.errors.full_messages.uniq.map {|e| e.downcase}.join(', ')
       end
       format.html do
         redirect_to(slug_path(
           @post.created_at.year,
           @post.created_at.month,
           @post.created_at.day,
-          @post.slug
+          @post.slug,
+          'html'
         ))
       end
     end
@@ -35,8 +37,6 @@ class CommentsController < ApplicationController
         @post.comments.delete_if {|comment| comment.id.to_s == params[:id]}
         if @post.save
           flash[:notice] = 'Successfully destroyed comment.'
-        else
-          flash[:error] = 'Error while destroying comment.'
         end
       else
         flash[:error] = 'Access denied.'
@@ -46,7 +46,8 @@ class CommentsController < ApplicationController
           @post.created_at.year,
           @post.created_at.month,
           @post.created_at.day,
-          @post.slug
+          @post.slug,
+          'html'
         ))
       end
     end
