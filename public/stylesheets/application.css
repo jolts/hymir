@@ -529,3 +529,19 @@ textarea:focus {
 #searchsubmit:focus {
   border: 1px solid #252527;
 }
+
+#login form {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+#login form label {
+  font-weight: bold;
+  color: #66717a;
+  text-shadow: 1px 1px 1px #000;
+  float: left;
+  width: 150px;
+}
+#login form input[type=submit] {
+  margin-left: 149px;
+}

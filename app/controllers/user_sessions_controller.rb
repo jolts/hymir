@@ -14,8 +14,8 @@ class UserSessionsController < ApplicationController
         flash[:notice] = 'You were successfully logged in.'
         format.html { redirect_to root_path }
       else
-        flash[:error] = 'Login failed'
-        format.html { render :action => 'new' }
+        flash[:error] = "Username or e-mail and/or password didn't match. Please try again."
+        format.html { redirect_to login_path }
       end
     end
   end
