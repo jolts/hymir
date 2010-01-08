@@ -11,7 +11,8 @@
 
   %body
     #container
-      = link_to '&rarr; Log out', logout_path, :method => :delete, :id => 'logout'
+      - if signed_in?
+        = link_to '&rarr; Log out', logout_path, :method => :delete, :id => 'logout'
       #header
         %h1= link_to Hymir::Config[:title], root_path
         #nav
