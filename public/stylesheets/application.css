@@ -32,8 +32,8 @@ textarea:focus          {border:1px solid #6887a0;}
 #nav                    {margin-top:25px;float:right;font-size:16px;}
 #nav ul                 {list-style:none;}
 #nav ul li              {text-shadow:1px 1px 1px #000;margin-left:10px;color:#6887a0;display:inline;margin-bottom:2px;border-bottom:2px solid #283743;}
-#nav ul li a            {color:#66717a;margin-bottom:2px;border-bottom:2px solid #10212e;}
-#nav ul li a:hover      {color:#66717a;margin-bottom:2px;border-bottom:2px solid #283743;}
+#nav ul li a            {color:#88939c;margin-bottom:2px;border-bottom:2px solid #10212e;}
+#nav ul li a:hover      {color:#88939c;margin-bottom:2px;border-bottom:2px solid #283743;}
 
 #wrapper                {background:url(/images/glow_top.png) no-repeat top left;border-top:1px solid #283743;border-bottom:1px solid black;padding:20px;width:820px;margin:0 auto;min-height:635px;overflow:hidden;position:relative;}
 
@@ -41,7 +41,7 @@ textarea:focus          {border:1px solid #6887a0;}
 #content a:hover        {text-decoration:underline;}
 
 #sidebar                {float:right;clear:right;width:170px;}
-#sidebar h2             {font-size:16px;color:#66717a;margin-top:0;}
+#sidebar h2             {font-size:16px;color:#88939c;margin-top:0;}
 #sidebar p              {line-height:normal;}
 #sidebar ul             {list-style:none;margin-bottom:10px;}
 
@@ -72,14 +72,14 @@ textarea:focus          {border:1px solid #6887a0;}
 #single .content .body ol           {margin:5px 0;text-shadow:none;}
 
 #posts .post                            {margin-bottom:40px;display:block;position:relative;overflow:hidden;}
-#posts .post .date                      {-moz-border-radius-topleft:8px;-webkit-border-radius-topleft:8px;-moz-border-radius-bottomleft:8px;-webkit-border-radius-bottomleft:8px;padding:0 -10px;text-shadow:1px 1px 1px #000;color:#66717a;float:left;font-size:11px;font-weight:bold;height:32px;padding-top:3px;border:1px solid #66717a;text-align:center;text-transform:uppercase;width:10%;}
+#posts .post .date                      {-moz-border-radius-topleft:8px;-webkit-border-radius-topleft:8px;-moz-border-radius-bottomleft:8px;-webkit-border-radius-bottomleft:8px;padding:0 -10px;text-shadow:1px 1px 1px #000;color:#88939c;float:left;font-size:11px;font-weight:bold;height:32px;padding-top:3px;border:1px solid #88939c;text-align:center;text-transform:uppercase;width:10%;}
 #posts .post .date b                    {margin:-2px 0 0;display:block;font-size:16px;}
-#posts .post .content                   {-moz-border-radius-topright:8px;-webkit-border-radius-topright:8px;-moz-border-radius-bottomright:8px;-webkit-border-radius-bottomright:8px;width:89%;float:right;clear:right;color:#10212e;background:#66717a;}
+#posts .post .content                   {-moz-border-radius-topright:8px;-webkit-border-radius-topright:8px;-moz-border-radius-bottomright:8px;-webkit-border-radius-bottomright:8px;width:89%;float:right;clear:right;color:#10212e;background:#88939c;}
 #posts .post .content .head             {-moz-border-radius-topright:8px;-webkit-border-radius-topright:8px;margin:1px;padding:7px;position:relative;overflow:hidden;background:#10212e;}
 #posts .post .content .head h2.title    {float:left;font-size:18px;margin:0;}
 #posts .post .content .head h2.title a  {color:#cdcdcd;}
 #posts .post .content .head h2.title a:hover {text-decoration:none;}
-#posts .post .content .head span.username {float:right;clear:right;padding-top:2px;font-size:13px;color:#66717a;}
+#posts .post .content .head span.username {float:right;clear:right;padding-top:2px;font-size:13px;color:#88939c;}
 #posts .post .content .body             {padding:5px 10px;}
 #posts .post .content .body a           {color:#000;font-weight:bold;}
 #posts .post .content .body h1,
@@ -91,11 +91,11 @@ textarea:focus          {border:1px solid #6887a0;}
 #posts .post .content .body p,
 #posts .post .content .body ul,
 #posts .post .content .body ol          {margin:5px;text-shadow:none;}
-#posts .post .content .meta             {-moz-border-radius-bottomright:8px;-webkit-border-radius-bottomright:8px;background:#10212e;margin:1px;padding:3px 7px;font-size:12px;color:#66717a;position:relative;overflow:hidden;}
+#posts .post .content .meta             {-moz-border-radius-bottomright:8px;-webkit-border-radius-bottomright:8px;background:#10212e;margin:1px;padding:3px 7px;font-size:12px;color:#88939c;position:relative;overflow:hidden;}
 #posts .post .content .meta span.tags   {float:left;}
 #posts .post .content .meta span.comments {float:right;clear:right;}
 
-#posts_list .post                       {color:#66717a;padding:10px 0 10px 5px;margin-left:-5px;border-bottom:1px solid #000;border-top:1px solid #283743;display:block;position:relative;overflow:hidden;}
+#posts_list .post                       {color:#88939c;padding:10px 0 10px 5px;margin-left:-5px;border-bottom:1px solid #000;border-top:1px solid #283743;display:block;position:relative;overflow:hidden;}
 #posts_list .post a       {text-shadow:1px 1px 1px #000;}
 #posts_list .post:hover   {background:#283743;}
 #posts_list .post.single  {border:none;-moz-border-radius:8px;-webkit-border-radius:8px;}
@@ -110,9 +110,9 @@ textarea:focus          {border:1px solid #6887a0;}
 #comments .comment.has_user             {-moz-border-radius-topleft:8px;-webkit-border-radius-topleft:8px;-moz-border-radius-bottomright:8px;-webkit-border-radius-bottomright:8px;background:#283743;margin:0 -10px 20px;padding:5px 10px;}
 #comments .comment .info                {float:left;width:23%;padding:5px 0;}
 #comments .comment .info .username      {text-shadow:1px 1px 1px #000;}
-#comments .comment .info p              {margin:0;color:#66717a;}
+#comments .comment .info p              {margin:0;color:#88939c;}
 #comments .comment .info span.destroy a {float:right;text-shadow:1px 1px 1px #000;color:#cc3333;}
-#comments .comment .info img.gravatar   {float:left;padding:2px;border:1px solid #66717a;margin:3px 5px 0 0;}
+#comments .comment .info img.gravatar   {float:left;padding:2px;border:1px solid #88939c;margin:3px 5px 0 0;}
 #comments .comment .body                {padding:5px 0;float:right;clear:right;width:75%;}
 #comments .comment .body h1,
 #comments .comment .body h2,
@@ -128,7 +128,7 @@ textarea:focus          {border:1px solid #6887a0;}
 
 #users .user                {margin:20px 0 30px;}
 #users .user dl             {margin-bottom:3px;display:block;position:relative;overflow:hidden;}
-#users .user dt             {text-shadow:1px 1px 1px #000;float:left;color:#66717a;width:14%;}
+#users .user dt             {text-shadow:1px 1px 1px #000;float:left;color:#88939c;width:14%;}
 #users .user dd             {float:right;clear:right;width:85%;}
 #users .user dd.name        {font-weight:bold;}
 #users .user span.destroy a {color:#cc3333;text-shadow:1px 1px 1px #000;float:right;}
@@ -136,20 +136,20 @@ textarea:focus          {border:1px solid #6887a0;}
 .pagination               {position:absolute;bottom:25px;margin-left:66px;}
 .pagination a,
 .pagination em,
-.pagination span          {padding:0.25em 0.5em;border:1px solid #66717a;font-style:normal;text-decoration:none;}
+.pagination span          {padding:0.25em 0.5em;border:1px solid #88939c;font-style:normal;text-decoration:none;}
 .pagination span.disabled,
-.pagination em            {color:#66717a;}
+.pagination em            {color:#88939c;}
 .pagination span.current  {font-weight:bold;background:#151311;}
 .pagination a:hover,
 .pagination a:focus       {border-color:#6887a0;}
 
-#searchfield            {margin-bottom:20px;display:inline;color:#10212e;background:#66717a;width:80px;border:1px solid #000;}
-#searchsubmit           {-moz-border-radius:2px;-webkit-border-radius:2px;color:#10212e;background:#66717a;padding:1px;border:1px solid #000;cursor:pointer;}
+#searchfield            {margin-bottom:20px;display:inline;color:#10212e;background:#88939c;width:80px;border:1px solid #000;}
+#searchsubmit           {-moz-border-radius:2px;-webkit-border-radius:2px;color:#10212e;background:#88939c;padding:1px;border:1px solid #000;cursor:pointer;}
 #searchfield:focus,
 #searchsubmit:focus     {border:1px solid #252527;}
 
 #logout                 {position:absolute;top:0;right:5px;}
 
 #login form                     {display:block;position:relative;overflow:hidden;}
-#login form label               {font-weight:bold;color:#66717a;text-shadow:1px 1px 1px #000;float:left;width:150px;}
+#login form label               {font-weight:bold;color:#88939c;text-shadow:1px 1px 1px #000;float:left;width:150px;}
 #login form input[type=submit]  {margin-left:149px;}
