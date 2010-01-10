@@ -32,8 +32,9 @@ ActionController::Routing::Routes.draw do |map|
 
     # Archives
     post.monthly 'archive/:year/:month',
-      :action       => :archive,
-      :requirements => {:year => /\d{4}/, :month => /\d{2}/}
+      :action => :archive,
+      :year   => /\d{4}/,
+      :month => /\d{2}/
 
     # Search
     post.search 'search', :action => :search
