@@ -12,7 +12,9 @@
   %body
     #container
       - if signed_in?
-        = link_to '&rarr; Log out', logout_path, :method => :delete, :id => 'logout'
+        = link_to '&rarr; Log out', logout_path, :method => :delete, :id => 'session'
+      - else
+        = link_to '&rarr; Log in', login_path, :id => 'session'
       #header
         %h1= link_to Hymir::Config[:title], root_path
         #nav
@@ -34,7 +36,7 @@
             = submit_tag 'Search', :name => nil, :id => 'searchsubmit'
           %h2 Archive
           %p
-            - Post.all(:order => 'created_at DESC').group_by(&:month).each do |month, posts|
+            - Post.all(:order => 'created_at DESC', :conditions => published?).group_by(&:month).each do |month, posts|
               #{link_to "#{month}", archive_path(posts)} (#{posts.count})
               %br/
           - if signed_in?

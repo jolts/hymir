@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @posts = Post.paginate(:per_page => 3, :page => params[:page], :order => 'created_at DESC')
+    @posts = Post.paginate(:per_page => 3, :page => params[:page], :order => 'created_at DESC', :conditions => published?)
 
     respond_to do |format|
       format.html
@@ -16,7 +16,8 @@ class PostsController < ApplicationController
   def search
     if params[:q] && !params[:q].empty?
       @posts = Post.all(:order => 'created_at DESC',
-                        '$where' => "this.title.match(/#{params[:q]}/i) || this.body.match(/#{params[:q]}/i)")
+                        '$where' => "this.title.match(/#{params[:q]}/i) || this.body.match(/#{params[:q]}/i)",
+                       :conditions => published?)
     end
     @posts ||= []
 
@@ -27,7 +28,7 @@ class PostsController < ApplicationController
   end
 
   def tag
-    @posts = Post.all(:order => 'created_at DESC', :tags => params[:tag])
+    @posts = Post.all(:order => 'created_at DESC', :tags => params[:tag], :conditions => published?)
 
     respond_to do |format|
       format.html
@@ -37,7 +38,8 @@ class PostsController < ApplicationController
 
   def archive
     @posts = Post.all(:order => 'created_at DESC',
-                      '$where' => "this.created_at.getFullYear() == #{params[:year]} && this.created_at.getMonth()+1 == #{params[:month].to_i < 10 ? params[:month].sub('0', '') : params[:month]}")
+                      '$where' => "this.created_at.getFullYear() == #{params[:year]} && this.created_at.getMonth()+1 == #{params[:month].to_i < 10 ? params[:month].sub('0', '') : params[:month]}",
+                     :conditions => published?)
 
     respond_to do |format|
       format.html
@@ -102,8 +104,12 @@ class PostsController < ApplicationController
   end
 
   private
+    def published?
+      signed_in? ? {} : {:published => true}
+    end
+
     def find_post_by_slug
-      @post ||= Post.find_by_slug(params[:id])
+      @post = Post.find_by_slug(params[:id], :conditions => published?)
     end
   # private
 end
