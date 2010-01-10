@@ -27,9 +27,7 @@ class PostsController < ApplicationController
   end
 
   def tag
-    @posts = Post.all(:order => 'created_at DESC').select do |p|
-      p.tags.include?(params[:tag])
-    end
+    @posts = Post.all(:order => 'created_at DESC', :tags => params[:tag])
 
     respond_to do |format|
       format.html
@@ -38,6 +36,7 @@ class PostsController < ApplicationController
   end
 
   def archive
+    # FIXME: Refactor this into a '$where' condition
     @posts = Post.all(:order => 'created_at DESC').select do |p|
       p.created_at.month == params[:month].to_i &&
       p.created_at.year  == params[:year].to_i
@@ -74,9 +73,6 @@ class PostsController < ApplicationController
         flash[:notice] = 'Successfully created post.'
         format.html do
           redirect_to(slug_path(
-            @post.created_at.year,
-            @post.created_at.month,
-            @post.created_at.day,
             @post.slug,
             'html'
           ))
@@ -99,9 +95,6 @@ class PostsController < ApplicationController
         flash[:notice] = 'Successfully updated post.'
         format.html do
           redirect_to(slug_path(
-            @post.created_at.year,
-            @post.created_at.month,
-            @post.created_at.day,
             @post.slug,
             'html'
           ))

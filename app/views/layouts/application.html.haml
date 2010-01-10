@@ -35,7 +35,7 @@
           %h2 Archive
           %p
             - Post.all(:order => 'created_at DESC').group_by(&:month).each do |month, posts|
-              = link_to "#{month} (#{posts.count})", archive_url(posts)
+              #{link_to "#{month}", archive_path(posts)} (#{posts.count})
               %br/
           - if signed_in?
             %h2 Welcome, #{h current_user.username}

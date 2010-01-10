@@ -42,7 +42,7 @@ textarea:focus          {border:1px solid #6887a0;}
 
 #sidebar                {float:right;clear:right;width:170px;}
 #sidebar h2             {font-size:16px;color:#88939c;margin-top:0;}
-#sidebar p              {line-height:normal;}
+#sidebar p              {line-height:normal;color:#88939c;}
 #sidebar ul             {list-style:none;margin-bottom:10px;}
 
 #footer                 {text-shadow:1px 1px 1px #000;border-top:1px solid #283743;color:#cdcdcd;padding-top:20px;margin-bottom:50px;text-align:center;}

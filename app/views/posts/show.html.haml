@@ -14,7 +14,7 @@
         %strong= h @post.user.username
         #{time_ago_in_words @post.created_at} ago
         - if @post.tags.any?
-          under #{tag_urls @post.tags}
+          under #{tag_paths @post.tags}
     .body
       = markdown @post.body
 

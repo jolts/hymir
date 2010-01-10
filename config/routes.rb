@@ -24,21 +24,19 @@ ActionController::Routing::Routes.draw do |map|
   end
   map.with_options :controller => :posts,
                    :method => :get do |post|
+    # Find posts by slug
+    post.slug ':slug.:format', :action => :show
+
     # Tags
     post.tag  'tag/:tag', :action => :tag
 
     # Archives
-    # FIXME: GET /archive/2010/01/01 (example) matches post.slug route!
-    #        Should return 404 instead.
-    post.archive_month 'archive/:year/:month',
+    post.monthly 'archive/:year/:month',
       :action       => :archive,
       :requirements => {:year => /\d{4}/, :month => /\d{2}/}
 
     # Search
     post.search 'search', :action => :search
-
-    # Find posts by slug
-    post.slug ':year/:month/:day/:slug.:format', :action => :show
   end
 
   # Index page

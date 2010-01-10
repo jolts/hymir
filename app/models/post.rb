@@ -22,6 +22,10 @@ class Post
   validates_length_of :title, :within => 4..40
   validates_format_of :named_tags, :with => RegTagsOk
 
+  def to_param
+    slug
+  end
+
   def named_tags=(given_tags)
     write_attribute(:tags, given_tags.split(/;\s*/).map {|t| t.downcase})
   end

@@ -7,17 +7,17 @@
           %b= post.created_at.strftime('%d')
         .content
           .head
-            %h2.title= link_to h(post.title), post_slug_url(post)
+            %h2.title= link_to h(post.title), post_slug_path(post)
             %span.username{:title => user_role(post.user)}= post.user.username
           .body
-            = markdown truncate(post.body, :length => 450, :omission => link_to('... (more)', post_slug_url(post)))
+            = markdown truncate(post.body, :length => 450, :omission => link_to('... (more)', post_slug_path(post)))
           .meta
             %span.tags
               - if post.tags.any?
-                Tags: #{tag_urls post.tags}
+                Tags: #{tag_paths post.tags}
               - else
                 No tags
-            %span.comments= link_to pluralize(post.comments.count, 'comment'), "#{post_slug_url(post)}#comments"
+            %span.comments= link_to pluralize(post.comments.count, 'comment'), "#{post_slug_path(post)}#comments"
 
   = will_paginate @posts
 - else
