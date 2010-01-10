@@ -72,10 +72,13 @@ textarea:focus          {border:1px solid #6887a0;}
 #single .content .body ol           {margin:5px 0;text-shadow:none;}
 
 #posts .post                            {margin-bottom:40px;display:block;position:relative;overflow:hidden;}
+#posts .post.draft .content .head {background:#32434f;}
 #posts .post .date                      {-moz-border-radius-topleft:8px;-webkit-border-radius-topleft:8px;-moz-border-radius-bottomleft:8px;-webkit-border-radius-bottomleft:8px;padding:0 -10px;text-shadow:1px 1px 1px #000;color:#88939c;float:left;font-size:11px;font-weight:bold;height:32px;padding-top:3px;border:1px solid #88939c;text-align:center;text-transform:uppercase;width:10%;}
+#posts .post.draft .date                {background:#21323f;}
 #posts .post .date b                    {margin:-2px 0 0;display:block;font-size:16px;}
 #posts .post .content                   {-moz-border-radius-topright:8px;-webkit-border-radius-topright:8px;-moz-border-radius-bottomright:8px;-webkit-border-radius-bottomright:8px;width:89%;float:right;clear:right;color:#10212e;background:#88939c;}
 #posts .post .content .head             {-moz-border-radius-topright:8px;-webkit-border-radius-topright:8px;margin:1px;padding:7px;position:relative;overflow:hidden;background:#10212e;}
+#posts .post.draft .content .head {background:#21323f;}
 #posts .post .content .head h2.title    {float:left;font-size:18px;margin:0;}
 #posts .post .content .head h2.title a  {color:#cdcdcd;}
 #posts .post .content .head h2.title a:hover {text-decoration:none;}
@@ -92,6 +95,7 @@ textarea:focus          {border:1px solid #6887a0;}
 #posts .post .content .body ul,
 #posts .post .content .body ol          {margin:5px;text-shadow:none;}
 #posts .post .content .meta             {-moz-border-radius-bottomright:8px;-webkit-border-radius-bottomright:8px;background:#10212e;margin:1px;padding:3px 7px;font-size:12px;color:#88939c;position:relative;overflow:hidden;}
+#posts .post.draft .content .meta {background:#21323f;}
 #posts .post .content .meta span.tags   {float:left;}
 #posts .post .content .meta span.comments {float:right;clear:right;}
 

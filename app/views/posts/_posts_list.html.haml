@@ -1,7 +1,7 @@
 - if @posts.any?
   %ul#posts_list
     - @posts.to_a.each do |post|
-      %li{:class => "post#{first_or_last_post(post)}"}
+      %li.post{:class => first_or_last_post(post)}
         .title
           %strong= link_to h(post.title), post_path(post)
           by #{post.user.username}
