@@ -57,6 +57,7 @@ textarea:focus          {border:1px solid #6887a0;}
 #single                             {display:block;position:relative;overflow:hidden;}
 #single .content .head              {padding:5px 0;border-bottom:1px solid #000;position:relative;overflow:hidden;}
 #single .content .head h2.title     {font-size:20px;margin:0;}
+#single .content .head h2.title span.draft {color:#88939c;font-size:14px;}
 #single .content .head span.actions {float:right;clear:right;margin-top:2px;}
 #single .content .head span.actions span.destroy a {color:#cc3333;text-shadow:1px 1px 1px #000;}
 #single .content .head p.meta       {margin:0;padding:0;padding-top:2px;font-size:12px;color:#404f48;}
