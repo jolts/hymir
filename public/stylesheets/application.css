@@ -141,7 +141,7 @@ textarea:focus          {border:1px solid #6887a0;}
 .pagination               {position:absolute;bottom:25px;margin-left:66px;}
 .pagination a,
 .pagination em,
-.pagination span          {padding:0.25em 0.5em;border:1px solid #88939c;font-style:normal;text-decoration:none;}
+.pagination span          {padding:0.25em 0.5em;border:1px solid #283743;font-style:normal;text-decoration:none;}
 .pagination span.disabled,
 .pagination em            {color:#88939c;}
 .pagination span.current  {font-weight:bold;background:#151311;}
