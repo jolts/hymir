@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_filter :find_user_by_username, :only => [:destroy]
   load_and_authorize_resource
 
   # TODO: Allow users to update their own profile
@@ -40,4 +41,10 @@ class UsersController < ApplicationController
       format.html { redirect_to users_path }
     end
   end
+
+  private
+    def find_user_by_username
+      @user ||= User.find_by_username(params[:id])
+    end
+  # private
 end

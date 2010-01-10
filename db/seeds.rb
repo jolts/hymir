@@ -8,7 +8,7 @@
 
 admin_user = User.create(
   :username => 'admin',
-  :email => 'admin@domain.com',
+  :email => Hymir::Config[:email],
   :password => 'abcdef',
   :password_confirmation => 'abcdef',
   :roles_mask => '1'

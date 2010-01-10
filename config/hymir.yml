@@ -2,6 +2,7 @@
 
 DEFAULTS: &DEFAULTS
   title: Hymir
+  email: blah@blah.com
 
 development:
   <<: *DEFAULTS
