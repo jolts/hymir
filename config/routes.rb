@@ -24,9 +24,6 @@ ActionController::Routing::Routes.draw do |map|
   end
   map.with_options :controller => :posts,
                    :method => :get do |post|
-    # Find posts by slug
-    post.slug ':slug.:format', :action => :show
-
     # Tags
     post.tag  'tag/:tag', :action => :tag
 

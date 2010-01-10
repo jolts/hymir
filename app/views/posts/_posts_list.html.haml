@@ -3,7 +3,7 @@
     - @posts.to_a.each do |post|
       %li{:class => "post#{first_or_last_post(post)}"}
         .title
-          %strong= link_to h(post.title), post_slug_path(post)
+          %strong= link_to h(post.title), post_path(post)
           by #{post.user.username}
         .meta #{post.created_at.strftime('%B %d, %Y %H:%M')}
 - else

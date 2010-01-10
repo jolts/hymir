@@ -24,6 +24,10 @@ class User
   validates_length_of :password, :minimum => 6
   validates_confirmation_of :password
 
+  def to_param
+    username
+  end
+
   def self.authenticate(email_or_username, secret)
     u = find_by_email(email_or_username.downcase) || find_by_username(email_or_username)
     u && u.authenticated?(secret) ? u : nil

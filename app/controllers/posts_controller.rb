@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_filter :find_post_by_slug, :only => :show
+  before_filter :find_post_by_slug, :only => [:show, :edit, :update, :destroy]
   load_and_authorize_resource
 
   def index
@@ -71,12 +71,7 @@ class PostsController < ApplicationController
     respond_to do |format|
       if @post.save
         flash[:notice] = 'Successfully created post.'
-        format.html do
-          redirect_to(slug_path(
-            @post.slug,
-            'html'
-          ))
-        end
+        format.html { redirect_to post_url(@post) }
       else
         format.html { render :action => 'new' }
       end
@@ -93,12 +88,7 @@ class PostsController < ApplicationController
     respond_to do |format|
       if @post.update_attributes(params[:post])
         flash[:notice] = 'Successfully updated post.'
-        format.html do
-          redirect_to(slug_path(
-            @post.slug,
-            'html'
-          ))
-        end
+        format.html { redirect_to post_url(@post) }
       else
         format.html { render :action => 'edit' }
       end
@@ -116,7 +106,7 @@ class PostsController < ApplicationController
 
   private
     def find_post_by_slug
-      @post ||= Post.find_by_slug(params[:slug])
+      @post ||= Post.find_by_slug(params[:id])
     end
   # private
 end
