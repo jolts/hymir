@@ -41,7 +41,7 @@ class UsersControllerTest < ActionController::TestCase
       post :create, :user => Factory.attributes_for(:user)
     end
 
-    should_change 'User.count', :by => 1
+    should_change('User count', :by => 1) { User.count }
   end
 
   context 'Visiting index as an admin' do
