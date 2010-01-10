@@ -7,12 +7,14 @@ class Post
   key :slug, String, :unique => true
   key :tags, Array
   key :published, Boolean
+  key :published_at, Time
   timestamps!
+
+  before_create :make_slug
+  before_save :update_published_at
 
   belongs_to :user
   many :comments
-
-  before_create :make_slug
 
   RegTagsOk = /\A([A-Z\s\-]+;?)*\z/i
 
@@ -38,9 +40,11 @@ class Post
 
   private
     def make_slug
-      write_attribute(:slug,
-        self.title.downcase.gsub(/ /, '-').gsub(/[^a-z0-9-]/, '').squeeze('-')
-      )
+      write_attribute(:slug, self.title.downcase.gsub(/ /, '-').gsub(/[^a-z0-9-]/, '').squeeze('-'))
+    end
+
+    def update_published_at
+      write_attribute(:published_at, Time.now) if self.published and !self.published_at
     end
   # private
 end
