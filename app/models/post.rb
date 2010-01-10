@@ -6,7 +6,7 @@ class Post
   key :body, String, :required => true, :allow_blank => false
   key :slug, String, :unique => true
   key :tags, Array
-  key :published, Boolean
+  key :published, Boolean, :default => false
   key :published_at, Time
   timestamps!
 
