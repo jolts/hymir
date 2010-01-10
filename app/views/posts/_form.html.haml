@@ -5,5 +5,9 @@
     = f.input :title, :required => true, :hint => 'Length is is required to be within 4 to 40 characters.'
     = f.input :named_tags, :label => 'Tags', :hint => "Separate tags with a semicolon (;). Only alphabetic characters and dashes (-) are allowed."
     = f.input :published, :as => :select, :label => 'Status', :collection => [['Draft', false], ['Published', true]], :hint => 'Guests will not see drafts.'
-    = f.input :body, :as => :text, :required => true, :hint => "#{link_to 'Markdown', 'http://daringfireball.net/projects/markdown/'} is enabled."
+    = f.input :body, :as => :text, :required => true, :input_html => {:rows => '15', :id => 'markdown'}
   = f.buttons
+
+- stylesheet 'markdown'
+- javascript 'showdown', 'jquery.textarea'
+= javascript_include_tag 'markdown'
