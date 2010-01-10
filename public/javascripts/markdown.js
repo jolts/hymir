@@ -1,5 +1,3 @@
-
-var converter = new Showdown.converter;
 var textarea = $('#markdown').TextArea();
 
 var toolbar = $.Toolbar(textarea, {
