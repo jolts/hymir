@@ -36,11 +36,8 @@ class PostsController < ApplicationController
   end
 
   def archive
-    # FIXME: Refactor this into a '$where' condition
-    @posts = Post.all(:order => 'created_at DESC').select do |p|
-      p.created_at.month == params[:month].to_i &&
-      p.created_at.year  == params[:year].to_i
-    end
+    @posts = Post.all(:order => 'created_at DESC',
+                      '$where' => "this.created_at.getFullYear() == #{params[:year]} && this.created_at.getMonth()+1 == #{params[:month].to_i < 10 ? params[:month].sub('0', '') : params[:month]}")
 
     respond_to do |format|
       format.html
