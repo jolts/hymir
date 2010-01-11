@@ -7,19 +7,24 @@
         = h @post.title
         - if not @post.published
           %span.draft [draft]
-      %span.actions
-        - if can? :update, @post
-          %span.edit= link_to image_tag('add.png'), edit_post_path(@post), :rel => 'tipsy', :title => 'Edit'
-        - if can? :destroy, @post
-          %span.destroy= link_to image_tag('delete.png'), @post, :method => :delete, :confirm => 'Are you sure?', :rel => 'tipsy', :title => 'Destroy'
-      %p.meta
-        By
-        %strong= h @post.user.username
-        #{time_ago_in_words @post.created_at} ago
-        - if @post.tags.any?
-          under #{tag_paths @post.tags}
+        %span.actions
+          - if can? :update, @post
+            %span.edit= link_to image_tag('add.png'), edit_post_path(@post), :rel => 'tipsy', :title => 'Edit'
+          - if can? :destroy, @post
+            %span.destroy= link_to image_tag('delete.png'), @post, :method => :delete, :confirm => 'Are you sure?', :rel => 'tipsy', :title => 'Destroy'
     .body
       = markdown @post.body
+      - if @post.updated?
+        %br/
+        %em.updated Updated on #{@post.updated_at.strftime('%B %d %Y at %H:%M')}
+    .foot
+      %p.meta
+        Posted on
+        = @post.created_at.strftime('%B %d %Y at %H:%M')
+        by
+        %strong= h @post.user.username
+        - if @post.tags.any?
+          and is filed under #{tag_paths @post.tags}.
 
 #comments
   - if @post.published

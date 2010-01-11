@@ -1,23 +1,23 @@
 - if @posts.any?
   %ul#posts
     - @posts.each do |post|
-      %li.post{:class => !post.published ? 'draft' : nil}
-        .date
-          = post.created_at.strftime('%b')
-          %b= post.created_at.strftime('%d')
+      %li.post
         .content
           .head
-            %h2.title= link_to h(post.title), post_path(post)
-            %span.username{:title => user_role(post.user)}= post.user.username
-          .body
-            = markdown truncate(post.body, :length => 450, :omission => link_to('... (more)', post_path(post)))
-          .meta
-            %span.tags
+            %h2.title
+              = link_to h(post.title), post_path(post)
+              - if not post.published
+                %span.draft [draft]
+            %p.meta
+              %span.comments= link_to pluralize(post.comments.count, 'comment'), "#{post_path post}#comments"
+              By
+              %strong= h post.user.username
+              on
+              = post.created_at.strftime('%B %d %Y at %H:%M')
               - if post.tags.any?
-                Tags: #{tag_paths post.tags}
-              - else
-                No tags
-            %span.comments= link_to pluralize(post.comments.count, 'comment'), "#{post_path post}#comments"
+                under #{tag_paths post.tags}
+          .body
+            = markdown post.body
 
   %p#pagination
     = link_to '&larr; Previous Page', :overwrite_params => {:page => @posts.previous_page} if @posts.previous_page
