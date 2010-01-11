@@ -34,19 +34,18 @@
           - form_tag posts_path, :method => :get do
             = text_field_tag :q, params[:q], :id => 'searchfield'
             = submit_tag 'Search', :name => nil, :id => 'searchsubmit'
-          %h2 Archive
-          %ul
-            - Post.all(:order => 'created_at DESC', :conditions => published?).group_by(&:month).each do |month, posts|
-              %li #{link_to "#{month}", archive_path(posts)} (#{posts.count})
           - if (post_tags = Post.all(:conditions => published?).map {|p| p.tags}.flatten.uniq).any?
             %h2 Tags
             %ul
               - post_tags.each do |post_tag|
                 %li= link_to h(post_tag), tag_path(post_tag)
+          %h2 Archive
+          %ul
+            - Post.all(:order => 'created_at DESC', :conditions => published?).group_by(&:month).each do |month, posts|
+              %li #{link_to "#{month}", archive_path(posts)} (#{posts.count})
           - if signed_in?
             %h2 Welcome, #{h current_user.username}
-          %p
-            - if signed_in?
+            %p
               - if can? :create, Post
                 = link_to 'New post', new_post_path
                 %br/
