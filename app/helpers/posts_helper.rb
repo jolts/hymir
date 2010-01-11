@@ -17,18 +17,14 @@ module PostsHelper
   end
 
   def posts_list_classes(post)
+    cls = post.published ? '' : ' draft'
     if @posts.first == @posts.last
-      cls = ' single'
+      cls += ' single'
     else
-      cls = ' first' if post == @posts.first
-      cls = ' last'  if post == @posts.last
+      cls += ' first' if post == @posts.first
+      cls += ' last'  if post == @posts.last
     end
 
-    if cls
-      cls += ' draft' unless post.published
-      cls
-    else
-      nil
-    end
+    cls.blank? ? nil : cls
   end
 end
