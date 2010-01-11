@@ -27,4 +27,8 @@ module PostsHelper
 
     cls.blank? ? nil : cls
   end
+
+  def published?
+    signed_in? ? {} : {:published => true}
+  end
 end

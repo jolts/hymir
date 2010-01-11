@@ -36,14 +36,15 @@
             = submit_tag 'Search', :name => nil, :id => 'searchsubmit'
           %h2 Archive
           %p
-            - Post.all(:order => 'created_at DESC', :conditions => signed_in? ? {} : {:published => true}).group_by(&:month).each do |month, posts|
+            - Post.all(:order => 'created_at DESC', :conditions => published?).group_by(&:month).each do |month, posts|
               #{link_to "#{month}", archive_path(posts)} (#{posts.count})
               %br/
-          %h2 Tags
-          %p
-            - Post.all.map {|p| p.tags}.flatten.uniq.each do |post_tag|
-              = link_to h(post_tag), tag_path(post_tag)
-              %br/
+          - if (post_tags = Post.all(:conditions => published?).map {|p| p.tags}.flatten.uniq).any?
+            %h2 Tags
+            %p
+              - post_tags.each do |post_tag|
+                = link_to h(post_tag), tag_path(post_tag)
+                %br/
           - if signed_in?
             %h2 Welcome, #{h current_user.username}
           %p
