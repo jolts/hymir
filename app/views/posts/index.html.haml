@@ -17,7 +17,7 @@
                 Tags: #{tag_paths post.tags}
               - else
                 No tags
-            %span.comments= link_to pluralize(post.comments.count, 'comment'), "#{post_path(post)}#comments"
+            %span.comments= link_to pluralize(post.comments.count, 'comment'), "#{post_path post}#comments"
 
   %p#pagination
     = link_to '&larr; Previous Page', :overwrite_params => {:page => @posts.previous_page} if @posts.previous_page
