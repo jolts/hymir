@@ -3,27 +3,20 @@ class PostsController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @posts = Post.paginate(:per_page => 3, :page => params[:page], :order => 'created_at DESC', :conditions => published?)
+    if params[:q] && !params[:q].empty?
+      @posts = Post.paginate(:per_page => 3, :page => params[:page],
+                             :order => 'created_at DESC', :conditions => published?,
+                             '$where' => "this.title.match(/#{params[:q]}/i) || this.body.match(/#{params[:q]}/i)")
+    else
+      @posts = Post.paginate(:per_page => 3, :page => params[:page],
+                             :order => 'created_at DESC', :conditions => published?)
+    end
 
     respond_to do |format|
       format.html
       format.js
       format.json { render :json => @posts }
       format.atom
-    end
-  end
-
-  def search
-    if params[:q] && !params[:q].empty?
-      @posts = Post.all(:order => 'created_at DESC',
-                        '$where' => "this.title.match(/#{params[:q]}/i) || this.body.match(/#{params[:q]}/i)",
-                       :conditions => published?)
-    end
-    @posts ||= []
-
-    respond_to do |format|
-      format.html
-      format.json { render :json => @posts }
     end
   end
 
@@ -37,9 +30,8 @@ class PostsController < ApplicationController
   end
 
   def archive
-    @posts = Post.all(:order => 'created_at DESC',
-                      '$where' => "this.created_at.getFullYear() == #{params[:year]} && this.created_at.getMonth()+1 == #{params[:month].to_i < 10 ? params[:month].sub('0', '') : params[:month]}",
-                     :conditions => published?)
+    @posts = Post.all(:order => 'created_at DESC', :conditions => published?,
+                      '$where' => "this.created_at.getFullYear() == #{params[:year]} && this.created_at.getMonth()+1 == #{params[:month].to_i < 10 ? params[:month].sub('0', '') : params[:month]}")
 
     respond_to do |format|
       format.html

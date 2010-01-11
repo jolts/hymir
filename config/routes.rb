@@ -5,7 +5,6 @@ ActionController::Routing::Routes.draw do |map|
     info.about 'about', :action => :about
     info.portfolio 'portfolio', :action => :portfolio
     info.services 'services', :action => :services
-    # Add more static pages here
   end
 
   # Sessions
@@ -23,18 +22,17 @@ ActionController::Routing::Routes.draw do |map|
     post.resources :comments, :only => [:create, :destroy]
   end
   map.with_options :controller => :posts,
-                   :method => :get do |post|
+                   :method     => :get do |post|
     # Tags
-    post.tag  'tag/:tag', :action => :tag
+    post.tag 'posts/tag/:tag',
+             :action => :tag,
+             :tag => /[A-Z\-]+/i
 
     # Archives
-    post.monthly 'archive/:year/:month',
-      :action => :archive,
-      :year   => /\d{4}/,
-      :month => /\d{2}/
-
-    # Search
-    post.search 'search', :action => :search
+    post.archives 'posts/archive/:year/:month',
+                  :action => :archive,
+                  :year   => /\d{4}/,
+                  :month  => /\d{2}/
   end
 
   # Index page

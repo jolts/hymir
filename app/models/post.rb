@@ -16,7 +16,7 @@ class Post
   belongs_to :user
   many :comments
 
-  RegTagsOk = /\A([A-Z\s\-]+;?)*\z/i
+  RegTagsOk = /\A([A-Z\-]+;?)*\z/i
 
   validates_associated :comments
   validates_length_of :title, :within => 4..40

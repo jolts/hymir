@@ -6,7 +6,7 @@ module PostsHelper
   def archive_path(posts)
     year  = posts.map {|p| p.created_at.strftime('%Y')}.first
     month = posts.map {|p| p.created_at.strftime('%m')}.first
-    "/archive/#{year}/#{month}"
+    archives_path(year, month)
   end
 
   def user_role(user)
