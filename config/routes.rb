@@ -16,6 +16,9 @@ ActionController::Routing::Routes.draw do |map|
 
   # Users
   map.resources :users, :except => [:show, :edit, :update]
+  #map.resources :users, :except => [:show, :edit, :update] do |user|
+  #  user.resources :posts, :only => [:index]
+  #end
 
   # Posts
   map.resources :posts do |post|
