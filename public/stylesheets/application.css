@@ -5,6 +5,7 @@ body                    {background:#10212e;font:13.38px Helvetica,Arial,sans-se
 p                       {margin:10px 0;line-height:1.25;}
 
 a                       {color:#6887a0;text-decoration:none;}
+a:hover                 {text-decoration:underline;}
 a:active, a:focus       {outline:0 none;}
 
 ul, ol                  {list-style:none;}
@@ -28,25 +29,25 @@ textarea:focus          {border:1px solid #6887a0;}
 #header                 {height:40px;margin-top:20px;padding:0 20px;padding-bottom:20px;border-bottom:1px solid black;}
 #header h1              {margin:0;text-shadow:2px 2px 2px #000;float:left;font-size:36px;font-weight:normal;}
 #header h1 a            {color:#6887a0;}
+#header h1 a:hover      {text-decoration:none;}
 
 #nav                    {margin-top:25px;float:right;font-size:16px;}
 #nav ul                 {list-style:none;}
 #nav ul li              {text-shadow:1px 1px 1px #000;margin-left:10px;color:#6887a0;display:inline;margin-bottom:2px;border-bottom:2px solid #283743;}
 #nav ul li a            {color:#88939c;margin-bottom:2px;border-bottom:2px solid #10212e;}
-#nav ul li a:hover      {color:#88939c;margin-bottom:2px;border-bottom:2px solid #283743;}
+#nav ul li a:hover      {color:#88939c;margin-bottom:2px;border-bottom:2px solid #283743;text-decoration:none;}
 
 #wrapper                {background:url(/images/glow_top.png) no-repeat top left;border-top:1px solid #283743;border-bottom:1px solid black;padding:20px;width:820px;margin:0 auto;min-height:500px;overflow:hidden;position:relative;}
 
 #content                {float:left;width:600px;}
-#content a:hover        {text-decoration:underline;}
 
 #sidebar                {float:right;clear:right;width:170px;color:#88939c;}
 #sidebar h2             {font-size:16px;margin-top:0;}
 #sidebar p              {line-height:normal;}
 #sidebar ul             {list-style:none;margin-bottom:10px;}
 
-#footer                 {text-shadow:1px 1px 1px #000;border-top:1px solid #283743;color:#cdcdcd;padding-top:20px;margin-bottom:50px;text-align:center;}
-#footer a               {text-decoration:none;}
+#footer                 {border-top:1px solid #283743;color:#cdcdcd;padding-top:20px;margin-bottom:50px;text-align:center;}
+#footer a               {text-decoration:none;text-shadow:1px 1px 1px #000;}
 #footer p               {margin:0;}
 
 #flash_notice,
