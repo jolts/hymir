@@ -1,7 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
   # Static pages
   map.with_options :controller => :info,
-                   :method     => :get do |info|
+                   :conditions => {:method => :get} do |info|
     info.about 'about', :action => :about
     info.portfolio 'portfolio', :action => :portfolio
     info.services 'services', :action => :services
@@ -9,8 +9,8 @@ ActionController::Routing::Routes.draw do |map|
 
   # Sessions
   map.with_options :controller => :user_sessions do |session|
-    session.login 'login', :action => :new, :method => :get
-    session.logout 'logout', :action => :destroy, :method => :delete
+    session.login 'login', :action => :new, :conditions => {:method => :get}
+    session.logout 'logout', :action => :destroy, :conditions => {:method => :delete}
   end
   map.resource :user_sessions, :only => [:create]
 
@@ -22,7 +22,7 @@ ActionController::Routing::Routes.draw do |map|
     post.resources :comments, :only => [:create, :destroy]
   end
   map.with_options :controller => :posts,
-                   :method     => :get do |post|
+                   :conditions => {:method => :get} do |post|
     # Tags
     post.tag 'posts/tag/:tag',
              :action => :tag,
@@ -36,5 +36,5 @@ ActionController::Routing::Routes.draw do |map|
   end
 
   # Index page
-  map.root :controller => :posts, :action => :index, :method => :get
+  map.root :controller => :posts, :action => :index, :conditions => {:method => :get}
 end
