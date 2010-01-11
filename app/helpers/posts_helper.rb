@@ -16,13 +16,13 @@ module PostsHelper
     role ||= ''
   end
 
-  def posts_list_classes(post)
+  def posts_list_classes(posts, post)
     cls = post.published ? '' : ' draft'
-    if @posts.first == @posts.last
+    if posts.first == posts.last
       cls += ' single'
     else
-      cls += ' first' if post == @posts.first
-      cls += ' last'  if post == @posts.last
+      cls += ' first' if post == posts.first
+      cls += ' last'  if post == posts.last
     end
 
     cls.blank? ? nil : cls
