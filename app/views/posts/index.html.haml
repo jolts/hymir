@@ -9,13 +9,15 @@
               - if not post.published
                 %span.draft [draft]
             %p.meta
-              %span.comments= link_to pluralize(post.comments.count, 'comment'), "#{post_path post}#comments"
-              By
+              Posted
+              - if post.tags.any?
+                in #{tag_paths post.tags}
+              by
               %strong= h post.user.username
               on
-              = post.created_at.strftime('%B %d %Y at %H:%M')
-              - if post.tags.any?
-                under #{tag_paths post.tags}
+              = post.created_at.strftime('%B %d, %Y')
+              &mdash;
+              = link_to pluralize(post.comments.count, 'comment'), "#{post_path post}#comments"
           .body
             = markdown post.body
 

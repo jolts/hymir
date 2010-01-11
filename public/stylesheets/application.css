@@ -82,7 +82,6 @@ textarea:focus          {border:1px solid #6887a0;}
 #posts .post .content .head h2.title a:hover {text-decoration: none;}
 #posts .post .content .head h2.title span.draft {color:#88939c;font-size:14px;}
 #posts .post .content .head p.meta  {margin:0;padding:0;padding-top:2px;font-size:12px;color:#404f48;}
-#posts .post .content .head span.comments {float:right;clear:right;margin-top:2px;}
 #posts .post .content .body         {border-top:1px solid #283743;padding:15px 0;}
 #posts .post .content .body h1,
 #posts .post .content .body h2,
