@@ -72,8 +72,6 @@
       tab_char: 4,
       lineHeight: 16,
       change: null,
-      resizeable: true,
-      resizeClassName: "resizeHandle"
     };
 
     var options = $.extend(defaults, options);
@@ -110,24 +108,6 @@
       this.isWebkit = (ua.indexOf('webkit') >= 0);
       this.isChrome = (ua.indexOf('chrome') >= 0);
       this.isOpera = (ua.indexOf('opera') >= 0);
-
-      if (this.options.resizeable && !this.isWebkit) {
-        resizeHandle = $('<div class="' + this.options.resizeClassName + '"></div>')
-        .insertAfter(this.el)
-        .bind("mousedown", function(e) {
-          var h = self.el.height(), y = e.clientY, mouseMove, mouseUp;
-          mouseMove = function(e) {
-            self.el.css("height", Math.max(20, e.clientY+h-y)+"px");
-            return false;
-          };
-          mouseUp = function(e) {
-            $("html").unbind("mousemove", mouseMove).unbind("mouseup", mouseUp);
-            return false;
-          };
-          $("html").bind("mousemove", mouseMove).bind("mouseup", mouseUp);
-        });
-      }
-
       this.lastSelection = {};
 
       // we need to add one character for webkit
