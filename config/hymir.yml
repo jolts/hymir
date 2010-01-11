@@ -6,6 +6,7 @@ DEFAULTS: &DEFAULTS
 
 development:
   <<: *DEFAULTS
+  domain: 'http://localhost:3000/'
   #  
 
 test:

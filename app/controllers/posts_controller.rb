@@ -3,17 +3,15 @@ class PostsController < ApplicationController
   load_and_authorize_resource
 
   def index
-    if params[:q] && !params[:q].empty?
-      @posts = Post.paginate(:per_page => 3, :page => params[:page],
-                             :order => 'created_at DESC', :conditions => published?,
-                             '$where' => "this.title.match(/#{params[:q]}/i) || this.body.match(/#{params[:q]}/i)")
+    if params[:q].blank?
+      @posts = Post.all(:order => 'created_at DESC', :conditions => published?)
     else
-      @posts = Post.paginate(:per_page => 3, :page => params[:page],
-                             :order => 'created_at DESC', :conditions => published?)
+      @posts = Post.all(:order => 'created_at DESC', :conditions => published?,
+                        '$where' => "this.title.match(/#{params[:q]}/i) || this.body.match(/#{params[:q]}/i)")
     end
 
     respond_to do |format|
-      format.html
+      format.html { @posts = @posts.paginate(:page => params[:page], :per_page => 3) }
       format.js
       format.json { render :json => @posts }
       format.atom

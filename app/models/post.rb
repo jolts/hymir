@@ -16,21 +16,21 @@ class Post
   belongs_to :user
   many :comments
 
-  RegTagsOk = /\A([A-Z\-]+;?)*\z/i
+  RegTagsOk = /\A([A-Z\s\-]+;?)*\z/i
 
   validates_associated :comments
   validates_length_of :title, :within => 4..40
-  validates_format_of :named_tags, :with => RegTagsOk
+  validates_format_of :tag_names, :with => RegTagsOk
 
   def to_param
     slug
   end
 
-  def named_tags=(given_tags)
+  def tag_names=(given_tags)
     write_attribute(:tags, given_tags.split(/;\s*/).map {|t| t.downcase})
   end
 
-  def named_tags
+  def tag_names
     self.tags.join('; ')
   end
 
