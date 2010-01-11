@@ -1,12 +1,12 @@
 class CommentsController < ApplicationController
-  before_filter :find_post_by_id
+  before_filter :find_post_by_slug
   load_and_authorize_resource :except => [:destroy]
 
   def create
     if signed_in?
       @comment.name = current_user.username
       @comment.email = current_user.email
-      @comment.url = 'http://github.com/gigamo/hymir'
+      @comment.url = Hymir::Config[:domain]
       @comment.has_user = true
     end
     @comment.created_at = Time.now
@@ -19,15 +19,7 @@ class CommentsController < ApplicationController
         flash[:error] = 'Error while creating comment.'
         #@comment.errors.full_messages.uniq.map {|e| e.downcase}.join(', ')
       end
-      format.html do
-        redirect_to(slug_path(
-          @post.created_at.year,
-          @post.created_at.month,
-          @post.created_at.day,
-          @post.slug,
-          'html'
-        ))
-      end
+      format.html { redirect_to post_url(@post) }
     end
   end
 
@@ -41,21 +33,13 @@ class CommentsController < ApplicationController
       else
         flash[:error] = 'Access denied.'
       end
-      format.html do
-        redirect_to(slug_path(
-          @post.created_at.year,
-          @post.created_at.month,
-          @post.created_at.day,
-          @post.slug,
-          'html'
-        ))
-      end
+      format.html { redirect_to post_url(@post) }
     end
   end
 
   private
-    def find_post_by_id
-      @post = Post.find(params[:post_id])
+    def find_post_by_slug
+      @post = Post.find_by_slug(params[:post_id])
     end
   # private
 end

@@ -1,7 +1,7 @@
 - if @posts.any?
   %ul#posts_list
     - @posts.each do |post|
-      %li.post{:class => posts_list_classes(post)}
+      %li.post{:class => posts_list_classes(@posts, post)}
         .title
           %strong= link_to h(post.title), post_path(post)
           by #{post.user.username}

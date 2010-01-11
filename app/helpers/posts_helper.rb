@@ -6,7 +6,7 @@ module PostsHelper
   def archive_path(posts)
     year  = posts.map {|p| p.created_at.strftime('%Y')}.first
     month = posts.map {|p| p.created_at.strftime('%m')}.first
-    "/archive/#{year}/#{month}"
+    archives_path(year, month)
   end
 
   def user_role(user)
@@ -16,19 +16,19 @@ module PostsHelper
     role ||= ''
   end
 
-  def posts_list_classes(post)
-    if @posts.first == @posts.last
-      cls = ' single'
+  def posts_list_classes(posts, post)
+    cls = post.published ? '' : ' draft'
+    if posts.first == posts.last
+      cls += ' single'
     else
-      cls = ' first' if post == @posts.first
-      cls = ' last'  if post == @posts.last
+      cls += ' first' if post == posts.first
+      cls += ' last'  if post == posts.last
     end
 
-    if cls
-      cls += ' draft' unless post.published
-      cls
-    else
-      nil
-    end
+    cls.blank? ? nil : cls
+  end
+
+  def published?
+    signed_in? ? {} : {:published => true}
   end
 end

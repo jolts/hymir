@@ -35,14 +35,14 @@ textarea:focus          {border:1px solid #6887a0;}
 #nav ul li a            {color:#88939c;margin-bottom:2px;border-bottom:2px solid #10212e;}
 #nav ul li a:hover      {color:#88939c;margin-bottom:2px;border-bottom:2px solid #283743;}
 
-#wrapper                {background:url(/images/glow_top.png) no-repeat top left;border-top:1px solid #283743;border-bottom:1px solid black;padding:20px;width:820px;margin:0 auto;min-height:635px;overflow:hidden;position:relative;}
+#wrapper                {background:url(/images/glow_top.png) no-repeat top left;border-top:1px solid #283743;border-bottom:1px solid black;padding:20px;width:820px;margin:0 auto;min-height:500px;overflow:hidden;position:relative;}
 
 #content                {float:left;width:600px;}
 #content a:hover        {text-decoration:underline;}
 
-#sidebar                {float:right;clear:right;width:170px;}
-#sidebar h2             {font-size:16px;color:#88939c;margin-top:0;}
-#sidebar p              {line-height:normal;color:#88939c;}
+#sidebar                {float:right;clear:right;width:170px;color:#88939c;}
+#sidebar h2             {font-size:16px;margin-top:0;}
+#sidebar p              {line-height:normal;}
 #sidebar ul             {list-style:none;margin-bottom:10px;}
 
 #footer                 {text-shadow:1px 1px 1px #000;border-top:1px solid #283743;color:#cdcdcd;padding-top:20px;margin-bottom:50px;text-align:center;}
@@ -96,7 +96,7 @@ textarea:focus          {border:1px solid #6887a0;}
 #posts .post .content .body ul,
 #posts .post .content .body ol          {margin:5px;text-shadow:none;}
 #posts .post .content .meta             {-moz-border-radius-bottomright:8px;-webkit-border-radius-bottomright:8px;background:#10212e;margin:1px;padding:3px 7px;font-size:12px;color:#88939c;position:relative;overflow:hidden;}
-#posts .post.draft .content .meta {background:#21323f;}
+#posts .post.draft .content .meta       {background:#21323f;}
 #posts .post .content .meta span.tags   {float:left;}
 #posts .post .content .meta span.comments {float:right;clear:right;}
 
@@ -138,22 +138,14 @@ textarea:focus          {border:1px solid #6887a0;}
 #users .user dd.name        {font-weight:bold;}
 #users .user span.destroy a {color:#cc3333;text-shadow:1px 1px 1px #000;float:right;}
 
-.pagination               {position:absolute;bottom:25px;margin-left:66px;}
-.pagination a,
-.pagination em,
-.pagination span          {padding:0.25em 0.5em;border:1px solid #88939c;font-style:normal;text-decoration:none;}
-.pagination span.disabled,
-.pagination em            {color:#88939c;}
-.pagination span.current  {font-weight:bold;background:#151311;}
-.pagination a:hover,
-.pagination a:focus       {border-color:#6887a0;}
+#pagination             {}
 
 #searchfield            {margin-bottom:20px;display:inline;color:#10212e;background:#88939c;width:80px;border:1px solid #000;}
 #searchsubmit           {-moz-border-radius:2px;-webkit-border-radius:2px;color:#10212e;background:#88939c;padding:1px;border:1px solid #000;cursor:pointer;}
 #searchfield:focus,
 #searchsubmit:focus     {border:1px solid #252527;}
 
-#logout                 {position:absolute;top:0;right:5px;}
+#session                {position:absolute;top:0;right:5px;}
 
 #login form                     {display:block;position:relative;overflow:hidden;}
 #login form label               {font-weight:bold;color:#88939c;text-shadow:1px 1px 1px #000;float:left;width:150px;}

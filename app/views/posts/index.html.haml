@@ -1,1 +1,27 @@
-= render 'posts'
+- if @posts.any?
+  %ul#posts
+    - @posts.each do |post|
+      %li.post{:class => !post.published ? 'draft' : nil}
+        .date
+          = post.created_at.strftime('%b')
+          %b= post.created_at.strftime('%d')
+        .content
+          .head
+            %h2.title= link_to h(post.title), post_path(post)
+            %span.username{:title => user_role(post.user)}= post.user.username
+          .body
+            = markdown truncate(post.body, :length => 450, :omission => link_to('... (more)', post_path(post)))
+          .meta
+            %span.tags
+              - if post.tags.any?
+                Tags: #{tag_paths post.tags}
+              - else
+                No tags
+            %span.comments= link_to pluralize(post.comments.count, 'comment'), "#{post_path post}#comments"
+
+  %p#pagination
+    = link_to '&larr; Previous Page', :overwrite_params => {:page => @posts.previous_page} if @posts.previous_page
+    = '|' if @posts.previous_page && @posts.next_page
+    = link_to 'Next Page &rarr;', :overwrite_params => {:page => @posts.next_page} if @posts.next_page
+- else
+  %h2 No posts found!

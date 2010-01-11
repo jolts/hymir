@@ -3,31 +3,24 @@ class PostsController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @posts = Post.paginate(:per_page => 3, :page => params[:page], :order => 'created_at DESC')
+    if params[:q].blank?
+      @posts = Post.paginate(:page => params[:page], :per_page => 10,
+                             :order => 'created_at DESC', :conditions => published?)
+    else
+      @posts = Post.paginate(:page => params[:page], :per_page => 10,
+                             :order => 'created_at DESC', :conditions => published?,
+                             '$where' => "this.title.match(/#{params[:q]}/i) || this.body.match(/#{params[:q]}/i)")
+    end
 
     respond_to do |format|
       format.html
-      format.js
       format.json { render :json => @posts }
       format.atom
     end
   end
 
-  def search
-    if params[:q] && !params[:q].empty?
-      @posts = Post.all(:order => 'created_at DESC',
-                        '$where' => "this.title.match(/#{params[:q]}/i) || this.body.match(/#{params[:q]}/i)")
-    end
-    @posts ||= []
-
-    respond_to do |format|
-      format.html
-      format.json { render :json => @posts }
-    end
-  end
-
   def tag
-    @posts = Post.all(:order => 'created_at DESC', :tags => params[:tag])
+    @posts = Post.all(:order => 'created_at DESC', :tags => params[:tag], :conditions => published?)
 
     respond_to do |format|
       format.html
@@ -36,11 +29,8 @@ class PostsController < ApplicationController
   end
 
   def archive
-    # FIXME: Refactor this into a '$where' condition
-    @posts = Post.all(:order => 'created_at DESC').select do |p|
-      p.created_at.month == params[:month].to_i &&
-      p.created_at.year  == params[:year].to_i
-    end
+    @posts = Post.all(:order => 'created_at DESC', :conditions => published?,
+                      '$where' => "this.created_at.getFullYear() == #{params[:year]} && this.created_at.getMonth()+1 == #{params[:month].to_i < 10 ? params[:month].sub('0', '') : params[:month]}")
 
     respond_to do |format|
       format.html
@@ -105,8 +95,12 @@ class PostsController < ApplicationController
   end
 
   private
+    def published?
+      signed_in? ? {} : {:published => true}
+    end
+
     def find_post_by_slug
-      @post ||= Post.find_by_slug(params[:id])
+      @post = Post.find_by_slug(params[:id], :conditions => published?)
     end
   # private
 end

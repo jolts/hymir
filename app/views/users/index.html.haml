@@ -18,6 +18,10 @@
           %dl
             %dt Roles
             %dd= user.roles.map {|role| role.capitalize}.join(', ')
+        - if user.posts.any?
+          %dl
+            %dt Posts
+            %dd= user.posts.count
         %dl
           %dt Age
           %dd= time_ago_in_words user.created_at

@@ -22,7 +22,7 @@ Rails::Initializer.run do |config|
   config.gem 'cancan'
   config.gem 'formtastic'
   config.gem 'rdiscount'
-  config.gem 'will_paginate'
+  #config.gem 'will_paginate'
   config.gem 'shoulda'
   config.gem 'factory_girl'
   #config.gem 'mcmire-matchy', :lib => 'matchy'

@@ -2,7 +2,7 @@
 %html{html_attrs}
   %head
     %title= h(yield(:title) || Hymir::Config[:title])
-    = auto_discovery_link_tag :atom, "#{posts_path}.atom", :title => 'Posts feed'
+    = auto_discovery_link_tag :atom, posts_path(:format => :atom), :title => 'Posts feed'
     = stylesheet_link_tag 'application', 'tipsy', :cache => 'application'
     = stylesheet_link_tag 'formtastic', 'formtastic_changes', :cache => 'formtastic'
     = javascript_include_tag 'jquery'
@@ -12,7 +12,9 @@
   %body
     #container
       - if signed_in?
-        = link_to '&rarr; Log out', logout_path, :method => :delete, :id => 'logout'
+        = link_to '&rarr; Log out', logout_path, :method => :delete, :id => 'session'
+      - else
+        = link_to '&rarr; Log in', login_path, :id => 'session'
       #header
         %h1= link_to Hymir::Config[:title], root_path
         #nav
@@ -29,14 +31,18 @@
             %h2= h yield(:title)
           = yield
         #sidebar
-          - form_tag search_path, :method => :get do
+          - form_tag posts_path, :method => :get do
             = text_field_tag :q, params[:q], :id => 'searchfield'
             = submit_tag 'Search', :name => nil, :id => 'searchsubmit'
           %h2 Archive
-          %p
-            - Post.all(:order => 'created_at DESC').group_by(&:month).each do |month, posts|
-              #{link_to "#{month}", archive_path(posts)} (#{posts.count})
-              %br/
+          %ul
+            - Post.all(:order => 'created_at DESC', :conditions => published?).group_by(&:month).each do |month, posts|
+              %li #{link_to "#{month}", archive_path(posts)} (#{posts.count})
+          - if (post_tags = Post.all(:conditions => published?).map {|p| p.tags}.flatten.uniq).any?
+            %h2 Tags
+            %ul
+              - post_tags.each do |post_tag|
+                %li= link_to h(post_tag), tag_path(post_tag)
           - if signed_in?
             %h2 Welcome, #{h current_user.username}
           %p
