@@ -42,7 +42,7 @@
           %h2 Tags
           %p
             - Post.all.map {|p| p.tags}.flatten.uniq.each do |post_tag|
-              = link_to post_tag, tag_path(post_tag)
+              = link_to h(post_tag), tag_path(post_tag)
               %br/
           - if signed_in?
             %h2 Welcome, #{h current_user.username}
