@@ -9,9 +9,10 @@ class PostsController < ApplicationController
       @posts = Post.all(:order => 'created_at DESC', :conditions => published?,
                         '$where' => "this.title.match(/#{params[:q]}/i) || this.body.match(/#{params[:q]}/i)")
     end
+    @posts = @posts.paginate(:page => params[:page], :per_page => 3)
 
     respond_to do |format|
-      format.html { @posts = @posts.paginate(:page => params[:page], :per_page => 3) }
+      format.html
       format.js
       format.json { render :json => @posts }
       format.atom
