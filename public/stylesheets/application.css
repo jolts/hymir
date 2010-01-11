@@ -35,7 +35,7 @@ textarea:focus          {border:1px solid #6887a0;}
 #nav ul li a            {color:#88939c;margin-bottom:2px;border-bottom:2px solid #10212e;}
 #nav ul li a:hover      {color:#88939c;margin-bottom:2px;border-bottom:2px solid #283743;}
 
-#wrapper                {background:url(/images/glow_top.png) no-repeat top left;border-top:1px solid #283743;border-bottom:1px solid black;padding:20px;width:820px;margin:0 auto;min-height:635px;overflow:hidden;position:relative;}
+#wrapper                {background:url(/images/glow_top.png) no-repeat top left;border-top:1px solid #283743;border-bottom:1px solid black;padding:20px;width:820px;margin:0 auto;min-height:500px;overflow:hidden;position:relative;}
 
 #content                {float:left;width:600px;}
 #content a:hover        {text-decoration:underline;}
@@ -138,14 +138,7 @@ textarea:focus          {border:1px solid #6887a0;}
 #users .user dd.name        {font-weight:bold;}
 #users .user span.destroy a {color:#cc3333;text-shadow:1px 1px 1px #000;float:right;}
 
-.pagination               {position:absolute;bottom:25px;margin-left:66px;}
-.pagination a,
-.pagination em,
-.pagination span          {padding:0.25em 0.5em;border:1px solid #283743;font-style:normal;text-decoration:none;}
-.pagination span.disabled {color:#88939c;}
-.pagination em            {color:#88939c;font-weight:bold;border-color:#6887a0;}
-.pagination a:hover,
-.pagination a:focus       {border-color:#6887a0;}
+#pagination             {}
 
 #searchfield            {margin-bottom:20px;display:inline;color:#10212e;background:#88939c;width:80px;border:1px solid #000;}
 #searchsubmit           {-moz-border-radius:2px;-webkit-border-radius:2px;color:#10212e;background:#88939c;padding:1px;border:1px solid #000;cursor:pointer;}

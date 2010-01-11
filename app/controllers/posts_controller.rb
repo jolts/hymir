@@ -4,16 +4,16 @@ class PostsController < ApplicationController
 
   def index
     if params[:q].blank?
-      @posts = Post.all(:order => 'created_at DESC', :conditions => published?)
+      @posts = Post.paginate(:page => params[:page], :per_page => 3,
+                             :order => 'created_at DESC', :conditions => published?)
     else
-      @posts = Post.all(:order => 'created_at DESC', :conditions => published?,
-                        '$where' => "this.title.match(/#{params[:q]}/i) || this.body.match(/#{params[:q]}/i)")
+      @posts = Post.paginate(:page => params[:page], :per_page => 10,
+                             :order => 'created_at DESC', :conditions => published?,
+                             '$where' => "this.title.match(/#{params[:q]}/i) || this.body.match(/#{params[:q]}/i)")
     end
-    @posts = @posts.paginate(:page => params[:page], :per_page => 3)
 
     respond_to do |format|
       format.html
-      format.js
       format.json { render :json => @posts }
       format.atom
     end
