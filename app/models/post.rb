@@ -35,7 +35,7 @@ class Post
   end
 
   def updated?
-    self.updated_at > self.created_at
+    self.updated_at > self.published_at if self.published_at
   end
 
   def month

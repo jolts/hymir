@@ -24,7 +24,7 @@
         by
         %strong= h @post.user.username
         - if @post.tags.any?
-          and is filed under #{tag_paths @post.tags}
+          and filed under #{tag_paths @post.tags}
 
 #comments
   - if @post.published
