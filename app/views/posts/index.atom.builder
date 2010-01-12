@@ -1,6 +1,6 @@
 atom_feed do |feed|
-  feed.title('Hymir')
-  feed.updated(@posts.first.created_at)
+  feed.title(Hymir::Config[:title])
+  feed.updated(@posts.first.updated_at)
 
   @posts.each do |post|
     feed.entry(post) do |entry|

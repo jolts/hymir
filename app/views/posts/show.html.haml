@@ -14,9 +14,6 @@
             %span.destroy= link_to image_tag('page_delete.png'), @post, :method => :delete, :confirm => 'Are you sure?', :rel => 'tipsy', :title => 'Destroy'
     .body
       = markdown @post.body
-      - if @post.updated?
-        %br/
-        %em.updated Updated on #{@post.updated_at.strftime('%B %d %Y at %H:%M')}
     .foot
       %p.meta
         Posted on
@@ -24,7 +21,17 @@
         by
         %strong= h @post.user.username
         - if @post.tags.any?
-          and filed under #{tag_paths @post.tags}
+          and filed under #{tag_paths @post.tags}.
+        - else
+          and filed without any tags.
+        %br/
+        Follow any comments to this post through the
+        = link_to 'Atom', post_path(@post, :format => :atom), :class => 'feed'
+        feed,
+        = link_to 'leave a comment', "#{post_path(@post)}#new_comment"
+        or
+        = link_to 'trackback', post_path(@post, :format => :html)
+        from your own site.
 
 #comments
   - if @post.published

@@ -43,13 +43,17 @@
           %ul
             - Post.all(:order => 'created_at DESC', :conditions => published?).group_by(&:month).each do |month, posts|
               %li.archive #{link_to "#{month}", archive_path(posts)} (#{posts.count})
+          %h2 Meta
+          %ul
+            %li.feed= link_to 'Entries', posts_path(:format => :atom)
           - if signed_in?
             %h2 Welcome, #{h current_user.username}
             %ul
               - if can? :create, Post
                 %li.newpost= link_to 'New post', new_post_path
-              - if can? :manage, User
+              - if can? :create, User
                 %li.newuser= link_to 'New user', new_user_path
+              - if can? :read, User
                 %li.allusers= link_to 'All users', users_path
       #footer
         %p Powered by #{link_to 'Hymir', 'http://github.com/gigamo/hymir', :rel => 'tipsy', :title => "Version: #{Hymir::Version::STRING}"}.

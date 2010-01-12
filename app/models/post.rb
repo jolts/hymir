@@ -8,11 +8,9 @@ class Post
   key :tags, Array
   key :published, Boolean, :default => false
   key :published_at, Time
-  key :position, Integer, :default => 0
   timestamps!
 
   before_create :make_slug
-  before_create :set_position
   before_save :update_published_at
 
   belongs_to :user
@@ -25,7 +23,7 @@ class Post
   validates_format_of :tag_names, :with => RegTagsOk
 
   def to_param
-    [self.position, self.slug].join('-')
+    self.slug
   end
 
   def tag_names=(given_tags)
@@ -47,10 +45,6 @@ class Post
   private
     def make_slug
       write_attribute(:slug, self.title.downcase.gsub(/ /, '-').gsub(/[^a-z0-9-]/, '').squeeze('-'))
-    end
-
-    def set_position
-      write_attribute(:position, (Post.all.map(&:position).max + 1 rescue 1))
     end
 
     def update_published_at

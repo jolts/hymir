@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_filter :find_post_by_position, :only => [:show, :edit, :update, :destroy]
+  before_filter :find_post_by_slug, :only => [:show, :edit, :update, :destroy]
   load_and_authorize_resource
 
   def index
@@ -44,6 +44,7 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html
       format.json { render :json => @post }
+      format.atom
     end
   end
 
@@ -99,8 +100,8 @@ class PostsController < ApplicationController
       signed_in? ? {} : {:published => true}
     end
 
-    def find_post_by_position
-      @post = Post.find_by_position(params[:id].to_i, :conditions => published?)
+    def find_post_by_slug
+      @post = Post.find_by_slug(params[:id], :conditions => published?)
     end
   # private
 end
