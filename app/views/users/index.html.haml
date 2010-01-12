@@ -1,27 +1,28 @@
 - title 'Users'
 
 - if can? :read, @users
-  #users
-    - @users.each do |user|
-      .user
-        %dl
-          %dt
-            Name
-            - if can?(:destroy, user) && User.all.count > 1
-              %span.destroy= link_to image_tag('user_delete.png'), user, :method => :delete, :confirm => 'Are you sure?', :rel => 'tipsy', :title => 'Destroy'
-          %dd.name
-            = user.username
-        %dl
-          %dt E-mail
-          %dd= user.email
-        - if user.roles.any?
+  #single
+    #users
+      - @users.each do |user|
+        %div.user{:class => users_list_classes(@users, user)}
           %dl
-            %dt Roles
-            %dd= user.roles.map {|role| role.capitalize}.join(', ')
-        - if user.posts.any?
+            %dt
+              Name
+              - if can?(:destroy, user) && User.all.count > 1
+                %span.destroy= link_to image_tag('user_delete.png'), user, :method => :delete, :confirm => 'Are you sure?', :rel => 'tipsy', :title => 'Destroy'
+            %dd.name
+              = user.username
           %dl
-            %dt Posts
-            %dd= user.posts.count
-        %dl
-          %dt Age
-          %dd= time_ago_in_words user.created_at
+            %dt E-mail
+            %dd= user.email
+          - if user.roles.any?
+            %dl
+              %dt Roles
+              %dd= user.roles.map {|role| role.capitalize}.join(', ')
+          - if user.posts.any?
+            %dl
+              %dt Posts
+              %dd= user.posts.count
+          %dl
+            %dt Age
+            %dd= time_ago_in_words user.created_at
