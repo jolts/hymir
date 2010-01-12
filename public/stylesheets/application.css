@@ -53,7 +53,7 @@ textarea:focus          {border:1px solid #6887a0;}
 #sidebar ul li.newuser  {background:url(/images/user_add.png) no-repeat;padding-top:4px;}
 #sidebar ul li.allusers {background:url(/images/group.png) no-repeat;padding-top:4px;}
  
-#footer                 {border-top:1px solid #283743;color:#cdcdcd;padding-top:20px;margin-bottom:50px;text-align:center;font-size:12px;}
+#footer                 {border-top:1px solid #283743;color:#cdcdcd;padding-top:20px;margin-bottom:50px;text-align:center;font-size:13px;font-family:'Myriad Pro';}
 #footer a               {text-decoration:none;text-shadow:1px 1px 1px #000;}
 #footer p               {margin:0;}
 
