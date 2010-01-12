@@ -26,8 +26,8 @@ textarea:focus          {border:1px solid #6887a0;}
 
 #container              {width:860px;margin:0 auto;}
 
-#header                 {height:40px;margin-top:20px;padding:0 20px;padding-bottom:20px;border-bottom:1px solid black;}
-#header h1              {margin:0;text-shadow:2px 2px 2px #000;float:left;font-size:36px;font-weight:normal;}
+#header                 {height:40px;margin-top:20px;padding:0;padding-bottom:20px;border-bottom:1px solid black;}
+#header h1              {margin:0 0 0 20px;text-shadow:2px 2px 2px #000;float:left;font-size:36px;font-weight:normal;}
 #header h1 a            {color:#6887a0;}
 #header h1 a:hover      {text-decoration:none;}
 
