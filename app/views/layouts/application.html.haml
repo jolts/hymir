@@ -12,9 +12,9 @@
   %body
     #container
       - if signed_in?
-        = link_to '&rarr; Log out', logout_path, :method => :delete, :id => 'session'
+        %span#session.login= link_to 'Log out', logout_path, :method => :delete
       - else
-        = link_to '&rarr; Log in', login_path, :id => 'session'
+        %span#session.logout= link_to 'Log in', login_path
       #header
         %h1= link_to Hymir::Config[:title], root_path
         #nav
@@ -38,21 +38,18 @@
             %h2 Tags
             %ul
               - post_tags.each do |post_tag|
-                %li= link_to h(post_tag), tag_path(post_tag)
+                %li.tag= link_to h(post_tag), tag_path(post_tag)
           %h2 Archive
           %ul
             - Post.all(:order => 'created_at DESC', :conditions => published?).group_by(&:month).each do |month, posts|
-              %li #{link_to "#{month}", archive_path(posts)} (#{posts.count})
+              %li.archive #{link_to "#{month}", archive_path(posts)} (#{posts.count})
           - if signed_in?
             %h2 Welcome, #{h current_user.username}
-            %p
+            %ul
               - if can? :create, Post
-                = link_to 'New post', new_post_path
-                %br/
+                %li.newpost= link_to 'New post', new_post_path
               - if can? :manage, User
-                = link_to 'New user', new_user_path
-                %br/
-                = link_to 'All users', users_path
-                %br/
+                %li.newuser= link_to 'New user', new_user_path
+                %li.allusers= link_to 'All users', users_path
       #footer
         %p Powered by #{link_to 'Hymir', 'http://github.com/gigamo/hymir', :rel => 'tipsy', :title => "Version: #{Hymir::Version::STRING}"}.

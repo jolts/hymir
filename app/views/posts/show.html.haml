@@ -9,9 +9,9 @@
           %span.draft [draft]
         %span.actions
           - if can? :update, @post
-            %span.edit= link_to image_tag('add.png'), edit_post_path(@post), :rel => 'tipsy', :title => 'Edit'
+            %span.edit= link_to image_tag('page_edit.png'), edit_post_path(@post), :rel => 'tipsy', :title => 'Edit'
           - if can? :destroy, @post
-            %span.destroy= link_to image_tag('delete.png'), @post, :method => :delete, :confirm => 'Are you sure?', :rel => 'tipsy', :title => 'Destroy'
+            %span.destroy= link_to image_tag('page_delete.png'), @post, :method => :delete, :confirm => 'Are you sure?', :rel => 'tipsy', :title => 'Destroy'
     .body
       = markdown @post.body
       - if @post.updated?
@@ -29,7 +29,7 @@
 #comments
   - if @post.published
     - if @post.comments.any?
-      %h2 #{@post.comments.count} Comments
+      %h2#comments_count #{@post.comments.count} Comments
       %ul#comments_list
         - @post.comments.sort_by {|c| c.created_at}.each do |comment|
           %li{:class => "comment#{comment.has_user ? ' has_user' : nil}"}
@@ -37,7 +37,7 @@
               = image_tag comment.gravatar(21), :alt => 'Gravatar', :size => '21x21', :class => 'gravatar'
               %strong.username= link_to_unless comment.url.blank?, h(comment.name), comment.url
               - if can? :destroy, comment
-                %span.destroy= link_to image_tag('delete.png'), post_comment_path(@post, comment), :method => :delete, :confirm => 'Are you sure?', :rel => 'tipsy', :title => 'Destroy'
+                %span.destroy= link_to image_tag('comment_delete.png'), post_comment_path(@post, comment), :method => :delete, :confirm => 'Are you sure?', :rel => 'tipsy', :title => 'Destroy'
               %p.meta #{time_ago_in_words comment.created_at} ago
             .body
               = markdown comment.body
@@ -45,6 +45,5 @@
       %h2 No comments yet!
 
     - if can? :create, Comment
-      #newcomment
-        %h2 New Comment
-        = render 'comments/form'
+      %h2#new_comment New Comment
+      = render 'comments/form'
