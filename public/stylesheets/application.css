@@ -46,6 +46,7 @@ textarea:focus          {border:1px solid #6887a0;}
 #sidebar p              {line-height:normal;}
 #sidebar ul             {list-style:none;margin-bottom:10px;}
 #sidebar ul li          {margin-bottom:2px;padding-left:20px;}
+#sidebar ul li.feed     {background:url(/images/rss.png) no-repeat;padding-top:2px;}
 #sidebar ul li.tag      {background:url(/images/tag.png) no-repeat;padding-top:1px;}
 #sidebar ul li.archive  {background:url(/images/folder.png) no-repeat;padding-top:2px;}
 #sidebar ul li.newpost  {background:url(/images/page_add.png) no-repeat;padding-top:4px;}
