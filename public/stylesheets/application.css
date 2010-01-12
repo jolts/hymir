@@ -50,7 +50,7 @@ textarea:focus          {border:1px solid #6887a0;}
 #sidebar ul li.archive  {background:url(/images/folder.png) no-repeat;}
 #sidebar ul li.newpost  {background:url(/images/page_add.png) no-repeat;padding-top:2px;}
 #sidebar ul li.newuser  {background:url(/images/user_add.png) no-repeat;padding-top:2px;}
-#sidebar ul li.allusers {background:url(/images/folder_user.png) no-repeat;padding-top:2px;}
+#sidebar ul li.allusers {background:url(/images/group.png) no-repeat;padding-top:2px;}
  
 #footer                 {border-top:1px solid #283743;color:#cdcdcd;padding-top:20px;margin-bottom:50px;text-align:center;}
 #footer a               {text-decoration:none;text-shadow:1px 1px 1px #000;}
@@ -147,8 +147,8 @@ h2#comments_count        {background:url(/images/comments.png) no-repeat;padding
 #searchsubmit:focus     {border:1px solid #252527;}
 
 #session                {position:absolute;top:0;right:5px;}
-#session.login          {background:url(/images/door_in.png) no-repeat;padding-left:20px;}
-#session.logout         {background:url(/images/door_out.png) no-repeat;padding-left:20px;}
+#session.login          {background:url(/images/door_in.png) no-repeat top right;padding-right:22px;}
+#session.logout         {background:url(/images/door_out.png) no-repeat top right;padding-right:22px;}
 
 #login form                     {display:block;position:relative;overflow:hidden;}
 #login form label               {font-weight:bold;color:#88939c;text-shadow:1px 1px 1px #000;float:left;width:150px;}
