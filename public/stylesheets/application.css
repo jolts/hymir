@@ -10,7 +10,7 @@ a:active, a:focus       {outline:0 none;}
 
 ul, ol                  {list-style:none;}
 
-h1, h2, h3, h4, h5, h6  {font-weight:normal;text-shadow:1px 1px 1px #000;margin:0 0 20px;}
+h1, h2, h3, h4, h5, h6  {font-family:'Myriad Pro';text-shadow:1px 1px 1px #000;margin:0 0 20px;}
 h1                      {font-size:20px;}
 h2                      {font-size:18px;}
 h3, h4, h5, h6          {font-size:16px;}
@@ -27,12 +27,12 @@ textarea:focus          {border:1px solid #6887a0;}
 #container              {width:860px;margin:0 auto;}
 
 #header                 {height:50px;margin-top:20px;padding:0;padding-bottom:20px;border-bottom:1px solid black;}
-#header h1              {margin:0 0 0 20px;text-shadow:2px 2px 2px #000;float:left;font-size:42px;font-weight:normal;}
+#header h1              {margin:0 0 0 20px;text-shadow:2px 2px 2px #000;float:left;font-size:42px;}
 #header h1 a            {color:#6887a0;}
 #header h1 a:hover      {text-decoration:none;}
 
-#nav                    {margin-top:25px;margin-right:20px;float:right;font-size:18px;}
-#nav ul                 {list-style:none;}
+#nav                    {margin-top:25px;margin-right:20px;float:right;font-size:18px;font-family:'Myriad Pro';}
+#nav ul                 {list-style:none;font-weight:bold;}
 #nav ul li              {text-shadow:1px 1px 1px #000;margin-left:10px;color:#6887a0;display:inline;margin-bottom:2px;border-bottom:2px solid #283743;}
 #nav ul li a            {color:#88939c;margin-bottom:2px;border-bottom:2px solid #10212e;}
 #nav ul li a:hover      {color:#88939c;margin-bottom:2px;border-bottom:2px solid #283743;text-decoration:none;}
