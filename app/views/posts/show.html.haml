@@ -1,6 +1,6 @@
 - title h(@post.title), false
 
-#single
+%div#single{:class => @post.published ? nil : 'draft'}
   .content
     .head
       %h2.title

@@ -1,7 +1,7 @@
 - if @posts.any?
   %ul#posts
     - @posts.each do |post|
-      %li.post
+      %li.post{:class => post.published ? nil : 'draft'}
         .content
           .head
             %h2.title
