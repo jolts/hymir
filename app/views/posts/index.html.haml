@@ -15,7 +15,7 @@
               by
               %strong= h post.user.username
               on
-              = post.created_at.strftime('%B %d, %Y')
+              = post.created_at.strftime('%B %e, %Y')
               &mdash;
               = link_to pluralize(post.comments.count, 'comment'), "#{post_path post}#comments"
           .body

@@ -20,7 +20,7 @@
     .foot
       %p.meta
         Posted on
-        = @post.created_at.strftime('%B %d %Y at %H:%M')
+        = @post.created_at.strftime('%B %e %Y at %H:%M')
         by
         %strong= h @post.user.username
         - if @post.tags.any?

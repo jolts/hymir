@@ -61,7 +61,7 @@ class PostsController < ApplicationController
     respond_to do |format|
       if @post.save
         flash[:notice] = 'Successfully created post.'
-        format.html { redirect_to post_url(@post) }
+        format.html { redirect_to post_path(@post) }
       else
         format.html { render :action => 'new' }
       end
@@ -78,7 +78,7 @@ class PostsController < ApplicationController
     respond_to do |format|
       if @post.update_attributes(params[:post])
         flash[:notice] = 'Successfully updated post.'
-        format.html { redirect_to post_url(@post) }
+        format.html { redirect_to post_path(@post) }
       else
         format.html { render :action => 'edit' }
       end

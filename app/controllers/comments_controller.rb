@@ -17,7 +17,7 @@ class CommentsController < ApplicationController
         flash[:notice] = 'Successfully created comment.'
       else
         flash[:error] = 'Error while creating comment.'
-        #@comment.errors.full_messages.uniq.map {|e| e.downcase}.join(', ')
+        #@comment.errors.full_messages.uniq.map {|e| e.downcase}.to_sentence
       end
       format.html { redirect_to post_url(@post) }
     end

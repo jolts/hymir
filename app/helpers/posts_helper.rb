@@ -1,11 +1,12 @@
 module PostsHelper
   def tag_paths(tags)
-    tags.map {|tag| link_to tag, tag_path(tag)}.join(', ')
+    tags.map {|tag| link_to tag, tag_path(tag)}.to_sentence
   end
 
   def archive_path(posts)
-    year  = posts.map {|p| p.created_at.strftime('%Y')}.first
-    month = posts.map {|p| p.created_at.strftime('%m')}.first
+    time  = posts.map(&:created_at).first
+    year  = time.strftime('%Y')
+    month = time.strftime('%m')
     archives_path(year, month)
   end
 
