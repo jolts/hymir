@@ -87,6 +87,7 @@ textarea:focus          {border:1px solid #6887a0;}
 #single.draft                       {background:rgba(255, 255, 255, 0.1);}
 #single.draft .content .body        {border-top:1px solid #4a5965;}
 #single.draft .content .foot        {border-top:1px solid #4a5965;}
+#single.draft .content .foot p.meta {color:#88939c;}
 
 #posts .post                        {display:block;position:relative;overflow:hidden;background:rgba(0, 0, 0, 0.15);padding:10px;margin:0 -10px 30px;-moz-border-radius:5px;-webkit-border-radius:5px;}
 #posts .post .content .head         {padding:0 0 5px;border-bottom:1px solid #000;position:relative;overflow:hidden;}
@@ -107,6 +108,7 @@ textarea:focus          {border:1px solid #6887a0;}
 #posts .post .content .body ol      {margin:5px 0;text-shadow:none;}
 #posts .post.draft                  {background:rgba(255, 255, 255, 0.1);}
 #posts .post.draft .content .body   {border-top:1px solid #4a5965;}
+#posts .post.draft .head p.meta     {color:#88939c;}
 
 #posts_list .post                       {color:#404f48;padding:10px 0 10px 5px;margin-left:-5px;border-bottom:1px solid #000;border-top:1px solid #283743;display:block;position:relative;overflow:hidden;}
 #posts_list .post a                     {text-shadow:1px 1px 1px #000;}
