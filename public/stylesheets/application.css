@@ -117,7 +117,8 @@ textarea:focus          {border:1px solid #6887a0;}
 #comments .post_comment.has_user             {background:rgba(255, 255, 255, 0.1);}
 #comments .post_comment .info                {float:left;width:23%;padding:5px 0;font-size:12px;}
 #comments .post_comment .info .username      {text-shadow:1px 1px 1px #000;}
-#comments .post_comment .info p              {margin:0;color:#88939c;}
+#comments .post_comment .info p              {margin:0;color:#404f48;}
+#comments .post_comment.has_user .info p     {color:#88939c;}
 #comments .post_comment .info span.destroy a {float:right;text-shadow:1px 1px 1px #000;color:#cc3333;}
 #comments .post_comment .info img.gravatar   {float:left;padding:1px;border:1px solid rgba(255, 255, 255, 0.1);margin:3px 5px 0 0;-moz-border-radius:2px;-webkit-border-radius:2px;}
 #comments .post_comment .body                {padding:5px 0;float:right;clear:right;width:75%;}
