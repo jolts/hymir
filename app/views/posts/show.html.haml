@@ -36,7 +36,7 @@
 #comments
   - if @post.published
     - if @post.comments.any?
-      %h2#comments_count #{@post.comments.count} Comments
+      %h2#comments_count= pluralize @post.comments.count, 'Comment'
       %ul#comments_list
         - @post.comments.sort_by {|c| c.created_at}.each do |comment|
           %li{:class => "post_comment#{comment.has_user ? ' has_user' : nil}"}
