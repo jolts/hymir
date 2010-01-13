@@ -20,6 +20,20 @@ class PostTest < ActiveSupport::TestCase
       assert @post.user_id
     end
 
+    should 'not be published by default' do
+      assert_equal false, @post.published
+    end
+
+    should 'not have published_at set' do
+      assert_nil @post.published_at
+    end
+
+    should 'set published_at when published' do
+      @post.published = true
+      @post.save!
+      assert @post.published_at
+    end
+
     should 'create a slug' do
       assert_equal 'foo-bar-baz', @post.slug
     end
@@ -51,9 +65,9 @@ class PostTest < ActiveSupport::TestCase
     end
 
     should 'be able to delete specific comments' do
-      comment = Comment.new(:name => 'John Doe')
+      comment = Comment.new
       @post.comments << comment
-      @post.comments.delete_if {|comment| comment.name == 'John Doe'}
+      @post.comments.delete_if {|c| c.id == comment.id}
       assert_equal [], @post.comments
     end
   end
