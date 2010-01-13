@@ -68,7 +68,7 @@ textarea:focus          {border:1px solid #6887a0;}
 #single .content .head h2.title span.draft {color:#88939c;font-size:14px;}
 #single .content .head h2.title span.actions {float:right;clear:right;margin-top:2px;}
 #single .content .head h2.title span.actions span.destroy a {color:#cc3333;text-shadow:1px 1px 1px #000;}
-#single .content .body              {border-top:1px solid #283743;padding:15px 0;font-size:15px;}
+#single .content .body              {border-top:1px solid #283743;padding:15px 0;font-size:15px;border-bottom:1px solid #000;}
 #single .content .body h1,
 #single .content .body h2,
 #single .content .body h3,
@@ -79,7 +79,7 @@ textarea:focus          {border:1px solid #6887a0;}
 #single .content .body ul,
 #single .content .body ol           {margin:5px 0;text-shadow:none;}
 #single .content .body em.updated   {font-size:12px;}
-#single .content .foot              {padding:13px 0;border-top:1px solid #283743;border-bottom:1px solid #283743;}
+#single .content .foot              {padding:5px 0;border-top:1px solid #283743;}
 #single .content .foot p.meta       {margin:0;padding:0;padding-top:2px;font-size:12px;color:#404f48;}
 #single.static                      {font-size:15px;}
 #single.draft                       {background:rgba(0, 0, 0, 0.30);}
