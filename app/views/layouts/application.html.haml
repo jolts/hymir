@@ -12,10 +12,6 @@
 
   %body
     #container
-      - if signed_in?
-        %span#session.login= link_to 'Log out', logout_path, :method => :delete
-      - else
-        %span#session.logout= link_to 'Log in', login_path
       #header
         %h1= link_to Hymir::Config[:title], root_path
         #nav
@@ -56,5 +52,9 @@
           %h2 Meta
           %ul
             %li.feed= link_to 'Entries', posts_path(:format => :atom)
+            - if signed_in?
+              %li.logout= link_to 'Log out', logout_path, :method => :delete
+            - else
+              %li.login= link_to 'Log in', login_path
       #footer
         %p Powered by #{link_to 'Hymir', 'http://github.com/gigamo/hymir', :rel => 'tipsy', :title => "Version: #{Hymir::Version::STRING}"}.
