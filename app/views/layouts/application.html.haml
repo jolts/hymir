@@ -6,8 +6,9 @@
     = stylesheet_link_tag 'application', 'tipsy', :cache => 'application'
     = stylesheet_link_tag 'formtastic', 'formtastic_changes', :cache => 'formtastic'
     = javascript_include_tag 'jquery'
-    = javascript_include_tag 'jquery.tipsy', 'application', :cache => 'application'
+    = javascript_include_tag 'jquery.tipsy'
     = javascript_include_tag 'cufon-yui', 'cufon-myriad', :cache => 'cufon'
+    = javascript_include_tag 'application', :cache => 'application'
     = yield(:head)
 
   %body
