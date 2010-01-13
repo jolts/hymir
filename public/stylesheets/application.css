@@ -10,7 +10,8 @@ a:active, a:focus       {outline:0 none;}
 
 ul, ol                  {list-style:none;}
 
-h1, h2, h3, h4, h5, h6  {font-family:'Myriad Pro';text-shadow:1px 1px 1px #000;margin:0 0 20px;}
+h1, h2, h3, h4, h5, h6  {text-shadow:1px 1px 1px #000;margin:0 0 20px;}
+h1, h2, h3              {font-family:'Myriad Pro';}
 h1                      {font-size:20px;}
 h2                      {font-size:18px;}
 h3, h4, h5, h6          {font-size:16px;}
@@ -153,8 +154,8 @@ h2#comments_count        {background:url(/images/comments.png) no-repeat;padding
 
 #pagination             {}
 
-#searchfield            {margin-bottom:20px;display:inline;color:#10212e;background:#88939c;width:85px;border:1px solid #000;}
-#searchsubmit           {-moz-border-radius:2px;-webkit-border-radius:2px;color:#10212e;background:#88939c;padding:1px;border:1px solid #000;cursor:pointer;}
+#searchfield            {margin-bottom:20px;display:inline;color:#10212e;background:#88939c;width:115px;border:1px solid #000;}
+#searchsubmit           {-moz-border-radius:2px;-webkit-border-radius:2px;color:#10212e;background:#88939c;padding:1px;border:1px solid #000;cursor:pointer;float:right;}
 #searchfield:focus,
 #searchsubmit:focus     {border:1px solid #252527;}
 

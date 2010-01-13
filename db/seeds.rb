@@ -11,22 +11,18 @@ admin_user = User.create(
   :email => Hymir::Config[:email],
   :password => 'abcdef',
   :password_confirmation => 'abcdef',
-  :roles_mask => '1'
+  :roles => ['admin']
 )
 
-if admin_user.save!
-  puts 'Successfully created admin user'
-end
+puts 'Successfully created admin user' if admin_user.save!
 
 welcome_post = Post.create(
   :user_id => admin_user.id,
   :title => 'Welcome to Hymir!',
-  :body => 'Should be more stuff here...',
+  :body => 'Should be more stuff here&hellip;',
   :tags => ['welcome', 'hymir'],
   :created_at => Time.now,
   :updated_at => Time.now
 )
 
-if welcome_post.save!
-  puts 'Successfully created welcome post'
-end
+puts 'Successfully created welcome post' if welcome_post.save!
