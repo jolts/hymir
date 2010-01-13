@@ -4,7 +4,8 @@
       %li.post{:class => posts_list_classes(@posts, post)}
         .title
           %strong= link_to h(post.title), post_path(post)
-          by #{post.user.username}
-        .meta #{post.created_at.strftime('%B %e')}
+          by
+          = h post.user.username
+        .meta= post.created_at.strftime('%B %e')
 - else
   %p No posts found!
