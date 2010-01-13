@@ -50,7 +50,6 @@
               = markdown comment.body
     - else
       %h2#comments_count No comments yet!
-
     - if can? :create, Comment
       %h2#new_comment New Comment
       = render 'comments/form'

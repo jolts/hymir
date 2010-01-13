@@ -5,7 +5,7 @@ body                    {background:#10212e;font:12px Helvetica Neue,Helvetica,A
 p                       {margin:10px 0;line-height:1.25;}
 
 a                       {color:#6887a0;text-decoration:none;}
-a:hover                 {text-decoration:underline;}
+a:hover                 {border-bottom:1px dotted #6887a0;}
 a:active, a:focus       {outline:0 none;}
 
 ul, ol                  {list-style:none;}
@@ -29,7 +29,7 @@ textarea:focus          {border:1px solid #6887a0;}
 #header                 {height:50px;margin-top:20px;padding:0;padding-bottom:20px;border-bottom:1px solid black;}
 #header h1              {margin:0 0 0 20px;text-shadow:2px 2px 2px #000;float:left;font-size:42px;}
 #header h1 a            {color:#6887a0;}
-#header h1 a:hover      {text-decoration:none;}
+#header h1 a:hover      {border:none;}
 
 #nav                    {margin-top:25px;margin-right:20px;float:right;font-size:17px;font-family:'Myriad Pro';}
 #nav ul                 {list-style:none;font-weight:bold;}
@@ -89,7 +89,7 @@ textarea:focus          {border:1px solid #6887a0;}
 #posts .post .content .head         {padding:0 0 5px;border-bottom:1px solid #000;position:relative;overflow:hidden;}
 #posts .post .content .head h2.title {font-size:19px;margin:0;}
 #posts .post .content .head h2.title a {color:#cdcdcd;}
-#posts .post .content .head h2.title a:hover {text-decoration: none;}
+#posts .post .content .head h2.title a:hover {border:none;}
 #posts .post .content .head h2.title span.draft {color:#88939c;font-size:14px;}
 #posts .post .content .head p.meta  {margin:0;padding:0;padding-top:2px;font-size:12px;color:#404f48;}
 #posts .post .content .body         {border-top:1px solid #283743;padding:15px 0 0;font-size:15px;}
