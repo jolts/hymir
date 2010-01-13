@@ -11,9 +11,9 @@ a:active, a:focus       {outline:0 none;}
 ul, ol                  {list-style:none;}
 
 h1, h2, h3, h4, h5, h6  {font-family:'Myriad Pro';text-shadow:1px 1px 1px #000;margin:0 0 20px;}
-h1                      {font-size:19px;}
+h1                      {font-size:20px;}
 h2                      {font-size:18px;}
-h3, h4, h5, h6          {font-size:17px;}
+h3, h4, h5, h6          {font-size:16px;}
 
 img                     {border:0 none;}
 
@@ -31,7 +31,7 @@ textarea:focus          {border:1px solid #6887a0;}
 #header h1 a            {color:#6887a0;}
 #header h1 a:hover      {border:none;}
 
-#nav                    {margin-top:25px;margin-right:20px;float:right;font-size:17px;font-family:'Myriad Pro';}
+#nav                    {margin-top:25px;margin-right:20px;float:right;font-size:16px;font-family:'Myriad Pro';}
 #nav ul                 {list-style:none;font-weight:bold;}
 #nav ul li              {text-shadow:1px 1px 1px #000;margin-left:10px;color:#6887a0;display:inline;margin-bottom:2px;border-bottom:2px solid #283743;}
 #nav ul li a            {color:#88939c;margin-bottom:2px;border-bottom:2px solid #10212e;}
@@ -42,7 +42,7 @@ textarea:focus          {border:1px solid #6887a0;}
 #content                {float:left;width:600px;}
 
 #sidebar                {float:right;clear:right;width:170px;color:#88939c;font-size:12px;}
-#sidebar h2             {font-size:17px;margin-bottom:5px;}
+#sidebar h2             {font-size:16px;margin-bottom:5px;}
 #sidebar p              {line-height:normal;}
 #sidebar ul             {list-style:none;margin-bottom:10px;}
 #sidebar ul li          {margin-bottom:2px;padding-left:20px;}
@@ -64,12 +64,12 @@ textarea:focus          {border:1px solid #6887a0;}
 
 #single                             {position:relative;background:rgba(0, 0, 0, 0.15);padding:10px;margin:0 -10px 30px;-moz-border-radius:5px;-webkit-border-radius:5px;}
 #single .content .head              {padding:0 0 5px;border-bottom:1px solid #000;position:relative;overflow:hidden;}
-#single .content .head h2.title     {font-size:19px;margin:0;}
-#single .content .head h2.title span.draft {color:#88939c;font-size:14px;}
-#single .content .head h2.title span.actions {float:right;clear:right;margin-top:2px;}
-#single .content .head h2.title span a {border:none;}
-#single .content .head h2.title span.actions span.destroy a {color:#cc3333;text-shadow:1px 1px 1px #000;}
-#single .content .body              {border-top:1px solid #283743;padding:15px 0;font-size:15px;border-bottom:1px solid #000;}
+#single .content .head h2.title     {font-size:20px;margin:0;}
+#single .content .head h2.title span.draft {color:#88939c;}
+#single .content .head span.actions {float:right;clear:right;margin-top:2px;}
+#single .content .head span a       {border:none;}
+#single .content .head span.actions span.destroy a {color:#cc3333;text-shadow:1px 1px 1px #000;}
+#single .content .body              {border-top:1px solid #283743;padding:14px 0;font-size:14px;border-bottom:1px solid #000;}
 #single .content .body h1,
 #single .content .body h2,
 #single .content .body h3,
@@ -82,19 +82,19 @@ textarea:focus          {border:1px solid #6887a0;}
 #single .content .body em.updated   {font-size:12px;}
 #single .content .foot              {padding:5px 0;border-top:1px solid #283743;}
 #single .content .foot p.meta       {margin:0;padding:0;padding-top:2px;font-size:12px;color:#404f48;}
-#single.static                      {font-size:15px;}
+#single.static                      {font-size:14px;}
 #single.draft                       {background:rgba(255, 255, 255, 0.1);}
 #single.draft .content .body        {border-top:1px solid #4a5965;}
 #single.draft .content .foot        {border-top:1px solid #4a5965;}
 
 #posts .post                        {display:block;position:relative;overflow:hidden;background:rgba(0, 0, 0, 0.15);padding:10px;margin:0 -10px 30px;-moz-border-radius:5px;-webkit-border-radius:5px;}
 #posts .post .content .head         {padding:0 0 5px;border-bottom:1px solid #000;position:relative;overflow:hidden;}
-#posts .post .content .head h2.title {font-size:19px;margin:0;}
+#posts .post .content .head h2.title {font-size:20px;margin:0;}
 #posts .post .content .head h2.title a {color:#cdcdcd;}
 #posts .post .content .head h2.title a:hover {border:none;}
-#posts .post .content .head h2.title span.draft {color:#88939c;font-size:14px;}
+#posts .post .content .head h2.title span.draft {color:#88939c;}
 #posts .post .content .head p.meta  {margin:0;padding:0;padding-top:2px;font-size:12px;color:#404f48;}
-#posts .post .content .body         {border-top:1px solid #283743;padding:15px 0 0;font-size:15px;}
+#posts .post .content .body         {border-top:1px solid #283743;padding:14px 0 0;font-size:14px;}
 #posts .post .content .body h1,
 #posts .post .content .body h2,
 #posts .post .content .body h3,
@@ -133,7 +133,7 @@ textarea:focus          {border:1px solid #6887a0;}
 #comments .post_comment .body h6,
 #comments .post_comment .body p,
 #comments .post_comment .body ul,
-#comments .post_comment .body ol             {margin:0 0 5px;text-shadow:none;font-size:15px;}
+#comments .post_comment .body ol             {margin:0 0 5px;text-shadow:none;font-size:14px;}
 #comments .post_comment.has_user             {background:rgba(255, 255, 255, 0.1);}
 #comments .post_comment.has_user .info p     {color:#88939c;}
 

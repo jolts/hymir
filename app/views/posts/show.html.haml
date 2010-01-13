@@ -3,15 +3,15 @@
 %div#single{:class => @post.published ? nil : 'draft'}
   .content
     .head
+      %span.actions
+        - if can? :update, @post
+          %span.edit= link_to image_tag('page_edit.png'), edit_post_path(@post), :rel => 'tipsy', :title => 'Edit'
+        - if can? :destroy, @post
+          %span.destroy= link_to image_tag('page_delete.png'), @post, :method => :delete, :confirm => 'Are you sure?', :rel => 'tipsy', :title => 'Destroy'
       %h2.title
         = h @post.title
         - if not @post.published
           %span.draft [draft]
-        %span.actions
-          - if can? :update, @post
-            %span.edit= link_to image_tag('page_edit.png'), edit_post_path(@post), :rel => 'tipsy', :title => 'Edit'
-          - if can? :destroy, @post
-            %span.destroy= link_to image_tag('page_delete.png'), @post, :method => :delete, :confirm => 'Are you sure?', :rel => 'tipsy', :title => 'Destroy'
     .body
       = markdown @post.body
     .foot
