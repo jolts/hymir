@@ -62,7 +62,7 @@ textarea:focus          {border:1px solid #6887a0;}
 #flash_notice span.notice {background:url(/images/information.png) no-repeat;padding-left:20px;}
 #flash_error span.error   {background:url(/images/delete.png) no-repeat;padding-left:20px;}
 
-#single                             {position:relative;background:rgba(0, 0, 0, 0.15);padding:10px;margin:-10px;-moz-border-radius:5px;-webkit-border-radius:5px;}
+#single                             {position:relative;background:rgba(0, 0, 0, 0.15);padding:10px;margin:0 -10px 30px;-moz-border-radius:5px;-webkit-border-radius:5px;}
 #single .content .head              {padding:0 0 5px;border-bottom:1px solid #000;position:relative;overflow:hidden;}
 #single .content .head h2.title     {font-size:19px;margin:0;}
 #single .content .head h2.title span.draft {color:#88939c;font-size:14px;}
@@ -82,10 +82,10 @@ textarea:focus          {border:1px solid #6887a0;}
 #single .content .foot              {padding:5px 0;border-top:1px solid #283743;}
 #single .content .foot p.meta       {margin:0;padding:0;padding-top:2px;font-size:12px;color:#404f48;}
 #single.static                      {font-size:15px;}
-#single.draft                       {background:rgba(0, 0, 0, 0.30);}
+#single.draft                       {background:rgba(255, 255, 255, 0.1);}
 
 #posts .post                        {display:block;position:relative;overflow:hidden;background:rgba(0, 0, 0, 0.15);padding:10px;margin:0 -10px 30px;-moz-border-radius:5px;-webkit-border-radius:5px;}
-#posts .post.draft                  {background:rgba(0, 0, 0, 0.30);}
+#posts .post.draft                  {background:rgba(255, 255, 255, 0.1);}
 #posts .post .content .head         {padding:0 0 5px;border-bottom:1px solid #000;position:relative;overflow:hidden;}
 #posts .post .content .head h2.title {font-size:19px;margin:0;}
 #posts .post .content .head h2.title a {color:#cdcdcd;}
@@ -105,32 +105,31 @@ textarea:focus          {border:1px solid #6887a0;}
 
 #posts_list .post                       {color:#88939c;padding:10px 0 10px 5px;margin-left:-5px;border-bottom:1px solid #000;border-top:1px solid #283743;display:block;position:relative;overflow:hidden;}
 #posts_list .post a       {text-shadow:1px 1px 1px #000;}
-#posts_list .post:hover, #posts_list .post.draft {background:rgba(0, 0, 0, 0.15);}
+#posts_list .post:hover, #posts_list .post.draft {background:rgba(255, 255, 255, 0.1);}
 #posts_list .post.single  {border:none;-moz-border-radius:5px;-webkit-border-radius:5px;}
 #posts_list .post.first   {border-top:none;-moz-border-radius-topright:5px;-webkit-border-radius-topright:5px;-moz-border-radius-topleft:5px;-webkit-border-radius-topleft:5px;}
 #posts_list .post.last    {border-bottom:none;-moz-border-radius-bottomright:5px;-webkit-border-radius-bottomright:5px;-moz-border-radius-bottomleft:5px;-webkit-border-radius-bottomleft:5px;}
 #posts_list .post .title  {float:left;width:73%;}
 #posts_list .post .meta   {float:right;clear:right;width:25%;}
 
-#comments                               {padding-top:30px;}
 #comments h2                            {margin:20px 0;font-size:16px;}
-#comments .comment                      {margin-bottom:20px;padding:5px 0;display:block;position:relative;overflow:hidden;}
-#comments .comment.has_user             {-moz-border-radius:5px;-webkit-border-radius:5px;;margin:0 -10px 20px;padding:5px 10px;background:rgba(0, 0, 0, 0.15);}
-#comments .comment .info                {float:left;width:23%;padding:5px 0;font-size:12px;}
-#comments .comment .info .username      {text-shadow:1px 1px 1px #000;}
-#comments .comment .info p              {margin:0;color:#88939c;}
-#comments .comment .info span.destroy a {float:right;text-shadow:1px 1px 1px #000;color:#cc3333;}
-#comments .comment .info img.gravatar   {float:left;padding:2px;border:1px solid #88939c;margin:3px 5px 0 0;}
-#comments .comment .body                {padding:5px 0;float:right;clear:right;width:75%;}
-#comments .comment .body h1,
-#comments .comment .body h2,
-#comments .comment .body h3,
-#comments .comment .body h4,
-#comments .comment .body h5,
-#comments .comment .body h6,
-#comments .comment .body p,
-#comments .comment .body ul,
-#comments .comment .body ol             {margin:0 0 5px;text-shadow:none;font-size:15px;}
+#comments .post_comment                      {margin-bottom:20px;padding:5px 0;display:block;position:relative;overflow:hidden;margin:0 -10px 20px;padding:5px 10px;background:rgba(0, 0, 0, 0.15);-moz-border-radius:5px;-webkit-border-radius:5px;}
+#comments .post_comment.has_user             {background:rgba(255, 255, 255, 0.1);}
+#comments .post_comment .info                {float:left;width:23%;padding:5px 0;font-size:12px;}
+#comments .post_comment .info .username      {text-shadow:1px 1px 1px #000;}
+#comments .post_comment .info p              {margin:0;color:#88939c;}
+#comments .post_comment .info span.destroy a {float:right;text-shadow:1px 1px 1px #000;color:#cc3333;}
+#comments .post_comment .info img.gravatar   {float:left;padding:1px;border:1px solid rgba(255, 255, 255, 0.1);margin:3px 5px 0 0;-moz-border-radius:2px;-webkit-border-radius:2px;}
+#comments .post_comment .body                {padding:5px 0;float:right;clear:right;width:75%;}
+#comments .post_comment .body h1,
+#comments .post_comment .body h2,
+#comments .post_comment .body h3,
+#comments .post_comment .body h4,
+#comments .post_comment .body h5,
+#comments .post_comment .body h6,
+#comments .post_comment .body p,
+#comments .post_comment .body ul,
+#comments .post_comment .body ol             {margin:0 0 5px;text-shadow:none;font-size:15px;}
 
 h2#new_comment           {margin-top:50px;background:url(/images/comment_add.png) no-repeat;padding-left:20px;}
 
