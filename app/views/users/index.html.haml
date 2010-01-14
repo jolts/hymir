@@ -1,31 +1,30 @@
 - title 'Users'
 
 - if can? :read, @users
-  #single
-    #users
-      - @users.each do |user|
-        %div.user{:class => users_list_classes(@users, user)}
-          - if can?(:destroy, user) && User.all.count > 1
-            %span.destroy= link_to image_tag('user_delete.png'), user, :method => :delete, :confirm => 'Are you sure?', :rel => 'tipsy', :title => 'Destroy'
+  #users
+    - @users.each do |user|
+      %div.user{:class => users_list_classes(@users, user)}
+        - if can?(:destroy, user) && User.all.count > 1
+          %span.destroy= link_to image_tag('user_delete.png'), user, :method => :delete, :confirm => 'Are you sure?', :rel => 'tipsy', :title => 'Destroy'
+        %dl
+          %dt
+            Name
+          %dd.name
+            = user.username
+        %dl
+          %dt E-mail
+          %dd= user.email
+        - if user.roles.any?
           %dl
-            %dt
-              Name
-            %dd.name
-              = user.username
+            %dt Roles
+            %dd= user.roles.map {|role| role.capitalize}.to_sentence
+        - if user.posts.any?
           %dl
-            %dt E-mail
-            %dd= user.email
-          - if user.roles.any?
-            %dl
-              %dt Roles
-              %dd= user.roles.map {|role| role.capitalize}.to_sentence
-          - if user.posts.any?
-            %dl
-              %dt Posts
-              %dd
-                = user.posts.count
-                %br/
-                = user.posts.map {|post| link_to post.title, post_path(post), :title => post.created_at}.to_sentence
-          %dl
-            %dt Age
-            %dd= content_tag :span, time_ago_in_words(user.created_at), :title => user.created_at
+            %dt Posts
+            %dd
+              = user.posts.count
+              %br/
+              = user.posts.map {|post| link_to post.title, post_path(post), :title => post.created_at}.to_sentence
+        %dl
+          %dt Age
+          %dd= content_tag :span, time_ago_in_words(user.created_at), :title => user.created_at
