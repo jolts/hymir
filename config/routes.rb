@@ -35,7 +35,7 @@ ActionController::Routing::Routes.draw do |map|
     post.archives 'posts/archives/:year/:month',
                   :action => :archive,
                   :year   => /[0-9]{4}/,
-                  :month  => /[0-9]{2}/
+                  :month  => /[0-9]{1,2}/
   end
 
   # Index page

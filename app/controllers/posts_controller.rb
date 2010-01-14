@@ -30,7 +30,7 @@ class PostsController < ApplicationController
 
   def archive
     @posts = Post.all(:order => 'created_at DESC', :conditions => published?,
-                      '$where' => "this.created_at.getFullYear() == #{params[:year]} && this.created_at.getMonth()+1 == #{params[:month].to_i < 10 ? params[:month].sub('0', '') : params[:month]}")
+                      '$where' => "this.created_at.getFullYear() == #{params[:year]} && this.created_at.getMonth()+1 == #{params[:month]}")
 
     respond_to do |format|
       format.html
