@@ -13,7 +13,7 @@
   %body
     #container
       #header
-        %h1= link_to Hymir::Config[:title], root_path
+        %h1= link_to h(Hymir::Config[:title]), root_path
         #nav
           %ul
             %li= link_to_unless_current 'Home', root_path
@@ -29,7 +29,7 @@
           = yield
         #sidebar
           - form_tag posts_path, :method => :get do
-            = text_field_tag :q, params[:q], :id => 'searchfield'
+            = text_field_tag :q, h(params[:q]), :id => 'searchfield'
             = submit_tag 'Search', :name => nil, :id => 'searchsubmit'
           - if signed_in?
             %h2 Welcome, #{h current_user.username}

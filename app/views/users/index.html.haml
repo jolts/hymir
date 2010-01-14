@@ -10,10 +10,10 @@
           %dt
             Name
           %dd.name
-            = user.username
+            = h user.username
         %dl
           %dt E-mail
-          %dd= user.email
+          %dd= h user.email
         - if user.roles.any?
           %dl
             %dt Roles
@@ -24,7 +24,7 @@
             %dd
               = user.posts.count
               %br/
-              = user.posts.map {|post| link_to post.title, post_path(post), :title => post.created_at}.to_sentence
+              = user.posts.map {|post| link_to h(post.title), post_path(post), :title => post.created_at}.to_sentence
         %dl
           %dt Age
           %dd= content_tag :span, time_ago_in_words(user.created_at), :title => user.created_at

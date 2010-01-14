@@ -10,8 +10,6 @@
           %span.destroy= link_to image_tag('page_delete.png'), @post, :method => :delete, :confirm => 'Are you sure?', :rel => 'tipsy', :title => 'Destroy'
       %h2.title
         = h @post.title
-        - if not @post.published
-          %span.draft [draft]
     .body
       = markdown @post.body
     .foot

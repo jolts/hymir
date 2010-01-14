@@ -1,6 +1,6 @@
 module PostsHelper
   def tag_paths(tags)
-    tags.map {|tag| link_to tag, tag_path(tag)}.to_sentence
+    tags.map {|tag| link_to h(tag), tag_path(tag)}.to_sentence
   end
 
   def archive_path(posts)
