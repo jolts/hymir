@@ -9,7 +9,7 @@ class PostsController < ApplicationController
     else
       @posts = Post.paginate(:page => params[:page], :per_page => 5,
                              :order => 'created_at DESC', :conditions => published?,
-                             '$where' => "this.title.match(/#{params[:q]}/i) || this.body.match(/#{params[:q]}/i)")
+                             :$where => "this.title.match(/#{params[:q]}/i) || this.body.match(/#{params[:q]}/i)")
     end
 
     respond_to do |format|
@@ -30,7 +30,7 @@ class PostsController < ApplicationController
 
   def archive
     @posts = Post.all(:order => 'created_at DESC', :conditions => published?,
-                      '$where' => "this.created_at.getFullYear() == #{params[:year]} && this.created_at.getMonth()+1 == #{params[:month]}")
+                      :$where => "this.created_at.getFullYear() == #{params[:year]} && this.created_at.getMonth()+1 == #{params[:month]}")
 
     respond_to do |format|
       format.html

@@ -1,5 +1,3 @@
-require 'digest/md5'
- 
 module Gravatarable
   def gravatar_email
     email.downcase

@@ -22,7 +22,10 @@
           - if user.posts.any?
             %dl
               %dt Posts
-              %dd= user.posts.count
+              %dd
+                = user.posts.count
+                %br/
+                = user.posts.map {|post| link_to post.title, post_path(post)}.to_sentence
           %dl
             %dt Age
             %dd= content_tag :span, time_ago_in_words(user.created_at), :title => user.created_at

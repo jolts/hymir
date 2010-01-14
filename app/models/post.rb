@@ -23,7 +23,7 @@ class Post
   validates_format_of :tag_names, :with => RegTagsOk
 
   def to_param
-    self.slug
+    slug
   end
 
   def tag_names=(given_tags)
@@ -31,24 +31,24 @@ class Post
   end
 
   def tag_names
-    self.tags.join('; ')
+    tags.join('; ')
   end
 
   def updated?
-    self.updated_at > self.published_at if self.published_at
+    updated_at > published_at if published_at
   end
 
   def month
-    self.created_at.strftime('%B %Y')
+    created_at.strftime('%B %Y')
   end
 
   private
     def make_slug
-      write_attribute(:slug, self.title.downcase.gsub(/ /, '-').gsub(/[^a-z0-9-]/, '').squeeze('-'))
+      write_attribute(:slug, title.downcase.gsub(/ /, '-').gsub(/[^a-z0-9-]/, '').squeeze('-'))
     end
 
     def update_published_at
-      write_attribute(:published_at, Time.now) if self.published and !self.published_at
+      write_attribute(:published_at, Time.now) if published and !published_at
     end
   # private
 end
