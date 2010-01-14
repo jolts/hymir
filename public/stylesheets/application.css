@@ -156,7 +156,8 @@ h2#comments_count        {background:url(/images/comments.png) no-repeat;padding
 #users .user dd.name        {font-weight:bold;}
 #users .user span.destroy a {color:#cc3333;text-shadow:1px 1px 1px #000;float:right;border:none;}
 
-#pagination             {color:#404f48;font-size:13px;font-family:'Myriad Pro',Helvetica Neue,Helvetica,Arial,sans-serif;}
+#pagination             {color:#404f48;font-size:13px;font-family:'Myriad Pro',Helvetica Neue,Helvetica,Arial,sans-serif;text-align:center;}
+#pagination a:hover     {border:none;}
 
 #searchfield            {margin-bottom:20px;display:inline;color:#10212e;background:#88939c;width:110px;border:1px solid #000;}
 #searchsubmit           {-moz-border-radius:2px;-webkit-border-radius:2px;color:#10212e;background:#88939c;padding:1px;border:1px solid #000;cursor:pointer;float:right;}
