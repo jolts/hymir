@@ -10,13 +10,6 @@ module PostsHelper
     archives_path(year, month)
   end
 
-  def user_role(user)
-    role = 'Author' if user.role?(:author)
-    role = 'Moderator' if user.role?(:moderator)
-    role = 'Admin' if user.role?(:admin)
-    role ||= ''
-  end
-
   def posts_list_classes(posts, post)
     cls = post.published ? '' : ' draft'
     if posts.first == posts.last

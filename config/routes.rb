@@ -30,7 +30,6 @@ ActionController::Routing::Routes.draw do |map|
     post.tag 'posts/tag/:tag',
              :action => :tag,
              :tag => /[A-Z\s\-]+/i
-
     # Archives
     post.archives 'posts/archives/:year/:month',
                   :action => :archive,
