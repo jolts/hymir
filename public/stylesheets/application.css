@@ -83,8 +83,7 @@ textarea:focus          {border:1px solid #6887a0;}
 #single .content .body ul,
 #single .content .body ol           {margin:5px 0;text-shadow:none;}
 #single .content .body em.updated   {font-size:12px;}
-#single .content .foot              {padding:5px 0;border-top:1px solid #283743;}
-#single .content .foot p.meta       {margin:0;padding:0;padding-top:2px;font-size:12px;color:#404f48;}
+#single .content .foot              {border-top:1px solid #283743;margin:0;padding:5px 0;font-size:12px;color:#404f48;}
 #single.static                      {font-size:14px;}
 #single.draft                       {background:rgba(255, 255, 255, 0.1);}
 #single.draft .content .body        {border-top:1px solid #4a5965;}
@@ -138,7 +137,7 @@ textarea:focus          {border:1px solid #6887a0;}
 #comments .post_comment .body p,
 #comments .post_comment .body ul,
 #comments .post_comment .body ol             {margin:0 0 5px;text-shadow:none;font-size:14px;}
-#comments .post_comment .body span.destroy a       {float:right;text-shadow:1px 1px 1px #000;color:#cc3333;border:none;}
+#comments .post_comment .body span.destroy a {float:right;text-shadow:1px 1px 1px #000;color:#cc3333;border:none;}
 #comments .post_comment.has_user             {background:rgba(255, 255, 255, 0.1);}
 #comments .post_comment.has_user .info p     {color:#88939c;}
 

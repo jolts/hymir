@@ -15,23 +15,22 @@
     .body
       = markdown @post.body
     .foot
-      %p.meta
-        Posted on
-        = content_tag :span, @post.created_at.strftime('%B %e %Y at %H:%M'), :title => @post.created_at
-        by
-        %strong= h @post.user.username
-        - if @post.tags.any?
-          and filed under #{tag_paths @post.tags}.
-        - else
-          and filed without any tags.
-        %br/
-        Follow any comments to this post through the
-        = link_to 'Atom', post_path(@post, :format => :atom), :class => 'feed'
-        feed,
-        = link_to 'leave a comment', "#{post_path(@post)}#new_comment"
-        or
-        = link_to 'trackback', post_path(@post, :format => :html)
-        from your own site.
+      Posted on
+      = content_tag :span, @post.created_at.strftime('%B %e %Y at %H:%M'), :title => @post.created_at
+      by
+      %strong= h @post.user.username
+      - if @post.tags.any?
+        and filed under #{tag_paths @post.tags}.
+      - else
+        and filed without any tags.
+      %br/
+      Follow any comments to this post through the
+      = link_to 'Atom', post_path(@post, :format => :atom), :class => 'feed'
+      feed,
+      = link_to 'leave a comment', "#{post_path(@post)}#new_comment"
+      or
+      = link_to 'trackback', post_path(@post, :format => :html)
+      from your own site.
 
 #comments
   - if @post.published
