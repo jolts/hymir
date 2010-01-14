@@ -42,11 +42,13 @@ textarea:focus          {border:1px solid #6887a0;}
 
 #content                {float:left;width:600px;}
 
-#sidebar                {float:right;clear:right;width:170px;color:#88939c;font-size:12px;background:rgba(0, 0, 0, 0.15);margin:0 -10px 30px;padding:5px 10px;-moz-border-radius:5px;-webkit-border-radius:5px;}
-#sidebar h2             {font-size:16px;margin:15px 0;}
-#sidebar p              {line-height:normal;}
-#sidebar ul             {list-style:none;}
-#sidebar ul li          {margin-bottom:2px;}
+#sidebar                {float:right;clear:right;width:170px;color:#88939c;font-size:12px;}
+#sidebar .content       {background:rgba(0, 0, 0, 0.15);margin:0 -10px 30px;padding:5px 10px;-moz-border-radius:5px;-webkit-border-radius:5px;}
+#sidebar .content h2    {font-size:16px;margin:5px 0;}
+#sidebar .content p     {line-height:normal;}
+#sidebar .content ul    {list-style:none;margin:15px 0;}
+#sidebar .content ul.meta {margin:15px 0 5px;}
+#sidebar .content ul li {margin-bottom:2px;}
  
 #footer                 {border-top:1px solid #283743;color:#cdcdcd;padding-top:20px;margin-bottom:50px;text-align:center;font-size:13px;font-family:'Myriad Pro';}
 #footer a               {text-decoration:none;text-shadow:1px 1px 1px #000;}
@@ -149,7 +151,7 @@ h2#comments_count        {background:url(/images/comments.png) no-repeat;padding
 #pagination a:hover     {border:none;}
 #pagination strong      {color:#516059;}
 
-#searchfield            {margin-bottom:5px;display:inline;color:#10212e;background:#88939c;width:110px;border:1px solid #000;}
+#searchfield            {margin-bottom:22px;display:inline;color:#10212e;background:#88939c;width:110px;border:1px solid #000;}
 #searchsubmit           {-moz-border-radius:2px;-webkit-border-radius:2px;color:#10212e;background:#88939c;padding:1px;border:1px solid #000;cursor:pointer;float:right;}
 #searchfield:focus,
 #searchsubmit:focus     {border:1px solid #252527;}
