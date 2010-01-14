@@ -22,11 +22,7 @@
             = markdown post.body
 
   #pagination
-    Showing
-    posts
-    %strong #{@posts.index(@posts.first)+@posts.offset+1}-#{@posts.index(@posts.last)+@posts.offset+1}
-    of
-    %strong= @posts.total_entries
+    Showing posts #{content_tag :strong, "#{@posts.index(@posts.first)+@posts.offset+1}-#{@posts.index(@posts.last)+@posts.offset+1}"} of #{content_tag :strong, @posts.total_entries}.
     %br/
     = link_to '&larr; Previous Page', :overwrite_params => {:page => @posts.previous_page} if @posts.previous_page
     = '|' if @posts.previous_page && @posts.next_page
