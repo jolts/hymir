@@ -33,33 +33,29 @@
             = text_field_tag :q, h(params[:q]), :id => 'searchfield'
             = submit_tag 'Search', :name => nil, :id => 'searchsubmit'
           - if signed_in?
-            .content
-              %h2 Welcome, #{h current_user.username}
-              %ul
-                - if can? :create, Post
-                  %li.newpost= link_to 'New post', new_post_path
-                - if can? :create, User
-                  %li.newuser= link_to 'New user', new_user_path
-                - if can? :read, User
-                  %li.allusers= link_to 'All users', users_path
+            %h2 Welcome, #{h current_user.username}
+            %ul
+              - if can? :create, Post
+                %li.newpost= link_to 'New post', new_post_path
+              - if can? :create, User
+                %li.newuser= link_to 'New user', new_user_path
+              - if can? :read, User
+                %li.allusers= link_to 'All users', users_path
           - if (post_tags = Post.all(:conditions => published?).map(&:tags).flatten.uniq).any?
-            .content
-              %h2 Tags
-              %ul
-                - post_tags.each do |post_tag|
-                  %li.tag= link_to h(post_tag), tag_path(post_tag)
-          .content
-            %h2 Archive
+            %h2 Tags
             %ul
-              - Post.all(:order => 'created_at DESC', :conditions => published?).group_by(&:month).each do |month, posts|
-                %li.archive #{link_to "#{month}", archive_path(posts)} (#{posts.count})
-          .content
-            %h2 Meta
-            %ul
-              %li.feed= link_to 'Entries', posts_path(:format => :atom)
-              - if signed_in?
-                %li.logout= link_to 'Log out', logout_path, :method => :delete
-              - else
-                %li.login= link_to 'Log in', login_path
+              - post_tags.each do |post_tag|
+                %li.tag= link_to h(post_tag), tag_path(post_tag)
+          %h2 Archive
+          %ul
+            - Post.all(:order => 'created_at DESC', :conditions => published?).group_by(&:month).each do |month, posts|
+              %li.archive #{link_to "#{month}", archive_path(posts)} (#{posts.count})
+          %h2 Meta
+          %ul
+            %li.feed= link_to 'Entries', posts_path(:format => :atom)
+            - if signed_in?
+              %li.logout= link_to 'Log out', logout_path, :method => :delete
+            - else
+              %li.login= link_to 'Log in', login_path
       #footer
         %p Powered by #{link_to 'Hymir', 'http://github.com/gigamo/hymir', :rel => 'tipsy', :title => "Version: #{Hymir::Version::STRING}"}.
