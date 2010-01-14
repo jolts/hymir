@@ -21,11 +21,12 @@
           .body
             = markdown post.body
 
-  #pagination
-    Showing posts #{content_tag :strong, "#{@posts.index(@posts.first)+@posts.offset+1}"}&ndash;#{content_tag :strong, "#{@posts.index(@posts.last)+@posts.offset+1}"} of #{content_tag :strong, @posts.total_entries}.
-    %br/
-    = link_to_if @posts.previous_page, '&laquo; Previous Page', :overwrite_params => {:page => @posts.previous_page}
-    &mdash;
-    = link_to_if @posts.next_page, 'Next Page &raquo;', :overwrite_params => {:page => @posts.next_page}
+  - if @posts.total_entries > @posts.limit
+    #pagination
+      Showing posts #{content_tag :strong, "#{@posts.index(@posts.first)+@posts.offset+1}"}&ndash;#{content_tag :strong, "#{@posts.index(@posts.last)+@posts.offset+1}"} of #{content_tag :strong, @posts.total_entries}.
+      %br/
+      = link_to_if @posts.previous_page, '&laquo; Previous Page', :overwrite_params => {:page => @posts.previous_page}
+      &mdash;
+      = link_to_if @posts.next_page, 'Next Page &raquo;', :overwrite_params => {:page => @posts.next_page}
 - else
   %h2 No posts found!
