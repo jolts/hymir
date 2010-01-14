@@ -15,7 +15,7 @@
               by
               %strong= h post.user.username
               on
-              = post.created_at.strftime('%B %e, %Y')
+              = content_tag :span, post.created_at.strftime('%B %e, %Y'), :title => post.created_at
               &mdash;
               = link_to pluralize(post.comments.count, 'comment'), "#{post_path post}#comments"
           .body

@@ -17,7 +17,7 @@
     .foot
       %p.meta
         Posted on
-        = @post.created_at.strftime('%B %e %Y at %H:%M')
+        = content_tag :span, @post.created_at.strftime('%B %e %Y at %H:%M'), :title => @post.created_at
         by
         %strong= h @post.user.username
         - if @post.tags.any?
@@ -45,7 +45,7 @@
               %strong.username= link_to_unless comment.url.blank?, h(comment.name), comment.url
               - if can? :destroy, comment
                 %span.destroy= link_to image_tag('comment_delete.png'), post_comment_path(@post, comment), :method => :delete, :confirm => 'Are you sure?', :rel => 'tipsy', :title => 'Destroy'
-              %p.meta= comment.created_at.strftime('%B %e')
+              %p.meta= content_tag :span, comment.created_at.strftime('%B %e'), :title => comment.created_at
             .body
               = markdown comment.body
     - else

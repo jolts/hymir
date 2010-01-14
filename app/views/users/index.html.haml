@@ -25,4 +25,4 @@
               %dd= user.posts.count
           %dl
             %dt Age
-            %dd= time_ago_in_words user.created_at
+            %dd= content_tag :span, time_ago_in_words(user.created_at), :title => user.created_at
