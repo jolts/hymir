@@ -145,7 +145,7 @@ h2#new_comment           {margin-top:50px;background:url(/images/comment_add.png
 
 h2#comments_count        {background:url(/images/comments.png) no-repeat;padding-left:20px;}
 
-#users .user                {font-size:12px;margin:10px 0;background:rgba(0, 0, 0, 0.15);padding:10px;-moz-border-radius:5px;-webkit-border-radius:5px;}
+#users .user                {font-size:12px;margin:10px -10px;background:rgba(0, 0, 0, 0.15);padding:10px;-moz-border-radius:5px;-webkit-border-radius:5px;}
 #users .user.self           {background:rgba(255, 255, 255, 0.1);}
 #users .user.single         {margin:0;}
 #users .user.first          {margin-top:0;}
