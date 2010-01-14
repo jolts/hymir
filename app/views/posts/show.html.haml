@@ -43,10 +43,10 @@
             .info
               = image_tag comment.gravatar(20), :alt => 'Gravatar', :size => '20x20', :class => 'gravatar'
               %strong.username= link_to_unless comment.url.blank?, h(comment.name), comment.url
-              - if can? :destroy, comment
-                %span.destroy= link_to image_tag('comment_delete.png'), post_comment_path(@post, comment), :method => :delete, :confirm => 'Are you sure?', :rel => 'tipsy', :title => 'Destroy'
               %p.meta= content_tag :span, comment.created_at.strftime('%B %e'), :title => comment.created_at
             .body
+              - if can? :destroy, comment
+                %span.destroy= link_to image_tag('comment_delete.png'), post_comment_path(@post, comment), :method => :delete, :confirm => 'Are you sure?', :rel => 'tipsy', :title => 'Destroy'
               = markdown comment.body
     - else
       %h2#comments_count No comments yet!

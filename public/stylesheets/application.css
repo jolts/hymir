@@ -112,7 +112,7 @@ textarea:focus          {border:1px solid #6887a0;}
 #posts .post.draft .content .body   {border-top:1px solid #4a5965;}
 #posts .post.draft .head p.meta     {color:#88939c;}
 
-#posts_list .post                       {color:#404f48;padding:10px 0 10px 5px;margin-left:-5px;border-bottom:1px solid #000;border-top:1px solid #283743;display:block;position:relative;overflow:hidden;}
+#posts_list .post                       {color:#404f48;padding:10px;border-bottom:1px solid #000;border-top:1px solid #283743;display:block;position:relative;overflow:hidden;}
 #posts_list .post a                     {text-shadow:1px 1px 1px #000;}
 #posts_list .post:hover, #posts_list .post.draft {background:rgba(255, 255, 255, 0.1);border-top:1px solid #4a5965;color:#88939c;}
 #posts_list .post.single                {border:none;-moz-border-radius:5px;-webkit-border-radius:5px;}
@@ -127,7 +127,6 @@ textarea:focus          {border:1px solid #6887a0;}
 #comments .post_comment .info .username      {text-shadow:1px 1px 1px #000;}
 #comments .post_comment .info p              {margin:0;color:#404f48;}
 #comments .post_comment.has_user .info p     {color:#88939c;}
-#comments .post_comment .info span.destroy a {float:right;text-shadow:1px 1px 1px #000;color:#cc3333;border:none;}
 #comments .post_comment .info img.gravatar   {float:left;padding:1px;border:1px solid rgba(255, 255, 255, 0.1);margin:3px 5px 0 0;-moz-border-radius:2px;-webkit-border-radius:2px;}
 #comments .post_comment .body                {padding:5px 0;float:right;clear:right;width:75%;}
 #comments .post_comment .body h1,
@@ -139,6 +138,7 @@ textarea:focus          {border:1px solid #6887a0;}
 #comments .post_comment .body p,
 #comments .post_comment .body ul,
 #comments .post_comment .body ol             {margin:0 0 5px;text-shadow:none;font-size:14px;}
+#comments .post_comment .body span.destroy a       {float:right;text-shadow:1px 1px 1px #000;color:#cc3333;border:none;}
 #comments .post_comment.has_user             {background:rgba(255, 255, 255, 0.1);}
 #comments .post_comment.has_user .info p     {color:#88939c;}
 
@@ -146,7 +146,8 @@ h2#new_comment           {margin-top:50px;background:url(/images/comment_add.png
 
 h2#comments_count        {background:url(/images/comments.png) no-repeat;padding-left:20px;}
 
-#users .user                {font-size:12px;margin:20px 0;}
+#users .user                {font-size:12px;margin:20px 0;background:rgba(0, 0, 0, 0.15);padding:10px;-moz-border-radius:5px;-webkit-border-radius:5px;}
+#users .user.self, #users .user:hover {background:rgba(255, 255, 255, 0.1);}
 #users .user.single         {margin:0;}
 #users .user.first          {margin-top:0;}
 #users .user.last           {margin-bottom:0;}
