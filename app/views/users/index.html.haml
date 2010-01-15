@@ -19,7 +19,7 @@
           - if user.roles.any?
             %dl
               %dt Roles
-              %dd= user.roles.map {|role| role.capitalize}.to_sentence
+              %dd= user.roles.map(&:capitalize).to_sentence
           - if user.posts.any?
             %dl
               %dt Posts

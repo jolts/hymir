@@ -28,7 +28,7 @@ class Post
   end
 
   def tag_names=(given_tags)
-    write_attribute(:tags, given_tags.split(/;\s*/).map {|t| t.downcase})
+    write_attribute(:tags, given_tags.split(/;\s*/).map(&:downcase))
   end
 
   def tag_names
