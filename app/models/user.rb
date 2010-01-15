@@ -10,7 +10,7 @@ class User
   # 1: Admin
   timestamps!
 
-  many :posts
+  has_many :posts
 
   RegEmailName = '[\w\.%\+\-]+'
   RegDomainHead = '(?:[A-Z0-9\-]+\.)+'

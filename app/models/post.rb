@@ -14,7 +14,7 @@ class Post
   before_save :update_published_at
 
   belongs_to :user
-  many :comments
+  has_many :comments
 
   RegTagsOk = /\A([A-Z\s\-]+;?)*\z/i
 
