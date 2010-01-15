@@ -80,8 +80,7 @@ textarea:focus          {border:1px solid #6887a0;}
 #single.static                      {font-size:14px;}
 #single.draft                       {background:rgba(255, 255, 255, 0.1);}
 #single.draft .content .body        {border-top:1px solid #4a5965;}
-#single.draft .content .foot        {border-top:1px solid #4a5965;}
-#single.draft .content .foot p.meta {color:#88939c;}
+#single.draft .content .foot        {border-top:1px solid #4a5965;color:#88939c;}
 
 #posts .post                        {display:block;position:relative;overflow:hidden;background:rgba(0, 0, 0, 0.15);padding:10px;margin:0 -10px 30px;-moz-border-radius:5px;-webkit-border-radius:5px;}
 #posts .post .content .head         {padding:0 0 5px;border-bottom:1px solid #000;position:relative;overflow:hidden;}

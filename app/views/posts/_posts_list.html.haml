@@ -6,6 +6,6 @@
           %strong= link_to h(post.title), post_path(post)
           by
           = h post.creator.username
-        .meta= content_tag :span, post.created_at.strftime('%B %e'), :title => post.created_at
+        .meta= content_tag :span, post.published_or_created_at.strftime('%B %e'), :title => post.published_or_created_at
 - else
   No posts found!

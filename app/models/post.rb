@@ -35,11 +35,15 @@ class Post
   end
 
   def updated?
-    updated_at > published_at if published_at
+    updated_at > published_or_created_at
   end
 
   def month
     created_at.strftime('%B %Y')
+  end
+
+  def published_or_created_at
+    published_at || created_at
   end
 
   private
