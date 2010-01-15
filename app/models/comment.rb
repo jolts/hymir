@@ -9,6 +9,9 @@ class Comment
   key :has_user, Boolean
   key :created_at, Time
 
+  # TODO: Validate urls
+  #RegUrlOk = /\A(https?:\/\/|www\.)[^\s<]+\z/ix
+
   def post
     _root_document
   end

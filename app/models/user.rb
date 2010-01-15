@@ -1,5 +1,6 @@
 class User
   include MongoMapper::Document
+  include Gravatarable
 
   key :username, String, :required => true, :unique => true
   key :email, String, :required => true, :unique => true
@@ -12,10 +13,7 @@ class User
 
   has_many :posts
 
-  RegEmailName = '[\w\.%\+\-]+'
-  RegDomainHead = '(?:[A-Z0-9\-]+\.)+'
-  RegDomainTLD = '(?:[A-Z]{2}|com|org|net|gov|mil|biz|info|mobi|name|aero|jobs|museum)'
-  RegEmailOk = /\A#{RegEmailName}@#{RegDomainHead}#{RegDomainTLD}\z/i
+  RegEmailOk = /\A[\w\.%\+\-]+@(?:[A-Z0-9\-]+\.)+(?:[A-Z]{2}|com|org|net|gov|mil|biz|info|mobi|name|aero|jobs|museum)\z/i
 
   validates_length_of :username, :within => 2..32
   validates_length_of :email, :within => 6..100

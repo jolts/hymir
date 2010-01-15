@@ -1,30 +1,32 @@
 - title 'Users'
 
 - if can? :read, @users
-  #users
+  %ul#users
     - @users.each do |user|
-      %div.user{:class => user.id == current_user.id ? 'self' : nil}
-        - if can?(:destroy, user) && User.all.count > 1
-          %span.destroy= link_to image_tag('user_delete.png'), user, :method => :delete, :confirm => 'Are you sure?', :rel => 'tipsy', :title => 'Destroy'
-        %dl
-          %dt
-            Name
-          %dd.name
-            = h user.username
-        %dl
-          %dt E-mail
-          %dd= h user.email
-        - if user.roles.any?
+      %li.user{:class => user.id == current_user.id ? 'self' : nil}
+        %div.avatar= image_tag user.gravatar(56), :alt => 'Gravatar', :size => '56x56', :class => 'gravatar'
+        %div.info
+          - if can?(:destroy, user) && User.all.count > 1
+            %span.destroy= link_to image_tag('user_delete.png'), user, :method => :delete, :confirm => 'Are you sure?', :rel => 'tipsy', :title => 'Destroy'
           %dl
-            %dt Roles
-            %dd= user.roles.map {|role| role.capitalize}.to_sentence
-        - if user.posts.any?
+            %dt
+              Name
+            %dd.name
+              = h user.username
           %dl
-            %dt Posts
-            %dd
-              = user.posts.count
-              %br/
-              = user.posts.map {|post| link_to h(post.title), post_path(post), :title => post.created_at}.to_sentence
-        %dl
-          %dt Age
-          %dd= content_tag :span, time_ago_in_words(user.created_at), :title => user.created_at
+            %dt E-mail
+            %dd= h user.email
+          - if user.roles.any?
+            %dl
+              %dt Roles
+              %dd= user.roles.map {|role| role.capitalize}.to_sentence
+          - if user.posts.any?
+            %dl
+              %dt Posts
+              %dd
+                = user.posts.count
+                %br/
+                = user.posts.map {|post| link_to h(post.title), post_path(post), :title => post.created_at}.to_sentence
+          %dl
+            %dt Age
+            %dd= content_tag :span, time_ago_in_words(user.created_at), :title => user.created_at

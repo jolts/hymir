@@ -1,6 +1,7 @@
 class Post
   include MongoMapper::Document
 
+  key :user_id, ObjectId
   key :title, String, :required => true, :allow_blank => false, :unique => true
   key :body, String, :required => true, :allow_blank => false
   key :slug, String, :unique => true

@@ -57,7 +57,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(params[:post].merge(:creator_id => current_user.id))
+    @post = Post.new(params[:post].merge(:creator_id => current_user.id, :user_id => current_user.id))
 
     respond_to do |format|
       if @post.save
