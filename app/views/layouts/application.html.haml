@@ -47,10 +47,11 @@
               %ul
                 - post_tags.each do |post_tag|
                   %li.tag= link_to h(post_tag), tag_path(post_tag)
-            %h2 Archive
-            %ul
-              - Post.all(:order => 'created_at DESC', :conditions => published?).group_by(&:month).each do |month, posts|
-                %li.archive #{link_to "#{month}", archive_path(posts)} (#{posts.count})
+            - if (all_posts = Post.all(:order => 'created_at DESC', :conditions => published?)).any?
+              %h2 Archive
+              %ul
+                - all_posts.group_by(&:month).each do |month, posts|
+                  %li.archive #{link_to "#{month}", archive_path(posts)} (#{posts.count})
             %h2 Meta
             %ul.meta
               %li.feed= link_to 'Feed', posts_path(:format => :atom)

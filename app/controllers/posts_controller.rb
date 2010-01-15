@@ -57,7 +57,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(params[:post].merge(:user_id => current_user.id))
+    @post = Post.new(params[:post].merge(:creator_id => current_user.id))
 
     respond_to do |format|
       if @post.save
@@ -77,7 +77,7 @@ class PostsController < ApplicationController
   
   def update
     respond_to do |format|
-      if @post.update_attributes(params[:post])
+      if @post.update_attributes(params[:post].merge(:updater_id => current_user.id))
         flash[:notice] = 'Successfully updated post.'
         format.html { redirect_to post_path(@post) }
       else

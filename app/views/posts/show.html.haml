@@ -16,7 +16,7 @@
       Posted on
       = content_tag :span, @post.created_at.strftime('%B %e %Y at %H:%M'), :title => @post.created_at
       by
-      %strong= h @post.user.username
+      %strong= h @post.creator.username
       - if @post.tags.any?
         and filed under #{tag_paths @post.tags}.
       - else

@@ -1,7 +1,6 @@
 class Post
   include MongoMapper::Document
 
-  key :user_id, ObjectId
   key :title, String, :required => true, :allow_blank => false, :unique => true
   key :body, String, :required => true, :allow_blank => false
   key :slug, String, :unique => true
@@ -9,6 +8,7 @@ class Post
   key :published, Boolean, :default => false
   key :published_at, Time
   timestamps!
+  userstamps!
 
   before_create :make_slug
   before_save :update_published_at

@@ -13,7 +13,7 @@
               - if post.tags.any?
                 in #{tag_paths post.tags}
               by
-              %strong= h post.user.username
+              %strong= h post.creator.username
               on
               = content_tag :span, post.created_at.strftime('%B %e, %Y'), :title => post.created_at
               &mdash;
