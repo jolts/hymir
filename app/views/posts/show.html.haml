@@ -25,9 +25,8 @@
         %br/
         Updated on
         = content_tag :span, @post.updated_at.strftime('%B %e %Y at %H:%M'), :title => @post.updated_at
-        - unless @post.updater.id == @post.creator.id
-          by
-          %strong= h @post.updater.username+'.'
+        by
+        %strong #{h @post.updater.username}.
       %br/
       Follow any comments to this post through the
       = link_to 'Atom', post_path(@post, :format => :atom), :class => 'feed'
