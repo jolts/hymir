@@ -53,7 +53,7 @@
                 %li.archive #{link_to "#{month}", archive_path(posts)} (#{posts.count})
             %h2 Meta
             %ul.meta
-              %li.feed= link_to 'Entries', posts_path(:format => :atom)
+              %li.feed= link_to 'Feed', posts_path(:format => :atom)
               - if signed_in?
                 %li.logout= link_to 'Log out', logout_path, :method => :delete
               - else
