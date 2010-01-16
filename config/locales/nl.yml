@@ -72,7 +72,7 @@ nl:
           all_users: Alle gebruikers
         tags:
           title: Tags
-        archive
+        archive:
           title: Archief
         meta:
           title: Meta
