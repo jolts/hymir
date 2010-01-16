@@ -40,7 +40,7 @@ class Post
   end
 
   def month
-    created_at.strftime('%B %Y')
+    I18n.l(published_or_created_at, :format => :month)
   end
 
   def published_or_created_at

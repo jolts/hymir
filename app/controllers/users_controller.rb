@@ -25,7 +25,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        flash[:notice] = 'Successfully created user.'
+        flash[:notice] = t('flash.notice.users.new')
         format.html { redirect_to root_path }
       else
         format.html { render :action => 'new' }
@@ -37,7 +37,7 @@ class UsersController < ApplicationController
     @user.destroy
 
     respond_to do |format|
-      flash[:notice] = 'Successfully destroyed user.'
+      flash[:notice] = t('flash.notice.users.destroy')
       format.html { redirect_to users_path }
     end
   end

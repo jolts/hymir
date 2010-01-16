@@ -1,5 +1,49 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
-  hello: "Hello world"
+  views:
+    layout:
+      nav:
+        home: Home
+        about: About
+        portfolio: Portfolio
+        services: Services
+      forms:
+        search: Search
+      sidebar:
+        controls:
+          title: Welcome
+          new_post: New post
+          new_user: New user
+          all_users: All users
+        tags:
+          title: Tags
+        archive:
+          title: Archive
+        meta:
+          title: Meta
+          feed: Posts feed
+          login: Log in
+          logout: Log out
+  flash:
+    notice:
+      post:
+        new: Successfully created post.
+        edit: Successfully updated post.
+        destroy: Successfully destroyed post.
+      comment:
+        new: Successfully created comment.
+        destroy: Successfully destroyed comment.
+      user_sessions:
+        new: You were successfully logged in.
+        destroy: You were successfully logged out.
+      users:
+        new: Successfully created user.
+        destroy: Successfully destroyed user.
+    error:
+      post:
+      comment:
+        new: Error while creating comment.
+      user_sessions:
+        new: Invalid credentials. Please try again.
+  time:
+    formats:
+      month: '%B %Y'

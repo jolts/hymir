@@ -2,6 +2,8 @@
 # Likewise, all the methods added will be available for all controllers.
 
 class ApplicationController < ActionController::Base
+  before_filter :set_locale
+
   include Hymir # lib/hymir.rb
   include Authentication # lib/authentication.rb
 
@@ -15,4 +17,10 @@ class ApplicationController < ActionController::Base
     flash[:error] = 'Access denied.'
     redirect_to root_url
   end
+
+  private
+    def set_locale
+      I18n.locale = params[:locale] unless params[:locale].blank? || !I18n.available_locales.include?(params[:locale])
+    end
+  # private
 end

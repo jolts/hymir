@@ -22,10 +22,8 @@ Rails::Initializer.run do |config|
   config.gem 'cancan'
   config.gem 'formtastic'
   config.gem 'rdiscount'
-  #config.gem 'will_paginate'
   config.gem 'shoulda'
   config.gem 'factory_girl'
-  #config.gem 'mcmire-matchy', :lib => 'matchy'
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
@@ -45,5 +43,5 @@ Rails::Initializer.run do |config|
 
   # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
-  # config.i18n.default_locale = :de
+  config.i18n.default_locale = :en
 end

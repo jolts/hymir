@@ -17,10 +17,10 @@
         %h1= link_to h(Hymir::Config[:title]), root_path
         #nav
           %ul
-            %li= link_to_unless_current 'Home', root_path
-            %li= link_to_unless_current 'About', about_path
-            %li= link_to_unless_current 'Portfolio', portfolio_path
-            %li= link_to_unless_current 'Services', services_path
+            %li= link_to_unless_current t('views.layout.nav.home'), root_path
+            %li= link_to_unless_current t('views.layout.nav.about'), about_path
+            %li= link_to_unless_current t('views.layout.nav.portfolio'), portfolio_path
+            %li= link_to_unless_current t('views.layout.nav.services'), services_path
       #wrapper
         - flash.each do |name, msg|
           = content_tag :div, (content_tag :span, msg, :class => name), :id => "flash_#{name}"
@@ -31,33 +31,33 @@
         #sidebar
           - form_tag posts_path, :method => :get do
             = text_field_tag :q, h(params[:q]), :id => 'searchfield'
-            = submit_tag 'Search', :name => nil, :id => 'searchsubmit'
+            = submit_tag t('views.layout.forms.search'), :name => nil, :id => 'searchsubmit'
           .content
             - if signed_in?
-              %h2 Welcome, #{h current_user.username}
+              %h2 #{t('views.layout.sidebar.controls.title')}, #{h current_user.username}
               %ul
                 - if can? :create, Post
-                  %li.newpost= link_to 'New post', new_post_path
+                  %li.newpost= link_to t('views.layout.sidebar.controls.new_post'), new_post_path
                 - if can? :create, User
-                  %li.newuser= link_to 'New user', new_user_path
+                  %li.newuser= link_to t('views.layout.sidebar.controls.new_user'), new_user_path
                 - if can? :read, User
-                  %li.allusers= link_to 'All users', users_path
+                  %li.allusers= link_to t('views.layout.sidebar.controls.all_users'), users_path
             - if (post_tags = Post.all(:conditions => published?).map(&:tags).flatten.uniq).any?
-              %h2 Tags
+              %h2= t('views.layout.sidebar.tags.title')
               %ul
                 - post_tags.each do |post_tag|
                   %li.tag= link_to h(post_tag), tag_path(post_tag)
             - if (all_posts = Post.all(:order => 'created_at DESC', :conditions => published?)).any?
-              %h2 Archive
+              %h2= t('views.layout.sidebar.archive.title')
               %ul
                 - all_posts.group_by(&:month).each do |month, posts|
                   %li.archive #{link_to "#{month}", archive_path(posts)} (#{posts.count})
-            %h2 Meta
+            %h2= t('views.layout.sidebar.meta.title')
             %ul.meta
-              %li.feed= link_to 'Feed', posts_path(:format => :atom)
+              %li.feed= link_to t('views.layout.sidebar.meta.feed'), posts_path(:format => :atom)
               - if signed_in?
-                %li.logout= link_to 'Log out', logout_path, :method => :delete
+                %li.logout= link_to t('views.layout.sidebar.meta.logout'), logout_path, :method => :delete
               - else
-                %li.login= link_to 'Log in', login_path
+                %li.login= link_to t('views.layout.sidebar.meta.login'), login_path
       #footer
         %p Powered by #{link_to 'Hymir', 'http://github.com/gigamo/hymir', :rel => 'tipsy', :title => "Version: #{Hymir::Version::STRING}"}.

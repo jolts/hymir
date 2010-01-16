@@ -61,7 +61,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        flash[:notice] = 'Successfully created post.'
+        flash[:notice] = t('flash.notice.post.new')
         format.html { redirect_to post_path(@post) }
       else
         format.html { render :action => 'new' }
@@ -78,7 +78,7 @@ class PostsController < ApplicationController
   def update
     respond_to do |format|
       if @post.update_attributes(params[:post].merge(:updater_id => current_user.id))
-        flash[:notice] = 'Successfully updated post.'
+        flash[:notice] = t('flash.notice.post.edit')
         format.html { redirect_to post_path(@post) }
       else
         format.html { render :action => 'edit' }
@@ -90,7 +90,7 @@ class PostsController < ApplicationController
     @post.destroy
 
     respond_to do |format|
-      flash[:notice] = 'Successfully destroyed post.'
+      flash[:notice] = t('flash.notice.post.destroy')
       format.html { redirect_to root_path }
     end
   end

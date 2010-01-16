@@ -14,9 +14,9 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        flash[:notice] = 'Successfully created comment.'
+        flash[:notice] = t('flash.notice.comment.new')
       else
-        flash[:error] = 'Error while creating comment.'
+        flash[:error] = t('flash.error.comment.new')
         #@comment.errors.full_messages.uniq.map(&:downcase).to_sentence
       end
       format.html { redirect_to post_url(@post) }
@@ -27,7 +27,7 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if can? :destroy, Comment
         @post.comments.delete_if {|comment| comment.id.to_s == params[:id]}
-        flash[:notice] = 'Successfully destroyed comment.' if @post.save
+        flash[:notice] = t('flash.notice.comment.destroy') if @post.save
       else
         flash[:error] = 'Access denied.'
       end
