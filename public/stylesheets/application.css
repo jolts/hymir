@@ -141,13 +141,14 @@ h2#comments_count        {background:url(/images/comments.png) no-repeat;padding
 #users .user                {display:block;position:relative;overflow:hidden;font-size:12px;margin:0 -10px 30px;background:rgba(0, 0, 0, 0.15);padding:10px;-moz-border-radius:5px;-webkit-border-radius:5px;}
 #users .user.self           {background:rgba(255, 255, 255, 0.1);}
 #users .user dl             {margin-bottom:3px;display:block;position:relative;overflow:hidden;}
-#users .user dt             {text-shadow:1px 1px 1px #000;float:left;color:#88939c;width:14%;}
-#users .user dd             {float:right;clear:right;width:85%;}
+#users .user dt             {text-shadow:1px 1px 1px #000;float:left;color:#88939c;width:60px;}
+#users .user dd             {float:right;clear:right;width:440px;}
 #users .user dd.name        {font-weight:bold;}
-#users .user span.destroy a {color:#cc3333;text-shadow:1px 1px 1px #000;float:right;border:none;}
-#users .user .avatar        {float:left;width:11%;}
-#users .user .avatar img.gravatar {padding:1px;border:1px solid rgba(255, 255, 255, 0.1);margin:3px 5px 0 0;-moz-border-radius:2px;-webkit-border-radius:2px;}
-#users .user .info          {float:right;clear:right;width:88%;}
+#users .user span.destroy a {color:#cc3333;text-shadow:1px 1px 1px #000;float:right;clear:right;border:none;}
+#users .user .block         {display:block;position:relative;overflow:hidden;}
+#users .user .block .avatar {float:left;width:11%;}
+#users .user .block .avatar img.gravatar {padding:1px;border:1px solid rgba(255, 255, 255, 0.1);margin:3px 5px 0 0;-moz-border-radius:2px;-webkit-border-radius:2px;}
+#users .user .block .info   {float:right;clear:right;width:88%;}
 
 #pagination             {color:#404f48;font-size:13px;font-family:'Myriad Pro',Helvetica Neue,Helvetica,Arial,sans-serif;text-align:center;}
 #pagination a:hover     {border:none;}

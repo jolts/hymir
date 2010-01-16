@@ -4,27 +4,28 @@
   %ul#users
     - @users.each do |user|
       %li.user{:class => user.id == current_user.id ? 'self' : nil}
-        %div.avatar= image_tag user.gravatar(56), :alt => 'Gravatar', :size => '56x56', :class => 'gravatar'
-        %div.info
-          - if can?(:destroy, user) && User.all.count > 1
-            %span.destroy= link_to image_tag('user_delete.png'), user, :method => :delete, :confirm => t('actions.confirm'), :rel => 'tipsy', :title => t('actions.destroy')
-          %dl
-            %dt= t('.info.name')
-            %dd.name= h user.username
-          %dl
-            %dt= t('.info.email')
-            %dd= h user.email
-          - if user.roles.any?
+        - if can?(:destroy, user) && User.all.count > 1
+          %span.destroy= link_to image_tag('user_delete.png'), user, :method => :delete, :confirm => t('actions.confirm'), :rel => 'tipsy', :title => t('actions.destroy')
+        .block
+          %div.avatar= image_tag user.gravatar(56), :alt => 'Gravatar', :size => '56x56', :class => 'gravatar'
+          %div.info
             %dl
-              %dt= t('.info.roles')
-              %dd= user.roles.map(&:capitalize).to_sentence
-          - if user.posts.any?
+              %dt= t('.info.name')
+              %dd.name= h user.username
             %dl
-              %dt= t('.info.posts')
-              %dd
-                = user.posts.count
-                %br/
-                = user.posts.map {|post| link_to h(post.title), post_path(post), :title => l(post.published_or_created_at)}.to_sentence
-          %dl
-            %dt= t('.info.age')
-            %dd= content_tag :span, time_ago_in_words(user.created_at), :title => l(user.created_at)
+              %dt= t('.info.email')
+              %dd= h user.email
+            - if user.roles.any?
+              %dl
+                %dt= t('.info.roles')
+                %dd= user.roles.map(&:capitalize).to_sentence
+            - if user.posts.any?
+              %dl
+                %dt= t('.info.posts')
+                %dd
+                  = user.posts.count
+                  %br/
+                  = user.posts.map {|post| link_to h(post.title), post_path(post), :title => l(post.published_or_created_at)}.to_sentence
+            %dl
+              %dt= t('.info.age')
+              %dd= content_tag :span, time_ago_in_words(user.created_at), :title => l(user.created_at)
