@@ -160,3 +160,5 @@ h2#comments_count        {background:url(/images/comments.png) no-repeat;padding
 #login form                     {display:block;position:relative;overflow:hidden;}
 #login form label               {font-weight:bold;color:#88939c;text-shadow:1px 1px 1px #000;float:left;width:150px;}
 #login form input[type=submit]  {margin-left:149px;}
+
+#locales                {position:absolute;top:0;right:2px;color:#404f48;}

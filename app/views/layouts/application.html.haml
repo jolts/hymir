@@ -13,6 +13,8 @@
 
   %body
     #container
+      #locales
+        = I18n.available_locales.map {|locale| link_to_unless (I18n.locale.to_sym == locale), h(locale), :overwrite_params => {:locale => locale}}.join(content_tag :span, ' &ndash; ', :class => :separator)
       #header
         %h1= link_to h(Hymir::Config[:title]), root_path
         #nav
