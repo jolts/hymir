@@ -1,6 +1,59 @@
 en:
-  views:
-    layout:
+  posts:
+    index:
+      no_posts: No posts found!
+      meta: Posted in {{tags}} by {{user}} on
+      pagination:
+        info: Showing posts {{posts}} of {{all_posts}}
+        previous_page: '&laquo; Previous page'
+        next_page: 'Next page &raquo;'
+    show:
+      meta: Posted on {{time}} by {{user}} and filed under {{tags}}.
+      info: Follow any comments to this post through the {{feed}}, {{comment}} or {{trackback}} from your own site.
+      comments:
+        no_comments: No comments yet!
+        new: New comment
+    edit:
+      title: Edit post
+    new:
+      title: New post
+    tag:
+      title: Posts tagged {{tag}}
+    archive:
+      title: Posts from {{period}}
+    posts_list:
+      title: '{{title}} by {{user}}'
+    uncategorized: uncategorized
+    comment: comment
+    feed: atom feed
+    leave_comment: leave a comment
+    trackback: trackback
+  users:
+    index:
+      title: All users
+      info:
+        name: Name
+        email: 'E-mail'
+        roles: Roles
+        posts: Posts
+        age: Age
+    new:
+      title: New user
+  user_sessions:
+    new:
+      title: Log in
+      email: 'E-mail'
+      password: Password
+      submit: Log in
+  info:
+    about:
+      title: About
+    portfolio:
+      title: Portfolio
+    services:
+      title: Services
+  layouts:
+    application:
       nav:
         home: Home
         about: About
@@ -10,7 +63,7 @@ en:
         search: Search
       sidebar:
         controls:
-          title: Welcome
+          title: Welcome, {{user}}
           new_post: New post
           new_user: New user
           all_users: All users
@@ -47,3 +100,39 @@ en:
   time:
     formats:
       month: '%B %Y'
+      shorter: '%B %e, %Y'
+      shortest: '%B %e'
+  actions:
+    confirm: 'Are you sure?'
+    destroy: Destroy
+    edit: Edit
+  formtastic:
+    actions:
+      create: Create {{model}}
+      update: Update {{model}}
+    labels:
+      post:
+        title: Title
+        tag_names: Tags
+        published: Status
+        body: Body
+      user:
+        username: Username
+        email: 'E-mail'
+        password: Password
+        password_confirmation: Password (again)
+      comment:
+        name: Name
+        email: 'E-mail'
+        url: Website
+        body: Body
+    hints:
+      post:
+        tag_names: Separate tags with a semicolon (;). Only alphabetic characters and dashes (-) are allowed.
+        published: Visitors will only see published posts.
+        body: "<a href='http://daringfireball.net/projects/markdown/'>Markdown</a> is enabled."
+      user:
+        password: 'Length should be at least 6 characters.'
+      comment:
+        email: "Won't be shown"
+        body: "<a href='http://daringfireball.net/projects/markdown/'>Markdown</a> is enabled."

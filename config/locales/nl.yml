@@ -1,0 +1,274 @@
+nl: 
+  posts:
+    index:
+      no_posts: Geen posts gevonden!
+      meta: Geplaatst in {{tags}} door {{user}} op
+      pagination:
+        info: Posts {{posts}} van {{all_posts}}
+        previous_page: '&laquo; Vorige pagina'
+        next_page: 'Volgende pagina &raquo;'
+    show:
+      meta: Geplaatst op {{time}} door {{user}} in {{tags}}.
+      info: Volg alle reacties op deze post via de {{feed}}, {{comment}} of {{trackback}} vanop je eigen site.
+      comments:
+        no_comments: Nog geen reacties!
+        new: Nieuwe reactie
+    edit:
+      title: Post wijzigen
+    new:
+      title: Nieuwe post
+    tag:
+      title: Posts getagd {{tag}}
+    archive:
+      title: Posts uit {{period}}
+    posts_list:
+      title: '{{title}} door {{user}}'
+    uncategorized: ongecategoriseerd
+    comment: reactie
+    feed: atom feed
+    leave_comment: laat een reactie na
+    trackback: trackback
+  users:
+    index:
+      title: Alle gebruikers
+      info:
+        name: Naam
+        email: 'E-mail'
+        roles: Rollen
+        posts: Posts
+        age: Leeftijd
+    new:
+      title: Nieuwe gebruiker
+  user_sessions:
+    new:
+      title: Inloggen
+      email: 'E-mail'
+      password: Wachtwoord
+      submit: Inloggen
+  info:
+    about:
+      title: About
+    portfolio:
+      title: Portfolio
+    services:
+      title: Diensten
+  layouts:
+    application:
+      nav:
+        home: Home
+        about: About
+        portfolio: Portfolio
+        services: Diensten
+      forms:
+        search: Zoek
+      sidebar:
+        controls:
+          title: Welkom, {{user}}
+          new_post: Nieuwe post
+          new_user: Nieuwe gebruiker
+          all_users: Alle gebruikers
+        tags:
+          title: Tags
+        archive:
+          title: Archief
+        meta:
+          title: Meta
+          feed: Posts feed
+          login: Inloggen
+          logout: Uitloggen
+  flash:
+    notice:
+      post:
+        new: Post werd succesvol aangemaakt.
+        edit: Post werd succesvol gewijzigd.
+        destroy: Post werd succesvol verwijderd.
+      comment:
+        new: Reactie werd succesvol aangemaakt.
+        destroy: Reactie werd succesvol verwijderd.
+      user_sessions:
+        new: U werd succesvol ingelogd.
+        destroy: U werd succesvol uitgelogd.
+      users:
+        new: Gebruiker werd succesvol aangemaakt.
+        destroy: Gebruiker werd succesvol verwijderd.
+    error:
+      post:
+      comment:
+        new: Er is een fout opgetreden tijdens het maken van de reactie.
+      user_sessions:
+        new: Ongeldige gegevens. Probeert u alstublieft opnieuw.
+  actions:
+    confirm: 'Ben je zeker?'
+    destroy: Verwijder
+    edit: Wijzig
+  formtastic:
+    actions:
+      create: '{{model}} maken'
+      update: '{{model}} wijzigen'
+    labels:
+      post:
+        title: Titel
+        tag_names: Tags
+        published: Status
+        body: Inhoud
+      user:
+        username: Gebruikersnaam
+        email: 'E-mail'
+        password: Wachtwoord
+        password_confirmation: Wachtwoord (opnieuw)
+      comment:
+        name: Naam
+        email: 'E-mail'
+        url: Website
+        body: Inhoud
+    hints:
+      post:
+        tag_names: 'Onderscheidt tags met een puntkomma (;). Enkel alfabetische karakters en streepjes (-) zijn toegelaten.'
+        published: Bezoekers zien enkel gepubliceerde posts.
+        body: "Gebruik <a href='http://daringfireball.net/projects/markdown/'>Markdown</a> voor opmaak."
+      user:
+        password: 'Lengte moet minstens 6 karakters lang zijn.'
+      comment:
+        email: 'Wordt niet getoond.'
+        body: "Gebruik <a href='http://daringfireball.net/projects/markdown/'>Markdown</a> voor opmaak."
+  number: 
+    format: 
+      separator: ','
+      precision: 2
+      delimiter: .
+    human: 
+      storage_units: 
+        format: '%n %u'
+        units: 
+          kb: KB
+          tb: TB
+          gb: GB
+          byte: 
+            one: Byte
+            other: Bytes
+          mb: MB
+    currency: 
+      format: 
+        format: '%u %n'
+        unit: !binary |
+          4oKs
+
+        separator: .
+        precision: 2
+        delimiter: .
+  time: 
+    am: "'s ochtends"
+    formats: 
+      default: '%a %d %b %Y %H:%M:%S %Z'
+      time: '%H:%M'
+      short: '%d %b %H:%M'
+      month: '%B %Y'
+      shorter: '%B %e, %Y'
+      shortest: '%B %e'
+      only_second: '%S'
+      datetime: 
+        formats: 
+          default: '%d-%m-%YT%H:%M:%S%Z'
+      long: '%d %B %Y %H:%M'
+    pm: "'s middags"
+  date: 
+    month_names: 
+    - 
+    - januari
+    - februari
+    - maart
+    - april
+    - mei
+    - juni
+    - juli
+    - augustus
+    - september
+    - oktober
+    - november
+    - december
+    abbr_day_names: 
+    - zon
+    - maa
+    - din
+    - woe
+    - don
+    - vri
+    - zat
+    order: 
+    - :day
+    - :month
+    - :year
+    formats: 
+      only_day: '%e'
+      default: '%d/%m/%Y'
+      short: '%e %b'
+      long: '%e %B %Y'
+    day_names: 
+    - zondag
+    - maandag
+    - dinsdag
+    - woensdag
+    - donderdag
+    - vrijdag
+    - zaterdag
+    abbr_month_names: 
+    - 
+    - jan
+    - feb
+    - mar
+    - apr
+    - mei
+    - jun
+    - jul
+    - aug
+    - sep
+    - okt
+    - nov
+    - dec
+  support: 
+    array: 
+      words_connector: ','
+      last_word_connector: ', en'
+      two_words_connector: en
+  datetime: 
+    format: 
+      default: '%Y-%m-%dT%H:%M:%S%Z'
+    prompts: 
+      minute: minuut
+      second: seconden
+      month: maand
+      hour: uur
+      day: dag
+      year: jaar
+    distance_in_words: 
+      less_than_x_minutes: 
+        one: 'minder dan \xC3\xA9\xC3\xA9n minuut'
+        other: minder dan {{count}} minuten
+      x_days: 
+        one: 1 dag
+        other: '{{count}} dagen'
+      x_seconds: 
+        one: 1 seconde
+        other: '{{count}} seconden'
+      about_x_hours: 
+        one: 'ongeveer \xC3\xA9\xC3\xA9n uur'
+        other: ongeveer {{count}} uur
+      less_than_x_seconds: 
+        one: 'minder dan \xC3\xA9\xC3\xA9n seconde'
+        other: minder dan {{count}} seconden
+      x_months: 
+        one: 1 maand
+        other: '{{count}} maanden'
+      x_minutes: 
+        one: 1 minuut
+        other: '{{count}} minuten'
+      about_x_years: 
+        one: 'ongeveer \xC3\xA9\xC3\xA9n jaar'
+        other: ongeveer {{count}} jaren
+      about_x_months: 
+        one: 'ongeveer \xC3\xA9\xC3\xA9n maand'
+        other: ongeveer {{count}} maanden
+      over_x_years: 
+        one: 'langer dan \xC3\xA9\xC3\xA9n jaar'
+        other: langer {{count}} jaar
+      half_a_minute: halve minuut

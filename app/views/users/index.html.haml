@@ -1,4 +1,4 @@
-- title 'Users'
+- title t('.title')
 
 - if can? :read, @users
   %ul#users
@@ -7,26 +7,24 @@
         %div.avatar= image_tag user.gravatar(56), :alt => 'Gravatar', :size => '56x56', :class => 'gravatar'
         %div.info
           - if can?(:destroy, user) && User.all.count > 1
-            %span.destroy= link_to image_tag('user_delete.png'), user, :method => :delete, :confirm => 'Are you sure?', :rel => 'tipsy', :title => 'Destroy'
+            %span.destroy= link_to image_tag('user_delete.png'), user, :method => :delete, :confirm => t('actions.confirm'), :rel => 'tipsy', :title => t('actions.destroy')
           %dl
-            %dt
-              Name
-            %dd.name
-              = h user.username
+            %dt= t('.info.name')
+            %dd.name= h user.username
           %dl
-            %dt E-mail
+            %dt= t('.info.email')
             %dd= h user.email
           - if user.roles.any?
             %dl
-              %dt Roles
+              %dt= t('.info.roles')
               %dd= user.roles.map(&:capitalize).to_sentence
           - if user.posts.any?
             %dl
-              %dt Posts
+              %dt= t('.info.posts')
               %dd
                 = user.posts.count
                 %br/
-                = user.posts.map {|post| link_to h(post.title), post_path(post), :title => post.published_or_created_at}.to_sentence
+                = user.posts.map {|post| link_to h(post.title), post_path(post), :title => l(post.published_or_created_at)}.to_sentence
           %dl
-            %dt Age
-            %dd= content_tag :span, time_ago_in_words(user.created_at), :title => user.created_at
+            %dt= t('.info.age')
+            %dd= content_tag :span, time_ago_in_words(user.created_at), :title => l(user.created_at)

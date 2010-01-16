@@ -1,4 +1,4 @@
-- title "Posts from #{params[:year]}/#{params[:month]}"
+- title t('.title', :period => "#{params[:year]}/#{params[:month]}")
 
 #single
   = render 'posts_list'

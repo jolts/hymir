@@ -5,28 +5,23 @@
         .content
           .head
             - if can?(:update, @post) && !post.published
-              %span.edit= link_to image_tag('page_edit.png'), edit_post_path(post), :rel => 'tipsy', :title => 'Edit'
+              %span.edit= link_to image_tag('page_edit.png'), edit_post_path(post), :rel => 'tipsy', :title => t('actions.edit')
             %h2.title
               = link_to h(post.title), post_path(post)
             %p.meta
-              Posted
-              - if post.tags.any?
-                in #{tag_paths post.tags}
-              by
-              %strong= h post.creator.username
-              on
-              = content_tag :span, post.published_or_created_at.strftime('%B %e, %Y'), :title => post.published_or_created_at
+              = t '.meta', :tags => (post.tags.any? ? tag_paths(post.tags) : t('posts.uncategorized')), :user => content_tag(:strong, h(post.creator.username))
+              = content_tag :span, l(post.published_or_created_at, :format => :shorter), :title => l(post.published_or_created_at)
               &mdash;
-              = link_to pluralize(post.comments.count, 'comment'), "#{post_path post}#comments"
+              = link_to pluralize(post.comments.count, t('posts.comment')), "#{post_path post}#comments"
           .body
             = markdown post.body
 
   - if @posts.total_entries > @posts.limit
     #pagination
-      Showing posts #{content_tag :strong, "#{@posts.index(@posts.first)+@posts.offset+1}"}&ndash;#{content_tag :strong, "#{@posts.index(@posts.last)+@posts.offset+1}"} of #{content_tag :strong, @posts.total_entries}.
+      = t '.pagination.info', :posts => "#{content_tag :strong, "#{@posts.index(@posts.first)+@posts.offset+1}"}&ndash;#{content_tag :strong, "#{@posts.index(@posts.last)+@posts.offset+1}"}", :all_posts => content_tag(:strong, @posts.total_entries)
       %br/
-      = link_to_if @posts.previous_page, '&laquo; Previous Page', :overwrite_params => {:page => @posts.previous_page}
+      = link_to_if @posts.previous_page, t('.pagination.previous_page'), :overwrite_params => {:page => @posts.previous_page}
       &mdash;
-      = link_to_if @posts.next_page, 'Next Page &raquo;', :overwrite_params => {:page => @posts.next_page}
+      = link_to_if @posts.next_page, t('.pagination.next_page'), :overwrite_params => {:page => @posts.next_page}
 - else
-  %h2 No posts found!
+  %h2= t '.no_posts'
