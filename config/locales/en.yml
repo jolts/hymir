@@ -23,6 +23,9 @@ en:
       title: Posts from {{period}}
     posts_list:
       title: '{{title}} by {{user}}'
+    form:
+      draft: Draft
+      published: Published
     uncategorized: uncategorized
     comment: comment
     feed: atom feed

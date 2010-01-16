@@ -23,6 +23,9 @@ nl:
       title: Posts uit {{period}}
     posts_list:
       title: '{{title}} door {{user}}'
+    form:
+      draft: Concept
+      published: Gepubliceerd
     uncategorized: ongecategoriseerd
     comment: reactie
     feed: atom feed

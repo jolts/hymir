@@ -4,7 +4,7 @@
   - f.inputs do
     = f.input :title, :required => true
     = f.input :tag_names, :label => 'Tags'
-    = f.input :published, :as => :select, :label => 'Status', :collection => [['Draft', false], ['Published', true]]
+    = f.input :published, :as => :select, :label => 'Status', :collection => [[t('.draft'), false], [t('.published'), true]]
     = f.input :body, :as => :text, :required => true, :input_html => {:rows => '15', :id => 'markdown'}
   = f.buttons
 
