@@ -27,9 +27,7 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if can? :destroy, Comment
         @post.comments.delete_if {|comment| comment.id.to_s == params[:id]}
-        if @post.save
-          flash[:notice] = 'Successfully destroyed comment.'
-        end
+        flash[:notice] = 'Successfully destroyed comment.' if @post.save
       else
         flash[:error] = 'Access denied.'
       end
