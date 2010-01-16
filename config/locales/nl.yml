@@ -229,9 +229,11 @@ nl:
     - nov
     - dec
   support: 
-    array: 
-      words_connector: ','
-      last_word_connector: ', en'
+    array:
+      sentence_connector: 'en'
+      words_connector: ', '
+      skip_last_comma: true
+      last_word_connector: ' en '
       two_words_connector: ' en '
   datetime: 
     format: 
