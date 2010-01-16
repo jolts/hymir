@@ -40,7 +40,7 @@ class Post
   end
 
   def month
-    I18n.l(published_or_created_at, :format => :month)
+    I18n.l(published_or_created_at, :format => :month).capitalize
   end
 
   def published_or_created_at
