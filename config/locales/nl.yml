@@ -232,7 +232,7 @@ nl:
     array: 
       words_connector: ','
       last_word_connector: ', en'
-      two_words_connector: en
+      two_words_connector: ' en '
   datetime: 
     format: 
       default: '%Y-%m-%dT%H:%M:%S%Z'
