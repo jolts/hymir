@@ -1,0 +1,10 @@
+%head
+  %title= h(yield(:title) || Hymir::Config[:title])
+  = tag :meta, {:"http-equiv" => 'Content-Type', :content => 'text/html; charset=utf-8'}
+  = auto_discovery_link_tag :atom, posts_path(:format => :atom), :title => 'Posts feed'
+  = stylesheet_link_tag 'application', 'tipsy', :cache => 'application'
+  = stylesheet_link_tag 'formtastic', 'formtastic_changes', :cache => 'formtastic'
+  = javascript_include_tag 'jquery-1.4.min', 'jquery.tipsy'
+  = javascript_include_tag 'cufon-yui', 'cufon-myriad', :cache => 'cufon'
+  = javascript_include_tag 'application', :cache => 'application'
+  = yield(:head)
