@@ -56,8 +56,8 @@ textarea:focus          {border:1px solid #6887a0;}
 
 #flash_notice,
 #flash_error              {-moz-border-radius-bottomright:5px;-webkit-border-radius-bottomright:5px;-moz-border-radius-bottomleft:5px;-webkit-border-radius-bottomleft:5px;padding:5px 0;margin:-20px 0 20px;border-left:1px solid #283743;border-bottom:1px solid #283743;border-right:1px solid #283743;text-align:center;}
-#flash_notice span.notice {background:url(/images/information.png) no-repeat;padding-left:20px;}
-#flash_error span.error   {background:url(/images/delete.png) no-repeat;padding-left:20px;}
+#flash_notice span.notice {background:url(/silk/images/information.png) no-repeat;padding-left:20px;}
+#flash_error span.error   {background:url(/silk/images/delete.png) no-repeat;padding-left:20px;}
 
 #single                             {position:relative;background:rgba(0, 0, 0, 0.15);padding:10px;margin:0 -10px 30px;-moz-border-radius:5px;-webkit-border-radius:5px;}
 #single .content .head              {padding:0 0 5px;border-bottom:1px solid #000;position:relative;overflow:hidden;}

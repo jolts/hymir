@@ -5,9 +5,9 @@
     .head
       %span.actions
         - if can? :update, @post
-          %span.edit= link_to image_tag('page_edit.png'), edit_post_path(@post), :rel => 'tipsy', :title => t('actions.edit')
+          %span.edit= link_to image_tag('silk/page_edit.png'), edit_post_path(@post), :rel => 'tipsy', :title => t('actions.edit')
         - if can? :destroy, @post
-          %span.destroy= link_to image_tag('page_delete.png'), @post, :method => :delete, :confirm => 'Are you sure?', :rel => 'tipsy', :title => t('actions.destroy')
+          %span.destroy= link_to image_tag('silk/page_delete.png'), @post, :method => :delete, :confirm => 'Are you sure?', :rel => 'tipsy', :title => t('actions.destroy')
       %h2.title
         = h @post.title
     .body
@@ -30,7 +30,7 @@
               %p.meta= content_tag :span, l(comment.created_at, :format => :shortest), :title => l(comment.created_at)
             .body
               - if can? :destroy, comment
-                %span.destroy= link_to image_tag('comment_delete.png'), post_comment_path(@post, comment), :method => :delete, :confirm => 'Are you sure?', :rel => 'tipsy', :title => t('actions.destroy')
+                %span.destroy= link_to image_tag('silk/comment_delete.png'), post_comment_path(@post, comment), :method => :delete, :confirm => 'Are you sure?', :rel => 'tipsy', :title => t('actions.destroy')
               = markdown comment.body
     - else
       %h2#comments_count= t '.comments.no_comments'
