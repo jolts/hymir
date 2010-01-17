@@ -99,7 +99,7 @@ en:
       comment:
         new: Error while creating comment.
       user_sessions:
-        new: Invalid credentials. Please try again.
+        new: Invalid username/email and password.
   time:
     formats:
       month: '%B %Y'

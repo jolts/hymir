@@ -99,7 +99,7 @@ nl:
       comment:
         new: Er is een fout opgetreden tijdens het maken van de reactie.
       user_sessions:
-        new: Ongeldige gegevens. Probeert u alstublieft opnieuw.
+        new: Ongeldige gebruikersnaam/email en passwoord.
   actions:
     confirm: 'Ben je zeker?'
     destroy: Verwijder
@@ -166,8 +166,8 @@ nl:
       time: '%H:%M'
       short: '%d %b %H:%M'
       month: '%B %Y'
-      shorter: '%B %e, %Y'
-      shortest: '%B %e'
+      shorter: '%e %B, %Y'
+      shortest: '%e %B'
       only_second: '%S'
       datetime: 
         formats: 
