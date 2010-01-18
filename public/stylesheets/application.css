@@ -7,6 +7,7 @@ p                       {margin:10px 0;line-height:1.25;}
 a                       {color:#6887a0;text-decoration:none;}
 a:hover                 {border-bottom:1px dotted #6887a0;}
 a:active, a:focus       {outline:0 none;}
+a:visited               {color:#57768f;}
 
 ul, ol                  {list-style:none;}
 
