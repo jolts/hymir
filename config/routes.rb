@@ -15,7 +15,15 @@ ActionController::Routing::Routes.draw do |map|
   map.resource :user_sessions, :only => [:create]
 
   # Users
-  map.resources :users, :except => [:show, :edit, :update]
+  map.resources :users, :except => [:show]
+  map.with_options :controller => :users do |users|
+    users.forgot_password 'forgot_password',
+                          :action => :forgot_password,
+                          :conditions => {:method => :post}
+    users.reset_password 'reset_password/:reset_code',
+                         :action => :reset_password,
+                         :conditions => {:method => :get}
+  end
 
   # Posts
   map.resources :posts do |post|

@@ -39,12 +39,18 @@ nl:
         age: Leeftijd
     new:
       title: Nieuwe gebruiker
+    edit:
+      title: Wachtwoord wijzigen
+      password: Nieuw wachtwoord
+      password_confirmation: Nieuw wachtwoord (nogmaals)
+      submit: Wachtwoord wijzigen
   user_sessions:
     new:
       title: Inloggen
       email: 'E-mail'
       password: Wachtwoord
       submit: Inloggen
+      submit_forgot: Reset link versturen
   info:
     about:
       title: About
@@ -64,6 +70,7 @@ nl:
       sidebar:
         controls:
           title: Welkom, {{user}}
+          edit_user: Wachtwoord wijzigen
           new_post: Nieuwe post
           new_user: Nieuwe gebruiker
           all_users: Alle gebruikers
@@ -94,13 +101,19 @@ nl:
         destroy: U werd succesvol uitgelogd.
       users:
         new: Gebruiker werd succesvol aangemaakt.
+        edit: Wachtwoord werd succesvol gewijzigd.
         destroy: Gebruiker werd succesvol verwijderd.
+        forgot_password: Wachtwoord reset link werd verstuurd naar {{email}}.
     error:
       post:
       comment:
         new: Er is een fout opgetreden tijdens het maken van de reactie.
       user_sessions:
         new: Ongeldige gebruikersnaam/email en passwoord.
+      users:
+        edit: Er is een fout opgetreden tijdens het wijzigen van het wachtwoord.
+        forgot_password: Gebruiker werd niet gevonden.
+        reset_code: Onjuiste reset code.
   actions:
     confirm: 'Ben je zeker?'
     destroy: Verwijder

@@ -11,3 +11,13 @@
         = password_field_tag :password
       %p
         = submit_tag t('.submit')
+
+%h3 Forgot your password?
+#single
+  #login
+    - form_tag forgot_password_path do
+      %p
+        = label_tag :email, t('.email')
+        = text_field_tag :email
+      %p
+        = submit_tag t('.submit_forgot')

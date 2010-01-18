@@ -39,12 +39,18 @@ en:
         age: Age
     new:
       title: New user
+    edit:
+      title: Change password
+      password: New password
+      password_confirmation: New password (again)
+      submit: Change password
   user_sessions:
     new:
       title: Log in
       email: 'E-mail'
       password: Password
       submit: Log in
+      submit_forgot: Send reset link
   info:
     about:
       title: About
@@ -64,6 +70,7 @@ en:
       sidebar:
         controls:
           title: Welcome, {{user}}
+          edit_user: Change password
           new_post: New post
           new_user: New user
           all_users: All users
@@ -94,13 +101,19 @@ en:
         destroy: You were successfully logged out.
       users:
         new: Successfully created user.
+        edit: Successfully updated password.
         destroy: Successfully destroyed user.
+        forgot_password: Password reset link was mailed to {{email}}.
     error:
       post:
       comment:
         new: Error while creating comment.
       user_sessions:
         new: Invalid username/email and password.
+      users:
+        edit: Error while updating password.
+        forgot_password: User not found.
+        reset_password: Invalid reset code.
   time:
     formats:
       month: '%B %Y'

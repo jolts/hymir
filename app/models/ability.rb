@@ -6,10 +6,13 @@ class Ability
     can [:read, :archive, :tag], :all
     cannot :read, User
     if user
+      can :update, User do |u|
+        u == user
+      end
       if user.role?(:author)
         can :create, Post
-        can :update, Post do |post|
-          post.try(:user) == user
+        can :update, Post do |p|
+          p.try(:user) == user
         end
       end
       if user.role?(:moderator)

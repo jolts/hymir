@@ -9,6 +9,8 @@ class User
   # 4: Author
   # 2: Moderator
   # 1: Admin
+  key :reset_password_code, String
+  key :reset_password_code_until, Time
   timestamps!
 
   has_many :posts
@@ -60,5 +62,12 @@ class User
 
   def role?(role)
     roles.include? role.to_s
+  end
+
+  def set_password_code!
+    seed = "#{email}#{Time.now.to_s.split(//).sort_by {rand}.join}"
+    self.reset_password_code_until = 1.day.from_now
+    self.reset_password_code = Digest::SHA1.hexdigest(seed)
+    save
   end
 end
