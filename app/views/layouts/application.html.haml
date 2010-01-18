@@ -21,6 +21,7 @@
             %h2= h yield(:title)
           = yield
         #sidebar
+          - all_posts = Post.all(:order => 'created_at DESC', :conditions => published?)
           - form_tag posts_path, :method => :get do
             = text_field_tag :q, h(params[:q]), :id => 'searchfield'
             = submit_tag t('.forms.search'), :name => nil, :id => 'searchsubmit'
@@ -34,12 +35,12 @@
                   %li.newuser= link_to t('.sidebar.controls.new_user'), new_user_path
                 - if can? :read, User
                   %li.allusers= link_to t('.sidebar.controls.all_users'), users_path
-            - if (post_tags = Post.all(:conditions => published?).map(&:tags).flatten.sort_by{|t|t}).any?
+            - if (post_tags = all_posts.map(&:tags).flatten.sort_by{|t|t}).any?
               %h2= t '.sidebar.tags.title'
               %ul#tagcloud
                 - tag_cloud(post_tags, %w[size1 size2 size3 size4 size5 size6]) do |tag, css_class|
                   %li= link_to h(tag), tag_path(tag), :class => css_class
-            - if (all_posts = Post.all(:order => 'created_at DESC', :conditions => published?)).any?
+            - if all_posts.any?
               %h2= t '.sidebar.archive.title'
               %ul
                 - all_posts.group_by(&:month).each do |month, posts|
