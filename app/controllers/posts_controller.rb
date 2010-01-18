@@ -4,7 +4,7 @@ class PostsController < ApplicationController
 
   def index
     if params[:q].blank?
-      @posts = Post.paginate(:page => params[:page], :per_page => 1,
+      @posts = Post.paginate(:page => params[:page], :per_page => 5,
                              :order => 'created_at DESC', :conditions => published?)
     else
       @posts = Post.paginate(:page => params[:page], :per_page => 5,
