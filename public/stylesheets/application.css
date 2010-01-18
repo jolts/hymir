@@ -165,9 +165,9 @@ h2#comments_count        {background:url(/images/comments.png) no-repeat;padding
 #locales                {position:absolute;top:0;right:2px;color:#404f48;}
 
 #tagcloud li            {display:inline;}
-#tagcloud .size1        {font-size:1.0em;}
-#tagcloud .size2        {font-size:1.2em;}
-#tagcloud .size3        {font-size:1.4em;}
-#tagcloud .size4        {font-size:1.6em;}
-#tagcloud .size5        {font-size:1.8em;}
-#tagcloud .size6        {font-size:2.0em;}
+#tagcloud .size1        {font-size:11px;}
+#tagcloud .size2        {font-size:12px;}
+#tagcloud .size3        {font-size:13px;}
+#tagcloud .size4        {font-size:14px;}
+#tagcloud .size5        {font-size:15px;}
+#tagcloud .size6        {font-size:16px;}
