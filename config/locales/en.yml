@@ -3,10 +3,7 @@ en:
     index:
       no_posts: No posts found!
       meta: Posted in {{tags}} by {{user}} on
-      pagination:
-        info: Showing posts {{posts}} of {{all_posts}}
-        previous_page: '&laquo; Previous page'
-        next_page: 'Next page &raquo;'
+      pagination_name: posts
     show:
       meta: Posted on {{time}} by {{user}} and filed under {{tags}}.
       info: Follow any comments to this post through the {{feed}}, {{comment}} or {{trackback}} from your own site.
@@ -79,6 +76,10 @@ en:
           feed: Posts feed
           login: Log in
           logout: Log out
+  pagination:
+    info: Showing {{item}} {{items}} of {{all_items}}
+    previous_page: '&laquo; Previous page'
+    next_page: 'Next page &raquo;'
   flash:
     notice:
       post:

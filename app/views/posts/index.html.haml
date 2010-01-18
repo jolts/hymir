@@ -18,8 +18,6 @@
 
   - if @posts.total_entries > @posts.limit
     #pagination
-      = pagination_info @posts
-      %br/
-      = pagination_links @posts
+      = paginate t('.pagination_name'), @posts
 - else
   %h2= t '.no_posts'

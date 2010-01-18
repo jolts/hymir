@@ -3,10 +3,7 @@ nl:
     index:
       no_posts: Geen posts gevonden!
       meta: Geplaatst in {{tags}} door {{user}} op
-      pagination:
-        info: Posts {{posts}} van {{all_posts}}
-        previous_page: '&laquo; Vorige pagina'
-        next_page: 'Volgende pagina &raquo;'
+      pagination_name: Posts
     show:
       meta: Geplaatst op {{time}} door {{user}} in {{tags}}.
       info: Volg alle reacties op deze post via de {{feed}}, {{comment}} of {{trackback}} vanop je eigen site.
@@ -79,6 +76,10 @@ nl:
           feed: Posts feed
           login: Inloggen
           logout: Uitloggen
+  pagination:
+    info: '{{item}} {{items}} van {{all_items}}'
+    previous_page: '&laquo; Vorige pagina'
+    next_page: 'Volgende pagina &raquo;'
   flash:
     notice:
       post:
