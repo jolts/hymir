@@ -14,4 +14,19 @@ module ApplicationHelper
 
     [info, links].join(tag(:br))
   end
+
+  def tag_cloud(tags, classes)
+    max, min = 0, 0
+
+    tag_count = tags.inject({}) {|hash, tag| hash.merge(tag => tags.select {|t| t == tag}.size)}
+    tags.uniq.each do |tag|
+      max = tag_count[tag] if tag_count[tag] > max
+      min = tag_count[tag] if tag_count[tag] < min
+    end
+    divisor = ((max - min) / classes.size) + 1
+
+    tags.uniq.each do |tag|
+      yield tag, classes[(tag_count[tag] - min) / divisor]
+    end
+  end
 end
