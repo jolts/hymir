@@ -164,6 +164,7 @@ h2#comments_count        {background:url(/images/comments.png) no-repeat;padding
 
 #locales                {position:absolute;top:0;right:2px;color:#404f48;}
 
+#tagcloud               {text-align:justify;}
 #tagcloud li            {display:inline;}
 #tagcloud .size1        {font-size:11px;}
 #tagcloud .size2        {font-size:12px;}
