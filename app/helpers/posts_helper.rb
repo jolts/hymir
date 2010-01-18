@@ -7,17 +7,20 @@ module PostsHelper
     time  = posts.map(&:created_at).first
     year  = time.strftime('%Y')
     month = time.strftime('%m')
+
     archives_path(year, month)
   end
 
   def posts_list_classes(posts, post)
-    cls = post.published ? '' : ' draft'
-    if posts.first == posts.last
+    cls = ''
+
+    if posts.first.id == posts.last.id
       cls += ' single'
     else
-      cls += ' first' if post == posts.first
-      cls += ' last'  if post == posts.last
+      cls += ' first' if post.id == posts.first.id
+      cls += ' last'  if post.id == posts.last.id
     end
+    cls += ' draft' if not post.published
 
     cls.blank? ? nil : cls
   end

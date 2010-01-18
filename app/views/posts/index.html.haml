@@ -18,10 +18,8 @@
 
   - if @posts.total_entries > @posts.limit
     #pagination
-      = t '.pagination.info', :posts => "#{content_tag :strong, "#{@posts.index(@posts.first)+@posts.offset+1}"}&ndash;#{content_tag :strong, "#{@posts.index(@posts.last)+@posts.offset+1}"}", :all_posts => content_tag(:strong, @posts.total_entries)
+      = pagination_info @posts
       %br/
-      = link_to_if @posts.previous_page, t('.pagination.previous_page'), :overwrite_params => {:page => @posts.previous_page}
-      &mdash;
-      = link_to_if @posts.next_page, t('.pagination.next_page'), :overwrite_params => {:page => @posts.next_page}
+      = pagination_links @posts
 - else
   %h2= t '.no_posts'

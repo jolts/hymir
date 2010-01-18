@@ -35,16 +35,16 @@
                 - if can? :read, User
                   %li.allusers= link_to t('.sidebar.controls.all_users'), users_path
             - if (post_tags = Post.all(:conditions => published?).map(&:tags).flatten.uniq).any?
-              %h2= t('.sidebar.tags.title')
+              %h2= t '.sidebar.tags.title'
               %ul
                 - post_tags.each do |post_tag|
                   %li.tag= link_to h(post_tag), tag_path(post_tag)
             - if (all_posts = Post.all(:order => 'created_at DESC', :conditions => published?)).any?
-              %h2= t('.sidebar.archive.title')
+              %h2= t '.sidebar.archive.title'
               %ul
                 - all_posts.group_by(&:month).each do |month, posts|
                   %li.archive #{link_to "#{month}", archive_path(posts)} (#{posts.count})
-            %h2= t('.sidebar.meta.title')
+            %h2= t '.sidebar.meta.title'
             %ul.meta
               %li.feed= link_to t('.sidebar.meta.feed'), posts_path(:format => :atom)
               - if signed_in?
