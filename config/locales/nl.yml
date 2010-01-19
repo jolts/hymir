@@ -79,9 +79,9 @@ nl:
         about: About
         portfolio: Portfolio
         services: Diensten
+    sidebar:
       forms:
         search: Zoek
-    sidebar:
       controls:
         title: Welkom, {{user}}
         edit_user: Wachtwoord wijzigen
@@ -113,19 +113,19 @@ nl:
       user_sessions:
         new: U werd succesvol ingelogd.
         destroy: U werd succesvol uitgelogd.
+        forgot_password: Wachtwoord reset link werd verstuurd naar {{email}}.
       users:
         new: Gebruiker werd succesvol aangemaakt.
         edit: Wachtwoord werd succesvol gewijzigd.
         destroy: Gebruiker werd succesvol verwijderd.
-        forgot_password: Wachtwoord reset link werd verstuurd naar {{email}}.
     error:
       post:
       comment:
         new: Er is een fout opgetreden tijdens het maken van de reactie.
       user_sessions:
         new: Ongeldige gebruikersnaam/email en passwoord.
-      users:
         forgot_password: Gebruiker werd niet gevonden.
+      users:
         reset_code: Onjuiste reset code.
   actions:
     confirm: 'Ben je zeker?'

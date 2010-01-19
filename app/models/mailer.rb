@@ -1,5 +1,5 @@
-class UserNotifier < ActionMailer::Base
-  def forgot_password(user)
+class Mailer < ActionMailer::Base
+  def password_reset_notification(user)
     recipients user.email
     from       Hymir::Config[:email]
     subject    '[hymir] Reset Password'

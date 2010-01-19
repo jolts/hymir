@@ -57,22 +57,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def forgot_password
-    @user = User.find_by_email(params[:email])
-
-    respond_to do |format|
-      if @user
-        @user.set_password_code!
-        UserNotifier.deliver_forgot_password(@user)
-        flash[:notice] = t('flash.notice.users.forgot_password', :email => @user.email)
-        format.html { redirect_to root_path }
-      else
-        flash[:error] = t('flash.error.users.forgot_password')
-        format.html { redirect_to login_path }
-      end
-    end
-  end
-
   def reset_password
     @user = User.find_by_reset_password_code(params[:reset_code])
 

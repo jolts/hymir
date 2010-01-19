@@ -79,9 +79,9 @@ en:
         about: About
         portfolio: Portfolio
         services: Services
+    sidebar:
       forms:
         search: Search
-    sidebar:
       controls:
         title: Welcome, {{user}}
         edit_user: Change password
@@ -113,19 +113,19 @@ en:
       user_sessions:
         new: You were successfully logged in.
         destroy: You were successfully logged out.
+        forgot_password: Password reset link was mailed to {{email}}.
       users:
         new: Successfully created user.
         edit: Successfully updated password.
         destroy: Successfully destroyed user.
-        forgot_password: Password reset link was mailed to {{email}}.
     error:
       post:
       comment:
         new: Error while creating comment.
       user_sessions:
         new: Invalid username/email and password.
-      users:
         forgot_password: User not found.
+      users:
         reset_password: Invalid reset code.
   time:
     formats:

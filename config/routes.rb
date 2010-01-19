@@ -8,22 +8,16 @@ ActionController::Routing::Routes.draw do |map|
   end
 
   # Sessions
+  map.resource :user_sessions, :only => [:create]
   map.with_options :controller => :user_sessions do |session|
     session.login 'login', :action => :new, :conditions => {:method => :get}
     session.logout 'logout', :action => :destroy, :conditions => {:method => :delete}
+    session.forgot_password 'forgot_password', :action => :forgot_password, :conditions => {:method => :post}
   end
-  map.resource :user_sessions, :only => [:create]
 
   # Users
   map.resources :users, :except => [:show]
-  map.with_options :controller => :users do |users|
-    users.forgot_password 'forgot_password',
-                          :action => :forgot_password,
-                          :conditions => {:method => :post}
-    users.reset_password 'reset_password/:reset_code',
-                         :action => :reset_password,
-                         :conditions => {:method => :get}
-  end
+  map.reset_password 'reset_password/:reset_code', :controller => :users, :action => :reset_password, :conditions => {:method => :get}
 
   # Posts
   map.resources :posts do |post|

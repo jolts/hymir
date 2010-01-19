@@ -19,9 +19,13 @@ h3, h4, h5, h6          {font-size:16px;}
 
 img                     {border:0 none;}
 
+input, textarea         {-moz-border-radius:2px;-webkit-border-radius:2px;}
 input[type=text],
 input[type=password],
-textarea                {-moz-border-radius:2px;-webkit-border-radius:2px;border:1px solid #bbb;padding:2px;}
+input[type=submit],
+textarea                {border:1px solid #bbb;padding:2px;font:13px 'Trebuchet MS',Helvetica Neue,Helvetica,Arial}
+input[type=submit]      {padding:1px;margin-top:1px;background:#ccc;}
+input[type=submit]:hover {background:#fff;}
 input[type=text]:focus,
 input[type=password]:focus,
 textarea:focus          {border:1px solid #6887a0;}
@@ -159,8 +163,8 @@ h2#comments_count        {background:url(/images/comments.png) no-repeat;padding
 #pagination a:hover     {border:none;}
 #pagination strong      {color:#516059;}
 
-#searchfield            {margin:1px 0 22px;display:inline;width:110px;}
-#searchsubmit           {-moz-border-radius:2px;-webkit-border-radius:2px;float:right;width:45px;}
+#searchfield            {margin:1px 0 22px;display:inline;width:100px;}
+#searchsubmit           {float:right;width:50px;}
 
 .saform form                     {display:block;position:relative;overflow:hidden;}
 .saform form label               {font-weight:bold;color:#88939c;text-shadow:1px 1px 1px #000;float:left;width:150px;}

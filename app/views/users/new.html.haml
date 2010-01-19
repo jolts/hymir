@@ -13,7 +13,7 @@
         = label_tag :user_roles, "#{t 'users.index.info.roles'}<abbr title='required'>*</abbr>"
         - User::Roles.each do |role|
           = check_box_tag 'user[roles][]', role, @user.roles.include?(role)
-          = h(role.humanize)
+          %span.user_role= h(role.humanize)
         %table.roles
           %thead
             %tr
