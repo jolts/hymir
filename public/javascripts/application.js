@@ -11,7 +11,7 @@
   Hymir.App = {
     init: function() {
       setupHandlers();
-      setupCufon();
+      //setupCufon();
     }
   }
 })();

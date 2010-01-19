@@ -12,7 +12,7 @@ a:visited               {color:#57768f;}
 ul, ol                  {list-style:none;}
 
 h1, h2, h3, h4, h5, h6  {text-shadow:1px 1px 1px #000;margin:0 0 20px;}
-h1, h2, h3              {font-family:'Myriad Pro';}
+h1, h2, h3              {font-family:'Trebuchet MS';}
 h1                      {font-size:20px;}
 h2                      {font-size:18px;}
 h3, h4, h5, h6          {font-size:16px;}
@@ -33,7 +33,7 @@ textarea:focus          {border:1px solid #6887a0;}
 #header h1 a            {color:#6887a0;}
 #header h1 a:hover      {border:none;}
 
-#nav                    {margin-top:25px;margin-right:20px;float:right;font-size:16px;font-family:'Myriad Pro';}
+#nav                    {margin-top:25px;margin-right:20px;float:right;font-size:16px;font-family:'Trebuchet MS';}
 #nav ul                 {list-style:none;font-weight:bold;}
 #nav ul li              {text-shadow:1px 1px 1px #000;margin-left:10px;color:#6887a0;display:inline;margin-bottom:2px;border-bottom:2px solid #283743;}
 #nav ul li a            {color:#88939c;margin-bottom:2px;border-bottom:2px solid #10212e;}
@@ -51,7 +51,7 @@ textarea:focus          {border:1px solid #6887a0;}
 #sidebar .content ul.meta {margin:15px 0 5px;}
 #sidebar .content ul li {margin-bottom:2px;}
  
-#footer                 {border-top:1px solid #283743;color:#cdcdcd;padding-top:20px;margin-bottom:50px;text-align:center;font-size:13px;font-family:'Myriad Pro';}
+#footer                 {border-top:1px solid #283743;color:#cdcdcd;padding-top:20px;margin-bottom:50px;text-align:center;font-size:13px;font-family:'Trebuchet MS';}
 #footer a               {text-decoration:none;text-shadow:1px 1px 1px #000;}
 #footer p               {margin:0;}
 
@@ -66,7 +66,7 @@ textarea:focus          {border:1px solid #6887a0;}
 
 #single                             {position:relative;background:rgba(0, 0, 0, 0.15);padding:10px;margin:0 -10px 30px;-moz-border-radius:5px;-webkit-border-radius:5px;}
 #single .content .head              {padding:0 0 5px;border-bottom:1px solid #000;position:relative;overflow:hidden;}
-#single .content .head h2.title     {font-size:20px;margin:0;}
+#single .content .head h2.title     {margin:0;}
 #single .content .head span.actions {float:right;clear:right;margin-top:2px;}
 #single .content .head span a       {border:none;}
 #single .content .head span.actions span.destroy a {color:#cc3333;text-shadow:1px 1px 1px #000;}
@@ -89,7 +89,7 @@ textarea:focus          {border:1px solid #6887a0;}
 
 #posts .post                        {display:block;position:relative;overflow:hidden;background:rgba(0, 0, 0, 0.15);padding:10px;margin:0 -10px 30px;-moz-border-radius:5px;-webkit-border-radius:5px;}
 #posts .post .content .head         {padding:0 0 5px;border-bottom:1px solid #000;position:relative;overflow:hidden;}
-#posts .post .content .head h2.title {font-size:20px;margin:0;}
+#posts .post .content .head h2.title {margin:0;}
 #posts .post .content .head h2.title a {color:#cdcdcd;}
 #posts .post .content .head h2.title a:hover {border:none;}
 #posts .post .content .head span.edit {color:#88939c;float:right;}
@@ -155,7 +155,7 @@ h2#comments_count        {background:url(/images/comments.png) no-repeat;padding
 #users .user .block .avatar img.gravatar {padding:1px;border:1px solid rgba(255, 255, 255, 0.1);margin:3px 5px 0 0;-moz-border-radius:2px;-webkit-border-radius:2px;}
 #users .user .block .info   {float:right;clear:right;width:88%;}
 
-#pagination             {color:#404f48;font-size:13px;font-family:'Myriad Pro',Helvetica Neue,Helvetica,Arial,sans-serif;text-align:center;}
+#pagination             {color:#404f48;font-size:13px;font-family:'Trebuchet MS',Helvetica Neue,Helvetica,Arial,sans-serif;text-align:center;}
 #pagination a:hover     {border:none;}
 #pagination strong      {color:#516059;}
 
@@ -166,7 +166,7 @@ h2#comments_count        {background:url(/images/comments.png) no-repeat;padding
 #login form label               {font-weight:bold;color:#88939c;text-shadow:1px 1px 1px #000;float:left;width:150px;}
 #login form input[type=submit]  {margin-left:149px;}
 
-#locales                {position:absolute;top:0;right:2px;color:#404f48;}
+#locales                {position:absolute;top:0;right:2px;color:#404f48;font-family:'Trebuchet MS',Helvetica Neue,Helvetica,Arial;}
 
 #tagcloud               {text-align:justify;}
 #tagcloud li            {display:inline;}
