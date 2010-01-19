@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_filter :find_user_by_username, :only => [:edit, :update, :destroy]
-  load_and_authorize_resource :except => [:forgot_password, :reset_password]
+  load_and_authorize_resource :except => [:reset_password]
 
   def index
     @users = User.all(:order => 'created_at ASC')
