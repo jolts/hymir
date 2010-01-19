@@ -39,6 +39,19 @@ nl:
         age: Leeftijd
     new:
       title: Nieuwe gebruiker
+      roles_help:
+        admin_create: Alles
+        admin_read: Alles
+        admin_update: Alles
+        admin_destroy: Alles
+        moderator_create: Reacties
+        moderator_read: Alles
+        moderator_update: Posts
+        moderator_destroy: 'Posts, reacties'
+        author_create: 'Posts, reacties'
+        author_read: Alles behalve gebruikers
+        author_update: Eigen posts
+        author_destroy: Niets
     edit:
       title: Wachtwoord wijzigen
       password: Nieuw wachtwoord

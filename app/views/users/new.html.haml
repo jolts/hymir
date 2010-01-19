@@ -14,4 +14,32 @@
         - User::Roles.each do |role|
           = check_box_tag 'user[roles][]', role, @user.roles.include?(role)
           = h(role.humanize)
+        %table.roles
+          %thead
+            %tr
+              %td.action &nbsp;
+              %td.admin Admin
+              %td.moderator Moderator
+              %td.author Author
+          %tbody
+            %tr
+              %td.action Create
+              %td.admin= t '.roles_help.admin_create'
+              %td.moderator= t '.roles_help.moderator_create'
+              %td.author= t '.roles_help.author_create'
+            %tr
+              %td.action Read
+              %td.admin= t '.roles_help.admin_read'
+              %td.moderator= t '.roles_help.moderator_read'
+              %td.author= t '.roles_help.author_read'
+            %tr
+              %td.action Update
+              %td.admin= t '.roles_help.admin_update'
+              %td.moderator= t '.roles_help.moderator_update'
+              %td.author= t '.roles_help.author_update'
+            %tr
+              %td.action Destroy
+              %td.admin= t '.roles_help.admin_destroy'
+              %td.moderator= t '.roles_help.moderator_destroy'
+              %td.author= t '.roles_help.author_destroy'
     = f.buttons
