@@ -62,13 +62,13 @@ class UsersController < ApplicationController
   end
 
   def forgot_password
-    user = User.find_by_email(params[:email])
+    @user = User.find_by_email(params[:email])
 
     respond_to do |format|
-      if user
-        user.set_password_code!
-        UserNotifier.deliver_forgot_password(user)
-        flash[:notice] = t('flash.notice.users.forgot_password', :email => user.email)
+      if @user
+        @user.set_password_code!
+        UserNotifier.deliver_forgot_password(@user)
+        flash[:notice] = t('flash.notice.users.forgot_password', :email => @user.email)
       else
         flash[:error] = t('flash.error.users.forgot_password')
       end
@@ -77,13 +77,12 @@ class UsersController < ApplicationController
   end
 
   def reset_password
-    sign_out_keeping_session!
-    user = User.find_by_reset_password_code(params[:reset_code])
+    @user = User.find_by_reset_password_code(params[:reset_code])
 
     respond_to do |format|
-      if user && user.reset_password_code_until && Time.now < user.reset_password_code_until
-        self.current_user = user
-        @user = user
+      if @user && @user.reset_password_code_until && Time.now < @user.reset_password_code_until
+        sign_out_keeping_session!
+        self.current_user = @user
         format.html { render :action => :edit }
       else
         flash[:error] = t('flash.error.users.reset_password')
