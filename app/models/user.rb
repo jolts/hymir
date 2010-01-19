@@ -66,8 +66,8 @@ class User
 
   def set_password_code!
     seed = "#{email}#{Time.now.to_s.split(//).sort_by {rand}.join}"
-    self.reset_password_code_until = 1.day.from_now
-    self.reset_password_code = Digest::SHA1.hexdigest(seed)
-    save
+    write_attribute(:reset_password_code_until, 1.day.from_now)
+    write_attribute(:reset_password_code, Digest::SHA1.hexdigest(seed))
+    save(:validate => false)
   end
 end
