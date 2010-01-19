@@ -46,7 +46,6 @@ class UsersController < ApplicationController
         flash[:notice] = t('flash.notice.users.edit')
         format.html { redirect_to root_path }
       else
-        flash[:error] = t('flash.error.users.edit')
         format.html { render :action => 'edit' }
       end
     end

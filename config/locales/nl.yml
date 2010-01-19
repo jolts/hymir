@@ -186,6 +186,13 @@ nl:
         separator: .
         precision: 2
         delimiter: .
+  activerecord:
+    errors:
+      template:
+        body: 'Controleer de volgende velden:'
+        header:
+          one: '1 fout zorgde ervoor dat deze {{model}} niet kon worden opgeslaan.'
+          other: '{{count}} fouten zorgden ervoor dat deze {{model}} niet kon worden opgeslaan.'
   time: 
     am: "'s ochtends"
     formats: 

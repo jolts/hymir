@@ -3,6 +3,8 @@
 #single
   #login
     - form_for @user do |f|
+      = f.error_messages
+
       %p
         = f.label :password, t('.password')
         = f.password_field :password, :value => ''

@@ -60,6 +60,10 @@ textarea:focus          {border:1px solid #6887a0;}
 #flash_notice span.notice {background:url(/images/silk/information.png) no-repeat;padding-left:20px;}
 #flash_error span.error   {background:url(/images/silk/delete.png) no-repeat;padding-left:20px;}
 
+.errorExplanation       {padding:10px;border:1px solid #283743;-moz-border-radius:5px;-webkit-border-radius:5px;}
+.errorExplanation h2    {background:url(/images/silk/delete.png) no-repeat;padding-left:20px;margin-bottom:0;}
+.errorExplanation li    {margin-left:35px;list-style:square;}
+
 #single                             {position:relative;background:rgba(0, 0, 0, 0.15);padding:10px;margin:0 -10px 30px;-moz-border-radius:5px;-webkit-border-radius:5px;}
 #single .content .head              {padding:0 0 5px;border-bottom:1px solid #000;position:relative;overflow:hidden;}
 #single .content .head h2.title     {font-size:20px;margin:0;}
