@@ -53,7 +53,7 @@ class Post
     end
 
     def update_published_at
-      write_attribute(:published_at, Time.now) if published and !published_at
+      write_attribute(:published_at, Time.now) if published && !published_at
     end
   # private
 end
