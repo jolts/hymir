@@ -1,7 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
   # Static pages
-  map.with_options :controller => :info,
-                   :conditions => {:method => :get} do |info|
+  map.with_options :controller => :info, :conditions => {:method => :get} do |info|
     info.about 'about', :action => :about
     info.portfolio 'portfolio', :action => :portfolio
     info.services 'services', :action => :services
@@ -23,17 +22,9 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :posts do |post|
     post.resources :comments, :only => [:create, :destroy]
   end
-  map.with_options :controller => :posts,
-                   :conditions => {:method => :get} do |post|
-    # Tags
-    post.tag 'posts/tag/:tag',
-             :action => :tag,
-             :tag => /[A-Z\s\-]+/i
-    # Archives
-    post.archives 'posts/archives/:year/:month',
-                  :action => :archive,
-                  :year   => /[0-9]{4}/,
-                  :month  => /[0-9]{1,2}/
+  map.with_options :controller => :posts, :conditions => {:method => :get} do |post|
+    post.tag 'posts/tag/:tag', :action => :tag, :tag => /[A-Z\s\-]+/i
+    post.archives 'posts/archives/:year/:month', :action => :archive, :year => /[0-9]{4}/, :month => /[0-9]{1,2}/
   end
 
   # Index page
