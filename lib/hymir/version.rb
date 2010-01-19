@@ -4,6 +4,8 @@ module Hymir
     MINOR = '0'
     TINY  = 'pre'
 
-    STRING = [MAJOR, MINOR, TINY].join('.').freeze
+    def self.to_s
+      [MAJOR, MINOR, TINY].join('.').freeze
+    end
   end
 end
