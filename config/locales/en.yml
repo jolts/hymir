@@ -60,6 +60,7 @@ en:
   user_sessions:
     new:
       title: Log in
+      forgot_password: 'Forgot your password?'
       email: 'E-mail'
       password: Password
       submit: Log in

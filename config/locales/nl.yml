@@ -60,6 +60,7 @@ nl:
   user_sessions:
     new:
       title: Inloggen
+      forgot_password: 'Wachtwoord vergeten?'
       email: 'E-mail'
       password: Wachtwoord
       submit: Inloggen
