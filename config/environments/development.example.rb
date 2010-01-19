@@ -15,3 +15,15 @@ config.action_controller.perform_caching             = false
 
 # Don't care if the mailer can't send
 config.action_mailer.raise_delivery_errors = false
+
+# Gmail example
+config.action_mailer.delivery_method = :smtp
+config.action_mailer.smtp_settings = {
+  :enable_starttls_auto => true,
+  :address => 'smtp.gmail.com',
+  :port => 587,
+  :authentication => :plain,
+  :domain => Hymir::Config[:domain],
+  :user_name => 'username@gmail.com',
+  :password => 'password'
+}
