@@ -49,7 +49,7 @@ class Post
 
   private
     def make_slug
-      write_attribute(:slug, title.downcase.gsub(/ /, '-').gsub(/[^a-z0-9-]/, '').squeeze('-'))
+      write_attribute(:slug, title.parameterize)
     end
 
     def update_published_at
