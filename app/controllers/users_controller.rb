@@ -38,11 +38,8 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user.password = params[:user][:password]
-    @user.password_confirmation = params[:user][:password_confirmation]
-
     respond_to do |format|
-      if @user.save
+      if @user.update_attributes(params[:user].slice(:password, :password_confirmation))
         flash[:notice] = t('flash.notice.users.edit')
         format.html { redirect_to root_path }
       else
@@ -68,10 +65,11 @@ class UsersController < ApplicationController
         @user.set_password_code!
         UserNotifier.deliver_forgot_password(@user)
         flash[:notice] = t('flash.notice.users.forgot_password', :email => @user.email)
+        format.html { redirect_to root_path }
       else
         flash[:error] = t('flash.error.users.forgot_password')
+        format.html { redirect_to login_path }
       end
-      format.html { redirect_to root_path }
     end
   end
 

@@ -124,7 +124,6 @@ nl:
       user_sessions:
         new: Ongeldige gebruikersnaam/email en passwoord.
       users:
-        edit: Er is een fout opgetreden tijdens het wijzigen van het wachtwoord.
         forgot_password: Gebruiker werd niet gevonden.
         reset_code: Onjuiste reset code.
   actions:

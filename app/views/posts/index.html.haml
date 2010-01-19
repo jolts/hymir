@@ -15,7 +15,6 @@
               = link_to pluralize(post.comments.count, t('posts.comment')), "#{post_path post}#comments"
           .body
             = markdown post.body
-
   - if @posts.total_entries > @posts.limit
     #pagination
       = paginate t('.pagination_name'), @posts

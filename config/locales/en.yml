@@ -124,7 +124,6 @@ en:
       user_sessions:
         new: Invalid username/email and password.
       users:
-        edit: Error while updating password.
         forgot_password: User not found.
         reset_password: Invalid reset code.
   time:
