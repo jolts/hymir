@@ -24,7 +24,7 @@ input[type=text],
 input[type=password],
 input[type=submit],
 textarea                {border:1px solid #bbb;padding:2px;font:13px 'Trebuchet MS',Helvetica Neue,Helvetica,Arial}
-input[type=submit]      {padding:1px;margin-top:1px;background:#ccc;}
+input[type=submit]      {padding:1px;margin-top:1px;background:#ccc;font-size:12px;}
 input[type=submit]:hover {background:#fff;}
 input[type=text]:focus,
 input[type=password]:focus,
@@ -73,7 +73,6 @@ textarea:focus          {border:1px solid #6887a0;}
 .single .content .head h2.title     {margin:0;}
 .single .content .head span.actions {float:right;clear:right;margin-top:2px;}
 .single .content .head span a       {border:none;}
-.single .content .head span.actions span.destroy a {color:#cc3333;text-shadow:1px 1px 1px #000;}
 .single .content .body              {border-top:1px solid #283743;padding:14px 0;font-size:14px;border-bottom:1px solid #000;}
 .single .content .body h1,
 .single .content .body h2,
@@ -119,8 +118,8 @@ textarea:focus          {border:1px solid #6887a0;}
 #posts_list .post.single                {border:none;-moz-border-radius:5px;-webkit-border-radius:5px;}
 #posts_list .post.first                 {border-top:none;-moz-border-radius-topright:5px;-webkit-border-radius-topright:5px;-moz-border-radius-topleft:5px;-webkit-border-radius-topleft:5px;}
 #posts_list .post.last                  {border-bottom:none;-moz-border-radius-bottomright:5px;-webkit-border-radius-bottomright:5px;-moz-border-radius-bottomleft:5px;-webkit-border-radius-bottomleft:5px;}
-#posts_list .post .title                {float:left;width:73%;}
-#posts_list .post .meta                 {float:right;clear:right;width:11%;}
+#posts_list .post .title                {float:left;width:74%;}
+#posts_list .post .meta                 {float:right;clear:right;width:10%;}
 
 #comments h2                                 {margin:20px 0;font-size:16px;}
 #comments .post_comment                      {margin-bottom:20px;padding:5px 0;display:block;position:relative;overflow:hidden;margin:0 -10px 20px;padding:5px 10px;background:rgba(0, 0, 0, 0.15);-moz-border-radius:5px;-webkit-border-radius:5px;}
@@ -150,10 +149,11 @@ h2#comments_count        {background:url(/images/comments.png) no-repeat;padding
 #users .user                {display:block;position:relative;overflow:hidden;font-size:12px;margin:0 -10px 30px;background:rgba(0, 0, 0, 0.15);padding:10px;-moz-border-radius:5px;-webkit-border-radius:5px;}
 #users .user.self           {background:rgba(255, 255, 255, 0.1);}
 #users .user dl             {margin-bottom:3px;display:block;position:relative;overflow:hidden;}
-#users .user dt             {text-shadow:1px 1px 1px #000;float:left;color:#88939c;width:60px;}
-#users .user dd             {float:right;clear:right;width:440px;}
+#users .user dt             {text-shadow:1px 1px 1px #000;float:left;color:#88939c;width:60px;font:11px 'Trebuchet MS',Helvetica Neue,Helvetica,Arial;}
+#users .user dd             {float:right;clear:right;width:430px;}
 #users .user dd.name        {font-weight:bold;}
-#users .user span.destroy a {color:#cc3333;text-shadow:1px 1px 1px #000;float:right;clear:right;border:none;}
+#users .user span.actions   {float:right;clear:right;width:40px;}
+#users .user span a         {border:none;float:right;padding:0 2px;}
 #users .user .block         {display:block;position:relative;overflow:hidden;}
 #users .user .block .avatar {float:left;width:11%;}
 #users .user .block .avatar img.gravatar {padding:1px;border:1px solid rgba(255, 255, 255, 0.1);margin:3px 5px 0 0;-moz-border-radius:2px;-webkit-border-radius:2px;}
@@ -167,8 +167,8 @@ h2#comments_count        {background:url(/images/comments.png) no-repeat;padding
 #searchsubmit           {float:right;width:50px;}
 
 .saform form                     {display:block;position:relative;overflow:hidden;}
-.saform form label               {font-weight:bold;color:#88939c;text-shadow:1px 1px 1px #000;float:left;width:150px;}
-.saform form input[type=submit]  {margin-left:149px;}
+.saform form label               {color:#88939c;text-shadow:1px 1px 1px #000;float:left;width:150px;font:bold 12px 'Trebuchet MS',Helvetica Neue,Helvetica,Arial;}
+.saform form input[type=submit]  {margin-left:150px;}
 
 #locales                {position:absolute;top:0;right:2px;color:#404f48;font-family:'Trebuchet MS',Helvetica Neue,Helvetica,Arial;}
 

@@ -1,7 +1,7 @@
 - if @posts.any? || !@posts.out_of_bounds?
   %ul#posts
     - @posts.each do |post|
-      %li.post{:class => post.published ? nil : 'draft'}
+      %li.post{:class => post.published ? nil : 'draft', :id => "post_#{post.id}"}
         .content
           .head
             - if can?(:update, @post) && !post.published

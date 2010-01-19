@@ -6,9 +6,6 @@ class Ability
     can [:read, :archive, :tag], :all
     cannot :read, User
     if user
-      can :update, User do |u|
-        u == user
-      end
       if user.role?(:author)
         can :create, Post
         can :update, Post do |p|
@@ -22,6 +19,9 @@ class Ability
       end
       if user.role?(:admin)
         can :manage, :all
+      end
+      can :update, User do |u|
+        u == user
       end
     end
   end
