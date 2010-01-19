@@ -1,6 +1,6 @@
 - title h(@post.title), false
 
-%div#single{:class => @post.published ? nil : 'draft'}
+%div.single{:class => @post.published ? nil : 'draft'}
   .content
     .head
       %span.actions
