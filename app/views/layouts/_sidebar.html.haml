@@ -1,0 +1,35 @@
+- all_posts = Post.all(:order => 'created_at DESC', :conditions => published?)
+- form_tag posts_path, :method => :get do
+  = text_field_tag :q, h(params[:q]), :id => 'searchfield'
+  = submit_tag t('.forms.search'), :name => nil, :id => 'searchsubmit'
+.content
+  - if signed_in?
+    %h2= t '.controls.title', :user => h(current_user.username)
+    %ul
+      %li.edituser= link_to t('.controls.edit_user'), edit_user_path(current_user)
+      - if can? :create, Post
+        %li.newpost= link_to t('.controls.new_post'), new_post_path
+      - if can? :create, User
+        %li.newuser= link_to t('.controls.new_user'), new_user_path
+      - if can? :read, User
+        %li.allusers= link_to t('.controls.all_users'), users_path
+
+  - if (post_tags = all_posts.map(&:tags).flatten.sort_by{|t|t}).any?
+    %h2= t '.tags.title'
+    %ul#tagcloud
+      - tag_cloud(post_tags, %w[size1 size2 size3 size4 size5 size6]) do |tag, css_class|
+        %li= link_to h(tag), tag_path(tag), :class => css_class
+
+  - if all_posts.any?
+    %h2= t '.archive.title'
+    %ul
+      - all_posts.group_by(&:month).each do |month, posts|
+        %li.archive #{link_to "#{month}", archive_path(posts)} (#{posts.count})
+
+  %h2= t '.meta.title'
+  %ul.meta
+    %li.feed= link_to t('.meta.feed'), posts_path(:format => :atom)
+    - if signed_in?
+      %li.logout= link_to t('.meta.logout'), logout_path, :method => :delete
+    - else
+      %li.login= link_to t('.meta.login'), login_path

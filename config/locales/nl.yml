@@ -81,22 +81,22 @@ nl:
         services: Diensten
       forms:
         search: Zoek
-      sidebar:
-        controls:
-          title: Welkom, {{user}}
-          edit_user: Wachtwoord wijzigen
-          new_post: Nieuwe post
-          new_user: Nieuwe gebruiker
-          all_users: Alle gebruikers
-        tags:
-          title: Tags
-        archive:
-          title: Archief
-        meta:
-          title: Meta
-          feed: Posts feed
-          login: Inloggen
-          logout: Uitloggen
+    sidebar:
+      controls:
+        title: Welkom, {{user}}
+        edit_user: Wachtwoord wijzigen
+        new_post: Nieuwe post
+        new_user: Nieuwe gebruiker
+        all_users: Alle gebruikers
+      tags:
+        title: Tags
+      archive:
+        title: Archief
+      meta:
+        title: Meta
+        feed: Posts feed
+        login: Inloggen
+        logout: Uitloggen
   pagination:
     info: '{{item}} {{items}} van {{all_items}}'
     previous_page: '&laquo; Vorige pagina'

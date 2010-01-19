@@ -81,22 +81,22 @@ en:
         services: Services
       forms:
         search: Search
-      sidebar:
-        controls:
-          title: Welcome, {{user}}
-          edit_user: Change password
-          new_post: New post
-          new_user: New user
-          all_users: All users
-        tags:
-          title: Tags
-        archive:
-          title: Archive
-        meta:
-          title: Meta
-          feed: Posts feed
-          login: Log in
-          logout: Log out
+    sidebar:
+      controls:
+        title: Welcome, {{user}}
+        edit_user: Change password
+        new_post: New post
+        new_user: New user
+        all_users: All users
+      tags:
+        title: Tags
+      archive:
+        title: Archive
+      meta:
+        title: Meta
+        feed: Posts feed
+        login: Log in
+        logout: Log out
   pagination:
     info: Showing {{item}} {{items}} of {{all_items}}
     previous_page: '&laquo; Previous page'
