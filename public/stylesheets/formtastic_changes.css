@@ -16,8 +16,8 @@ form.formtastic fieldset ol li input,
 form.formtastic fieldset ol li textarea         {padding:2px;}
 form.formtastic fieldset ol li label            {font-weight:bold;color:#66717a;text-shadow:1px 1px 1px #000;font-size:12px;}
 form.formtastic fieldset ol li table.roles      {margin:15px 0 0 149px;color:#66717a;}
-form.formtastic fieldset ol li table.roles thead{text-align:left;font-weight:bold;}
-form.formtastic fieldset ol li table.roles td   {width:100px;}
-form.formtastic fieldset ol li table.roles td.action {width:50px;font-weight:bold;}
+form.formtastic fieldset ol li table.roles thead{text-align:left;font-weight:bold;text-shadow:1px 1px 1px #000;}
+form.formtastic fieldset ol li table.roles td   {width:110px;}
+form.formtastic fieldset ol li table.roles td.action {width:55px;font-weight:bold;text-shadow:1px 1px 1px #000;}
 form.formtastic fieldset ol li table.roles td.admin {width:70px;}
 form.formtastic fieldset ol li table.roles td.author {width:150px;}
