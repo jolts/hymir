@@ -5,5 +5,6 @@
         .title
           = t '.title', :title => content_tag(:strong, link_to(h(post.title), post_path(post))), :user => h(post.creator.username)
         .meta= content_tag :span, l(post.published_or_created_at, :format => :shortest), :title => l(post.published_or_created_at)
+
 - else
   = t 'posts.index.no_posts'

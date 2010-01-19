@@ -42,11 +42,13 @@
               %ul#tagcloud
                 - tag_cloud(post_tags, %w[size1 size2 size3 size4 size5 size6]) do |tag, css_class|
                   %li= link_to h(tag), tag_path(tag), :class => css_class
+
             - if all_posts.any?
               %h2= t '.sidebar.archive.title'
               %ul
                 - all_posts.group_by(&:month).each do |month, posts|
                   %li.archive #{link_to "#{month}", archive_path(posts)} (#{posts.count})
+
             %h2= t '.sidebar.meta.title'
             %ul.meta
               %li.feed= link_to t('.sidebar.meta.feed'), posts_path(:format => :atom)
@@ -55,4 +57,4 @@
               - else
                 %li.login= link_to t('.sidebar.meta.login'), login_path
       #footer
-        %p Powered by #{link_to 'Hymir', 'http://github.com/gigamo/hymir', :rel => 'tipsy', :title => "Version: #{Hymir::Version::STRING}"}.
+        %p Powered by #{link_to 'Hymir', 'http://github.com/gigamo/hymir', :title => "Version: #{Hymir::Version::STRING}"}.

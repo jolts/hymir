@@ -1,23 +1,22 @@
 - title t('.title')
 
-.single
-  .saform
-    - form_tag user_sessions_path do
-      %p
-        = label_tag :email, t('.email')
-        = text_field_tag :email
-      %p
-        = label_tag :password, t('.password')
-        = password_field_tag :password
-      %p
-        = submit_tag t('.submit')
+.single.saform
+  - form_tag user_sessions_path do
+    %p
+      = label_tag :email, t('.email')
+      = text_field_tag :email
+    %p
+      = label_tag :password, t('.password')
+      = password_field_tag :password
+    %p
+      = submit_tag t('.submit')
 
 %h3= t '.forgot_password'
-.single
-  .saform
-    - form_tag forgot_password_path do
-      %p
-        = label_tag :email, t('.email')
-        = text_field_tag :email
-      %p
-        = submit_tag t('.submit_forgot')
+
+.single.saform
+  - form_tag forgot_password_path do
+    %p
+      = label_tag :email, t('.email')
+      = text_field_tag :email
+    %p
+      = submit_tag t('.submit_forgot')
