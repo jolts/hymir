@@ -1,6 +1,6 @@
 class Comment
   include MongoMapper::EmbeddedDocument
-  include Gravatarable
+  include Hymir::Gravatar
 
   key :name, String, :required => true, :allow_blank => false
   key :email, String, :required => true, :allow_blank => false

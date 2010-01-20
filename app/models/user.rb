@@ -1,14 +1,11 @@
 class User
   include MongoMapper::Document
-  include Gravatarable
+  include Hymir::Gravatar
 
   key :username, String, :required => true, :unique => true
   key :email, String, :required => true, :unique => true
   key :crypted_password, String
   key :roles_mask, Integer, :numeric => true
-  # 4: Author
-  # 2: Moderator
-  # 1: Admin
   key :reset_password_code, String
   key :reset_password_code_until, Time
   timestamps!
