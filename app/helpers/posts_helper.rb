@@ -15,7 +15,7 @@ module PostsHelper
     cls = ''
 
     if posts.first.id == posts.last.id
-      cls += ' single'
+      cls += ' alone'
     else
       cls += ' first' if post.id == posts.first.id
       cls += ' last'  if post.id == posts.last.id

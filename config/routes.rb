@@ -23,8 +23,8 @@ ActionController::Routing::Routes.draw do |map|
     post.resources :comments, :only => [:create, :destroy]
   end
   map.with_options :controller => :posts, :conditions => {:method => :get} do |post|
-    post.tag 'posts/tag/:tag', :action => :tag, :tag => /[A-Z\s\-]+/i
-    post.archives 'posts/archives/:year/:month', :action => :archive, :year => /[0-9]{4}/, :month => /[0-9]{1,2}/
+    post.tag 'tag/:tag', :action => :tag, :tag => /[A-Z\s\-%20]+/i
+    post.archives 'archives/:year/:month', :action => :archive, :year => /[0-9]{4}/, :month => /[0-9]{1,2}/
   end
 
   # Index page
