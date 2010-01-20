@@ -2,4 +2,4 @@
 
 .single.static
   Find me in
-  %code= __FILE__.split('/')[-4..-1].join('/')
+  %code= __FILE__.sub(/#{RAILS_ROOT}\//, '')
