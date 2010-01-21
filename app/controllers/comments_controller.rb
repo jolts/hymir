@@ -4,9 +4,9 @@ class CommentsController < ApplicationController
 
   def create
     if signed_in?
-      @comment.name = current_user.username
-      @comment.email = current_user.email
-      @comment.url = Hymir::Config[:domain]
+      @comment.name     = current_user.username
+      @comment.email    = current_user.email
+      @comment.url      = Hymir::Config[:domain]
       @comment.has_user = true
     end
     @comment.created_at = Time.now
@@ -17,7 +17,6 @@ class CommentsController < ApplicationController
         flash[:notice] = t('flash.notice.comment.new')
       else
         flash[:error] = t('flash.error.comment.new')
-        #@comment.errors.full_messages.uniq.map(&:downcase).to_sentence
       end
       format.html { redirect_to post_url(@post) }
     end
