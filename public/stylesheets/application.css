@@ -144,9 +144,9 @@ code, pre               {font-family:'Liberation Mono','Monaco','DejaVu Sans Mon
 #comments .post_comment.has_user             {background:rgba(255, 255, 255, 0.1);}
 #comments .post_comment.has_user .info p     {color:#88939c;}
 
-h2#new_comment           {margin-top:50px;background:url(/images/comment_add.png) no-repeat;padding-left:20px;}
+h2#new_comment           {margin-top:50px;background:url(/images/silk/comment_add.png) no-repeat;padding-left:20px;}
 
-h2#comments_count        {background:url(/images/comments.png) no-repeat;padding-left:20px;}
+h2#comments_count        {background:url(/images/silk/comments.png) no-repeat;padding-left:20px;}
 
 #users .user                {display:block;position:relative;overflow:hidden;font-size:12px;margin:0 -10px 30px;background:rgba(0, 0, 0, 0.15);padding:10px;-moz-border-radius:5px;-webkit-border-radius:5px;}
 #users .user.self           {background:rgba(255, 255, 255, 0.1);}

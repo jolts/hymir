@@ -45,9 +45,9 @@ en:
         admin_update: Everything
         admin_destroy: Everything
         moderator_create: Comments
-        moderator_read: Everything
-        moderator_update: Posts
-        moderator_destroy: 'Posts, comments'
+        moderator_read: Everything except users
+        moderator_update: Nothing
+        moderator_destroy: Comments
         author_create: 'Posts, comments'
         author_read: Everything except users
         author_update: Own posts
