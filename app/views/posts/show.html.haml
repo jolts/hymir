@@ -37,5 +37,8 @@
       %h2#comments_count= t '.comments.no_comments'
 
     - if can? :create, Comment
-      %h2#new_comment= t '.comments.new'
-      = render 'comments/form'
+      - if @post.published_or_created_at > 2.weeks.ago
+        %h2#new_comment= t '.comments.new'
+        = render 'comments/form'
+      - else
+        %h2#new_comment= t '.comments.disabled'

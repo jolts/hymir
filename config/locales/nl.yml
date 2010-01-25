@@ -10,6 +10,7 @@ nl:
       comments:
         no_comments: Nog geen reacties!
         new: Nieuwe reactie
+        disabled: Sorry, reacties zijn na twee weken niet meer mogelijk.
     edit:
       title: Post wijzigen
     new:

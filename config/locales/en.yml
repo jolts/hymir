@@ -10,6 +10,7 @@ en:
       comments:
         no_comments: No comments yet!
         new: New comment
+        disabled: Sorry, comments are automatically disabled after two weeks.
     edit:
       title: Edit post
     new:

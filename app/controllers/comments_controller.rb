@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
     @post.comments << @comment
 
     respond_to do |format|
-      if @post.save
+      if @post.save && @post.published_or_created_at > 2.weeks.ago
         flash[:notice] = t('flash.notice.comment.new')
       else
         flash[:error] = t('flash.error.comment.new')
