@@ -119,6 +119,7 @@ en:
         edit: Successfully updated password.
         destroy: Successfully destroyed user.
     error:
+      access_denied: Access denied.
       post:
       comment:
         new: Error while creating comment.

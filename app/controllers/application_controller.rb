@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
   filter_parameter_logging :password, :password_confirmation
 
   rescue_from CanCan::AccessDenied do |exception|
-    flash[:error] = 'Access denied.'
+    flash[:error] = t('flash.error.access_denied')
     redirect_to root_url
   end
 

@@ -119,6 +119,7 @@ nl:
         edit: Wachtwoord werd succesvol gewijzigd.
         destroy: Gebruiker werd succesvol verwijderd.
     error:
+      access_denied: Toegang geweigerd.
       post:
       comment:
         new: Er is een fout opgetreden tijdens het maken van de reactie.
