@@ -24,7 +24,7 @@ class UserSessionsController < ApplicationController
     respond_to do |format|
       if user = User.find_by_email(params[:email])
         user.set_password_code!
-        Mailer.deliver_password_reset_notification user
+        Mailer.send_later :deliver_password_reset_notification, user
         flash[:notice] = t('flash.notice.user_sessions.forgot_password', :email => user.email)
         format.html { redirect_to root_path }
       else
