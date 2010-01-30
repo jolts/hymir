@@ -29,6 +29,13 @@ en:
     feed: atom feed
     leave_comment: leave a comment
     trackback: trackback
+  pages:
+    show:
+      meta: Posted on {{time}} by {{user}}.
+    new:
+      title: New page
+    edit:
+      title: Edit page
   users:
     index:
       title: All users
@@ -66,13 +73,6 @@ en:
       password: Password
       submit: Log in
       submit_forgot: Send reset link
-  info:
-    about:
-      title: About
-    portfolio:
-      title: Portfolio
-    services:
-      title: Services
   layouts:
     application:
       nav:
@@ -86,6 +86,7 @@ en:
       controls:
         title: Welcome, {{user}}
         edit_user: Change password
+        new_page: New page
         new_post: New post
         new_user: New user
         all_users: All users
@@ -108,6 +109,10 @@ en:
         new: Successfully created post.
         edit: Successfully updated post.
         destroy: Successfully destroyed post.
+      page:
+        new: Successfully created page.
+        edit: Successfully updated page.
+        destroy: Successfully destroyed page.
       comment:
         new: Successfully created comment.
         destroy: Successfully destroyed comment.
@@ -148,6 +153,10 @@ en:
         tag_names: Tags
         published: Status
         body: Body
+      page:
+        title: Title
+        url: Url
+        body: Body
       user:
         username: Username
         email: 'E-mail'
@@ -162,6 +171,9 @@ en:
       post:
         tag_names: Separate tags with a semicolon (;). Only alphabetic characters and dashes (-) are allowed.
         published: Visitors will only see published posts.
+        body: "<a href='http://daringfireball.net/projects/markdown/'>Markdown</a> is enabled."
+      page:
+        url: 'Will show up as "/site/:url". Please choose this carefully, as you cannot change this later. Only alphabetic characters are allowed.'
         body: "<a href='http://daringfireball.net/projects/markdown/'>Markdown</a> is enabled."
       user:
         password: 'Length should be at least 6 characters.'

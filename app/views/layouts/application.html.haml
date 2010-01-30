@@ -10,9 +10,8 @@
         #nav
           %ul
             %li= link_to_unless_current t('.nav.home'), root_path
-            %li= link_to_unless_current t('.nav.about'), about_path
-            %li= link_to_unless_current t('.nav.portfolio'), portfolio_path
-            %li= link_to_unless_current t('.nav.services'), services_path
+            - Page.all(:order => 'title ASC').each do |page|
+              %li= link_to_unless_current h(page.title), page_path(page)
       #wrapper
         - flash.each do |name, msg|
           = content_tag :div, (content_tag :span, msg, :class => name), :id => "flash_#{name}"

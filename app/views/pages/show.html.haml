@@ -1,0 +1,16 @@
+- title h(@page.title), false
+
+.single
+  .content
+    .head
+      %span.actions
+        - if signed_in?
+          %span.edit= link_to image_tag('silk/page_edit.png'), edit_page_path(@page), :rel => 'tipsy', :title => t('actions.edit')
+          %span.destroy= link_to image_tag('silk/page_delete.png'), @page, :method => :delete, :confirm => 'Are you sure?', :rel => 'tipsy', :title => t('actions.destroy')
+      %h2.title
+        = h @page.title
+    .body
+      = markdown @page.body
+    .foot
+      = t '.meta', :time => content_tag(:span, l(@page.created_at, :format => :long), :title => l(@page.created_at)), :user => h(@page.creator.username)
+      %br/

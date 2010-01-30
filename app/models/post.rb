@@ -20,7 +20,7 @@ class Post
   RegTagsOk = /\A([A-Z\s\-]+;?)*\z/i
 
   validates_associated :comments
-  validates_length_of :title, :within => 4..40
+  validates_length_of :title, :within => 4..60
   validates_format_of :tag_names, :with => RegTagsOk
 
   def to_param
@@ -47,7 +47,7 @@ class Post
     published_at || created_at
   end
 
-  private
+  protected
     def make_slug
       write_attribute(:slug, title.parameterize)
     end
@@ -55,5 +55,5 @@ class Post
     def update_published_at
       write_attribute(:published_at, Time.now) if published && !published_at
     end
-  # private
+  #
 end

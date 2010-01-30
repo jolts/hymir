@@ -29,6 +29,13 @@ nl:
     feed: atom feed
     leave_comment: laat een reactie na
     trackback: trackback
+  pages:
+    show:
+      meta: Geplaatst op {{time}} door {{user}}.
+    new:
+      title: Nieuwe pagina
+    edit:
+      title: Pagina wijzigen
   users:
     index:
       title: Alle gebruikers
@@ -66,13 +73,6 @@ nl:
       password: Wachtwoord
       submit: Inloggen
       submit_forgot: Reset link versturen
-  info:
-    about:
-      title: About
-    portfolio:
-      title: Portfolio
-    services:
-      title: Diensten
   layouts:
     application:
       nav:
@@ -86,6 +86,7 @@ nl:
       controls:
         title: Welkom, {{user}}
         edit_user: Wachtwoord wijzigen
+        new_page: Nieuwe pagina
         new_post: Nieuwe post
         new_user: Nieuwe gebruiker
         all_users: Alle gebruikers
@@ -108,6 +109,10 @@ nl:
         new: Post werd succesvol aangemaakt.
         edit: Post werd succesvol gewijzigd.
         destroy: Post werd succesvol verwijderd.
+      page:
+        new: Pagina werd succesvol aangemaakt.
+        edit: Pagina werd succesvol gewijzigd.
+        destroy: Pagina werd succesvol verwijderd.
       comment:
         new: Reactie werd succesvol aangemaakt.
         destroy: Reactie werd succesvol verwijderd.
@@ -143,6 +148,10 @@ nl:
         tag_names: Tags
         published: Status
         body: Inhoud
+      page:
+        title: Titel
+        url: Url
+        body: Inhoud
       user:
         username: Gebruikersnaam
         email: 'E-mail'
@@ -157,6 +166,9 @@ nl:
       post:
         tag_names: 'Onderscheidt tags met een puntkomma (;). Enkel alfabetische karakters en streepjes (-) zijn toegelaten.'
         published: Bezoekers zien enkel gepubliceerde posts.
+        body: "Gebruik <a href='http://daringfireball.net/projects/markdown/'>Markdown</a> voor opmaak."
+      page:
+        url: 'Wordt getoond als "/site/:url". Kies dit zorgvuldig, nadien veranderen is onmogelijk. Enkel alfabetische karakters zijn toegelaten.'
         body: "Gebruik <a href='http://daringfireball.net/projects/markdown/'>Markdown</a> voor opmaak."
       user:
         password: 'Lengte moet minstens 6 karakters lang zijn.'

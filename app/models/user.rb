@@ -10,6 +10,7 @@ class User
   timestamps!
 
   has_many :posts
+  has_many :pages
 
   RegEmailOk = /\A[\w\.%\+\-]+@(?:[A-Z0-9\-]+\.)+(?:[A-Z]{2}|com|org|net|gov|mil|biz|info|mobi|name|aero|jobs|museum)\z/i
 

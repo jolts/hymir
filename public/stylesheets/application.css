@@ -41,7 +41,7 @@ code, pre               {font-family:'Liberation Mono','Monaco','DejaVu Sans Mon
 
 #nav                    {margin-top:25px;margin-right:20px;float:right;font-size:16px;font-family:'Trebuchet MS';}
 #nav ul                 {list-style:none;font-weight:bold;}
-#nav ul li              {text-shadow:1px 1px 1px #000;margin-left:10px;color:#6887a0;display:inline;margin-bottom:2px;border-bottom:2px solid #283743;}
+#nav ul li              {text-shadow:1px 1px 1px #000;margin-left:10px;color:#6887a0;display:inline;margin-bottom:2px;border-bottom:2px solid #283743;text-transform:capitalize;}
 #nav ul li a            {color:#88939c;margin-bottom:2px;border-bottom:2px solid #10212e;}
 #nav ul li a:hover      {color:#88939c;margin-bottom:2px;border-bottom:2px solid #283743;text-decoration:none;}
 
