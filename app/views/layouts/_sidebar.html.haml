@@ -7,12 +7,9 @@
     %h2= t '.controls.title', :user => h(current_user.username)
     %ul
       %li.edituser= link_to t('.controls.edit_user'), edit_user_path(current_user)
-      - if can? :create, Post
-        %li.newpost= link_to t('.controls.new_post'), new_post_path
-      - if can? :create, User
-        %li.newuser= link_to t('.controls.new_user'), new_user_path
-      - if can? :read, User
-        %li.allusers= link_to t('.controls.all_users'), users_path
+      %li.newpost= link_to t('.controls.new_post'), new_post_path
+      %li.newuser= link_to t('.controls.new_user'), new_user_path
+      %li.allusers= link_to t('.controls.all_users'), users_path
 
   - if (post_tags = all_posts.map(&:tags).flatten.sort_by{|t|t}).any?
     %h2= t '.tags.title'

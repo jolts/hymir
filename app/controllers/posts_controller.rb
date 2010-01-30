@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_filter :find_post_by_slug, :only => [:show, :edit, :update, :destroy]
-  load_and_authorize_resource
+  before_filter :login_required, :only => [:new, :create, :edit, :update, :destroy]
 
   def index
     if params[:q].blank?
@@ -95,7 +95,7 @@ class PostsController < ApplicationController
     end
   end
 
-  private
+  protected
     def published?
       signed_in? ? {} : {:published => true}
     end

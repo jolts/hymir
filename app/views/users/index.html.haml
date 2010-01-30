@@ -1,14 +1,12 @@
 - title t('.title')
 
-- if can? :read, @users
+- if signed_in?
   %ul#users
     - @users.each do |user|
       %li.user{:class => user.id == current_user.id ? 'self' : nil, :id => "user_#{user.id}"}
         %span.actions
-          - if can?(:destroy, user) && User.all.count > 1
-            %span.destroy= link_to image_tag('silk/user_delete.png'), user, :method => :delete, :confirm => t('actions.confirm'), :rel => 'tipsy', :title => t('actions.destroy')
-          - if can?(:update, user)
-            %span.edit= link_to image_tag('silk/user_edit.png'), edit_user_path(user), :rel => 'tipsy', :title => t('actions.edit')
+          %span.destroy= link_to image_tag('silk/user_delete.png'), user, :method => :delete, :confirm => t('actions.confirm'), :rel => 'tipsy', :title => t('actions.destroy')
+          %span.edit= link_to image_tag('silk/user_edit.png'), edit_user_path(user), :rel => 'tipsy', :title => t('actions.edit')
         .block
           %div.avatar= image_tag user.gravatar(56), :alt => 'Gravatar', :size => '56x56', :class => 'gravatar'
           %div.info
@@ -18,10 +16,6 @@
             %dl
               %dt= t('.info.email')
               %dd= h user.email
-            - if user.roles.any?
-              %dl
-                %dt= t('.info.roles')
-                %dd= user.roles.map(&:capitalize).to_sentence
             - if user.posts.any?
               %dl
                 %dt= t('.info.posts')

@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_filter :find_user_by_username, :only => [:edit, :update, :destroy]
-  load_and_authorize_resource :except => [:reset_password]
+  before_filter :login_required, :except => [:reset_password]
 
   def index
     @users = User.all(:order => 'created_at ASC')
@@ -72,7 +72,7 @@ class UsersController < ApplicationController
     end
   end
 
-  private
+  protected
     def find_user_by_username
       @user = User.find_by_username(params[:id])
     end

@@ -19,7 +19,6 @@ Rails::Initializer.run do |config|
   config.gem 'haml'
   config.gem 'mongo_mapper'
   config.gem 'bcrypt-ruby', :lib => 'bcrypt'
-  config.gem 'cancan'
   config.gem 'formtastic'
   config.gem 'rdiscount'
   config.gem 'shoulda'

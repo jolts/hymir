@@ -7,20 +7,38 @@ class ApplicationController < ActionController::Base
   include Hymir # lib/hymir.rb
   include Authentication # lib/authentication.rb
 
-  helper :all # include all helpers, all the time
-  protect_from_forgery # See ActionController::RequestForgeryProtection for details
-
-  # Scrub sensitive parameters from your log
+  helper :all
+  protect_from_forgery
   filter_parameter_logging :password, :password_confirmation
 
-  rescue_from CanCan::AccessDenied do |exception|
-    flash[:error] = t('flash.error.access_denied')
-    redirect_to root_url
-  end
+  protected
+    def set_locale
+      unless params[:locale].blank? || !I18n.available_locales.include?(params[:locale].to_sym)
+        I18n.locale = params[:locale]
+      end
+    end
+  #
 
   private
-    def set_locale
-      I18n.locale = params[:locale] unless params[:locale].blank? || !I18n.available_locales.include?(params[:locale].to_sym)
+    def login_required
+      unless signed_in?
+        store_location
+        flash[:error] = t('flash.error.access_denied')
+        redirect_to login_path
+      end
+    end
+
+    def store_location
+      disallowed_urls = [login_url, logout_url]
+      disallowed_urls.map! {|url| url[/\/\w+$/]}
+      unless disallowed_urls.include?(request.request_uri)
+        session[:return_to] = request.request_uri
+      end
+    end
+
+    def redirect_back_or_default(default)
+      redirect_to(session[:return_to] || default)
+      session[:return_to] = nil
     end
   # private
 end

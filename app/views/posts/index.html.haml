@@ -4,7 +4,7 @@
       %li.post{:class => post.published ? nil : 'draft', :id => "post_#{post.id}"}
         .content
           .head
-            - if can?(:update, @post) && !post.published
+            - if signed_in? && !post.published
               %span.edit= link_to image_tag('silk/page_edit.png'), edit_post_path(post), :rel => 'tipsy', :title => t('actions.edit')
             %h2.title
               = link_to h(post.title), post_path(post)

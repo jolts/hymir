@@ -1,14 +1,16 @@
 class CommentsController < ApplicationController
   before_filter :find_post_by_slug
-  load_and_authorize_resource :except => [:destroy]
 
   def create
+    @comment = Comment.new(params[:comment])
+
     if signed_in?
       @comment.name     = current_user.username
       @comment.email    = current_user.email
       @comment.url      = Hymir::Config[:domain]
       @comment.has_user = true
     end
+
     @comment.created_at = Time.now
     @post.comments << @comment
 
@@ -34,7 +36,7 @@ class CommentsController < ApplicationController
     end
   end
 
-  private
+  protected
     def find_post_by_slug
       @post = Post.find_by_slug(params[:post_id])
     end

@@ -5,7 +5,6 @@ class User
   key :username, String, :required => true, :unique => true
   key :email, String, :required => true, :unique => true
   key :crypted_password, String
-  key :roles_mask, Integer, :numeric => true
   key :reset_password_code, String
   key :reset_password_code_until, Time
   timestamps!
@@ -45,20 +44,6 @@ class User
 
   def email=(given_email)
     write_attribute(:email, given_email.downcase)
-  end
-
-  Roles = %w[admin moderator author]
-
-  def roles=(roles)
-    write_attribute(:roles_mask, (roles & Roles).map {|r| 2**Roles.index(r)}.sum)
-  end
-
-  def roles
-    Roles.reject {|r| ((roles_mask || 0) & 2**Roles.index(r)).zero?}
-  end
-
-  def role?(role)
-    roles.include? role.to_s
   end
 
   def set_password_code!

@@ -12,10 +12,10 @@ class UserSessionsController < ApplicationController
       if user = User.authenticate(params[:email], params[:password])
         self.current_user = user
         flash[:notice] = t('flash.notice.user_sessions.new')
-        format.html { redirect_to root_path }
+        format.html { redirect_back_or_default root_path }
       else
         flash[:error] = t('flash.error.user_sessions.new')
-        format.html { redirect_to login_path }
+        format.html { redirect_back_or_default login_path }
       end
     end
   end
