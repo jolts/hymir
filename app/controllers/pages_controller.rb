@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   before_filter :find_page_by_url, :except => [:new, :create]
+  before_filter :login_required, :except => [:show]
 
   def show
     respond_to do |format|
