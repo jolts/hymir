@@ -15,11 +15,3 @@ form.formtastic fieldset ol li p.inline-errors  {background:url(/images/delete.p
 form.formtastic fieldset ol li input,
 form.formtastic fieldset ol li textarea         {padding:2px;font:13px 'Trebuchet MS',Helvetica Neue,Helvetica,Arial}
 form.formtastic fieldset ol li label            {font:bold 12px 'Trebuchet MS',Helvetica Neue,Helvetica,Arial;;color:#66717a;text-shadow:1px 1px 1px #000;}
-form.formtastic fieldset ol li .user_role       {font:11px 'Trebuchet MS',Helvetica Neue,Helvetica,Arial;}
-form.formtastic fieldset ol li table.roles      {margin:15px 0 0 149px;color:#66717a;}
-form.formtastic fieldset ol li table.roles thead{text-align:left;font-weight:bold;text-shadow:1px 1px 1px #000;font:11px 'Trebuchet MS',Helvetica Neue,Helvetica,Arial;}
-form.formtastic fieldset ol li table.roles td   {width:110px;}
-form.formtastic fieldset ol li table.roles td.action {width:55px;font-weight:bold;text-shadow:1px 1px 1px #000;font:11px 'Trebuchet MS',Helvetica Neue,Helvetica,Arial;}
-form.formtastic fieldset ol li table.roles td.admin {width:70px;}
-form.formtastic fieldset ol li table.roles td.moderator {width:150px;}
-form.formtastic fieldset ol li table.roles td.author {width:150px;}
