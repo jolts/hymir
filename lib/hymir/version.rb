@@ -4,7 +4,7 @@ module Hymir
 
     MAJOR = '1'
     MINOR = '0'
-    TINY  = 'beta'
+    TINY  = 'beta2'
 
     def to_s
       [MAJOR, MINOR, TINY].join('.').freeze
