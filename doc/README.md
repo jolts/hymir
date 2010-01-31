@@ -31,3 +31,9 @@ Last but not least, you can change the site's title and some other
 things in `config/hymir.yml`.
 
 Now simply start your mongo daemon and run `script/server`.
+
+## Delayed Job
+
+Hymir uses [Delayed Job](http://github.com/collectiveidea/delayed_job)
+for its notification mailer. Please refer to its (Delayed Job's) 
+documentation on how to run the worker.
