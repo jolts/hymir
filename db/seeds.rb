@@ -6,7 +6,7 @@
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Major.create(:name => 'Daley', :city => cities.first)
 
-admin_user = User.create(
+admin_user = User.new(
   :username => 'admin',
   :email => Hymir::Config[:email],
   :password => 'abcdef',
@@ -16,8 +16,9 @@ admin_user = User.create(
 
 puts 'Successfully created admin user' if admin_user.save!
 
-welcome_post = Post.create(
+welcome_post = Post.new(
   :user_id => admin_user.id,
+  :creator_id => admin_user.id,
   :title => 'Welcome to Hymir!',
   :body => 'Should be more stuff here&hellip;',
   :tags => ['welcome', 'hymir'],
@@ -26,3 +27,15 @@ welcome_post = Post.create(
 )
 
 puts 'Successfully created welcome post' if welcome_post.save!
+
+about_page = Page.new(
+  :user_id => admin_user.id,
+  :creator_id => admin_user.id,
+  :title => 'About',
+  :body => 'Fill me',
+  :url => 'about',
+  :created_at => Time.now,
+  :updated_at => Time.now
+)
+
+puts 'Successfully created about page' if about_page.save!
