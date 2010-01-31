@@ -5,11 +5,10 @@ Hymir is a small blogging application using the
 
 ## Installation
 
-Assuming you have Rails already installed, all what's left is MongoDB
-and some gems.
+Assuming you have Rails already installed, all that's left is MongoDB
+and some gems.  
 
-You can download MongoDB [here](http://www.mongodb.org/display/DOCS/Downloads).
-
+You can download MongoDB [here](http://www.mongodb.org/display/DOCS/Downloads).  
 As for the required gems, you can either run `rake gems:install` or
 install them manually:
 
@@ -23,4 +22,10 @@ install them manually:
 
 ## Getting it up and running
 
-Simply start your mongo daemon and run `script/server`.
+Since Hymir uses Mongo there's no need to migrate the database schema or
+anything the like.  
+You'll probably want to seed your database with an
+initial user though, so have a look in `db/seed.rb`, enter your user
+details and run `rake db:seed`.
+
+Now simply start your mongo daemon and run `script/server`.
