@@ -1,74 +1,55 @@
 class UsersController < ApplicationController
   before_filter :find_user_by_username, :only => [:edit, :update, :destroy]
   before_filter :login_required, :except => [:reset_password]
+  before_filter :check_current_user, :only => [:edit, :update]
 
   def index
     @users = User.all(:order => 'created_at ASC')
-
-    respond_to do |format|
-      format.html
-    end
   end
 
   def new
     @user = User.new
-
-    respond_to do |format|
-      format.html
-    end
   end
   
   def create
     @user = User.new(params[:user])
 
-    respond_to do |format|
-      if @user.save
-        flash[:notice] = t('flash.notice.users.new')
-        format.html { redirect_to root_path }
-      else
-        format.html { render :action => 'new' }
-      end
+    if @user.save
+      flash[:notice] = t('flash.notice.users.new')
+      redirect_to root_path
+    else
+      render :action => 'new'
     end
   end
 
   def edit
-    respond_to do |format|
-      format.html
-    end
   end
 
   def update
-    respond_to do |format|
-      if @user.update_attributes(params[:user].slice(:password, :password_confirmation))
-        flash[:notice] = t('flash.notice.users.edit')
-        format.html { redirect_to root_path }
-      else
-        format.html { render :action => 'edit' }
-      end
+    if @user.update_attributes(params[:user].slice(:password, :password_confirmation))
+      flash[:notice] = t('flash.notice.users.edit')
+      redirect_to root_path
+    else
+      render :action => 'edit'
     end
   end
 
   def destroy
     @user.destroy
-
-    respond_to do |format|
-      flash[:notice] = t('flash.notice.users.destroy')
-      format.html { redirect_to users_path }
-    end
+    flash[:notice] = t('flash.notice.users.destroy')
+    redirect_to users_path
   end
 
   def reset_password
     @user = User.find_by_reset_password_code(params[:reset_code])
 
-    respond_to do |format|
-      if @user && @user.reset_password_code_until && Time.now < @user.reset_password_code_until
-        sign_out_keeping_session!
-        self.current_user = @user
-        format.html { render :action => :edit }
-      else
-        flash[:error] = t('flash.error.users.reset_password')
-        format.html { redirect_to root_path }
-      end
+    if @user && @user.reset_password_code_until && Time.now < @user.reset_password_code_until
+      sign_out_keeping_session!
+      self.current_user = @user
+      render :action => :edit
+    else
+      flash[:error] = t('flash.error.users.reset_password')
+      redirect_to root_path
     end
   end
 
@@ -76,5 +57,12 @@ class UsersController < ApplicationController
     def find_user_by_username
       @user = User.find_by_username(params[:id])
     end
-  # private
+
+    def check_current_user
+      unless @user == current_user
+        flash[:error] = t('flash.error.access_denied')
+        redirect_to root_path
+      end
+    end
+  # protected
 end
