@@ -1,4 +1,5 @@
 - all_posts = Post.all(:order => 'created_at DESC', :conditions => published?)
+
 - form_tag posts_path, :method => :get do
   = text_field_tag :q, h(params[:q]), :id => 'searchfield'
   = submit_tag t('.forms.search'), :name => nil, :id => 'searchsubmit'
