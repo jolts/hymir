@@ -84,7 +84,7 @@ code, pre               {font-family:'Liberation Mono','Monaco','DejaVu Sans Mon
 .single .content .body h6,
 .single .content .body p,
 .single .content .body ul,
-.single .content .body ol           {margin:5px 0;text-shadow:none;}
+.single .content .body ol           {margin:5px 0;text-shadow:none;text-align:justify;}
 .single .content .body em.updated   {font-size:12px;}
 .single .content .foot              {border-top:1px solid #283743;margin:0;padding:5px 0;font-size:12px;color:#404f48;}
 .single.static                      {font-size:14px;}
@@ -109,7 +109,7 @@ code, pre               {font-family:'Liberation Mono','Monaco','DejaVu Sans Mon
 #posts .post .content .body h6,
 #posts .post .content .body p,
 #posts .post .content .body ul,
-#posts .post .content .body ol      {margin:5px 0;text-shadow:none;}
+#posts .post .content .body ol      {margin:5px 0;text-shadow:none;text-align:justify;}
 #posts .post.draft                  {background:rgba(255, 255, 255, 0.1);}
 #posts .post.draft .content .body   {border-top:1px solid #4a5965;}
 #posts .post.draft .head p.meta     {color:#88939c;}
@@ -129,7 +129,7 @@ code, pre               {font-family:'Liberation Mono','Monaco','DejaVu Sans Mon
 #comments .post_comment .info .username      {text-shadow:1px 1px 1px #000;}
 #comments .post_comment .info p              {margin:0;color:#404f48;}
 #comments .post_comment.has_user .info p     {color:#88939c;}
-#comments .post_comment .info img.gravatar   {float:left;padding:1px;border:1px solid rgba(255, 255, 255, 0.1);margin:3px 5px 0 0;-moz-border-radius:2px;-webkit-border-radius:2px;}
+#comments .post_comment .info img.gravatar   {float:left;padding:1px;border:1px solid rgba(255, 255, 255, 0.1);margin:2px 5px 0 0;-moz-border-radius:2px;-webkit-border-radius:2px;}
 #comments .post_comment .body                {padding:5px 0;float:right;clear:right;width:75%;}
 #comments .post_comment .body h1,
 #comments .post_comment .body h2,
@@ -139,7 +139,7 @@ code, pre               {font-family:'Liberation Mono','Monaco','DejaVu Sans Mon
 #comments .post_comment .body h6,
 #comments .post_comment .body p,
 #comments .post_comment .body ul,
-#comments .post_comment .body ol             {margin:0 0 5px;text-shadow:none;font-size:14px;}
+#comments .post_comment .body ol             {margin:0 0 5px;text-shadow:none;font-size:14px;text-align:justify;}
 #comments .post_comment .body span.destroy a {float:right;text-shadow:1px 1px 1px #000;color:#cc3333;border:none;}
 #comments .post_comment.has_user             {background:rgba(255, 255, 255, 0.1);}
 #comments .post_comment.has_user .info p     {color:#88939c;}

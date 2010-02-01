@@ -25,7 +25,7 @@ nl:
       draft: Concept
       published: Gepubliceerd
     uncategorized: ongecategoriseerd
-    comment: reactie
+    comment: Reactie
     feed: atom feed
     leave_comment: laat een reactie na
     trackback: trackback
@@ -220,7 +220,7 @@ nl:
       datetime: 
         formats: 
           default: '%d-%m-%YT%H:%M:%S%Z'
-      long: '%d %B %Y %H:%M'
+      long: '%e %B %Y om %H:%M'
     pm: "'s middags"
   date: 
     month_names: 

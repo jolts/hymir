@@ -24,7 +24,7 @@
         - @post.comments.sort_by {|c| c.created_at}.each do |comment|
           %li{:class => "post_comment#{comment.has_user ? ' has_user' : nil}", :id => "comment_#{comment.id}"}
             .info
-              = image_tag comment.gravatar(20), :alt => 'Gravatar', :size => '20x20', :class => 'gravatar'
+              = image_tag comment.gravatar(21), :alt => 'Gravatar', :size => '21x21', :class => 'gravatar'
               %strong.username= link_to_unless comment.url.blank?, h(comment.name), comment.url
               %p.meta= content_tag :span, l(comment.created_at, :format => :shortest), :title => l(comment.created_at)
             .body

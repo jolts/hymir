@@ -25,7 +25,7 @@ en:
       draft: Draft
       published: Published
     uncategorized: uncategorized
-    comment: comment
+    comment: Comment
     feed: atom feed
     leave_comment: leave a comment
     trackback: trackback
@@ -139,6 +139,7 @@ en:
       month: '%B %Y'
       shorter: '%B %e, %Y'
       shortest: '%B %e'
+      long: '%B %e %Y at %H:%M'
   actions:
     confirm: 'Are you sure?'
     destroy: Destroy
