@@ -101,8 +101,8 @@ en:
         logout: Log out
   pagination:
     info: Showing {{item}} {{items}} of {{all_items}}
-    previous_page: '&laquo; Previous page'
-    next_page: 'Next page &raquo;'
+    previous_page: '&larr; Previous page'
+    next_page: 'Next page &rarr;'
   flash:
     notice:
       post:

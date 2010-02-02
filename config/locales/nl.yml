@@ -101,8 +101,8 @@ nl:
         logout: Uitloggen
   pagination:
     info: '{{item}} {{items}} van {{all_items}}'
-    previous_page: '&laquo; Vorige pagina'
-    next_page: 'Volgende pagina &raquo;'
+    previous_page: '&larr; Vorige pagina'
+    next_page: 'Volgende pagina &rarr;'
   flash:
     notice:
       post:
