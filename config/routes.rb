@@ -1,6 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
   # Sessions
-  map.resource :user_sessions, :only => [:create]
+  map.resource :user_session, :only => [:create]
   map.with_options :controller => :user_sessions do |session|
     session.login 'login', :action => :new
     session.logout 'logout', :action => :destroy
