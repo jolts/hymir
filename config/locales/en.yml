@@ -139,7 +139,7 @@ en:
       month: '%B %Y'
       shorter: '%B %e, %Y'
       shortest: '%B %e'
-      long: '%B %e %Y at %H:%M'
+      long: '%B %e, %Y at %H:%M'
   actions:
     confirm: 'Are you sure?'
     destroy: Destroy

@@ -60,8 +60,8 @@ class UsersController < ApplicationController
 
     def check_current_user
       unless @user == current_user
-        flash[:error] = t('flash.error.access_denied')
         redirect_to root_path
+        return false
       end
     end
   # protected

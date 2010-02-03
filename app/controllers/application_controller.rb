@@ -25,6 +25,7 @@ class ApplicationController < ActionController::Base
         store_location
         flash[:error] = t('flash.error.access_denied')
         redirect_to login_path
+        return false
       end
     end
 
