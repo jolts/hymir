@@ -2,8 +2,7 @@ User.create!(:username => 'admin',
              :email => Hymir::Config[:email],
              :password => 'abcdef',
              :password_confirmation => 'abcdef',
-             :roles => ['admin'])
-puts 'Successfully created admin user'
+puts 'Successfully created user'
 
 Post.create!(:user_id => admin_user.id,
              :creator_id => admin_user.id,
