@@ -77,9 +77,6 @@ en:
     application:
       nav:
         home: Home
-        about: About
-        portfolio: Portfolio
-        services: Services
     sidebar:
       forms:
         search: Search

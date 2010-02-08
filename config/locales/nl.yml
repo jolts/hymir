@@ -77,9 +77,6 @@ nl:
     application:
       nav:
         home: Home
-        about: About
-        portfolio: Portfolio
-        services: Diensten
     sidebar:
       forms:
         search: Zoek
