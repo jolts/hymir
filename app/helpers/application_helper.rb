@@ -1,5 +1,5 @@
 module ApplicationHelper
-  def paginate(item, items)
+  def hymir_paginate(item, items)
     page_first_item = items.index(items.first) + items.offset + 1
     page_last_item  = items.index(items.last)  + items.offset + 1
 
