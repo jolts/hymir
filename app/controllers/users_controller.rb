@@ -59,10 +59,7 @@ class UsersController < ApplicationController
     end
 
     def check_current_user
-      unless @user == current_user
-        redirect_to root_path
-        return false
-      end
+      permission_denied unless @user == current_user
     end
   # protected
 end

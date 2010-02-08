@@ -1,6 +1,3 @@
-# Filters added to this controller apply to all controllers in the application.
-# Likewise, all the methods added will be available for all controllers.
-
 class ApplicationController < ActionController::Base
   before_filter :set_locale
 
@@ -17,14 +14,22 @@ class ApplicationController < ActionController::Base
         I18n.locale = params[:locale]
       end
     end
+
+    def permission_denied
+      respond_to do |format|
+        flash[:error] = t('flash.error.access_denied')
+        format.html { redirect_to(logged_in? ? root_path : login_path) }
+        format.xml  { head :unauthorized }
+        format.js   { head :unauthorized }
+      end
+    end
   #
 
   private
     def login_required
       unless signed_in?
         store_location
-        flash[:error] = t('flash.error.access_denied')
-        redirect_to login_path
+        permission_denied
         return false
       end
     end
