@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
     def permission_denied
       respond_to do |format|
         flash[:error] = t('flash.error.access_denied')
-        format.html { redirect_to(logged_in? ? root_path : login_path) }
+        format.html { redirect_to(signed_in? ? root_path : login_path) }
         format.xml  { head :unauthorized }
         format.js   { head :unauthorized }
       end
