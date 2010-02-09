@@ -27,6 +27,10 @@ anything the like.
 You'll probably want to seed your database with an
 initial user though, so have a look in `db/seed.rb`, enter your user
 details and run `rake db:seed`.  
+
+Next up, you will want to rename the `production.example.rb` and `development.example.rb` files in `config/environments`.  
+If you wish for the password reset mailer to work, you have to add your mailer settings in these files.
+
 Last but not least, you can change the site's title and some other
 things in `config/hymir.yml`.
 
