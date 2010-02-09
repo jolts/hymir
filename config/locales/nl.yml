@@ -31,7 +31,7 @@ nl:
     trackback: trackback
   pages:
     show:
-      meta: Geplaatst op {{time}} door {{user}}.
+      meta: Laatst gewijzigd op {{time}} door {{user}}.
     new:
       title: Nieuwe pagina
     edit:

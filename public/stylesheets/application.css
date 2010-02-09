@@ -80,10 +80,10 @@ code, pre               {font-family:'Liberation Mono','Monaco','DejaVu Sans Mon
 .single .content .body h3,
 .single .content .body h4,
 .single .content .body h5,
-.single .content .body h6,
+.single .content .body h6           {margin:5px 0;text-shadow:none;}
 .single .content .body p,
 .single .content .body ul,
-.single .content .body ol           {margin:5px 0;text-shadow:none;text-align:justify;}
+.single .content .body ol           {margin:15px 0;text-align:justify;}
 .single .content .body em.updated   {font-size:12px;}
 .single .content .foot              {border-top:1px solid #283743;margin:0;padding:5px 0;font-size:12px;color:#404f48;}
 .single.static                      {font-size:14px;}
@@ -105,10 +105,10 @@ code, pre               {font-family:'Liberation Mono','Monaco','DejaVu Sans Mon
 #posts .post .content .body h3,
 #posts .post .content .body h4,
 #posts .post .content .body h5,
-#posts .post .content .body h6,
+#posts .post .content .body h6           {margin:5px 0;text-shadow:none;}
 #posts .post .content .body p,
 #posts .post .content .body ul,
-#posts .post .content .body ol      {margin:5px 0;text-shadow:none;text-align:justify;}
+#posts .post .content .body ol           {margin:15px 0;text-align:justify;}
 #posts .post.draft                  {background:rgba(255, 255, 255, 0.1);}
 #posts .post.draft .content .body   {border-top:1px solid #4a5965;}
 #posts .post.draft .head p.meta     {color:#88939c;}
@@ -173,7 +173,7 @@ h2#comments_count        {background:url(/images/silk/comments.png) no-repeat;pa
 
 #locales                {position:absolute;top:0;right:2px;color:#404f48;font:bold 11px 'Helvetica Neue',Helvetica,Arial,sans-serif;text-transform:uppercase;}
 
-#tagcloud               {text-align:justify;padding:0 15px;}
+#tagcloud               {text-align:justify;padding:0 10px;}
 #tagcloud li            {display:inline;}
 #tagcloud .size1        {font-size:11px;}
 #tagcloud .size2        {font-size:12px;}

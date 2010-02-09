@@ -12,5 +12,5 @@
     .body
       = markdown @page.body
     .foot
-      = t '.meta', :time => content_tag(:span, l(@page.created_at, :format => :long), :title => l(@page.created_at)), :user => h(@page.creator.username)
+      = t '.meta', :time => content_tag(:span, l(@page.updated_at, :format => :long), :title => l(@page.updated_at)), :user => h(@page.updater.username)
       %br/

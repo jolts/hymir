@@ -31,7 +31,7 @@ en:
     trackback: trackback
   pages:
     show:
-      meta: Posted on {{time}} by {{user}}.
+      meta: Last changed on {{time}} by {{user}}.
     new:
       title: New page
     edit:
