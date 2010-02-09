@@ -1,16 +1,13 @@
 DEFAULTS: &DEFAULTS
   title: Hymir
-  email: blah@blah.com
+  email: gigamo@gmail.com
 
 development:
   <<: *DEFAULTS
   domain: 'http://localhost:3000/'
-  #  
 
 test:
   <<: *DEFAULTS
-  # 
 
 production:
   <<: *DEFAULTS
-  #
