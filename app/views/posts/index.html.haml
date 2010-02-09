@@ -13,7 +13,7 @@
               = content_tag :span, l(post.published_or_created_at, :format => :shorter), :title => l(post.published_or_created_at)
               - if post.published
                 &mdash;
-                = link_to pluralize(post.comments.count, t('posts.comment')), "#{post_path post}#comments"
+                = link_to pluralize(post.comments.size, t('posts.comment')), "#{post_path post}#comments"
           .body
             = markdown post.body
 

@@ -6,7 +6,7 @@ en:
       pagination_name: posts
     show:
       meta: Posted on {{time}} by {{user}} and filed under {{tags}}.
-      info: Follow any comments to this post through the {{feed}}, {{comment}} or {{trackback}} from your own site.
+      info: Follow any comments to this post through the {{feed}}, or {{comment}}.
       comments:
         no_comments: No comments yet!
         new: New comment
@@ -88,7 +88,7 @@ en:
         new_user: New user
         all_users: All users
       tags:
-        title: Tags
+        title: Tagcloud
       archive:
         title: Archive
       meta:

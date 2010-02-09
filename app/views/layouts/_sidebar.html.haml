@@ -23,7 +23,7 @@
     %h2= t '.archive.title'
     %ul
       - all_posts.group_by(&:month).each do |month, posts|
-        %li.archive #{link_to "#{month}", archive_path(posts)} (#{posts.count})
+        %li.archive #{link_to "#{month}", archive_path(posts)} (#{posts.size})
 
   %h2= t '.meta.title'
   %ul.meta

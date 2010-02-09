@@ -12,7 +12,6 @@ a:visited               {color:#57768f;}
 ul, ol                  {list-style:none;}
 
 h1, h2, h3, h4, h5, h6  {text-shadow:1px 1px 1px #000;margin:0 0 20px;}
-h1, h2, h3              {font-family:'Trebuchet MS';}
 h1                      {font-size:20px;}
 h2                      {font-size:18px;}
 h3, h4, h5, h6          {font-size:16px;}
@@ -23,7 +22,7 @@ input, textarea         {-moz-border-radius:2px;-webkit-border-radius:2px;}
 input[type=text],
 input[type=password],
 input[type=submit],
-textarea                {border:1px solid #bbb;padding:2px;font:13px 'Trebuchet MS',Helvetica Neue,Helvetica,Arial;background:#fff;color:#000;}
+textarea                {border:1px solid #bbb;padding:2px;font:13px 'Helvetica Neue',Helvetica,Arial;background:#fff;color:#000;}
 input[type=submit]      {padding:1px;margin-top:1px;background:#ccc;font-size:12px;color:#131313;}
 input[type=submit]:hover {background:#fff;}
 input[type=text]:focus,
@@ -35,12 +34,12 @@ code, pre               {font-family:'Liberation Mono','Monaco','DejaVu Sans Mon
 #container              {width:860px;margin:0 auto;}
 
 #header                 {height:50px;margin-top:20px;padding:0;padding-bottom:20px;border-bottom:1px solid black;}
-#header h1              {margin:0 0 0 20px;text-shadow:2px 2px 2px #000;float:left;font-size:42px;}
-#header h1 a            {color:#6887a0;}
+#header h1              {margin:0 0 0 20px;text-shadow:2px 2px 2px #000;float:left;font-size:50px;font-family:'Myriad Pro','Lucida Grande';}
+#header h1 a            {color:#fff;}
 #header h1 a:hover      {border:none;}
 
-#nav                    {margin-top:25px;margin-right:20px;float:right;font-size:16px;font-family:'Trebuchet MS';}
-#nav ul                 {list-style:none;font-weight:bold;}
+#nav                    {margin-top:25px;margin-right:20px;float:right;font-size:16px;text-transform:lowercase;font-weight:200;}
+#nav ul                 {list-style:none;}
 #nav ul li              {text-shadow:1px 1px 1px #000;margin-left:10px;color:#6887a0;display:inline;margin-bottom:2px;border-bottom:2px solid #283743;text-transform:capitalize;}
 #nav ul li a            {color:#88939c;margin-bottom:2px;border-bottom:2px solid #10212e;}
 #nav ul li a:hover      {color:#88939c;margin-bottom:2px;border-bottom:2px solid #283743;text-decoration:none;}
@@ -51,13 +50,13 @@ code, pre               {font-family:'Liberation Mono','Monaco','DejaVu Sans Mon
 
 #sidebar                {float:right;clear:right;width:170px;color:#88939c;font-size:12px;}
 #sidebar .content       {background:rgba(0, 0, 0, 0.15);margin:0 -10px 30px;padding:5px 10px;-moz-border-radius:5px;-webkit-border-radius:5px;}
-#sidebar .content h2    {font-size:16px;margin:5px 0;}
+#sidebar .content h2    {font-size:16px;margin:5px 0;font-weight:200;}
 #sidebar .content p     {line-height:normal;}
 #sidebar .content ul    {list-style:none;margin:15px 0;}
 #sidebar .content ul.meta {margin:15px 0 5px;}
 #sidebar .content ul li {margin-bottom:2px;}
  
-#footer                 {border-top:1px solid #283743;color:#cdcdcd;padding-top:20px;margin-bottom:50px;text-align:center;font-size:13px;font-family:'Trebuchet MS';}
+#footer                 {border-top:1px solid #283743;color:#88939c;padding-top:20px;margin-bottom:50px;text-align:center;font-size:11px;font-weight:bold;text-transform:uppercase;}
 #footer a               {text-decoration:none;text-shadow:1px 1px 1px #000;}
 #footer p               {margin:0;}
 
@@ -126,7 +125,7 @@ code, pre               {font-family:'Liberation Mono','Monaco','DejaVu Sans Mon
 #comments h2                                 {margin:20px 0;font-size:16px;}
 #comments .post_comment                      {margin-bottom:20px;padding:5px 0;display:block;position:relative;overflow:hidden;margin:0 -10px 20px;padding:5px 10px;background:rgba(0, 0, 0, 0.15);-moz-border-radius:5px;-webkit-border-radius:5px;}
 #comments .post_comment .info                {float:left;width:23%;padding:5px 0;font-size:12px;}
-#comments .post_comment .info .username      {text-shadow:1px 1px 1px #000;}
+#comments .post_comment .info .username      {text-shadow:1px 1px 1px #000;font-size:11px;text-transform:uppercase;}
 #comments .post_comment .info p              {margin:0;color:#404f48;}
 #comments .post_comment.has_user .info p     {color:#88939c;}
 #comments .post_comment .info img.gravatar   {float:left;padding:1px;border:1px solid rgba(255, 255, 255, 0.1);margin:2px 5px 0 0;-moz-border-radius:2px;-webkit-border-radius:2px;}
@@ -151,7 +150,7 @@ h2#comments_count        {background:url(/images/silk/comments.png) no-repeat;pa
 #users .user                {display:block;position:relative;overflow:hidden;font-size:12px;margin:0 -10px 30px;background:rgba(0, 0, 0, 0.15);padding:10px;-moz-border-radius:5px;-webkit-border-radius:5px;}
 #users .user.self           {background:rgba(255, 255, 255, 0.1);}
 #users .user dl             {margin-bottom:3px;display:block;position:relative;overflow:hidden;}
-#users .user dt             {text-shadow:1px 1px 1px #000;float:left;color:#88939c;width:60px;font:11px 'Trebuchet MS',Helvetica Neue,Helvetica,Arial;}
+#users .user dt             {text-shadow:1px 1px 1px #000;float:left;color:#88939c;width:60px;font:bold 11px 'Helvetica Neue',Helvetica,Arial;text-transform:uppercase;}
 #users .user dd             {float:right;clear:right;width:430px;}
 #users .user dd.name        {font-weight:bold;}
 #users .user span.actions   {float:right;clear:right;width:40px;}
@@ -161,7 +160,7 @@ h2#comments_count        {background:url(/images/silk/comments.png) no-repeat;pa
 #users .user .block .avatar img.gravatar {padding:1px;border:1px solid rgba(255, 255, 255, 0.1);margin:3px 5px 0 0;-moz-border-radius:2px;-webkit-border-radius:2px;}
 #users .user .block .info   {float:right;clear:right;width:88%;}
 
-#pagination             {color:#404f48;font-size:13px;font-family:'Trebuchet MS',Helvetica Neue,Helvetica,Arial,sans-serif;text-align:center;}
+#pagination             {color:#404f48;font-size:11px;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;text-align:center;text-transform:uppercase;}
 #pagination a:hover     {border:none;}
 #pagination strong      {color:#516059;}
 
@@ -169,12 +168,12 @@ h2#comments_count        {background:url(/images/silk/comments.png) no-repeat;pa
 #searchsubmit           {float:right;width:50px;}
 
 .saform form                     {display:block;position:relative;overflow:hidden;}
-.saform form label               {color:#88939c;text-shadow:1px 1px 1px #000;float:left;width:150px;font:bold 12px 'Trebuchet MS',Helvetica Neue,Helvetica,Arial;}
+.saform form label               {color:#88939c;text-shadow:1px 1px 1px #000;float:left;width:150px;font:bold 11px 'Helvetica Neue',Helvetica,Arial;text-transform:uppercase;}
 .saform form input[type=submit]  {margin-left:150px;}
 
-#locales                {position:absolute;top:0;right:2px;color:#404f48;font-family:'Trebuchet MS',Helvetica Neue,Helvetica,Arial;}
+#locales                {position:absolute;top:0;right:2px;color:#404f48;font:bold 11px 'Helvetica Neue',Helvetica,Arial,sans-serif;text-transform:uppercase;}
 
-#tagcloud               {text-align:justify;}
+#tagcloud               {text-align:justify;padding:0 15px;}
 #tagcloud li            {display:inline;}
 #tagcloud .size1        {font-size:11px;}
 #tagcloud .size2        {font-size:12px;}

@@ -14,12 +14,12 @@
     .foot
       = t '.meta', :time => content_tag(:span, l(@post.published_or_created_at, :format => :long), :title => l(@post.published_or_created_at)), :user => h(@post.creator.username), :tags => (@post.tags.any? ? tag_paths(@post.tags) : t('posts.uncategorized'))
       %br/
-      = t '.info', :feed => link_to(t('posts.feed'), post_path(@post, :format => :atom), :class => 'feed'), :comment => link_to(t('posts.leave_comment'), "#{post_path(@post)}#new_comment"), :trackback => link_to(t('posts.trackback'), post_path(@post, :format => :html))
+      = t '.info', :feed => link_to(t('posts.feed'), post_path(@post, :format => :atom), :class => 'feed'), :comment => link_to(t('posts.leave_comment'), "#{post_path(@post)}#new_comment")
 
 #comments
   - if @post.published
     - if @post.comments.any?
-      %h2#comments_count= pluralize @post.comments.count, t('posts.comment')
+      %h2#comments_count= pluralize @post.comments.size, t('posts.comment')
       %ul#comments_list
         - @post.comments.sort_by {|c| c.created_at}.each do |comment|
           %li{:class => "post_comment#{comment.has_user ? ' has_user' : nil}", :id => "comment_#{comment.id}"}

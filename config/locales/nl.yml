@@ -6,7 +6,7 @@ nl:
       pagination_name: Posts
     show:
       meta: Geplaatst op {{time}} door {{user}} in {{tags}}.
-      info: Volg alle reacties op deze post via de {{feed}}, {{comment}} of {{trackback}} vanop je eigen site.
+      info: Volg alle reacties op deze post via de {{feed}}, of {{comment}}.
       comments:
         no_comments: Nog geen reacties!
         new: Nieuwe reactie
@@ -88,7 +88,7 @@ nl:
         new_user: Nieuwe gebruiker
         all_users: Alle gebruikers
       tags:
-        title: Tags
+        title: Tagcloud
       archive:
         title: Archief
       meta:
