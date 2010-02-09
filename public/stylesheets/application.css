@@ -84,6 +84,10 @@ code, pre               {font-family:'Liberation Mono','Monaco','DejaVu Sans Mon
 .single .content .body p,
 .single .content .body ul,
 .single .content .body ol           {margin:15px 0;text-align:justify;}
+.single .content .body ul,
+.single .content .body ol           {margin-left: 15px;}
+.single .content .body ul           {list-style:disc;}
+.single .content .body ol           {list-style:decimal;}
 .single .content .body em.updated   {font-size:12px;}
 .single .content .foot              {border-top:1px solid #283743;margin:0;padding:5px 0;font-size:12px;color:#404f48;}
 .single.static                      {font-size:14px;}
@@ -109,6 +113,10 @@ code, pre               {font-family:'Liberation Mono','Monaco','DejaVu Sans Mon
 #posts .post .content .body p,
 #posts .post .content .body ul,
 #posts .post .content .body ol           {margin:15px 0;text-align:justify;}
+#posts .post .content .body ul,
+#posts .post .content .body ol           {margin-left: 15px;}
+#posts .post .content .body ul           {list-style:disc;}
+#posts .post .content .body ol           {list-style:decimal;}
 #posts .post.draft                  {background:rgba(255, 255, 255, 0.1);}
 #posts .post.draft .content .body   {border-top:1px solid #4a5965;}
 #posts .post.draft .head p.meta     {color:#88939c;}
