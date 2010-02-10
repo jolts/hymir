@@ -11,7 +11,7 @@ form.formtastic fieldset ol li p.inline-hints { color:#333; }
 
 form.formtastic fieldset ol li p.inline-hints   {font-size:12px;color:#66717a;}
 form.formtastic fieldset ol li ul.errors,
-form.formtastic fieldset ol li p.inline-errors  {background:url(/images/delete.png) no-repeat;padding-left:20px;font-size:12px;color:#cdcdcd;}
+form.formtastic fieldset ol li p.inline-errors  {background:url(/images/silk/delete.png) no-repeat;padding-left:20px;font-size:12px;color:#cdcdcd;}
 form.formtastic fieldset ol li input,
 form.formtastic fieldset ol li textarea         {padding:2px;font:13px 'Helvetica Neue',Helvetica,Arial}
 form.formtastic fieldset ol li label            {font:bold 11px 'Helvetica Neue',Helvetica,Arial;;color:#66717a;text-shadow:1px 1px 1px #000;text-transform:uppercase;}
