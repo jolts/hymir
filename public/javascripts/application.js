@@ -31,7 +31,7 @@
     setupAJAXDestroy: function() {
       $('a.destroy').live('click', function(event) {
         if (confirm('Are you sure?')) {
-          link = $(this)
+          link = $(this);
           parent = link.parents('.has-actions:first');
           $.ajax({
             url: link.attr('href'),
