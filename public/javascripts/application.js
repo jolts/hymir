@@ -14,8 +14,7 @@
 
     setupFlashFade: function() {
       flash_div = $('#flash_notice, #flash_error');
-      flash_div.hide();
-      flash_div.slideDown(350);
+      flash_div.hide().slideDown(350);
       flash_div.delay(5000).slideUp(700);
     },
 
