@@ -2,7 +2,7 @@
   %ul#posts
     - @posts.each do |post|
       %li.post{:class => post.published ? nil : 'draft', :id => "post_#{post.id}"}
-        .content
+        .content.has-actions
           .head
             - if signed_in? && !post.published
               %span.actions

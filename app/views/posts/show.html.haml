@@ -1,7 +1,7 @@
 - title h(@post.title), false
 
 %div.single{:class => @post.published ? nil : 'draft'}
-  .content
+  .content.has-actions
     .head
       %span.actions
         - if signed_in?
@@ -22,7 +22,7 @@
       %h2#comments_count= pluralize @post.comments.size, t('posts.comment')
       %ul#comments_list
         - @post.comments.sort_by {|c| c.created_at}.each do |comment|
-          %li{:class => "post_comment#{comment.has_user ? ' has_user' : nil}", :id => "comment_#{comment.id}"}
+          %li{:class => "post_comment has-actions#{comment.has_user ? ' has_user' : nil}", :id => "comment_#{comment.id}"}
             .info
               = image_tag comment.gravatar(21), :alt => 'Gravatar', :size => '21x21', :class => 'gravatar'
               %strong.username= link_to_unless comment.url.blank?, h(comment.name), comment.url

@@ -20,7 +20,7 @@
 
     setupActionHover: function() {
       $('.actions').hide();
-      $('.content, .post_comment').hover(
+      $('.has-actions').hover(
         function() { $(this).find('.actions').fadeIn(100); },
         function() { $(this).find('.actions').fadeOut(100); }
       );
