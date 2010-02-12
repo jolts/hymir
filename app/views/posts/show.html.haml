@@ -29,7 +29,8 @@
               %p.meta= content_tag :span, l(comment.created_at, :format => :shortest), :title => l(comment.created_at)
             .body
               - if signed_in?
-                %span.destroy= link_to image_tag('silk/comment_delete.png'), post_comment_path(@post, comment), :method => :delete, :confirm => 'Are you sure?', :rel => 'tipsy', :title => t('actions.destroy')
+                %span.actions
+                  %span.destroy= link_to image_tag('silk/comment_delete.png'), post_comment_path(@post, comment), :method => :delete, :confirm => 'Are you sure?', :rel => 'tipsy', :title => t('actions.destroy')
               = markdown comment.body
 
     - else
