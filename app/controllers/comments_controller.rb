@@ -23,8 +23,13 @@ class CommentsController < ApplicationController
 
   def destroy
     @post.comments.delete_if {|comment| comment.id.to_s == params[:id]}
-    flash[:notice] = t('flash.notice.comment.destroy') if @post.save
-    redirect_to post_url(@post)
+    if request.xhr?
+      flash.now[:notice] = t('flash.notice.comment.destroy') if @post.save
+      render :nothing => true
+    else
+      flash[:notice] = t('flash.notice.comment.destroy') if @post.save
+      redirect_to post_url(@post)
+    end
   end
 
   protected

@@ -6,6 +6,7 @@
       this.setupTipsy();
       this.setupFlashFade();
       this.setupActionHover();
+      this.setupAJAXDestroy();
     },
 
     setupTipsy: function() {
@@ -24,6 +25,24 @@
         function() { $(this).find('.actions').fadeIn(100); },
         function() { $(this).find('.actions').fadeOut(100); }
       );
+    },
+
+    setupAJAXDestroy: function() {
+      $('a.destroy').live('click', function(event) {
+        if (confirm('Are you sure?')) {
+          parent = $(this).parents('.has-actions:first');
+          $.ajax({
+            url: $(this).attr('href'),
+            type: 'DELETE',
+            success: function() {
+              parent.fadeOut(500, function() {
+                parent.remove();
+              });
+            }
+          });
+        }
+        return false;
+      });
     }
   }
 })();
