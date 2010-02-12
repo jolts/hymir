@@ -30,10 +30,14 @@
     setupAJAXDestroy: function() {
       $('a.destroy').live('click', function(event) {
         if (confirm('Are you sure?')) {
-          parent = $(this).parents('.has-actions:first');
+          link = $(this)
+          parent = link.parents('.has-actions:first');
           $.ajax({
-            url: $(this).attr('href'),
+            url: link.attr('href'),
             type: 'DELETE',
+            beforeSend: function() {
+              link.html("<img src='/images/ajax-loader.gif' alt='Loading' />");
+            },
             success: function() {
               parent.fadeOut(500, function() {
                 parent.remove();
