@@ -21,10 +21,11 @@
 
     setupActionHover: function() {
       $('.actions').hide();
-      $('.has-actions').hover(
-        function() { $(this).find('.actions').fadeIn(100); },
-        function() { $(this).find('.actions').fadeOut(100); }
-      );
+      $('.has-actions').hover(function() {
+        $(this).find('.actions').fadeIn(100);
+      }, function() {
+        $(this).find('.actions').fadeOut(100);
+      });
     },
 
     setupAJAXDestroy: function() {
