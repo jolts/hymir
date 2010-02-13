@@ -66,5 +66,5 @@ class PostsController < ApplicationController
     def find_post_by_slug
       @post = Post.find_by_slug(params[:id], :conditions => published?)
     end
-  # protected
+  #
 end

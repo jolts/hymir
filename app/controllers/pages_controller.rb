@@ -42,5 +42,5 @@ class PagesController < ApplicationController
     def find_page_by_url
       @page = Page.find_by_url(params[:id])
     end
-  # protected
+  #
 end

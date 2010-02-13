@@ -61,5 +61,5 @@ class UsersController < ApplicationController
     def check_current_user
       permission_denied unless @user == current_user
     end
-  # protected
+  #
 end
