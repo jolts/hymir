@@ -3,14 +3,14 @@
 - if signed_in?
   %ul#users
     - @users.each do |user|
-      %li.user{:class => user.id == current_user.id ? 'self' : nil, :id => "user_#{user.id}"}
+      %li.user.has-actions{:class => user.id == current_user.id ? 'self' : nil, :id => "user_#{user.id}"}
         %span.actions
           %span.destroy= link_to image_tag('silk/user_delete.png'), user, :method => :delete, :confirm => t('actions.confirm'), :rel => 'tipsy', :title => t('actions.destroy')
           - if user == current_user
             %span.edit= link_to image_tag('silk/user_edit.png'), edit_user_path(user), :rel => 'tipsy', :title => t('actions.edit')
         .block
-          %div.avatar= image_tag user.gravatar(56), :alt => 'Gravatar', :size => '56x56', :class => 'gravatar'
-          %div.info
+          .avatar= image_tag user.gravatar(55), :alt => 'Gravatar', :size => '55x55', :class => 'gravatar'
+          .info
             %dl
               %dt= t('.info.name')
               %dd.name= h user.username

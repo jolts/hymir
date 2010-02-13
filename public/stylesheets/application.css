@@ -159,14 +159,13 @@ h2#comments_count        {background:url(/images/silk/comments.png) no-repeat;pa
 #users .user.self           {background:rgba(255, 255, 255, 0.1);}
 #users .user dl             {margin-bottom:3px;display:block;position:relative;overflow:hidden;}
 #users .user dt             {text-shadow:1px 1px 1px #000;float:left;color:#88939c;width:60px;font:bold 11px 'Helvetica Neue',Helvetica,Arial;text-transform:uppercase;}
-#users .user dd             {float:right;clear:right;width:430px;}
 #users .user dd.name        {font-weight:bold;}
-#users .user span.actions   {float:right;clear:right;width:40px;}
+#users .user span.actions   {float:right;}
 #users .user span a         {border:none;float:right;padding:0 2px;}
 #users .user .block         {display:block;position:relative;overflow:hidden;}
-#users .user .block .avatar {float:left;width:11%;}
+#users .user .block .avatar {float:left;width:70px;}
 #users .user .block .avatar img.gravatar {padding:1px;border:1px solid rgba(255, 255, 255, 0.1);margin:3px 5px 0 0;-moz-border-radius:2px;-webkit-border-radius:2px;}
-#users .user .block .info   {float:right;clear:right;width:88%;}
+#users .user .block .info   {margin-left:70px;}
 
 #pagination             {color:#404f48;font-size:11px;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;text-align:center;text-transform:uppercase;}
 #pagination a:hover     {border:none;}
